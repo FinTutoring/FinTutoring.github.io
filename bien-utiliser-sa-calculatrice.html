@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔢 Bien utiliser sa calculatrice BA II Plus pour le CFA® - Guide Complet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .calc-key {
+            background: #f3f4f6;
+            border: 2px solid #e5e7eb;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .calc-key.primary {
+            background: #dc2626;
+            color: white;
+            border-color: #b91c1c;
+        }
+        .calc-key.secondary {
+            background: #b91c1c;
+            color: white;
+            border-color: #7f1d1d;
+        }
+        .function-box {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .warning-box {
+            background: #fff7ed;
+            border-left: 4px solid #ea580c;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .success-box {
+            background: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .keyboard-visual {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 4px;
+            background: #374151;
+            padding: 16px;
+            border-radius: 12px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .key {
+            background: #6b7280;
+            color: white;
+            text-align: center;
+            padding: 8px 4px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .key.highlight {
+            background: #dc2626;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <!-- Header avec logo centré -->
+    <header class="bg-gradient-red text-white pt-10 pb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo centré -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+
+            <!-- Nom et slogan -->
+            <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal -->
+            <h1 class="text-4xl font-bold mb-4">🔢 Maîtriser sa BA II Plus pour le CFA®</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">Découvrez les raccourcis essentiels, fonctions cachées et astuces avancées pour optimiser votre performance avec la Texas Instruments BA II Plus lors de l'examen CFA®</p>
+        </div>
+    </header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#configuration" class="hover:text-red-600 transition-colors">Configuration</a>
+                <a href="#raccourcis" class="hover:text-red-600 transition-colors">Raccourcis</a>
+                <a href="#fonctions-cachees" class="hover:text-red-600 transition-colors">Fonctions Cachées</a>
+                <a href="#calculs-essentiels" class="hover:text-red-600 transition-colors">Calculs CFA</a>
+                <a href="#erreurs-eviter" class="hover:text-red-600 transition-colors">Erreurs à Éviter</a>
+                <a href="#strategies" class="hover:text-red-600 transition-colors">Stratégies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Pourquoi la BA II Plus est Cruciale pour le CFA®</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La <strong class="text-red-600">Texas Instruments BA II Plus</strong> est l'une des deux calculatrices officiellement autorisées pour l'examen CFA® (avec la HP 12C). Maîtriser cet outil peut vous faire gagner des <strong>minutes précieuses</strong> lors de l'examen et améliorer significativement votre score.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Avec seulement 90 secondes par question en moyenne, chaque seconde compte. Ce guide vous révélera les techniques avancées pour exploiter pleinement les capacités de votre calculatrice.
+                        </p>
+                        <div class="success-box">
+                            <p class="text-green-800 font-semibold">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Les candidats qui maîtrisent leur calculatrice économisent en moyenne 15-20 secondes par calcul complexe !
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-calculator mr-2"></i>Avantages de la BA II Plus
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Interface intuitive et logique</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Fonctions financières avancées intégrées</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Calculs statistiques et probabilités</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Gestion efficace des flux de trésorerie</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Conversions de taux et de devises</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Mémoire pour stocker des constantes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Configuration optimale -->
+        <section id="configuration" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Configuration Optimale pour l'Examen</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-cog mr-2"></i>Paramètres Essentiels
+                    </h3>
+                    
+                    <div class="function-box">
+                        <h4 class="font-semibold mb-2">1. Format des Nombres</h4>
+                        <p class="text-sm mb-2">Séquence : <span class="calc-key">2nd</span> <span class="calc-key">FORMAT</span></p>
+                        <p class="text-sm">Recommandé : <strong>4 décimales</strong> pour la précision optimale</p>
+                    </div>
+
+                    <div class="function-box">
+                        <h4 class="font-semibold mb-2">2. Périodes par Année</h4>
+                        <p class="text-sm mb-2">Séquence : <span class="calc-key">2nd</span> <span class="calc-key">P/Y</span> <span class="calc-key">1</span> <span class="calc-key">ENTER</span></p>
+                        <p class="text-sm">Défaut : P/Y = 1, C/Y = 1 (capitalisation annuelle)</p>
+                    </div>
+
+                    <div class="function-box">
+                        <h4 class="font-semibold mb-2">3. Mode Calcul</h4>
+                        <p class="text-sm mb-2">Séquence : <span class="calc-key">2nd</span> <span class="calc-key">BGN</span></p>
+                        <p class="text-sm">Défaut : END (paiements en fin de période)</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-keyboard mr-2"></i>Interface Principale
+                    </h3>
+                    
+                    <div class="keyboard-visual mb-4">
+                        <div class="key">2nd</div>
+                        <div class="key">CE/C</div>
+                        <div class="key">CPT</div>
+                        <div class="key">+/-</div>
+                        <div class="key">ON/OFF</div>
+                        
+                        <div class="key">N</div>
+                        <div class="key highlight">I/Y</div>
+                        <div class="key highlight">PV</div>
+                        <div class="key highlight">PMT</div>
+                        <div class="key highlight">FV</div>
+                        
+                        <div class="key">CF</div>
+                        <div class="key">NPV</div>
+                        <div class="key">IRR</div>
+                        <div class="key">PB</div>
+                        <div class="key">DPB</div>
+                        
+                        <div class="key">7</div>
+                        <div class="key">8</div>
+                        <div class="key">9</div>
+                        <div class="key">÷</div>
+                        <div class="key">%</div>
+                        
+                        <div class="key">4</div>
+                        <div class="key">5</div>
+                        <div class="key">6</div>
+                        <div class="key">×</div>
+                        <div class="key">1/x</div>
+                    </div>
+                    
+                    <p class="text-sm text-gray-600">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        Les touches surlignées en rouge sont les plus utilisées pour les calculs CFA®
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Raccourcis essentiels -->
+        <section id="raccourcis" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Raccourcis Essentiels pour Gagner du Temps</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-bolt mr-2"></i>Raccourcis de Navigation
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <p class="font-semibold">Effacement Rapide</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="calc-key">CE/C</span> : Effacer dernière entrée<br>
+                                <span class="calc-key">2nd</span> <span class="calc-key">CE/C</span> : Reset complet (CLR TVM)
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <p class="font-semibold">Mémoire Rapide</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="calc-key">STO</span> <span class="calc-key">0-9</span> : Sauvegarder<br>
+                                <span class="calc-key">RCL</span> <span class="calc-key">0-9</span> : Rappeler
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <p class="font-semibold">Répétition Calculs</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="calc-key">2nd</span> <span class="calc-key">ENTER</span> : Répéter dernier calcul
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Calculs Express
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-500 pl-4">
+                            <p class="font-semibold">Pourcentages Rapides</p>
+                            <p class="text-sm text-gray-600">
+                                Pour +15% : <span class="calc-key">× 1.15 =</span><br>
+                                Pour -15% : <span class="calc-key">× 0.85 =</span>
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-orange-500 pl-4">
+                            <p class="font-semibold">Puissances Courantes</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="calc-key">y^x</span> : Puissance générale<br>
+                                <span class="calc-key">2nd</span> <span class="calc-key">y^x</span> : Racine x-ième
+                            </p>
+                        </div>
+
+                        <div class="border-l-4 border-indigo-500 pl-4">
+                            <p class="font-semibold">Inversion Rapide</p>
+                            <p class="text-sm text-gray-600">
+                                <span class="calc-key">1/x</span> : Inverse directement<br>
+                                <span class="calc-key">+/-</span> : Changement de signe
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mt-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-rocket mr-2"></i>Séquences Ultra-Rapides
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="function-box">
+                        <h4 class="font-semibold text-red-600 mb-2">Taux Effectif ↔ Nominal</h4>
+                        <p class="text-sm mb-2">
+                            <strong>Vers Effectif :</strong><br>
+                            <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">ICONV</span><br>
+                            NOM = taux nominal<br>
+                            C/Y = périodes<br>
+                            <span class="calc-key primary">CPT</span> <span class="calc-key">EFF</span>
+                        </p>
+                    </div>
+
+                    <div class="function-box">
+                        <h4 class="font-semibold text-red-600 mb-2">Amortissement Rapide</h4>
+                        <p class="text-sm mb-2">
+                            <strong>Table d'amortissement :</strong><br>
+                            <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">AMORT</span><br>
+                            P1 = période début<br>
+                            P2 = période fin<br>
+                            <span class="calc-key primary">↓</span> pour naviguer
+                        </p>
+                    </div>
+
+                    <div class="function-box">
+                        <h4 class="font-semibold text-red-600 mb-2">Statistiques Express</h4>
+                        <p class="text-sm mb-2">
+                            <strong>Moyennes :</strong><br>
+                            Données + <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">DATA</span><br>
+                            <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">STAT</span><br>
+                            <span class="calc-key primary">↓</span> pour résultats
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fonctions cachées -->
+        <section id="fonctions-cachees" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Fonctions Cachées et Avancées</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-6">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-eye mr-2"></i>Fonctions Peu Connues mais Puissantes
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">🔍 Fonction BOND (2nd + FV)</h4>
+                        <div class="success-box mb-4">
+                            <p class="text-green-800 font-semibold mb-2">Calcul Direct Prix/Rendement Obligations</p>
+                            <div class="text-sm">
+                                <p><strong>SDT</strong> = Date de règlement</p>
+                                <p><strong>CPN</strong> = Taux de coupon (%)</p>
+                                <p><strong>RDT</strong> = Rendement recherché (%)</p>
+                                <p><strong>MAT</strong> = Date d'échéance</p>
+                                <p><strong>PRI</strong> = Prix (à calculer ou donné)</p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg mb-4">📊 BREAKEVEN (2nd + PV)</h4>
+                        <div class="function-box">
+                            <p class="text-sm">
+                                <strong>Analyse de seuil de rentabilité :</strong><br>
+                                FC = Coûts fixes<br>
+                                VC = Coûts variables par unité<br>
+                                P = Prix de vente par unité<br>
+                                → Calcule automatiquement le point mort
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg mb-4">💱 ICONV (2nd + xP/Y)</h4>
+                        <div class="warning-box mb-4">
+                            <p class="text-orange-800 font-semibold mb-2">Conversions de Taux Avancées</p>
+                            <div class="text-sm">
+                                <p><strong>NOM</strong> = Taux nominal</p>
+                                <p><strong>EFF</strong> = Taux effectif</p>
+                                <p><strong>C/Y</strong> = Périodes de capitalisation</p>
+                                <p>Bidirectionnel : calcule NOM→EFF ou EFF→NOM</p>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg mb-4">📈 Régression (2nd + 7, 8, 9)</h4>
+                        <div class="function-box">
+                            <p class="text-sm">
+                                <strong>2nd + 7</strong> = Régression linéaire<br>
+                                <strong>2nd + 8</strong> = Régression logarithmique<br>
+                                <strong>2nd + 9</strong> = Régression exponentielle<br>
+                                Calcule automatiquement R², a, b
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-magic mr-2"></i>Astuces de Pro pour l'Examen
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-red-600 mb-3">
+                            <i class="fas fa-stopwatch mr-2"></i>Gain de Temps
+                        </h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Utilisez <span class="calc-key">ANS</span> (2nd + (-)) pour reprendre le dernier résultat</li>
+                            <li>• Programmez les constantes fréquentes en mémoire (0-9)</li>
+                            <li>• <span class="calc-key">2nd</span> + <span class="calc-key">ENTER</span> = répéter la dernière opération</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-blue-600 mb-3">
+                            <i class="fas fa-shield-alt mr-2"></i>Vérifications
+                        </h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• <span class="calc-key">2nd</span> + <span class="calc-key">FORMAT</span> pour vérifier les décimales</li>
+                            <li>• Toujours vérifier P/Y = 1 avant TVM</li>
+                            <li>• Utiliser des ordres de grandeur pour valider</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-green-600 mb-3">
+                            <i class="fas fa-lightbulb mr-2"></i>Optimisations
+                        </h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Mode chaîné : effectuer plusieurs calculs d'affilée</li>
+                            <li>• Parenthèses intelligentes pour calculs complexes</li>
+                            <li>• <span class="calc-key">2nd</span> + <span class="calc-key">QUIT</span> = sortir rapidement des menus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculs essentiels CFA -->
+        <section id="calculs-essentiels" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Calculs Essentiels pour le CFA®</h2>
+            
+            <div class="space-y-8">
+                <!-- TVM -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-chart-line mr-2"></i>Time Value of Money (TVM)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4">Exemple : Valeur Actuelle d'une Annuité</h4>
+                            <div class="function-box">
+                                <p class="font-semibold text-red-600 mb-2">Problème :</p>
+                                <p class="text-sm mb-3">
+                                    Calculer la VA de 10 paiements annuels de 1000€ à 8% d'intérêt
+                                </p>
+                                
+                                <p class="font-semibold text-blue-600 mb-2">Séquence :</p>
+                                <div class="text-sm space-y-1">
+                                    <p><span class="calc-key">10</span> <span class="calc-key primary">N</span></p>
+                                    <p><span class="calc-key">8</span> <span class="calc-key primary">I/Y</span></p>
+                                    <p><span class="calc-key">1000</span> <span class="calc-key primary">PMT</span></p>
+                                    <p><span class="calc-key">0</span> <span class="calc-key primary">FV</span></p>
+                                    <p><span class="calc-key primary">CPT</span> <span class="calc-key primary">PV</span></p>
+                                </div>
+                                
+                                <p class="font-semibold text-green-600 mt-2">Résultat : -6 710,08€</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4">Calcul de Taux de Rendement</h4>
+                            <div class="function-box">
+                                <p class="font-semibold text-red-600 mb-2">Problème :</p>
+                                <p class="text-sm mb-3">
+                                    Investissement de 10000€, retour de 15000€ dans 5 ans. Quel rendement ?
+                                </p>
+                                
+                                <p class="font-semibold text-blue-600 mb-2">Séquence :</p>
+                                <div class="text-sm space-y-1">
+                                    <p><span class="calc-key">5</span> <span class="calc-key primary">N</span></p>
+                                    <p><span class="calc-key">10000</span> <span class="calc-key">+/-</span> <span class="calc-key primary">PV</span></p>
+                                    <p><span class="calc-key">15000</span> <span class="calc-key primary">FV</span></p>
+                                    <p><span class="calc-key">0</span> <span class="calc-key primary">PMT</span></p>
+                                    <p><span class="calc-key primary">CPT</span> <span class="calc-key primary">I/Y</span></p>
+                                </div>
+                                
+                                <p class="font-semibold text-green-600 mt-2">Résultat : 8,45%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cash Flow -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-money-bill-wave mr-2"></i>Analyse des Flux de Trésorerie (CF)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4">NPV et IRR - Méthode Rapide</h4>
+                            <div class="success-box">
+                                <p class="font-semibold text-green-800 mb-2">Flux irréguliers :</p>
+                                <p class="text-sm mb-3">
+                                    Investissement initial : -100 000€<br>
+                                    Année 1 : +30 000€<br>
+                                    Année 2 : +40 000€<br>
+                                    Année 3 : +50 000€<br>
+                                    Taux d'actualisation : 10%
+                                </p>
+                                
+                                <p class="font-semibold text-blue-600 mb-2">Séquence :</p>
+                                <div class="text-sm space-y-1">
+                                    <p><span class="calc-key primary">CF</span> → CF₀ = -100000 <span class="calc-key">ENTER</span> <span class="calc-key">↓</span></p>
+                                    <p>C01 = 30000 <span class="calc-key">ENTER</span> <span class="calc-key">↓</span> <span class="calc-key">↓</span></p>
+                                    <p>C02 = 40000 <span class="calc-key">ENTER</span> <span class="calc-key">↓</span> <span class="calc-key">↓</span></p>
+                                    <p>C03 = 50000 <span class="calc-key">ENTER</span></p>
+                                    <p><span class="calc-key primary">NPV</span> → I = 10 <span class="calc-key">ENTER</span> <span class="calc-key">↓</span></p>
+                                    <p><span class="calc-key primary">CPT</span> → NPV = 4 815€</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4">IRR du Même Projet</h4>
+                            <div class="function-box">
+                                <p class="font-semibold text-red-600 mb-2">Après saisie des CF :</p>
+                                <div class="text-sm space-y-1">
+                                    <p><span class="calc-key primary">IRR</span> <span class="calc-key primary">CPT</span></p>
+                                    <p class="font-semibold text-green-600 mt-2">Résultat : IRR = 12,05%</p>
+                                </div>
+                            </div>
+
+                            <div class="warning-box mt-4">
+                                <p class="font-semibold text-orange-800 mb-2">
+                                    <i class="fas fa-exclamation-triangle mr-2"></i>Astuce Importante
+                                </p>
+                                <p class="text-sm">
+                                    Une fois les flux saisis, vous pouvez calculer NPV à différents taux sans tout ressaisir. 
+                                    Changez juste la valeur I dans le menu NPV !
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-chart-bar mr-2"></i>Statistiques et Probabilités
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="function-box">
+                            <h4 class="font-semibold text-red-600 mb-2">Moyennes et Écarts-types</h4>
+                            <p class="text-sm mb-2">
+                                <strong>Saisie données :</strong><br>
+                                <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">DATA</span><br>
+                                Valeur <span class="calc-key">ENTER</span> <span class="calc-key">↓</span><br>
+                                Fréquence <span class="calc-key">ENTER</span> <span class="calc-key">↓</span>
+                            </p>
+                            <p class="text-sm">
+                                <strong>Calculs :</strong><br>
+                                <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">STAT</span><br>
+                                <span class="calc-key">↓</span> pour naviguer
+                            </p>
+                        </div>
+
+                        <div class="function-box">
+                            <h4 class="font-semibold text-red-600 mb-2">Permutations/Combinaisons</h4>
+                            <p class="text-sm">
+                                <strong>nPr :</strong> n <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">nPr</span> r<br>
+                                <strong>nCr :</strong> n <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">nCr</span> r<br><br>
+                                <strong>Exemple :</strong><br>
+                                10 objets, choisir 3<br>
+                                10 <span class="calc-key secondary">2nd</span> <span class="calc-key secondary">nCr</span> 3 = 120
+                            </p>
+                        </div>
+
+                        <div class="function-box">
+                            <h4 class="font-semibold text-red-600 mb-2">Distributions</h4>
+                            <p class="text-sm">
+                                <strong>Normale :</strong> disponible via menus statistiques avancés<br><br>
+                                <strong>Conseil :</strong> Pour CFA®, souvent plus rapide d'utiliser les tables fournies que les fonctions calculatrice
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Erreurs à éviter -->
+        <section id="erreurs-eviter" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Erreurs Critiques à Éviter</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>Top 10 des Erreurs Fatales
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">1. Oublier de Reset TVM</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Calculs précédents influencent nouveaux résultats<br>
+                                    <strong>Solution :</strong> <span class="calc-key">2nd</span> <span class="calc-key">CE/C</span> avant chaque nouveau problème TVM
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">2. P/Y ≠ 1</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Calculatrice configurée pour capitalisation mensuelle/trimestrielle<br>
+                                    <strong>Solution :</strong> Vérifier <span class="calc-key">2nd</span> <span class="calc-key">P/Y</span> = 1 systématiquement
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">3. Signe des Cash Flows</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Ne pas respecter convention entrée/sortie<br>
+                                    <strong>Solution :</strong> Investissement négatif, retours positifs (ou inverse cohérent)
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">4. Unités de Temps Incohérentes</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Mélanger taux annuel avec périodes mensuelles<br>
+                                    <strong>Solution :</strong> Toujours harmoniser : taux annuel ↔ N en années
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">5. Mauvais Mode BEGIN/END</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Paiements en début vs fin de période<br>
+                                    <strong>Solution :</strong> Vérifier <span class="calc-key">2nd</span> <span class="calc-key">BGN</span> selon énoncé
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">6. Confusion IRR Multiple</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Flux complexes peuvent donner plusieurs IRR<br>
+                                    <strong>Solution :</strong> Analyser cohérence économique du résultat
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">7. Précision Décimales</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Arrondir trop tôt dans calculs intermédiaires<br>
+                                    <strong>Solution :</strong> 4+ décimales pendant calcul, arrondir à la fin
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">8. Oublier +/- pour Inversion</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Signe incorrect dans résultats TVM<br>
+                                    <strong>Solution :</strong> Utiliser <span class="calc-key">+/-</span> si nécessaire
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">9. Effacement Partiel</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Utiliser <span class="calc-key">CE/C</span> au lieu de clear complet<br>
+                                    <strong>Solution :</strong> <span class="calc-key">2nd</span> <span class="calc-key">CE/C</span> pour reset total
+                                </p>
+                            </div>
+
+                            <div class="warning-box">
+                                <h4 class="font-semibold text-orange-800 mb-2">10. Panique et Précipitation</h4>
+                                <p class="text-sm">
+                                    <strong>Problème :</strong> Stress → erreurs de saisie<br>
+                                    <strong>Solution :</strong> Respirer, vérifier chaque étape méthodiquement
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-first-aid mr-2"></i>Check-list de Vérification Rapide
+                    </h3>
+                    <div class="grid md:grid-cols-4 gap-4 text-sm">
+                        <div>
+                            <h4 class="font-semibold mb-2">Avant Calcul TVM</h4>
+                            <ul class="space-y-1">
+                                <li>☑️ <span class="calc-key">2nd</span> <span class="calc-key">CE/C</span></li>
+                                <li>☑️ P/Y = 1</li>
+                                <li>☑️ Mode END</li>
+                                <li>☑️ 4 décimales</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Pendant Saisie</h4>
+                            <ul class="space-y-1">
+                                <li>☑️ Cohérence unités</li>
+                                <li>☑️ Signes CF corrects</li>
+                                <li>☑️ Valeurs réalistes</li>
+                                <li>☑️ Pas de rush</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Après Calcul</h4>
+                            <ul class="space-y-1">
+                                <li>☑️ Ordre de grandeur</li>
+                                <li>☑️ Signe logique</li>
+                                <li>☑️ Test cohérence</li>
+                                <li>☑️ Backup résultat</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Problème Détecté</h4>
+                            <ul class="space-y-1">
+                                <li>☑️ Reset complet</li>
+                                <li>☑️ Ressaisir calmement</li>
+                                <li>☑️ Vérifier paramètres</li>
+                                <li>☑️ Tester autre méthode</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stratégies d'examen -->
+        <section id="strategies" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Stratégies d'Examen avec la BA II Plus</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-stopwatch mr-2"></i>Gestion Optimale du Temps
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-green-600 mb-3">
+                                <i class="fas fa-bolt mr-2"></i>Calculs Rapides (< 30s)
+                            </h4>
+                            <ul class="text-sm space-y-2">
+                                <li>• Pourcentages simples</li>
+                                <li>• Règle de 3</li>
+                                <li>• Conversions de base</li>
+                                <li>• Moyennes arithmétiques</li>
+                                <li>• Ratios financiers basiques</li>
+                            </ul>
+                            <div class="mt-3 p-2 bg-green-100 rounded text-xs">
+                                <strong>Conseil :</strong> Utilisez les raccourcis mentaux quand possible
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-yellow-600 mb-3">
+                                <i class="fas fa-calculator mr-2"></i>Calculs Moyens (30-60s)
+                            </h4>
+                            <ul class="text-sm space-y-2">
+                                <li>• TVM standards</li>
+                                <li>• Statistics de base</li>
+                                <li>• NPV simples</li>
+                                <li>• Probabilités</li>
+                                <li>• Correlations</li>
+                            </ul>
+                            <div class="mt-3 p-2 bg-yellow-100 rounded text-xs">
+                                <strong>Conseil :</strong> Mémorisez les séquences de touches
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-red-600 mb-3">
+                                <i class="fas fa-brain mr-2"></i>Calculs Complexes (60-90s)
+                            </h4>
+                            <ul class="text-sm space-y-2">
+                                <li>• CF irréguliers</li>
+                                <li>• Obligations complexes</li>
+                                <li>• Régressions multiples</li>
+                                <li>• Optimisation de portefeuille</li>
+                                <li>• Dérivés avancés</li>
+                            </ul>
+                            <div class="mt-3 p-2 bg-red-100 rounded text-xs">
+                                <strong>Conseil :</strong> Si > 90s, marquez et revenez plus tard
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-chess mr-2"></i>Stratégies de Résolution par Domaine
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="function-box">
+                                <h4 class="font-semibold text-red-600 mb-3">📊 Quantitative Methods</h4>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>Priorités BA II Plus :</strong></p>
+                                    <ul class="ml-4 space-y-1">
+                                        <li>• Statistiques descriptives automatisées</li>
+                                        <li>• Régressions intégrées</li>
+                                        <li>• Fonctions de probabilité</li>
+                                        <li>• Tests d'hypothèse (calculs complémentaires)</li>
+                                    </ul>
+                                    <div class="bg-blue-100 p-2 rounded mt-2">
+                                        <strong>Astuce :</strong> Configurez 6 décimales pour ce domaine
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="function-box">
+                                <h4 class="font-semibold text-red-600 mb-3">💼 Corporate Finance</h4>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>TVM intensif :</strong></p>
+                                    <ul class="ml-4 space-y-1">
+                                        <li>• NPV/IRR projets</li>
+                                        <li>• Coût du capital (WACC)</li>
+                                        <li>• Valorisations DCF</li>
+                                        <li>• Analyses de sensibilité</li>
+                                    </ul>
+                                    <div class="bg-green-100 p-2 rounded mt-2">
+                                        <strong>Astuce :</strong> Sauvegardez taux de base en mémoire
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="function-box">
+                                <h4 class="font-semibold text-red-600 mb-3">📈 Equity Investments</h4>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>Modèles de valorisation :</strong></p>
+                                    <ul class="ml-4 space-y-1">
+                                        <li>• DDM (Dividend Discount Model)</li>
+                                        <li>• P/E ratios et multiples</li>
+                                        <li>• Croissance des dividendes</li>
+                                        <li>• Rendements ajustés au risque</li>
+                                    </ul>
+                                    <div class="bg-purple-100 p-2 rounded mt-2">
+                                        <strong>Astuce :</strong> Programmez formule Gordon en mémoire
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="function-box">
+                                <h4 class="font-semibold text-red-600 mb-3">🏦 Fixed Income</h4>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>Fonction BOND cruciale :</strong></p>
+                                    <ul class="ml-4 space-y-1">
+                                        <li>• Prix/rendement obligations</li>
+                                        <li>• Duration et convexité</li>
+                                        <li>• Courbes de taux</li>
+                                        <li>• Immunisation de portefeuille</li>
+                                    </ul>
+                                    <div class="bg-orange-100 p-2 rounded mt-2">
+                                        <strong>Astuce :</strong> Maîtrisez 2nd+FV (BOND) parfaitement
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-target mr-2"></i>Plan d'Action pour le Jour J
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-600 mb-3">🏁 Avant l'Examen</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Test calculatrice</li>
+                                <li>✓ Piles neuves</li>
+                                <li>✓ Reset complet</li>
+                                <li>✓ Configuration standard</li>
+                                <li>✓ Mémorisation constantes</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-600 mb-3">⚡ Première Session</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Commencer par calculs simples</li>
+                                <li>✓ Vérifier configuration</li>
+                                <li>✓ Établir rythme</li>
+                                <li>✓ Marquer questions longues</li>
+                                <li>✓ Garder temps pour révision</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-600 mb-3">🔄 Pause Inter-Session</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Ne pas discuter réponses</li>
+                                <li>✓ Recharge mentale</li>
+                                <li>✓ Vérifier calculatrice</li>
+                                <li>✓ Reset si nécessaire</li>
+                                <li>✓ Confiance en préparation</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-600 mb-3">🎯 Deuxième Session</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>✓ Maintenir concentration</li>
+                                <li>✓ Appliquer même stratégie</li>
+                                <li>✓ Pas de panique si difficile</li>
+                                <li>✓ Utiliser élimination</li>
+                                <li>✓ Finaliser toutes réponses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Maîtrisez Votre BA II Plus, Maximisez Votre Score CFA®</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        La calculatrice BA II Plus n'est pas qu'un outil de calcul pour l'examen CFA®, c'est un <strong>multiplicateur de performance</strong>. En maîtrisant ses fonctions avancées et en évitant les erreurs courantes, vous gagnez un avantage concurrentiel décisif.
+                    </p>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        Avec les techniques de ce guide, vous économiserez 15-30 secondes par question calculatoire, soit <strong>45-90 minutes sur l'ensemble de l'examen</strong> - un temps précieux pour réviser et optimiser vos réponses.
+                    </p>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <p class="text-red-100 font-semibold">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            La différence entre réussite et échec au CFA® se joue souvent sur les détails techniques et la gestion du temps. Votre calculatrice peut être votre meilleur allié.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">Récapitulatif des Points Clés</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ <strong>Configuration :</strong> P/Y=1, 4 décimales, mode END</li>
+                        <li>✓ <strong>Reset :</strong> 2nd + CE/C avant chaque nouveau calcul</li>
+                        <li>✓ <strong>Fonctions cachées :</strong> BOND, ICONV, régressions</li>
+                        <li>✓ <strong>Mémoire :</strong> Stocker constantes fréquentes (STO 0-9)</li>
+                        <li>✓ <strong>Vérification :</strong> Ordres de grandeur et cohérence</li>
+                        <li>✓ <strong>Timing :</strong> 30s/simple, 60s/moyen, 90s/complexe max</li>
+                        <li>✓ <strong>Stratégie :</strong> Marquer et revenir sur difficiles</li>
+                        <li>✓ <strong>Préparation :</strong> Pratique intensive pre-examen</li>
+                    </ul>
+                    
+                    <div class="mt-6 pt-4 border-t border-red-300">
+                        <p class="text-red-200 text-sm">
+                            <i class="fas fa-trophy mr-2"></i>
+                            <strong>Objectif :</strong> Transformer votre BA II Plus en arme secrète pour le CFA®
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-red-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-calculator text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-red-200">
+                        <p>Bonne chance pour maîtriser votre BA II Plus !</p>
+                        <p>Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-10 object-contain">
+            </div>
+
+            <p class="text-gray-400 mb-4">
+                © 2024 Finance Tutoring. Guide basé sur le manuel officiel Texas Instruments BA II Plus et l'expérience pratique des examens CFA®.
+            </p>
+            
+            <div class="space-y-2 text-sm text-gray-500">
+                <p>Sources : Texas Instruments Manuel Utilisateur, CFA Institute Calculator Policy, Finance Tutoring Research</p>
+                <p>
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Ce guide est indépendant et n'est pas affilié au CFA Institute ou Texas Instruments
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
