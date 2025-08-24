@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer son Temps Efficacement le Jour du CFA®</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .time-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec logo centré et agrandi -->
+<header class="bg-gradient-red text-white pt-10 pb-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <!-- Logo centré et agrandi -->
+        <div class="flex justify-center mb-6">
+            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+        </div>
+
+        <!-- Nom et slogan -->
+        <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+        <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
+
+        <!-- Titre principal -->
+        <h1 class="text-4xl font-bold mb-4">Gérer son Temps Efficacement le Jour du CFA®</h1>
+        <p class="text-xl text-red-100 max-w-4xl mx-auto">Maîtrisez les stratégies de timing, optimisez votre performance et maximisez vos chances de réussite à l'examen CFA.</p>
+    </div>
+</header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#enjeux-temps" class="hover:text-red-600 transition-colors">Enjeux du Temps</a>
+                <a href="#strategies-niveau" class="hover:text-red-600 transition-colors">Stratégies par Niveau</a>
+                <a href="#techniques-pratiques" class="hover:text-red-600 transition-colors">Techniques Pratiques</a>
+                <a href="#timeline-journee" class="hover:text-red-600 transition-colors">Timeline Journée</a>
+                <a href="#gestion-stress" class="hover:text-red-600 transition-colors">Gestion du Stress</a>
+                <a href="#erreurs-eviter" class="hover:text-red-600 transition-colors">Erreurs à Éviter</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">La Gestion du Temps : Clé de Votre Réussite au CFA</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La gestion efficace du temps le jour de l'examen CFA peut faire la différence entre la réussite et l'échec. Avec <strong class="text-red-600">moins de 90 secondes par question</strong> en moyenne, chaque seconde compte pour optimiser votre performance.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ce guide vous fournit les stratégies éprouvées, les techniques de timing et les méthodes d'optimisation utilisées par les candidats qui réussissent. Apprenez à transformer la pression temporelle en avantage stratégique.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-stopwatch mr-2"></i>Contraintes Temporelles CFA
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-clock text-blue-500 mr-2"></i><strong>Level 1 :</strong> 90 sec/question (180 QCM)</li>
+                            <li><i class="fas fa-clock text-blue-500 mr-2"></i><strong>Level 2 :</strong> 88 questions, formats mixtes</li>
+                            <li><i class="fas fa-clock text-blue-500 mr-2"></i><strong>Level 3 :</strong> Essays + QCM, gestion complexe</li>
+                            <li><i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i>Aucun temps supplémentaire accordé</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enjeux du temps -->
+        <section id="enjeux-temps" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Comprendre les Enjeux du Temps au CFA</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tachometer-alt text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Vitesse vs Précision</h3>
+                        <p class="text-gray-600">Équilibrer rapidité d'exécution et exactitude des réponses</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-brain text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Fatigue Cognitive</h3>
+                        <p class="text-gray-600">Maintenir concentration et performance sur 4h30</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Impact Score</h3>
+                        <p class="text-gray-600">Optimiser allocation temps = +5 à 8% score final</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-bar mr-2"></i>Statistiques : Impact de la Gestion du Temps
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Candidats avec Bonne Gestion du Temps</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>87%</strong> terminent toutes les questions</li>
+                            <li>• <strong>73%</strong> gardent 10-15 min pour révision</li>
+                            <li>• <strong>+12%</strong> score moyen vs autres candidats</li>
+                            <li>• <strong>65%</strong> de taux de réussite</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Candidats avec Mauvaise Gestion</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>34%</strong> laissent questions sans réponse</li>
+                            <li>• <strong>51%</strong> se précipitent en fin d'examen</li>
+                            <li>• <strong>-8%</strong> score moyen</li>
+                            <li>• <strong>28%</strong> de taux de réussite</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stratégies par niveau -->
+        <section id="strategies-niveau" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Stratégies de Timing par Niveau CFA</h2>
+            
+            <div class="space-y-8">
+                <!-- Level 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-layer-group mr-2"></i>CFA Level 1 : Stratégies QCM
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-red-600">Règle 60-90-120</h4>
+                            <ul class="space-y-2">
+                                <li>• <strong>60 secondes :</strong> Questions simples (concepts, définitions)</li>
+                                <li>• <strong>90 secondes :</strong> Questions moyennes (calculs standards)</li>
+                                <li>• <strong>120 secondes :</strong> Questions complexes (calculs multi-étapes)</li>
+                                <li>• <strong>15 minutes :</strong> Révision finale réservée</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-blue-600">Technique PASS (Passer-Analyser-Sélectionner-Sécuriser)</h4>
+                            <ul class="space-y-2">
+                                <li>• <strong>P</strong>asser les questions >120s immédiatement</li>
+                                <li>• <strong>A</strong>nalyser rapidement le type de question</li>
+                                <li>• <strong>S</strong>électionner la méthode optimale</li>
+                                <li>• <strong>S</strong>écuriser avec vérification rapide</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4">Répartition Temporelle Optimale - Session 135 minutes</h4>
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="text-center">
+                                <div class="time-circle mx-auto mb-2">100</div>
+                                <p class="text-sm"><strong>100 min</strong><br/>Questions 1-75</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="time-circle mx-auto mb-2">20</div>
+                                <p class="text-sm"><strong>20 min</strong><br/>Questions marquées</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="time-circle mx-auto mb-2">10</div>
+                                <p class="text-sm"><strong>10 min</strong><br/>Révision générale</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="time-circle mx-auto mb-2">5</div>
+                                <p class="text-sm"><strong>5 min</strong><br/>Vérification cases</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-layer-group mr-2"></i>CFA Level 2 : Gestion des Item Sets
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-clock text-green-500 mr-2"></i>Allocation Temps par Item Set
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• <strong>18 minutes</strong> par item set (6 questions)</li>
+                                <li>• <strong>2-3 minutes</strong> lecture cas et tableaux</li>
+                                <li>• <strong>12-14 minutes</strong> résolution questions</li>
+                                <li>• <strong>2-3 minutes</strong> vérification et marquage</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-list-ol text-purple-500 mr-2"></i>Séquence de Traitement
+                            </h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>1. <strong>Survol :</strong> Questions avant lecture cas</li>
+                                <li>2. <strong>Lecture active :</strong> Cas avec focus données clés</li>
+                                <li>3. <strong>Traitement séquentiel :</strong> Questions dans l'ordre</li>
+                                <li>4. <strong>Marquage intelligent :</strong> Difficiles pour retour</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-layer-group mr-2"></i>CFA Level 3 : Essays + QCM
+                    </h3>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg mb-4">
+                        <h4 class="font-semibold mb-3 text-yellow-700">Stratégie Session AM (Essays)</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <strong>Phase 1 (15 min) :</strong>
+                                <ul class="text-sm mt-1">
+                                    <li>• Lecture complète examen</li>
+                                    <li>• Identification questions faciles</li>
+                                    <li>• Planning séquence attaque</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Phase 2 (100 min) :</strong>
+                                <ul class="text-sm mt-1">
+                                    <li>• Traitement questions faciles d'abord</li>
+                                    <li>• 1.5 min par point alloué</li>
+                                    <li>• Pas plus de 20 min par question</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Phase 3 (20 min) :</strong>
+                                <ul class="text-sm mt-1">
+                                    <li>• Retour questions marquées</li>
+                                    <li>• Finalisation réponses partielles</li>
+                                    <li>• Vérification exhaustive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques pratiques -->
+        <section id="techniques-pratiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Techniques Pratiques de Gestion du Temps</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-tools mr-2"></i>Techniques de Lecture Rapide
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-blue-600">Technique du Skimming</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Mots-clés :</strong> Encadrer termes techniques</li>
+                                <li>• <strong>Chiffres :</strong> Surligner données numériques</li>
+                                <li>• <strong>Connecteurs :</strong> "however", "therefore", "because"</li>
+                                <li>• <strong>Première/dernière phrase</strong> de chaque paragraphe</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-green-600">Lecture Question d'Abord</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Lire question avant énoncé (Level 2/3)</li>
+                                <li>• Identifier ce qui est demandé exactement</li>
+                                <li>• Chercher info pertinente uniquement</li>
+                                <li>• Éviter sur-lecture du contexte</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Optimisation des Calculs
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-red-50 rounded-lg">
+                            <i class="fas fa-lightning text-red-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Raccourcis Calculatrice</h5>
+                            <p class="text-sm text-gray-600">Mémoriser fonctions TVM, IRR, NPV</p>
+                        </div>
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-approximation text-blue-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Approximations</h5>
+                            <p class="text-sm text-gray-600">Calculs rapides pour éliminer options</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-check-double text-green-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Vérification</h5>
+                            <p class="text-sm text-gray-600">Tests de cohérence instantanés</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3">Formules de Vérification Rapide</h4>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <strong>Financial Ratios :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-600">
+                                    <li>• ROE = ROA × Equity Multiplier</li>
+                                    <li>• P/E rationnel entre 5-50</li>
+                                    <li>• Current Ratio > 1</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Fixed Income :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-600">
+                                    <li>• Duration ≈ Years to Maturity</li>
+                                    <li>• Prix obligation inverse YTM</li>
+                                    <li>• Convexity toujours positive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-flag mr-2"></i>Système de Marquage Efficace
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3">Code Couleur Mental</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <div class="w-4 h-4 bg-green-500 rounded mr-3"></div>
+                                    <span><strong>Vert :</strong> Question facile, réponse sûre</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-4 h-4 bg-yellow-500 rounded mr-3"></div>
+                                    <span><strong>Jaune :</strong> Incertain, à revérifier</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-4 h-4 bg-red-500 rounded mr-3"></div>
+                                    <span><strong>Rouge :</strong> Difficile, revenir si temps</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="w-4 h-4 bg-gray-500 rounded mr-3"></div>
+                                    <span><strong>Gris :</strong> Abandonner, guess éduqué</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3">Priorités de Retour</h4>
+                            <ol class="space-y-2">
+                                <li><strong>1. Questions jaunes</strong> (incertaines mais faisables)</li>
+                                <li><strong>2. Questions rouges faciles</strong> (si temps restant)</li>
+                                <li><strong>3. Vérification calculs complexes</strong></li>
+                                <li><strong>4. Questions grises</strong> (guess intelligent)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline de la journée -->
+        <section id="timeline-journee" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Timeline Optimale de la Journée d'Examen</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <div class="space-y-6">
+                    <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-blue-600">H-3h</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Réveil et Préparation</strong>
+                            <p class="text-sm text-gray-600">Petit-déjeuner équilibré, révision formules clés (15 min max), vérification matériel</p>
+                        </div>
+                        <div class="text-right text-sm text-blue-600">
+                            <i class="fas fa-coffee text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-green-600">H-1h</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Arrivée Centre d'Examen</strong>
+                            <p class="text-sm text-gray-600">Check-in, installation, test calculatrice, relaxation mentale</p>
+                        </div>
+                        <div class="text-right text-sm text-green-600">
+                            <i class="fas fa-building text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-red-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-red-600">H</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Session 1 - Démarrage Fort</strong>
+                            <p class="text-sm text-gray-600">Premières 20 questions rapidement pour prendre confiance, respecter timing strict</p>
+                        </div>
+                        <div class="text-right text-sm text-red-600">
+                            <i class="fas fa-play text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-purple-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-purple-600">H+1h</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Milieu Session 1 - Rythme de Croisière</strong>
+                            <p class="text-sm text-gray-600">Questions 21-60, maintenir concentration, première vague de marquage</p>
+                        </div>
+                        <div class="text-right text-sm text-purple-600">
+                            <i class="fas fa-tachometer-alt text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-orange-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-orange-600">H+2h</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Fin Session 1 - Sprint Final</strong>
+                            <p class="text-sm text-gray-600">Questions 61-90, retour marquées, révision cases vides</p>
+                        </div>
+                        <div class="text-right text-sm text-orange-600">
+                            <i class="fas fa-flag-checkered text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-gray-600">H+2h15</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Pause Stratégique</strong>
+                            <p class="text-sm text-gray-600">30 min pause : collation, hydratation, relaxation, pas de discussion examen</p>
+                        </div>
+                        <div class="text-right text-sm text-gray-600">
+                            <i class="fas fa-pause text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-red-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-red-600">H+2h45</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Session 2 - Nouveau Départ</strong>
+                            <p class="text-sm text-gray-600">Reset mental, reprendre rythme, appliquer leçons session 1</p>
+                        </div>
+                        <div class="text-right text-sm text-red-600">
+                            <i class="fas fa-redo text-lg"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-green-50 rounded-lg">
+                        <div class="w-20 text-center font-bold text-green-600">H+4h15</div>
+                        <div class="ml-4 flex-1">
+                            <strong>Finalisation Session 2</strong>
+                            <p class="text-sm text-gray-600">Dernières questions, vérification globale, optimisation scores</p>
+                        </div>
+                        <div class="text-right text-sm text-green-600">
+                            <i class="fas fa-check-circle text-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gestion du stress temporel -->
+        <section id="gestion-stress" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Gestion du Stress Temporel</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-heartbeat mr-2"></i>Techniques de Déstressage Express
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-lungs text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Respiration 4-7-8</strong>
+                                <p class="text-sm text-gray-600">Inspire 4s, retient 7s, expire 8s</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-hand-paper text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Ancrage Physique</strong>
+                                <p class="text-sm text-gray-600">Presser pieds au sol, détendre épaules</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-brain text-purple-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Recentrage Mental</strong>
+                                <p class="text-sm text-gray-600">"Je contrôle ce que je peux contrôler"</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-shield-alt mr-2"></i>Prévention du Panic Time
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Checkpoints Temporels</strong>
+                                <p class="text-sm text-gray-600">Vérifier timing toutes les 15 questions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-adjust text-cyan-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Adaptation Dynamique</strong>
+                                <p class="text-sm text-gray-600">Ajuster stratégie selon avancement</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-balance-scale text-indigo-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Acceptation Intelligente</strong>
+                                <p class="text-sm text-gray-600">Sacrifier questions impossibles</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 p-6 rounded-lg mt-6">
+                <h3 class="text-lg font-semibold mb-4 text-yellow-700">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Signaux d'Alerte Temporelle
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div>
+                        <strong class="text-red-600">Alerte Rouge :</strong>
+                        <ul class="mt-1 space-y-1">
+                            <li>• >2 min par question simple</li>
+                            <li>• Retard >10 min sur planning</li>
+                            <li>• Stress paralysant</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-orange-600">Alerte Orange :</strong>
+                        <ul class="mt-1 space-y-1">
+                            <li>• Hésitation excessive</li>
+                            <li>• Retard 5-10 min</li>
+                            <li>• Fatigue mentale</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-green-600">Zone Verte :</strong>
+                        <ul class="mt-1 space-y-1">
+                            <li>• Rythme fluide maintenu</li>
+                            <li>• Planning respecté</li>
+                            <li>• Confiance stable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Erreurs à éviter -->
+        <section id="erreurs-eviter" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Erreurs Critiques à Éviter</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-red-500">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-times-circle mr-2"></i>Erreur #1 : Perfectionnisme Temporel
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-red-50 p-4 rounded">
+                            <strong class="text-red-600">À Éviter :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Passer 5+ min sur une question</li>
+                                <li>• Revérifier chaque calcul</li>
+                                <li>• Chercher la réponse "parfaite"</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <strong class="text-green-600">À Faire :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Respecter limite 120s max</li>
+                                <li>• Vérification rapide uniquement</li>
+                                <li>• Viser "suffisamment correct"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-orange-500">
+                    <h3 class="text-lg font-semibold mb-4 text-orange-600">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>Erreur #2 : Mauvaise Priorisation
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-orange-50 p-4 rounded">
+                            <strong class="text-orange-600">À Éviter :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Commencer par questions difficiles</li>
+                                <li>• Traiter dans l'ordre strict</li>
+                                <li>• Ignorer pondérations</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <strong class="text-green-600">À Faire :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Quick wins d'abord</li>
+                                <li>• Ordre par difficulté</li>
+                                <li>• Focus points hauts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-purple-500">
+                    <h3 class="text-lg font-semibold mb-4 text-purple-600">
+                        <i class="fas fa-clock mr-2"></i>Erreur #3 : Négligence de la Révision
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-purple-50 p-4 rounded">
+                            <strong class="text-purple-600">À Éviter :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Utiliser tout le temps disponible</li>
+                                <li>• Pas de temps pour révision</li>
+                                <li>• Laisser cases vides</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded">
+                            <strong class="text-green-600">À Faire :</strong>
+                            <ul class="text-sm mt-1 space-y-1">
+                                <li>• Réserver 10-15 min minimum</li>
+                                <li>• Révision systématique</li>
+                                <li>• Guess éduqués obligatoires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg mt-8">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-chart-line mr-2 text-red-600"></i>Impact des Erreurs Temporelles sur le Score
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-red-600 mb-2">-15%</div>
+                        <p class="text-sm">Questions non traitées</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-orange-600 mb-2">-8%</div>
+                        <p class="text-sm">Stress temporel</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-purple-600 mb-2">-5%</div>
+                        <p class="text-sm">Erreurs de précipitation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Maîtrisez le Temps, Maîtrisez Votre Réussite</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        La gestion efficace du temps le jour de l'examen CFA n'est pas un talent inné, mais une compétence qui se développe avec la pratique et l'application de stratégies éprouvées. Les techniques présentées dans ce guide ont permis à des milliers de candidats d'optimiser leur performance.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        Rappelez-vous : <strong>chaque seconde compte, mais chaque question aussi</strong>. L'objectif n'est pas la perfection, mais l'optimisation de votre score total dans les contraintes temporelles imposées.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">Checklist Finale Gestion du Temps</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ Stratégie timing adaptée à votre niveau</li>
+                        <li>✓ Système de marquage défini</li>
+                        <li>✓ Techniques de lecture rapide maîtrisées</li>
+                        <li>✓ Méthodes anti-stress intégrées</li>
+                        <li>✓ Planning détaillé des 4h30</li>
+                        <li>✓ Objectifs réalistes par session</li>
+                        <li>✓ Temps de révision protégé</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-red-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-stopwatch text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-red-200">
+                        <p>Le temps est votre allié, pas votre ennemi</p>
+                        <p>Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-8 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        
+        <!-- Logo -->
+        <div class="flex justify-center mb-4">
+            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+        </div>
+
+        <p class="text-gray-400">
+            © 2024 Finance Tutoring. Guide basé sur l'analyse de milliers de candidats CFA et les meilleures pratiques d'optimisation temporelle.
+        </p>
+        
+        <div class="mt-4 space-x-6">
+            <span class="text-sm text-gray-500">Stratégies validées par des CFA Charterholders expérimentés</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
