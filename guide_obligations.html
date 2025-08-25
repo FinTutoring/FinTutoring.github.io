@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Complet des Marchés Obligataires</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .rating-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .rating-aaa {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .rating-aa {
+            background: #dbeafe;
+            color: #2563eb;
+        }
+        .rating-a {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .rating-bbb {
+            background: #fed7aa;
+            color: #ea580c;
+        }
+        .rating-junk {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        .yield-curve {
+            height: 300px;
+        }
+        @media (max-width: 768px) {
+            .yield-curve {
+                height: 250px;
+            }
+            .text-4xl {
+                font-size: 2rem !important;
+            }
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+            .text-2xl {
+                font-size: 1.25rem !important;
+            }
+            .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            .h-48 {
+                height: 8rem !important;
+            }
+        }
+        .table-responsive {
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+        .min-w-table {
+            min-width: 600px;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec fond blanc et titres rouges -->
+    <header class="bg-white text-gray-900 pt-6 md:pt-10 pb-6 md:pb-8 border-b-4 border-red-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo centré -->
+            <div class="flex justify-center mb-4 md:mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-32 md:h-48 object-contain">
+            </div>
+
+            <!-- Nom et slogan en rouge -->
+            <h1 class="text-xl md:text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-500 mb-4 md:mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal en rouge -->
+            <h1 class="text-2xl md:text-4xl font-bold text-gradient mb-4">Guide Complet des Marchés Obligataires</h1>
+            <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto px-2">Maîtrisez les obligations, la valorisation, les risques et les stratégies d'investissement sur les marchés de taux.</p>
+        </div>
+    </header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4">
+            <div class="flex flex-wrap gap-2 md:gap-4 text-xs md:text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#types-obligations" class="hover:text-red-600 transition-colors">Types</a>
+                <a href="#pricing" class="hover:text-red-600 transition-colors">Pricing</a>
+                <a href="#duration" class="hover:text-red-600 transition-colors">Duration</a>
+                <a href="#risques" class="hover:text-red-600 transition-colors">Risques</a>
+                <a href="#strategies" class="hover:text-red-600 transition-colors">Stratégies</a>
+                <a href="#marches" class="hover:text-red-600 transition-colors">Marchés</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 md:py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-8 md:mb-12">
+            <div class="bg-white p-4 md:p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-4 md:mb-6">Les Marchés Obligataires : Pilier de la Finance Mondiale</h2>
+                <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Les marchés obligataires représentent <strong class="text-red-600">plus de 130 000 milliards de dollars</strong> d'encours mondial, soit près de deux fois la taille des marchés actions. Ces instruments de dette constituent l'épine dorsale du financement des entreprises et des États.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ce guide complet vous permettra de maîtriser tous les aspects des obligations : de leur mécanisme de base aux stratégies d'investissement sophistiquées utilisées par les professionnels.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-4 md:p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-chart-pie mr-2"></i>Marché Obligataire Mondial 2024
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-university text-blue-500 mr-2"></i><strong>Government Bonds :</strong> 65% (85T$)</li>
+                            <li><i class="fas fa-building text-green-500 mr-2"></i><strong>Corporate Bonds :</strong> 25% (32T$)</li>
+                            <li><i class="fas fa-city text-purple-500 mr-2"></i><strong>Municipal Bonds :</strong> 7% (9T$)</li>
+                            <li><i class="fas fa-exchange-alt text-orange-500 mr-2"></i><strong>Autres :</strong> 3% (4T$)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Types d'obligations -->
+        <section id="types-obligations" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Classification des Obligations</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-university text-blue-600 text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-base md:text-lg mb-2">Obligations d'État</h3>
+                        <p class="text-sm text-gray-600">Titres souverains, OAT, Bunds, Treasuries</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-building text-green-600 text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-base md:text-lg mb-2">Obligations Corporate</h3>
+                        <p class="text-sm text-gray-600">Investment grade, High yield, Convertibles</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-city text-purple-600 text-lg md:text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-base md:text-lg mb-2">Obligations Municipales</h3>
+                        <p class="text-sm text-gray-600">General obligation, Revenue bonds</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                    <i class="fas fa-list-alt mr-2"></i>Caractéristiques par Type d'Obligation
+                </h3>
+                
+                <div class="table-responsive">
+                    <table class="min-w-table w-full border-collapse">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Type</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Émetteur</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Rendement Moyen</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Risque</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Liquidité</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm">
+                            <tr>
+                                <td class="border p-2 md:p-3 font-medium">OAT française 10Y</td>
+                                <td class="border p-2 md:p-3">État français</td>
+                                <td class="border p-2 md:p-3 text-green-600 font-semibold">3.2%</td>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-aa">AA</span></td>
+                                <td class="border p-2 md:p-3">Très haute</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border p-2 md:p-3 font-medium">Corporate IG</td>
+                                <td class="border p-2 md:p-3">Grandes entreprises</td>
+                                <td class="border p-2 md:p-3 text-green-600 font-semibold">4.1%</td>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-a">A-BBB</span></td>
+                                <td class="border p-2 md:p-3">Haute</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2 md:p-3 font-medium">High Yield</td>
+                                <td class="border p-2 md:p-3">Entreprises risquées</td>
+                                <td class="border p-2 md:p-3 text-orange-600 font-semibold">7.8%</td>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-junk">BB-D</span></td>
+                                <td class="border p-2 md:p-3">Moyenne</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border p-2 md:p-3 font-medium">Emerging Markets</td>
+                                <td class="border p-2 md:p-3">Pays émergents</td>
+                                <td class="border p-2 md:p-3 text-red-600 font-semibold">9.2%</td>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-bbb">BBB-BB</span></td>
+                                <td class="border p-2 md:p-3">Faible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing et valorisation -->
+        <section id="pricing" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Pricing et Valorisation des Obligations</h2>
+            
+            <div class="space-y-6 md:space-y-8">
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Formules Fondamentales de Pricing
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                        <div class="bg-blue-50 p-4 md:p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-blue-600">Prix d'une Obligation</h4>
+                            <div class="bg-white p-3 md:p-4 rounded font-mono text-xs md:text-sm">
+                                P = Σ(C/(1+r)^t) + M/(1+r)^n
+                            </div>
+                            <ul class="text-xs md:text-sm mt-3 space-y-1">
+                                <li><strong>P :</strong> Prix de l'obligation</li>
+                                <li><strong>C :</strong> Coupon périodique</li>
+                                <li><strong>r :</strong> Taux de rendement requis</li>
+                                <li><strong>M :</strong> Valeur nominale</li>
+                                <li><strong>n :</strong> Nombre de périodes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 md:p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-green-600">Yield to Maturity (YTM)</h4>
+                            <div class="bg-white p-3 md:p-4 rounded font-mono text-xs md:text-sm">
+                                YTM = C + (M-P)/n / (M+P)/2
+                            </div>
+                            <p class="text-xs md:text-sm mt-3 text-gray-600">
+                                Approximation YTM pour obligation simple. 
+                                Calcul exact nécessite résolution itérative.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-chart-line mr-2"></i>Courbes de Rendement
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <canvas id="yieldCurveChart" class="yield-curve" style="height: 300px;"></canvas>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+                        <div class="text-center p-3 md:p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-arrow-up text-blue-600 text-lg md:text-2xl mb-2"></i>
+                            <h5 class="font-semibold text-sm md:text-base">Courbe Normale</h5>
+                            <p class="text-xs text-gray-600">Taux longs > Taux courts</p>
+                        </div>
+                        <div class="text-center p-3 md:p-4 bg-yellow-50 rounded-lg">
+                            <i class="fas fa-arrows-alt-h text-yellow-600 text-lg md:text-2xl mb-2"></i>
+                            <h5 class="font-semibold text-sm md:text-base">Courbe Plate</h5>
+                            <p class="text-xs text-gray-600">Taux similaires</p>
+                        </div>
+                        <div class="text-center p-3 md:p-4 bg-red-50 rounded-lg">
+                            <i class="fas fa-arrow-down text-red-600 text-lg md:text-2xl mb-2"></i>
+                            <h5 class="font-semibold text-sm md:text-base">Courbe Inversée</h5>
+                            <p class="text-xs text-gray-600">Taux courts > Taux longs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Duration et Convexité -->
+        <section id="duration" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Duration et Convexité</h2>
+            
+            <div class="space-y-6 md:space-y-8">
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-clock mr-2"></i>Types de Duration
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-stopwatch text-green-500 mr-2"></i>Duration de Macaulay
+                            </h4>
+                            <div class="bg-green-50 p-3 md:p-4 rounded-lg mb-3">
+                                <div class="font-mono text-xs md:text-sm mb-2">
+                                    D_Mac = Σ(t × C_t × PV_t) / P
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600">
+                                    Durée de vie moyenne pondérée des flux de trésorerie
+                                </p>
+                            </div>
+                            <ul class="space-y-1 text-xs md:text-sm text-gray-700">
+                                <li>• Mesure en années</li>
+                                <li>• Indépendante du taux de marché</li>
+                                <li>• Base pour duration modifiée</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-tachometer-alt text-blue-500 mr-2"></i>Duration Modifiée
+                            </h4>
+                            <div class="bg-blue-50 p-3 md:p-4 rounded-lg mb-3">
+                                <div class="font-mono text-xs md:text-sm mb-2">
+                                    D_Mod = D_Mac / (1 + YTM)
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600">
+                                    Sensibilité du prix aux variations de taux
+                                </p>
+                            </div>
+                            <ul class="space-y-1 text-xs md:text-sm text-gray-700">
+                                <li>• Variation prix = -D_Mod × ΔY</li>
+                                <li>• Approximation linéaire</li>
+                                <li>• Outil de gestion des risques</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-wave-square mr-2"></i>Convexité et Approximation du Prix
+                    </h3>
+                    
+                    <div class="bg-purple-50 p-4 md:p-6 rounded-lg mb-6">
+                        <h4 class="font-semibold mb-3 text-purple-600">Formule Complète d'Approximation</h4>
+                        <div class="bg-white p-3 md:p-4 rounded font-mono text-xs md:text-sm text-center">
+                            ΔP/P ≈ -D_Mod × ΔY + 0.5 × Convexité × (ΔY)²
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-chart-line text-green-600 text-lg md:text-xl"></i>
+                            </div>
+                            <h5 class="font-semibold text-sm md:text-base mb-2">Convexité Positive</h5>
+                            <p class="text-xs text-gray-600">Obligations classiques, gains asymétriques</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-chart-line-down text-red-600 text-lg md:text-xl"></i>
+                            </div>
+                            <h5 class="font-semibold text-sm md:text-base mb-2">Convexité Négative</h5>
+                            <p class="text-xs text-gray-600">Obligations callable, MBS</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i class="fas fa-balance-scale text-blue-600 text-lg md:text-xl"></i>
+                            </div>
+                            <h5 class="font-semibold text-sm md:text-base mb-2">Convexité Ajustée</h5>
+                            <p class="text-xs text-gray-600">Prise en compte des options</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risques obligataires -->
+        <section id="risques" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Analyse des Risques Obligataires</h2>
+            
+            <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-percentage mr-2"></i>Risque de Taux d'Intérêt
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-arrow-up text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Hausse des taux</strong>
+                                <p class="text-gray-600 text-xs">Baisse du prix des obligations</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Risque de réinvestissement</strong>
+                                <p class="text-gray-600 text-xs">Taux futurs incertains</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-wave-square text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Risque de forme</strong>
+                                <p class="text-gray-600 text-xs">Changement courbe de taux</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-4 md:p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>Risque de Crédit
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-ban text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Risque de défaut</strong>
+                                <p class="text-gray-600 text-xs">Non-paiement principal/intérêts</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-line-down text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Risque de dégradation</strong>
+                                <p class="text-gray-600 text-xs">Baisse de notation</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-expand-arrows-alt text-purple-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Risque de spread</strong>
+                                <p class="text-gray-600 text-xs">Élargissement prime de risque</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Matrice risque/rendement -->
+            <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                    <i class="fas fa-table mr-2"></i>Matrice Risque/Rendement par Rating
+                </h3>
+                
+                <div class="table-responsive">
+                    <table class="min-w-table w-full border-collapse">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Rating</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Catégorie</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Spread (bp)</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Défaut 10Y (%)</th>
+                                <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Volatilité</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs md:text-sm">
+                            <tr>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-aaa">AAA</span></td>
+                                <td class="border p-2 md:p-3">Investment Grade</td>
+                                <td class="border p-2 md:p-3 text-green-600 font-semibold">15-25</td>
+                                <td class="border p-2 md:p-3">0.05%</td>
+                                <td class="border p-2 md:p-3">Très faible</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-aa">AA</span></td>
+                                <td class="border p-2 md:p-3">Investment Grade</td>
+                                <td class="border p-2 md:p-3 text-green-600 font-semibold">25-50</td>
+                                <td class="border p-2 md:p-3">0.15%</td>
+                                <td class="border p-2 md:p-3">Faible</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-a">A</span></td>
+                                <td class="border p-2 md:p-3">Investment Grade</td>
+                                <td class="border p-2 md:p-3 text-blue-600 font-semibold">50-100</td>
+                                <td class="border p-2 md:p-3">0.35%</td>
+                                <td class="border p-2 md:p-3">Modérée</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-bbb">BBB</span></td>
+                                <td class="border p-2 md:p-3">Investment Grade</td>
+                                <td class="border p-2 md:p-3 text-yellow-600 font-semibold">100-200</td>
+                                <td class="border p-2 md:p-3">1.25%</td>
+                                <td class="border p-2 md:p-3">Modérée</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-junk">BB</span></td>
+                                <td class="border p-2 md:p-3">High Yield</td>
+                                <td class="border p-2 md:p-3 text-orange-600 font-semibold">200-400</td>
+                                <td class="border p-2 md:p-3">4.2%</td>
+                                <td class="border p-2 md:p-3">Élevée</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="border p-2 md:p-3"><span class="rating-badge rating-junk">B</span></td>
+                                <td class="border p-2 md:p-3">High Yield</td>
+                                <td class="border p-2 md:p-3 text-red-600 font-semibold">400-800</td>
+                                <td class="border p-2 md:p-3">12.8%</td>
+                                <td class="border p-2 md:p-3">Très élevée</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stratégies d'investissement -->
+        <section id="strategies" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Stratégies d'Investissement Obligataire</h2>
+            
+            <div class="space-y-6 md:space-y-8">
+                <!-- Stratégies passives -->
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-anchor mr-2"></i>Stratégies Passives
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 md:gap-6">
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold mb-2 text-blue-600">Buy & Hold</h4>
+                            <ul class="text-xs md:text-sm space-y-1 text-gray-700">
+                                <li>• Achat jusqu'à maturité</li>
+                                <li>• Pas de trading actif</li>
+                                <li>• Revenus prévisibles</li>
+                                <li>• Faibles coûts</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold mb-2 text-green-600">Indexation</h4>
+                            <ul class="text-xs md:text-sm space-y-1 text-gray-700">
+                                <li>• Répliquer un indice</li>
+                                <li>• Diversification automatique</li>
+                                <li>• Gestion systématique</li>
+                                <li>• Performance de marché</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-4">
+                            <h4 class="font-semibold mb-2 text-purple-600">Immunisation</h4>
+                            <ul class="text-xs md:text-sm space-y-1 text-gray-700">
+                                <li>• Duration = horizon</li>
+                                <li>• Protection taux</li>
+                                <li>• Rebalancing requis</li>
+                                <li>• Passifs définis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stratégies actives -->
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-chart-line mr-2"></i>Stratégies Actives
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-clock text-orange-500 mr-2"></i>Duration Management
+                            </h4>
+                            <div class="bg-orange-50 p-3 md:p-4 rounded-lg">
+                                <ul class="text-xs md:text-sm space-y-2">
+                                    <li><strong>Extension duration :</strong> Anticipation baisse taux</li>
+                                    <li><strong>Réduction duration :</strong> Anticipation hausse taux</li>
+                                    <li><strong>Bullet strategy :</strong> Concentration maturité</li>
+                                    <li><strong>Barbell strategy :</strong> Court terme + Long terme</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-exchange-alt text-cyan-500 mr-2"></i>Yield Curve Strategies
+                            </h4>
+                            <div class="bg-cyan-50 p-3 md:p-4 rounded-lg">
+                                <ul class="text-xs md:text-sm space-y-2">
+                                    <li><strong>Steepening :</strong> Long court + Short long</li>
+                                    <li><strong>Flattening :</strong> Short court + Long long</li>
+                                    <li><strong>Butterfly :</strong> Courbure de la courbe</li>
+                                    <li><strong>Roll down :</strong> Glissement temporel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Structure de portefeuille -->
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-pie-chart mr-2"></i>Structures de Portefeuille Optimales
+                    </h3>
+                    
+                    <div class="space-y-4 md:space-y-6">
+                        <!-- Portefeuille conservateur -->
+                        <div class="border-l-4 border-green-500 pl-4">
+                            <h4 class="font-semibold mb-2 text-green-600">Profil Conservateur</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-xs md:text-sm">
+                                <div class="bg-green-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-green-600">60%</div>
+                                    <div>Gouvernementales</div>
+                                </div>
+                                <div class="bg-blue-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-blue-600">30%</div>
+                                    <div>Corporate IG</div>
+                                </div>
+                                <div class="bg-purple-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-purple-600">10%</div>
+                                    <div>Municipales</div>
+                                </div>
+                                <div class="bg-gray-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-gray-600">0%</div>
+                                    <div>High Yield</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Portefeuille équilibré -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-semibold mb-2 text-blue-600">Profil Équilibré</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 text-xs md:text-sm">
+                                <div class="bg-green-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-green-600">40%</div>
+                                    <div>Gouvernementales</div>
+                                </div>
+                                <div class="bg-blue-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-blue-600">35%</div>
+                                    <div>Corporate IG</div>
+                                </div>
+                                <div class="bg-orange-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-orange-600">15%</div>
+                                    <div>High Yield</div>
+                                </div>
+                                <div class="bg-red-50 p-2 md:p-3 rounded text-center">
+                                    <div class="font-bold text-red-600">10%</div>
+                                    <div>Emerging</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marchés internationaux -->
+        <section id="marches" class="mb-8 md:mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-6 md:mb-8">Marchés Obligataires Internationaux</h2>
+            
+            <div class="space-y-6 md:space-y-8">
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-globe mr-2"></i>Principales Places Financières
+                    </h3>
+                    
+                    <div class="table-responsive">
+                        <table class="min-w-table w-full border-collapse">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Marché</th>
+                                    <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Taille (T$)</th>
+                                    <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Benchmark 10Y</th>
+                                    <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Rendement</th>
+                                    <th class="border p-2 md:p-3 text-left text-xs md:text-sm font-semibold">Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-xs md:text-sm">
+                                <tr>
+                                    <td class="border p-2 md:p-3 font-medium">🇺🇸 États-Unis</td>
+                                    <td class="border p-2 md:p-3">48.0</td>
+                                    <td class="border p-2 md:p-3">US Treasury 10Y</td>
+                                    <td class="border p-2 md:p-3 text-blue-600 font-semibold">4.25%</td>
+                                    <td class="border p-2 md:p-3"><span class="rating-badge rating-aaa">AAA</span></td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border p-2 md:p-3 font-medium">🇨🇳 Chine</td>
+                                    <td class="border p-2 md:p-3">21.5</td>
+                                    <td class="border p-2 md:p-3">CGB 10Y</td>
+                                    <td class="border p-2 md:p-3 text-green-600 font-semibold">2.65%</td>
+                                    <td class="border p-2 md:p-3"><span class="rating-badge rating-a">A+</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border p-2 md:p-3 font-medium">🇯🇵 Japon</td>
+                                    <td class="border p-2 md:p-3">12.8</td>
+                                    <td class="border p-2 md:p-3">JGB 10Y</td>
+                                    <td class="border p-2 md:p-3 text-green-600 font-semibold">0.85%</td>
+                                    <td class="border p-2 md:p-3"><span class="rating-badge rating-a">A</span></td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border p-2 md:p-3 font-medium">🇩🇪 Allemagne</td>
+                                    <td class="border p-2 md:p-3">8.2</td>
+                                    <td class="border p-2 md:p-3">Bund 10Y</td>
+                                    <td class="border p-2 md:p-3 text-blue-600 font-semibold">2.45%</td>
+                                    <td class="border p-2 md:p-3"><span class="rating-badge rating-aaa">AAA</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="border p-2 md:p-3 font-medium">🇫🇷 France</td>
+                                    <td class="border p-2 md:p-3">4.1</td>
+                                    <td class="border p-2 md:p-3">OAT 10Y</td>
+                                    <td class="border p-2 md:p-3 text-blue-600 font-semibold">3.15%</td>
+                                    <td class="border p-2 md:p-3"><span class="rating-badge rating-aa">AA</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 md:p-8 rounded-lg shadow-red">
+                    <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-red-600">
+                        <i class="fas fa-chart-area mr-2"></i>Répartition par Devise (Marchés Internationaux)
+                    </h3>
+                    
+                    <div class="mb-6">
+                        <canvas id="currencyChart" class="yield-curve" style="height: 300px;"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                        <div class="text-center p-3 bg-blue-50 rounded-lg">
+                            <div class="text-lg md:text-2xl font-bold text-blue-600 mb-1">38%</div>
+                            <div class="text-xs md:text-sm font-semibold">USD</div>
+                        </div>
+                        <div class="text-center p-3 bg-green-50 rounded-lg">
+                            <div class="text-lg md:text-2xl font-bold text-green-600 mb-1">22%</div>
+                            <div class="text-xs md:text-sm font-semibold">EUR</div>
+                        </div>
+                        <div class="text-center p-3 bg-red-50 rounded-lg">
+                            <div class="text-lg md:text-2xl font-bold text-red-600 mb-1">16%</div>
+                            <div class="text-xs md:text-sm font-semibold">CNY</div>
+                        </div>
+                        <div class="text-center p-3 bg-purple-50 rounded-lg">
+                            <div class="text-lg md:text-2xl font-bold text-purple-600 mb-1">24%</div>
+                            <div class="text-xs md:text-sm font-semibold">Autres</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="bg-gray-50 p-6 md:p-8 rounded-lg mb-8 md:mb-12 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-gradient mb-4">Perfectionnez Votre Expertise Obligataire</h2>
+            <p class="text-lg text-gray-700 mb-6 md:mb-8 max-w-3xl mx-auto">
+                Découvrez nos formations avancées en analyse obligataire, gestion de portefeuille et stratégies de trading. 
+                Bénéficiez de l'expertise de professionnels des marchés financiers.
+            </p>
+            <a href="https://www.finance-tutoring.fr" target="_blank" class="cta-button">
+                <i class="fas fa-graduation-cap"></i>
+                Découvrir Nos Formations
+            </a>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-6 md:p-8 rounded-lg">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Maîtrisez l'Art de l'Investissement Obligataire</h2>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        Les marchés obligataires offrent une diversité d'opportunités d'investissement allant de la préservation du capital à la génération d'alpha significatif. La compréhension des mécanismes de pricing, des mesures de risque et des stratégies avancées est essentielle pour naviguer efficacement sur ces marchés.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        Que vous soyez gestionnaire institutionnel ou investisseur individuel, maîtriser l'analyse obligataire vous permettra d'optimiser vos allocations et de mieux gérer les risques de taux et de crédit.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-4 md:p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">Points Clés à Retenir</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ Comprendre la relation prix/rendement inverse</li>
+                        <li>✓ Maîtriser duration et convexité</li>
+                        <li>✓ Analyser les risques de crédit et de taux</li>
+                        <li>✓ Adapter la stratégie au profil de risque</li>
+                        <li>✓ Diversifier géographiquement et sectoriellement</li>
+                        <li>✓ Surveiller les indicateurs macro-économiques</li>
+                        <li>✓ Utiliser les courbes de rendement</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-red-400">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-red-600 text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-xs md:text-sm text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-right text-xs md:text-sm text-red-200">
+                        <p>Investissez intelligemment sur les marchés obligataires</p>
+                        <p>Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-6 md:py-8 mt-8 md:mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-16 md:h-24 object-contain">
+            </div>
+
+            <p class="text-gray-400 text-sm">
+                © 2024 Finance Tutoring. Guide basé sur les dernières données des marchés obligataires internationaux et les meilleures pratiques professionnelles.
+            </p>
+            
+            <div class="mt-4 space-x-6">
+                <span class="text-xs md:text-sm text-gray-500">Sources : Bloomberg, Refinitiv, Banques Centrales, CFA Institute</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Yield Curve Chart
+        const ctx1 = document.getElementById('yieldCurveChart').getContext('2d');
+        const yieldCurveChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['3M', '6M', '1Y', '2Y', '5Y', '10Y', '30Y'],
+                datasets: [{
+                    label: 'Courbe Normale',
+                    data: [2.1, 2.3, 2.6, 2.9, 3.4, 3.8, 4.1],
+                    borderColor: '#22c55e',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'Courbe Inversée',
+                    data: [4.2, 3.9, 3.6, 3.3, 3.0, 2.8, 2.6],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Courbes de Rendement Types'
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Rendement (%)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Maturité'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Currency Distribution Chart
+        const ctx2 = document.getElementById('currencyChart').getContext('2d');
+        const currencyChart = new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['USD', 'EUR', 'CNY', 'JPY', 'GBP', 'Autres'],
+                datasets: [{
+                    data: [38, 22, 16, 8, 6, 10],
+                    backgroundColor: [
+                        '#3b82f6',
+                        '#22c55e',
+                        '#ef4444',
+                        '#8b5cf6',
+                        '#f59e0b',
+                        '#6b7280'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Répartition par Devise des Marchés Obligataires Mondiaux'
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
