@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Fondamentale : Indicateurs Clés et Évaluation d'Entreprise</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .ratio-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .ratio-excellent {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+        .ratio-good {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        .ratio-warning {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+            color: white;
+            text-decoration: none;
+        }
+        .formula-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            text-align: center;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec fond blanc et police rouge -->
+<header class="bg-white text-gray-900 pt-10 pb-8 border-b-4 border-red-600">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <!-- Logo centré -->
+        <div class="flex justify-center mb-6">
+            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+        </div>
+
+        <!-- Nom et slogan en rouge -->
+        <h1 class="text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+        <p class="text-sm text-red-500 mb-6">Excellence en Formation Financière</p>
+
+        <!-- Titre principal en rouge -->
+        <h1 class="text-4xl font-bold text-gradient mb-4">Analyse Fondamentale : Indicateurs Clés et Évaluation</h1>
+        <p class="text-xl text-gray-700 max-w-4xl mx-auto">Apprenez à lire un bilan, maîtriser les ratios financiers et valoriser une entreprise avec les méthodes des professionnels.</p>
+    </div>
+</header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#lecture-bilan" class="hover:text-red-600 transition-colors">Lecture du Bilan</a>
+                <a href="#ratios-rentabilite" class="hover:text-red-600 transition-colors">Ratios Rentabilité</a>
+                <a href="#ratios-liquidite" class="hover:text-red-600 transition-colors">Ratios Liquidité</a>
+                <a href="#ratios-endettement" class="hover:text-red-600 transition-colors">Ratios Endettement</a>
+                <a href="#valorisation" class="hover:text-red-600 transition-colors">Méthodes Valorisation</a>
+                <a href="#analyse-sectorielle" class="hover:text-red-600 transition-colors">Analyse Sectorielle</a>
+                <a href="#outils-pratiques" class="hover:text-red-600 transition-colors">Outils Pratiques</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Maîtriser l'Analyse Fondamentale des Entreprises</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            L'analyse fondamentale est la méthode de référence pour évaluer la valeur intrinsèque d'une entreprise. Elle repose sur l'étude approfondie des <strong class="text-red-600">états financiers</strong>, des <strong class="text-red-600">ratios clés</strong> et du <strong class="text-red-600">contexte économique</strong> de l'entreprise.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Cette approche permet aux investisseurs de prendre des décisions éclairées en se basant sur des données financières concrètes plutôt que sur des mouvements de marché à court terme.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-chart-line mr-2"></i>Piliers de l'Analyse Fondamentale
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>États financiers (Bilan, P&L, Cash Flow)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Ratios financiers (25+ indicateurs clés)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Méthodes de valorisation (DCF, Multiples)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Analyse concurrentielle et sectorielle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lecture du bilan -->
+        <section id="lecture-bilan" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Anatomie d'un Bilan Financier</h2>
+            
+            <div class="space-y-8">
+                <!-- Structure du bilan -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-balance-scale mr-2"></i>Structure et Équilibre du Bilan
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-blue-600">ACTIF (Emplois)</h4>
+                            <div class="space-y-3">
+                                <div class="border-b pb-2">
+                                    <strong>Actif Immobilisé</strong>
+                                    <ul class="text-sm mt-1 ml-4">
+                                        <li>• Immobilisations corporelles</li>
+                                        <li>• Immobilisations incorporelles</li>
+                                        <li>• Immobilisations financières</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Actif Circulant</strong>
+                                    <ul class="text-sm mt-1 ml-4">
+                                        <li>• Stocks et en-cours</li>
+                                        <li>• Créances clients</li>
+                                        <li>• Trésorerie et équivalents</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-green-600">PASSIF (Ressources)</h4>
+                            <div class="space-y-3">
+                                <div class="border-b pb-2">
+                                    <strong>Capitaux Propres</strong>
+                                    <ul class="text-sm mt-1 ml-4">
+                                        <li>• Capital social</li>
+                                        <li>• Réserves</li>
+                                        <li>• Résultat net</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Dettes</strong>
+                                    <ul class="text-sm mt-1 ml-4">
+                                        <li>• Dettes financières (LT/CT)</li>
+                                        <li>• Dettes fournisseurs</li>
+                                        <li>• Dettes fiscales et sociales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg">
+                        <div class="formula-box">
+                            <strong>ÉQUATION FONDAMENTALE :</strong><br/>
+                            ACTIF = PASSIF (Capitaux Propres + Dettes)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Points clés d'analyse -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-search mr-2"></i>Points Clés d'Analyse du Bilan
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-4 bg-blue-50 rounded-lg">
+                            <i class="fas fa-coins text-blue-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Liquidité</h5>
+                            <p class="text-sm text-gray-600">Capacité à honorer les dettes à court terme</p>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <i class="fas fa-chart-pie text-green-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Structure Financière</h5>
+                            <p class="text-sm text-gray-600">Répartition fonds propres/dettes</p>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-lg">
+                            <i class="fas fa-cogs text-purple-600 text-2xl mb-2"></i>
+                            <h5 class="font-semibold">Efficacité Opérationnelle</h5>
+                            <p class="text-sm text-gray-600">Optimisation cycle d'exploitation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratios de rentabilité -->
+        <section id="ratios-rentabilite" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Ratios de Rentabilité</h2>
+            
+            <div class="space-y-6">
+                <!-- ROE -->
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-green-500">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Return on Equity (ROE)</h4>
+                            <div class="formula-box mb-3">
+                                ROE = Résultat Net / Capitaux Propres × 100
+                            </div>
+                            <p class="text-sm text-gray-600">Mesure la rentabilité des capitaux propres</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Interprétation</h5>
+                            <ul class="text-sm space-y-1">
+                                <li><span class="ratio-badge ratio-excellent">Excellent</span> > 20%</li>
+                                <li><span class="ratio-badge ratio-good">Bon</span> 15-20%</li>
+                                <li><span class="ratio-badge ratio-warning">Faible</span> < 10%</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Secteurs de Référence</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• <strong>Banques :</strong> 10-15%</li>
+                                <li>• <strong>Tech :</strong> 15-25%</li>
+                                <li>• <strong>Luxe :</strong> 20-30%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROA -->
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-blue-500">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Return on Assets (ROA)</h4>
+                            <div class="formula-box mb-3">
+                                ROA = Résultat Net / Total Actif × 100
+                            </div>
+                            <p class="text-sm text-gray-600">Efficacité d'utilisation des actifs</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Interprétation</h5>
+                            <ul class="text-sm space-y-1">
+                                <li><span class="ratio-badge ratio-excellent">Excellent</span> > 10%</li>
+                                <li><span class="ratio-badge ratio-good">Bon</span> 5-10%</li>
+                                <li><span class="ratio-badge ratio-warning">Faible</span> < 3%</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Facteurs d'Influence</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• Intensité capitalistique</li>
+                                <li>• Maturité du secteur</li>
+                                <li>• Cycle économique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marge Nette -->
+                <div class="bg-white p-6 rounded-lg shadow-red border-l-4 border-purple-500">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-2">Marge Nette</h4>
+                            <div class="formula-box mb-3">
+                                Marge Nette = Résultat Net / CA × 100
+                            </div>
+                            <p class="text-sm text-gray-600">Rentabilité après tous les coûts</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Benchmarks Sectoriels</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• <strong>Distribution :</strong> 2-5%</li>
+                                <li>• <strong>Industrie :</strong> 5-10%</li>
+                                <li>• <strong>Services :</strong> 8-15%</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Évolution Temporelle</h5>
+                            <ul class="text-sm space-y-1">
+                                <li>• Analyser tendance 3-5 ans</li>
+                                <li>• Identifier cycles sectoriels</li>
+                                <li>• Comparer aux concurrents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratios de liquidité -->
+        <section id="ratios-liquidite" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Ratios de Liquidité</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Current Ratio -->
+                    <div class="border-r border-gray-200 pr-6">
+                        <h4 class="font-semibold text-lg mb-4 text-blue-600">
+                            <i class="fas fa-tint mr-2"></i>Current Ratio
+                        </h4>
+                        <div class="formula-box mb-4">
+                            Current Ratio = Actif Circulant / Passif Circulant
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h5 class="font-semibold mb-2">Seuils de Référence</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li><span class="ratio-badge ratio-excellent">> 2.0</span> Très liquide</li>
+                                    <li><span class="ratio-badge ratio-good">1.5-2.0</span> Bonne liquidité</li>
+                                    <li><span class="ratio-badge ratio-warning">< 1.0</span> Risque liquidité</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Analyse Qualitative</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Composition actif circulant</li>
+                                    <li>• Délais de rotation stocks</li>
+                                    <li>• Qualité des créances</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Ratio -->
+                    <div class="pl-6">
+                        <h4 class="font-semibold text-lg mb-4 text-green-600">
+                            <i class="fas fa-bolt mr-2"></i>Quick Ratio (Acid Test)
+                        </h4>
+                        <div class="formula-box mb-4">
+                            Quick Ratio = (AC - Stocks) / Passif Circulant
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <h5 class="font-semibold mb-2">Interprétation</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li><span class="ratio-badge ratio-excellent">> 1.5</span> Excellente liquidité</li>
+                                    <li><span class="ratio-badge ratio-good">1.0-1.5</span> Liquidité correcte</li>
+                                    <li><span class="ratio-badge ratio-warning">< 1.0</span> Attention requise</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Avantages</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Exclut les stocks</li>
+                                    <li>• Mesure plus conservative</li>
+                                    <li>• Adapté aux secteurs industriels</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratios d'endettement -->
+        <section id="ratios-endettement" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Ratios d'Endettement et Solvabilité</h2>
+            
+            <div class="space-y-6">
+                <!-- Debt-to-Equity -->
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold text-xl mb-6 text-red-600">
+                        <i class="fas fa-scale-balanced mr-2"></i>Ratio d'Endettement (Debt-to-Equity)
+                    </h4>
+                    
+                    <div class="grid md:grid-cols-4 gap-4 mb-6">
+                        <div class="text-center p-4 bg-gray-50 rounded-lg">
+                            <div class="formula-box text-sm">
+                                D/E = Dettes Totales / Capitaux Propres
+                            </div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-lg">
+                            <h5 class="font-semibold text-green-600">Conservateur</h5>
+                            <p class="text-sm">< 0.5</p>
+                        </div>
+                        <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                            <h5 class="font-semibold text-yellow-600">Modéré</h5>
+                            <p class="text-sm">0.5 - 1.0</p>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-lg">
+                            <h5 class="font-semibold text-red-600">Risqué</h5>
+                            <p class="text-sm">> 1.5</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h5 class="font-semibold mb-3">Variations Sectorielles</h5>
+                        <div class="grid md:grid-cols-3 gap-4 text-sm">
+                            <div>
+                                <strong>Secteurs Capital-Intensifs</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Utilities : 0.8-1.2</li>
+                                    <li>• Télécoms : 0.6-1.0</li>
+                                    <li>• Immobilier : 1.0-2.0</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Services & Technologie</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Software : 0.1-0.4</li>
+                                    <li>• Conseil : 0.2-0.6</li>
+                                    <li>• E-commerce : 0.3-0.8</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Industrie Traditionnelle</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• Automobile : 0.5-1.0</li>
+                                    <li>• Chimie : 0.4-0.8</li>
+                                    <li>• Agroalimentaire : 0.3-0.7</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coverage Ratio -->
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold text-lg mb-4 text-blue-600">Coverage Ratio (Couverture des Intérêts)</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <div class="formula-box mb-4">
+                                Coverage = EBIT / Charges Financières
+                            </div>
+                            <h5 class="font-semibold mb-2">Grille d'Évaluation</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li><span class="ratio-badge ratio-excellent">> 10x</span> Très sûr</li>
+                                <li><span class="ratio-badge ratio-good">5-10x</span> Sûr</li>
+                                <li><span class="ratio-badge ratio-warning">2-5x</span> Attention</li>
+                                <li><span class="ratio-badge ratio-warning">< 2x</span> Risque élevé</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2">Signification</h5>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Capacité à payer les intérêts</li>
+                                <li>• Marge de sécurité financière</li>
+                                <li>• Résistance aux chocs</li>
+                                <li>• Flexibilité d'endettement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes de valorisation -->
+        <section id="valorisation" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Méthodes de Valorisation d'Entreprise</h2>
+            
+            <div class="space-y-8">
+                <!-- DCF -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Discounted Cash Flow (DCF)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4">Formule DCF</h4>
+                            <div class="formula-box mb-4">
+                                Valeur = Σ [FCF<sub>t</sub> / (1 + WACC)<sup>t</sup>] + Valeur Terminale
+                            </div>
+                            
+                            <h4 class="font-semibold mb-3">Étapes de Calcul</h4>
+                            <ol class="space-y-2 text-sm">
+                                <li><strong>1.</strong> Projeter les Free Cash Flows (5-10 ans)</li>
+                                <li><strong>2.</strong> Calculer le WACC</li>
+                                <li><strong>3.</strong> Déterminer la valeur terminale</li>
+                                <li><strong>4.</strong> Actualiser les flux</li>
+                                <li><strong>5.</strong> Sommer les valeurs actualisées</li>
+                            </ol>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-4">Composants du WACC</h4>
+                            <div class="space-y-3">
+                                <div class="bg-blue-50 p-3 rounded">
+                                    <strong>Coût des Fonds Propres (Ke)</strong>
+                                    <div class="formula-box text-sm mt-2">
+                                        Ke = Rf + β × (Rm - Rf)
+                                    </div>
+                                </div>
+                                <div class="bg-green-50 p-3 rounded">
+                                    <strong>Coût de la Dette (Kd)</strong>
+                                    <div class="formula-box text-sm mt-2">
+                                        Kd = Charges Financières / Dettes × (1 - Taux IS)
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h4 class="font-semibold mt-4 mb-2">Avantages & Limites</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div>
+                                    <strong class="text-green-600">Avantages</strong>
+                                    <ul class="mt-1">
+                                        <li>• Valeur intrinsèque</li>
+                                        <li>• Théoriquement robuste</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Limites</strong>
+                                    <ul class="mt-1">
+                                        <li>• Sensible aux hypothèses</li>
+                                        <li>• Complexe à implémenter</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multiples de valorisation -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-chart-bar mr-2"></i>Méthode des Multiples
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-blue-600 mb-3">P/E Ratio</h4>
+                            <div class="formula-box text-sm mb-3">
+                                P/E = Prix Action / BPA
+                            </div>
+                            <h5 class="font-semibold mb-2">Benchmarks Sectoriels</h5>
+                            <ul class="text-xs space-y-1">
+                                <li>• <strong>Growth Tech :</strong> 25-50x</li>
+                                <li>• <strong>Banques :</strong> 8-15x</li>
+                                <li>• <strong>Utilities :</strong> 12-18x</li>
+                                <li>• <strong>Cycliques :</strong> 6-12x</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-green-600 mb-3">EV/EBITDA</h4>
+                            <div class="formula-box text-sm mb-3">
+                                EV/EBITDA = Valeur Entreprise / EBITDA
+                            </div>
+                            <h5 class="font-semibold mb-2">Avantages</h5>
+                            <ul class="text-xs space-y-1">
+                                <li>• Neutralise structure financière</li>
+                                <li>• Exclut amortissements</li>
+                                <li>• Comparaison internationale</li>
+                                <li>• Moins volatil que P/E</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-purple-600 mb-3">P/B Ratio</h4>
+                            <div class="formula-box text-sm mb-3">
+                                P/B = Prix Action / Valeur Comptable
+                            </div>
+                            <h5 class="font-semibold mb-2">Utilisation</h5>
+                            <ul class="text-xs space-y-1">
+                                <li>• Banques et assurances</li>
+                                <li>• Entreprises asset-heavy</li>
+                                <li>• Situations de détresse</li>
+                                <li>• < 1x = potentiel sous-valorisation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">
+                            <i class="fas fa-exclamation-triangle text-yellow-600 mr-2"></i>Points d'Attention
+                        </h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Choisir des comparables pertinents (taille, géographie, business model)</li>
+                            <li>• Analyser la dispersion des multiples du secteur</li>
+                            <li>• Utiliser plusieurs multiples pour triangulation</li>
+                            <li>• Ajuster pour les différences de croissance et risque</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analyse sectorielle -->
+        <section id="analyse-sectorielle" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Analyse Sectorielle et Benchmarking</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-industry mr-2"></i>Spécificités Sectorielles
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Secteurs Technologiques -->
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-600 mb-2">
+                                <i class="fas fa-microchip mr-2"></i>Technologie & Software
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div><strong>KPIs Spécifiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• ARR (Annual Recurring Revenue)</li>
+                                    <li>• Customer Acquisition Cost (CAC)</li>
+                                    <li>• Lifetime Value (LTV)</li>
+                                    <li>• Churn Rate</li>
+                                </ul>
+                                <div><strong>Ratios Typiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• Marge Brute : 70-90%</li>
+                                    <li>• P/E : 25-50x</li>
+                                    <li>• EV/Sales : 8-20x</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-600 mb-2">
+                                <i class="fas fa-shopping-cart mr-2"></i>Commerce & Distribution
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div><strong>KPIs Spécifiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• Same Store Sales Growth</li>
+                                    <li>• Inventory Turnover</li>
+                                    <li>• Sales per m²</li>
+                                    <li>• Gross Margin Evolution</li>
+                                </ul>
+                                <div><strong>Ratios Typiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• Marge Nette : 2-5%</li>
+                                    <li>• ROA : 5-12%</li>
+                                    <li>• Asset Turnover : 2-4x</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secteurs Traditionnels -->
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-600 mb-2">
+                                <i class="fas fa-industry mr-2"></i>Banques & Finance
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div><strong>KPIs Spécifiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• Net Interest Margin (NIM)</li>
+                                    <li>• Cost/Income Ratio</li>
+                                    <li>• Loan Loss Provisions</li>
+                                    <li>• Tier 1 Capital Ratio</li>
+                                </ul>
+                                <div><strong>Ratios Typiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• ROE : 10-15%</li>
+                                    <li>• P/B : 0.8-1.5x</li>
+                                    <li>• Cost/Income : 50-65%</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-600 mb-2">
+                                <i class="fas fa-bolt mr-2"></i>Utilities & Infrastructure
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div><strong>KPIs Spécifiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• Regulated Asset Base (RAB)</li>
+                                    <li>• EBITDA Margin</li>
+                                    <li>• Capex/Sales Ratio</li>
+                                    <li>• Dividend Yield</li>
+                                </ul>
+                                <div><strong>Ratios Typiques :</strong></div>
+                                <ul class="ml-4 space-y-1">
+                                    <li>• P/E : 12-18x</li>
+                                    <li>• EV/EBITDA : 8-12x</li>
+                                    <li>• Debt/Equity : 0.8-1.2x</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mb-12">
+            <div class="bg-gradient-red text-white p-8 rounded-lg text-center">
+                <h2 class="text-2xl font-bold mb-4">Perfectionnez Votre Analyse Fondamentale</h2>
+                <p class="text-red-100 mb-6 max-w-2xl mx-auto">
+                    Rejoignez Finance Tutoring pour approfondir vos compétences en analyse financière avec nos formations spécialisées et nos outils d'analyse avancés.
+                </p>
+                <a href="https://www.finance-tutoring.fr" class="cta-button">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Découvrir Nos Formations
+                </a>
+                <p class="text-sm text-red-200 mt-4">
+                    Formations CFA • Analyse Financière • Modélisation Excel • Valorisation d'Entreprise
+                </p>
+            </div>
+        </section>
+
+        <!-- Outils pratiques -->
+        <section id="outils-pratiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Outils Pratiques et Ressources</h2>
+            
+            <div class="space-y-6">
+                <!-- Checklist d'analyse -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-clipboard-check mr-2"></i>Checklist d'Analyse Fondamentale
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4">Phase 1 : Analyse Préliminaire</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check1">
+                                    <label for="check1">Comprendre le business model</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check2">
+                                    <label for="check2">Identifier les concurrents directs</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check3">
+                                    <label for="check3">Analyser les tendances sectorielles</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check4">
+                                    <label for="check4">Évaluer la position concurrentielle</label>
+                                </li>
+                            </ul>
+
+                            <h4 class="font-semibold mb-4 mt-6">Phase 2 : Analyse Financière</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check5">
+                                    <label for="check5">Calculer ratios de rentabilité</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check6">
+                                    <label for="check6">Analyser la liquidité</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check7">
+                                    <label for="check7">Évaluer l'endettement</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check8">
+                                    <label for="check8">Examiner l'efficacité opérationnelle</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold mb-4">Phase 3 : Valorisation</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check9">
+                                    <label for="check9">Construire modèle DCF</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check10">
+                                    <label for="check10">Analyser multiples comparables</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check11">
+                                    <label for="check11">Effectuer analyse de sensibilité</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check12">
+                                    <label for="check12">Triangulation des méthodes</label>
+                                </li>
+                            </ul>
+
+                            <h4 class="font-semibold mb-4 mt-6">Phase 4 : Décision</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check13">
+                                    <label for="check13">Comparer valeur intrinsèque/prix</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check14">
+                                    <label for="check14">Identifier risques majeurs</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check15">
+                                    <label for="check15">Définir price target</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" class="mr-2" id="check16">
+                                    <label for="check16">Formuler recommandation</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sources de données -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-database mr-2"></i>Sources de Données Financières
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 text-blue-600">Sources Gratuites</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>AMF :</strong> Documents de référence</li>
+                                <li>• <strong>Yahoo Finance :</strong> Données historiques</li>
+                                <li>• <strong>Google Finance :</strong> Ratios de base</li>
+                                <li>• <strong>INSEE :</strong> Données sectorielles</li>
+                                <li>• <strong>Banque de France :</strong> FIBEN</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 text-green-600">Sources Premium</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Bloomberg Terminal</strong></li>
+                                <li>• <strong>Refinitiv Eikon</strong></li>
+                                <li>• <strong>FactSet</strong></li>
+                                <li>• <strong>S&P Capital IQ</strong></li>
+                                <li>• <strong>Morningstar Direct</strong></li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 text-purple-600">Outils Spécialisés</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>DCF Templates :</strong> Excel/Google Sheets</li>
+                                <li>• <strong>Ratios Calculators :</strong> En ligne</li>
+                                <li>• <strong>Screeners :</strong> Finviz, TradingView</li>
+                                <li>• <strong>API :</strong> Alpha Vantage, IEX</li>
+                                <li>• <strong>Python/R :</strong> yfinance, quantlib</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+            <h2 class="text-3xl font-bold text-gradient mb-6">Maîtriser l'Art de l'Analyse Fondamentale</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        L'analyse fondamentale est un processus rigoureux qui combine <strong class="text-red-600">expertise technique</strong>, <strong class="text-red-600">compréhension business</strong> et <strong class="text-red-600">vision stratégique</strong>. La maîtrise des ratios financiers et méthodes de valorisation vous permet de prendre des décisions d'investissement éclairées.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Rappelez-vous que l'analyse quantitative doit toujours être complétée par une analyse qualitative approfondie du management, de la stratégie et de l'environnement concurrentiel.
+                    </p>
+                </div>
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">Points Clés à Retenir</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li>✓ Analyser les tendances sur 3-5 ans minimum</li>
+                        <li>✓ Toujours comparer aux concurrents directs</li>
+                        <li>✓ Utiliser plusieurs méthodes de valorisation</li>
+                        <li>✓ Considérer les spécificités sectorielles</li>
+                        <li>✓ Intégrer l'analyse qualitative</li>
+                        <li>✓ Rester prudent sur les projections</li>
+                        <li>✓ Actualiser régulièrement l'analyse</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+
+            <p class="text-gray-400">
+                © 2024 Finance Tutoring. Guide d'analyse fondamentale basé sur les meilleures pratiques de l'industrie financière.
+            </p>
+            
+            <div class="mt-4 space-x-6">
+                <span class="text-sm text-gray-500">Excellence en Formation Financière • Formations CFA • Analyse d'Entreprise</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
