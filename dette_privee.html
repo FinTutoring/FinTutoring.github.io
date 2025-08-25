@@ -1,0 +1,1089 @@
+architecture_dette_privee_guide_expert.html
+
+Rendered HTML
+
+Download
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecturer une Opération de Dette Privée - Guide Expert</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .calculator-input {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            transition: border-color 0.3s ease;
+        }
+        .calculator-input:focus {
+            border-color: #dc2626;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        .covenant-tracker {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .risk-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .risk-low { background: #dcfce7; color: #16a34a; }
+        .risk-medium { background: #fef3c7; color: #d97706; }
+        .risk-high { background: #fef2f2; color: #dc2626; }
+        @media (max-width: 768px) {
+            .mobile-stack { flex-direction: column; }
+            .mobile-full { width: 100%; }
+            .mobile-text-sm { font-size: 0.875rem; }
+            .mobile-p-4 { padding: 1rem; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec fond blanc et police rouge -->
+<header class="bg-white text-gray-900 pt-10 pb-8 border-b-4 border-red-600">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <!-- Logo centré -->
+        <div class="flex justify-center mb-6">
+            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+        </div>
+
+        <!-- Nom et slogan en rouge -->
+        <h1 class="text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+        <p class="text-sm text-red-500 mb-6">Excellence en Formation Financière</p>
+
+        <!-- Titre principal en rouge -->
+        <h1 class="text-4xl font-bold text-gradient mb-4">Architecturer une Opération de Dette Privée</h1>
+        <p class="text-xl text-gray-700 max-w-4xl mx-auto">Guide expert pour structurer, documenter et gérer les opérations de dette privée avec les meilleures pratiques du marché.</p>
+    </div>
+</header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#structuration" class="hover:text-red-600 transition-colors">Structuration</a>
+                <a href="#due-diligence" class="hover:text-red-600 transition-colors">Due Diligence</a>
+                <a href="#pricing" class="hover:text-red-600 transition-colors">Pricing</a>
+                <a href="#documentation" class="hover:text-red-600 transition-colors">Documentation</a>
+                <a href="#covenants" class="hover:text-red-600 transition-colors">Covenants</a>
+                <a href="#gestion-risques" class="hover:text-red-600 transition-colors">Gestion des Risques</a>
+                <a href="#outils" class="hover:text-red-600 transition-colors">Outils</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Dette Privée : Architecture et Enjeux Stratégiques</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La dette privée représente un segment en forte croissance du financement d'entreprise, avec <strong class="text-red-600">plus de 1 200 Md€</strong> d'encours mondiaux en 2024. L'architecture d'une opération requiert une expertise technique pointue et une maîtrise des enjeux réglementaires.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ce dossier expert vous guide dans toutes les étapes : de la structuration initiale à la gestion post-closing, en passant par les aspects juridiques, financiers et opérationnels critiques.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-chart-line mr-2"></i>Marché de la Dette Privée 2024
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-euro-sign text-green-500 mr-2"></i>Encours global : 1 200 Md€</li>
+                            <li><i class="fas fa-percentage text-blue-500 mr-2"></i>Croissance annuelle : +12%</li>
+                            <li><i class="fas fa-building text-purple-500 mr-2"></i>Tickets moyens : 50-500 M€</li>
+                            <li><i class="fas fa-clock text-orange-500 mr-2"></i>Maturité moyenne : 5-7 ans</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Structuration -->
+        <section id="structuration" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Structuration Juridique et Financière</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-sitemap text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Structuration Juridique</h3>
+                        <p class="text-gray-600">SPV, garanties, sûretés et optimisation fiscale</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-layers text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Tranching</h3>
+                        <p class="text-gray-600">Senior, mezzanine et subordination adaptée</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Protection</h3>
+                        <p class="text-gray-600">Covenants, step-downs et mécanismes de protection</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-building mr-2"></i>Schémas de Structuration Classiques
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Structure Unitranche</h4>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Avantages :</strong> Simplicité, rapidité d'exécution</li>
+                                <li>• <strong>Ticket :</strong> 10-100 M€ typiquement</li>
+                                <li>• <strong>Marge :</strong> 400-800 bp selon le risque</li>
+                                <li>• <strong>Covenants :</strong> Package standard mais négociable</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Structure Multi-Tranches</h4>
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Senior :</strong> 60-70% du total, 300-500 bp</li>
+                                <li>• <strong>Mezzanine :</strong> 20-30%, 800-1200 bp</li>
+                                <li>• <strong>Subordinated :</strong> 10-20%, 1200+ bp</li>
+                                <li>• <strong>Avantage :</strong> Optimisation coût du capital</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h4 class="font-semibold mb-4">Graphique : Répartition des Structures par Taille de Ticket</h4>
+                    <div style="height: 400px;">
+                        <canvas id="structureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Due Diligence -->
+        <section id="due-diligence" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Due Diligence Approfondie</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-search mr-2"></i>Processus de Due Diligence Intégrée
+                </h3>
+                
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="relative pl-8 pb-8 timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">Phase 1 - Due Diligence Commerciale (2-3 semaines)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Analyse du marché et positionnement concurrentiel</li>
+                                <li>• Évaluation du management et gouvernance</li>
+                                <li>• Revue de la stratégie et business plan</li>
+                            </ul>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Analyse des clients et concentration</li>
+                                <li>• Évaluation des barrières à l'entrée</li>
+                                <li>• Assessment des risques sectoriels</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-8 timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">Phase 2 - Due Diligence Financière (3-4 semaines)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Audit des comptes et quality of earnings</li>
+                                <li>• Analyse des flux de trésorerie historiques</li>
+                                <li>• Revue du working capital et saisonnalité</li>
+                            </ul>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Projections financières détaillées</li>
+                                <li>• Analyse de sensibilité et stress tests</li>
+                                <li>• Évaluation des besoins en capex</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 pb-8 timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">Phase 3 - Due Diligence Juridique (2-3 semaines)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Revue de la structure juridique et fiscale</li>
+                                <li>• Analyse des contrats significatifs</li>
+                                <li>• Évaluation des passifs contingents</li>
+                            </ul>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Compliance réglementaire</li>
+                                <li>• Propriété intellectuelle et licences</li>
+                                <li>• Litiges en cours ou potentiels</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="relative pl-8 timeline-item">
+                        <h4 class="font-semibold text-lg mb-2">Phase 4 - Due Diligence ESG (1-2 semaines)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Évaluation des risques environnementaux</li>
+                                <li>• Analyse des pratiques sociales</li>
+                                <li>• Assessment de la gouvernance</li>
+                            </ul>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Compliance SFDR et taxonomie UE</li>
+                                <li>• Métriques ESG et reporting</li>
+                                <li>• Plan d'amélioration ESG</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-yellow-700">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Red Flags Critiques à Identifier
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div>
+                        <strong class="text-red-600">Financiers :</strong>
+                        <ul class="text-sm mt-1 space-y-1">
+                            <li>• Détérioration des marges</li>
+                            <li>• Concentration client excessive</li>
+                            <li>• Cash conversion détériorée</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-orange-600">Opérationnels :</strong>
+                        <ul class="text-sm mt-1 space-y-1">
+                            <li>• Turnover management élevé</li>
+                            <li>• Systèmes IT obsolètes</li>
+                            <li>• Dépendance fournisseur unique</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong class="text-purple-600">Juridiques :</strong>
+                        <ul class="text-sm mt-1 space-y-1">
+                            <li>• Litiges significatifs</li>
+                            <li>• Non-compliance réglementaire</li>
+                            <li>• Problèmes de propriété IP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Modèles de Pricing et Spreads</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-calculator mr-2"></i>Calculateur de Pricing Dette Privée
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Paramètres de l'Opération</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Montant (M€)</label>
+                                <input type="number" id="loanAmount" class="calculator-input w-full" value="50" min="1" max="1000">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Maturité (années)</label>
+                                <input type="number" id="maturity" class="calculator-input w-full" value="5" min="1" max="10">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Rating Interne</label>
+                                <select id="rating" class="calculator-input w-full">
+                                    <option value="aaa">AAA (Prime)</option>
+                                    <option value="aa">AA (High Grade)</option>
+                                    <option value="a" selected>A (Upper Medium)</option>
+                                    <option value="bbb">BBB (Lower Medium)</option>
+                                    <option value="bb">BB (Speculative)</option>
+                                    <option value="b">B (Highly Speculative)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">LTV (%)</label>
+                                <input type="number" id="ltv" class="calculator-input w-full" value="60" min="10" max="90">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Résultats du Pricing</h4>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <div class="space-y-4">
+                                <div class="flex justify-between">
+                                    <span>Taux de base (€STR):</span>
+                                    <span class="font-semibold">3.75%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Spread estimé:</span>
+                                    <span class="font-semibold" id="spreadResult">450 bp</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Taux tout-in:</span>
+                                    <span class="font-semibold text-red-600" id="allInRate">8.25%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Frais d'arrangement:</span>
+                                    <span class="font-semibold" id="fees">2.00%</span>
+                                </div>
+                                <hr class="my-4">
+                                <div class="flex justify-between text-lg">
+                                    <span>Coût effectif global:</span>
+                                    <span class="font-bold text-red-600" id="totalCost">8.65%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="calculatePricing()" class="mt-4 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors w-full">
+                            <i class="fas fa-calculator mr-2"></i>Recalculer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-bar mr-2"></i>Spreads de Marché par Rating et Maturité
+                </h3>
+                <div style="height: 450px;">
+                    <canvas id="spreadChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation -->
+        <section id="documentation" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Documentation Juridique</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-file-contract mr-2"></i>Documents Principaux
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-file-alt text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Credit Agreement</strong>
+                                <p class="text-sm text-gray-600">Contrat principal définissant termes et conditions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-shield-alt text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Security Documents</strong>
+                                <p class="text-sm text-gray-600">Nantissements, hypothèques et sûretés</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-handshake text-purple-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Intercreditor Agreement</strong>
+                                <p class="text-sm text-gray-600">Relations entre créanciers senior/junior</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-check text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Guarantee Documents</strong>
+                                <p class="text-sm text-gray-600">Garanties des sociétés du groupe</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-clipboard-list mr-2"></i>Clauses Négociées
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-percentage text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Pricing Grid</strong>
+                                <p class="text-sm text-gray-600">Mécanisme de step-down basé sur leverage</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-calendar-check text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Mandatory Prepayments</strong>
+                                <p class="text-sm text-gray-600">Remboursements anticipés obligatoires</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-ban text-indigo-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Restrictions</strong>
+                                <p class="text-sm text-gray-600">Limitations capex, dividendes, acquisitions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-red-600 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Events of Default</strong>
+                                <p class="text-sm text-gray-600">Cas de défaut et mécanismes de remédiation</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-clock mr-2 text-red-600"></i>Timeline de Documentation
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-blue-600 mb-2">S-8</div>
+                        <p class="text-sm">Term Sheet Signed</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-green-600 mb-2">S-6</div>
+                        <p class="text-sm">First Draft Docs</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-orange-600 mb-2">S-2</div>
+                        <p class="text-sm">Final Negotiation</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-red-600 mb-2">S0</div>
+                        <p class="text-sm">Signing & Closing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Covenants -->
+        <section id="covenants" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Architecture des Covenants</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-tasks mr-2"></i>Tracker de Covenants Financiers
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="text-left p-3 font-semibold">Covenant</th>
+                                <th class="text-center p-3 font-semibold">Seuil Année 1</th>
+                                <th class="text-center p-3 font-semibold">Seuil Année 2+</th>
+                                <th class="text-center p-3 font-semibold">Actuel</th>
+                                <th class="text-center p-3 font-semibold">Marge</th>
+                                <th class="text-center p-3 font-semibold">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-3 font-medium">Ratio de Leverage (Debt/EBITDA)</td>
+                                <td class="text-center p-3">≤ 6.0x</td>
+                                <td class="text-center p-3">≤ 5.0x</td>
+                                <td class="text-center p-3">4.2x</td>
+                                <td class="text-center p-3">0.8x</td>
+                                <td class="text-center p-3"><span class="risk-badge risk-low">OK</span></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 font-medium">Couverture d'Intérêts (EBITDA/Int.)</td>
+                                <td class="text-center p-3">≥ 3.0x</td>
+                                <td class="text-center p-3">≥ 3.5x</td>
+                                <td class="text-center p-3">3.8x</td>
+                                <td class="text-center p-3">0.3x</td>
+                                <td class="text-center p-3"><span class="risk-badge risk-medium">Watch</span></td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-3 font-medium">Ratio de Liquidité (Current Ratio)</td>
+                                <td class="text-center p-3">≥ 1.1x</td>
+                                <td class="text-center p-3">≥ 1.2x</td>
+                                <td class="text-center p-3">1.15x</td>
+                                <td class="text-center p-3">-0.05x</td>
+                                <td class="text-center p-3"><span class="risk-badge risk-high">Alert</span></td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium">Capex Maximum (% EBITDA)</td>
+                                <td class="text-center p-3">≤ 10%</td>
+                                <td class="text-center p-3">≤ 8%</td>
+                                <td class="text-center p-3">6%</td>
+                                <td class="text-center p-3">2%</td>
+                                <td class="text-center p-3"><span class="risk-badge risk-low">OK</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-shield-alt mr-2"></i>Covenants de Protection
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="covenant-tracker">
+                            <h4 class="font-semibold mb-2">Restrictions Financières</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Limitation des dividendes (cash sweep)</li>
+                                <li>• Restriction des acquisitions > seuil</li>
+                                <li>• Contrôle des investissements</li>
+                                <li>• Interdiction debt pushdown</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <h4 class="font-semibold mb-2">Restrictions Opérationnelles</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Changement de business</li>
+                                <li>• Cession d'actifs > seuil</li>
+                                <li>• Opérations avec parties liées</li>
+                                <li>• Modifications statutaires</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-chart-line mr-2"></i>Mécanismes d'Ajustement
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="covenant-tracker">
+                            <h4 class="font-semibold mb-2">Step-Down Provisions</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Leverage < 4.0x → Covenant holiday</li>
+                                <li>• 3 tests consécutifs → Relâchement</li>
+                                <li>• Investment grade → Package allégé</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <h4 class="font-semibold mb-2">Cure Mechanisms</h4>
+                            <ul class="text-sm space-y-1">
+                                <li>• Equity cure (2x par vie du crédit)</li>
+                                <li>• Covenant reset après cure</li>
+                                <li>• Période de grâce : 30 jours</li>
+                                <li>• Contribution minimum : 10 M€</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gestion des Risques -->
+        <section id="gestion-risques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Gestion des Risques</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Matrice des Risques
+                </h3>
+                
+                <div style="height: 400px;">
+                    <canvas id="riskMatrix"></canvas>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-credit-card mr-2"></i>Risque de Crédit
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-high mr-2">Élevé</span>
+                            Détérioration financière
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-medium mr-2">Moyen</span>
+                            Changement management
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-low mr-2">Faible</span>
+                            Risque sectoriel
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 p-3 bg-red-50 rounded">
+                        <strong class="text-red-600">Mitigation :</strong>
+                        <ul class="text-xs mt-1 space-y-1">
+                            <li>• Monitoring mensuel renforcé</li>
+                            <li>• Covenants financiers stricts</li>
+                            <li>• Sûretés first ranking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-percentage mr-2"></i>Risque de Taux
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-medium mr-2">Moyen</span>
+                            Hausse des taux base
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-low mr-2">Faible</span>
+                            Volatilité spread
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-low mr-2">Faible</span>
+                            Duration mismatch
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 rounded">
+                        <strong class="text-yellow-600">Mitigation :</strong>
+                        <ul class="text-xs mt-1 space-y-1">
+                            <li>• Taux variable indexé €STR</li>
+                            <li>• Floors et caps optionnels</li>
+                            <li>• Hedging recommandé</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-tint mr-2"></i>Risque de Liquidité
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-low mr-2">Faible</span>
+                            Liquidité secondaire
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-medium mr-2">Moyen</span>
+                            Refinancement
+                        </li>
+                        <li class="flex items-center">
+                            <span class="risk-badge risk-high mr-2">Élevé</span>
+                            Appels de marge
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-4 p-3 bg-blue-50 rounded">
+                        <strong class="text-blue-600">Mitigation :</strong>
+                        <ul class="text-xs mt-1 space-y-1">
+                            <li>• RCF non tiré maintenu</li>
+                            <li>• Covenant liquidité minimum</li>
+                            <li>• Refinancement anticipé</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outils Pratiques -->
+        <section id="outils" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Outils et Modèles</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-download mr-2"></i>Modèles Excel
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>LBO Model Complet</strong>
+                                <p class="text-sm text-gray-600">Sources & uses, returns analysis</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>Covenant Tracker</strong>
+                                <p class="text-sm text-gray-600">Suivi automatisé des ratios</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>Waterfall Calculator</strong>
+                                <p class="text-sm text-gray-600">Distribution des cash flows</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-file-alt mr-2"></i>Templates Juridiques
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>Term Sheet Standard</strong>
+                                <p class="text-sm text-gray-600">Modèle unitranche français</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>Credit Agreement</strong>
+                                <p class="text-sm text-gray-600">Contrat type LMA</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <div>
+                                <strong>DD Checklist</strong>
+                                <p class="text-sm text-gray-600">Liste exhaustive par workstream</p>
+                            </div>
+                            <button class="text-red-600 hover:text-red-800">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-red-50 to-red-100 p-8 rounded-lg text-center border border-red-200">
+                <h2 class="text-2xl font-bold text-red-600 mb-4">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    Approfondissez Vos Compétences en Dette Privée
+                </h2>
+                <p class="text-gray-700 mb-6 max-w-3xl mx-auto">
+                    Découvrez nos formations spécialisées en finance structurée, LBO et dette privée. 
+                    Programmes conçus par des professionnels pour maîtriser toutes les dimensions techniques et réglementaires.
+                </p>
+                <a href="https://www.finance-tutoring.fr" target="_blank" class="cta-button">
+                    <i class="https://www.finance-tutoring.fr/formations/gestion-d-actifs/les-fondamentaux-de-la-dette-privee/"></i>
+                    Découvrir Finance Tutoring
+                </a>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Excellence en Architecture de Dette Privée</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        L'architecture d'une opération de dette privée requiert une maîtrise technique approfondie et une vision stratégique globale. Ce dossier vous a fourni les outils et méthodologies essentiels utilisés par les meilleurs praticiens du marché.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        De la structuration initiale au monitoring post-closing, chaque étape demande rigueur, expertise et anticipation des risques pour garantir le succès de l'opération.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">Points Clés à Retenir</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ Structuration adaptée au profil de risque</li>
+                        <li>✓ Due diligence intégrée et exhaustive</li>
+                        <li>✓ Pricing aligné sur les standards marché</li>
+                        <li>✓ Documentation robuste et négociée</li>
+                        <li>✓ Covenants équilibrés et intelligents</li>
+                        <li>✓ Gestion proactive des risques</li>
+                        <li>✓ Monitoring continu post-closing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-red-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-landmark text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-red-200">
+                        <p>L'expertise au service de vos ambitions</p>
+                        <p>Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+            <p class="text-gray-400">
+                © 2024 Finance Tutoring. Guide basé sur l'expertise de professionnels de la dette privée et les meilleures pratiques du marché.
+            </p>
+            <div class="mt-4 space-x-6">
+                <span class="text-sm text-gray-500">Sources : LMA, LSTA, AFIC, France Invest</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Calculateur de pricing
+        function calculatePricing() {
+            const amount = parseFloat(document.getElementById('loanAmount').value);
+            const maturity = parseFloat(document.getElementById('maturity').value);
+            const rating = document.getElementById('rating').value;
+            const ltv = parseFloat(document.getElementById('ltv').value);
+            
+            // Spreads de base par rating
+            const spreads = {
+                'aaa': 200, 'aa': 300, 'a': 450, 'bbb': 600, 'bb': 800, 'b': 1200
+            };
+            
+            let spread = spreads[rating];
+            
+            // Ajustements
+            if (maturity > 7) spread += 50;
+            if (ltv > 70) spread += 100;
+            if (amount < 25) spread += 75; // Small ticket premium
+            
+            const allInRate = 3.75 + (spread / 100);
+            const fees = amount < 50 ? 2.5 : 2.0;
+            const totalCost = allInRate + (fees / maturity);
+            
+            document.getElementById('spreadResult').textContent = spread + ' bp';
+            document.getElementById('allInRate').textContent = allInRate.toFixed(2) + '%';
+            document.getElementById('fees').textContent = fees.toFixed(2) + '%';
+            document.getElementById('totalCost').textContent = totalCost.toFixed(2) + '%';
+        }
+
+        // Graphiques
+        window.onload = function() {
+            // Graphique structure
+            const ctx1 = document.getElementById('structureChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Unitranche', 'Multi-Tranches', 'Mezzanine Pure', 'Hybrid'],
+                    datasets: [{
+                        data: [45, 35, 15, 5],
+                        backgroundColor: ['#dc2626', '#f97316', '#eab308', '#6b7280'],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        title: { display: true, text: 'Répartition des Structures par Volume (2024)' }
+                    }
+                }
+            });
+
+            // Graphique spreads
+            const ctx2 = document.getElementById('spreadChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['AAA', 'AA', 'A', 'BBB', 'BB', 'B'],
+                    datasets: [
+                        {
+                            label: '3-5 ans',
+                            data: [200, 300, 450, 600, 800, 1200],
+                            backgroundColor: '#dc2626'
+                        },
+                        {
+                            label: '5-7 ans',
+                            data: [250, 350, 500, 650, 900, 1350],
+                            backgroundColor: '#f97316'
+                        },
+                        {
+                            label: '7+ ans',
+                            data: [300, 400, 550, 750, 1000, 1500],
+                            backgroundColor: '#eab308'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Spread (bp)' }
+                        },
+                        x: {
+                            title: { display: true, text: 'Rating' }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        title: { display: true, text: 'Spreads par Rating et Maturité' }
+                    }
+                }
+            });
+
+            // Matrice des risques
+            const ctx3 = document.getElementById('riskMatrix').getContext('2d');
+            new Chart(ctx3, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Risque de Crédit',
+                        data: [{x: 8, y: 9}],
+                        backgroundColor: '#dc2626',
+                        pointRadius: 8
+                    }, {
+                        label: 'Risque de Taux',
+                        data: [{x: 6, y: 5}],
+                        backgroundColor: '#f97316',
+                        pointRadius: 8
+                    }, {
+                        label: 'Risque de Liquidité',
+                        data: [{x: 4, y: 7}],
+                        backgroundColor: '#eab308',
+                        pointRadius: 8
+                    }, {
+                        label: 'Risque Opérationnel',
+                        data: [{x: 7, y: 6}],
+                        backgroundColor: '#6b7280',
+                        pointRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Probabilité (1-10)' },
+                            min: 0, max: 10
+                        },
+                        y: {
+                            title: { display: true, text: 'Impact (1-10)' },
+                            min: 0, max: 10
+                        }
+                    },
+                    plugins: {
+                        title: { display: true, text: 'Matrice Probabilité vs Impact' }
+                    }
+                }
+            });
+
+            // Calculer pricing initial
+            calculatePricing();
+        };
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDp7l8YHpPqiMUKSBtogbe5IgBEoi%2BWDFMFjWj6OgawZ8I%2BoqO7mPzS3d9O%2FpZjTIxGzOqMJVmsSpAArpAlzwc%2FUO12BWHHZl05lx%2Fxb65bfpNWh%2B1i9jTZCLBg0Gcf8MDQRG6u9FswfGnQnT19ApFjrxTgzYS2yEpn4bSEiD0gXwffSWsSDzr2Wwtw0SiPa5xsRwVIS7%2BgIa503uN10GwE4yKDaWUp7V2kBPIu0eHYEEtJTFYaUaHtVlkl4MtT8rjvBNpGKXNU7WSymRtLAxGZbnrFZ0JQFQExvVxuIoA8ZGN0o7ZJSnO%2BX6%2BiW2RVK%2Fv%2B8XP14caCDWwatVbht4ejcekV0Uj%2BF2%2FPUCxbG1BdR9IibUSaaLf8bygwlbS54WwjqIPY5iWdR2Jx9aFBSfTQCgtoKnOSayo12uGGkvPTsYUCCY8ctUswtXIkOgm3vtKN%2FG4vpNnOxJFvNj5PEpn2dzYj%2BMFl1fxE%2FqbXcY3FWTEYXCq%2FBH6UYbo4nr85TquI7gpzLvgeDm%2BWUOwJPgEtw%3D";
+        window.__genspark_locale = "fr-FR";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDp7l8YHpPqiMUKSBtogbe5IgBEoi+WDFMFjWj6OgawZ8I+oqO7mPzS3d9O/pZjTIxGzOqMJVmsSpAArpAlzwc/UO12BWHHZl05lx/xb65bfpNWh+1i9jTZCLBg0Gcf8MDQRG6u9FswfGnQnT19ApFjrxTgzYS2yEpn4bSEiD0gXwffSWsSDzr2Wwtw0SiPa5xsRwVIS7+gIa503uN10GwE4yKDaWUp7V2kBPIu0eHYEEtJTFYaUaHtVlkl4MtT8rjvBNpGKXNU7WSymRtLAxGZbnrFZ0JQFQExvVxuIoA8ZGN0o7ZJSnO+X6+iW2RVK/v+8XP14caCDWwatVbht4ejcekV0Uj+F2/PUCxbG1BdR9IibUSaaLf8bygwlbS54WwjqIPY5iWdR2Jx9aFBSfTQCgtoKnOSayo12uGGkvPTsYUCCY8ctUswtXIkOgm3vtKN/G4vpNnOxJFvNj5PEpn2dzYj+MFl1fxE/qbXcY3FWTEYXCq/BH6UYbo4nr85TquI7gpzLvgeDm+WUOwJPgEtw=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
