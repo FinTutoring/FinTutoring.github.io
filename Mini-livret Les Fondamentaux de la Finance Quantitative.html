@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Fondamentaux de la Finance Quantitative - Guide Complet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .calculator-input {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            transition: border-color 0.3s ease;
+        }
+        .calculator-input:focus {
+            border-color: #dc2626;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+        .covenant-tracker {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .risk-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .risk-low { background: #dcfce7; color: #16a34a; }
+        .risk-medium { background: #fef3c7; color: #d97706; }
+        .risk-high { background: #fef2f2; color: #dc2626; }
+        .formula-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin: 12px 0;
+        }
+        .python { border-left: 4px solid #3776ab; }
+        .r { border-left: 4px solid #276dc3; }
+        .interactive-calculator {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+        }
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        .exercise-box {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        .solution-box {
+            background: #f0fdf4;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .reference-item {
+            background: #fafafa;
+            border-left: 4px solid #6b7280;
+            padding: 12px 16px;
+            margin: 8px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .regulation-highlight {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        @media print {
+            body { print-color-adjust: exact; }
+            .no-print { display: none; }
+        }
+        @media (max-width: 768px) {
+            .mobile-stack { flex-direction: column; }
+            .mobile-full { width: 100%; }
+            .mobile-text-sm { font-size: 0.875rem; }
+            .mobile-p-4 { padding: 1rem; }
+        }
+    </style>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec fond blanc et police rouge -->
+    <header class="bg-white text-gray-900 pt-10 pb-8 border-b-4 border-red-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo centré -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+            </div>
+
+            <!-- Nom et slogan en rouge -->
+            <h1 class="text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-500 mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal en rouge -->
+            <h1 class="text-4xl font-bold text-gradient mb-4">Guide Complet: Les Fondamentaux de la Finance Quantitative</h1>
+            <p class="text-xl text-gray-700 max-w-4xl mx-auto">Maîtrisez les mathématiques financières, les modèles de pricing, le risk management et les applications pratiques dans l'univers complexe de la finance quantitative moderne.</p>
+            
+            <!-- Table des matières rapide -->
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg border border-red-200">
+                <h3 class="text-lg font-semibold text-red-600 mb-4">Ce que vous découvrirez dans ce guide :</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-left">
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Les concepts fondamentaux de la finance quantitative
+                    </div>
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Les modèles mathématiques appliqués aux marchés financiers
+                    </div>
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Les techniques d'évaluation des produits dérivés
+                    </div>
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Les stratégies de gestion quantitative de portefeuille
+                    </div>
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Des études de cas concrets et applications pratiques
+                    </div>
+                    <div>
+                        <i class="fas fa-check text-green-500 mr-2"></i>Trading algorithmique et machine learning en finance
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10 no-print">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#contexte" class="hover:text-red-600 transition-colors">Contexte</a>
+                <a href="#probabilites" class="hover:text-red-600 transition-colors">Probabilités</a>
+                <a href="#mathematiques" class="hover:text-red-600 transition-colors">Mathématiques</a>
+                <a href="#mesures" class="hover:text-red-600 transition-colors">Mesures</a>
+                <a href="#black-scholes" class="hover:text-red-600 transition-colors">Black-Scholes</a>
+                <a href="#modeles" class="hover:text-red-600 transition-colors">Modèles</a>
+                <a href="#produits-structures" class="hover:text-red-600 transition-colors">Produits Structurés</a>
+                <a href="#risk-management" class="hover:text-red-600 transition-colors">Risk Management</a>
+                <a href="#trading-algo" class="hover:text-red-600 transition-colors">Trading Algo</a>
+                <a href="#machine-learning" class="hover:text-red-600 transition-colors">ML Finance</a>
+                <a href="#reglementations" class="hover:text-red-600 transition-colors">Réglementations</a>
+                <a href="#exercices" class="hover:text-red-600 transition-colors">Exercices</a>
+                <a href="#applications" class="hover:text-red-600 transition-colors">Applications</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Contexte Actuel -->
+        <section id="contexte" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Contexte Actuel et Enjeux de la Finance Quantitative</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Dans un environnement de <strong class="text-red-600">complexité croissante</strong> des produits structurés, la finance quantitative est devenue le pilier central de l'industrie financière moderne. Les évolutions réglementaires (FRTB, Basel IV), la digitalisation des marchés, et l'émergence de nouvelles classes d'actifs (crypto-actifs, produits ESG) exigent une maîtrise technique approfondie.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            L'explosion des données (Big Data) et l'avènement de l'intelligence artificielle transforment radicalement les approches traditionnelles de pricing, de risk management et de trading. Les professionnels doivent désormais maîtriser non seulement les modèles mathématiques classiques, mais aussi les techniques de machine learning et d'optimisation algorithmique.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Cette formation répond aux enjeux critiques du secteur financier 2024-2025, où les compétences quantitatives avancées sont devenues un facteur différenciant majeur pour les institutions financières cherchant à maintenir leur avantage concurrentiel.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>Enjeux Stratégiques 2024-2025
+                        </h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><i class="fas fa-chart-line text-red-500 mr-2"></i><strong>Volatilité Extrême:</strong> Gestion des risques dans des marchés hypercorrelatés et volatils</li>
+                            <li><i class="fas fa-balance-scale text-blue-500 mr-2"></i><strong>Réglementation:</strong> FRTB, Basel IV, DORA - Impact sur les modèles et le capital réglementaire</li>
+                            <li><i class="fas fa-brain text-purple-500 mr-2"></i><strong>IA/ML:</strong> Intégration de l'intelligence artificielle dans les processus de décision financière</li>
+                            <li><i class="fas fa-layer-group text-green-500 mr-2"></i><strong>Produits Complexes:</strong> Structuration et pricing d'instruments dérivés de plus en plus sophistiqués</li>
+                            <li><i class="fas fa-globe text-orange-500 mr-2"></i><strong>ESG/Climat:</strong> Quantification des risques climatiques et développement durable</li>
+                            <li><i class="fas fa-coins text-yellow-500 mr-2"></i><strong>Digital Assets:</strong> Crypto-monnaies, DeFi et nouveaux paradigmes financiers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Statistiques du marché -->
+                <div class="mt-8 bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg border border-red-200">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">Chiffres Clés du Secteur</h3>
+                    <div class="grid md:grid-cols-4 gap-6 text-center">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-2xl font-bold text-red-600">€15T+</div>
+                            <div class="text-sm text-gray-600">Marché global des dérivés</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-2xl font-bold text-blue-600">+35%</div>
+                            <div class="text-sm text-gray-600">Demande en quants 2024</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-2xl font-bold text-green-600">€150k+</div>
+                            <div class="text-sm text-gray-600">Salaire moyen quant senior</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="text-2xl font-bold text-purple-600">80%</div>
+                            <div class="text-sm text-gray-600">Trades automatisés</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Lois de Probabilité -->
+        <section id="probabilites" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Fondements Probabilistes et Distributions</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-chart-bell mr-2"></i>Loi Normale et Log-Normale
+                    </h3>
+                    <p class="text-gray-700 mb-4">Fondamentales pour le modèle Black-Scholes et la modélisation des rendements d'actifs. La loi normale modélise les variations de prix à court terme, tandis que la loi log-normale modélise les prix des actifs (toujours positifs).</p>
+                    
+                    <div class="formula-box">
+                        <strong>Loi Normale :</strong> $X \sim N(\mu, \sigma^2)$<br>
+                        $f(x) = \frac{1}{\sigma\sqrt{2\pi}} \exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)$
+                    </div>
+                    
+                    <div class="formula-box">
+                        <strong>Loi Log-Normale :</strong><br>
+                        Si $\ln(X) \sim N(\mu, \sigma^2)$, alors $X$ suit une loi log-normale<br>
+                        $f(x) = \frac{1}{x\sigma\sqrt{2\pi}} \exp\left(-\frac{(\ln x - \mu)^2}{2\sigma^2}\right)$
+                    </div>
+                    
+                    <div class="covenant-tracker">
+                        <strong>Applications pratiques :</strong>
+                        <ul class="text-sm mt-2 space-y-1">
+                            <li>• Prix des actions (log-normale)</li>
+                            <li>• Rendements d'actifs (normale)</li>
+                            <li>• Modèles de volatilité</li>
+                            <li>• Simulation Monte Carlo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-bolt mr-2"></i>Distribution de Poisson et Processus de Saut
+                    </h3>
+                    <p class="text-gray-700 mb-4">Essentielle pour modéliser les événements rares et les discontinuités de marché. Utilisée dans les modèles de défaut de crédit et les processus de saut.</p>
+                    
+                    <div class="formula-box">
+                        <strong>Poisson :</strong> $X \sim \text{Pois}(\lambda)$<br>
+                        $P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}$<br>
+                        <strong>Paramètre :</strong> $\lambda$ = taux d'occurrence moyen
+                    </div>
+                    
+                    <div class="formula-box">
+                        <strong>Processus de Poisson Composé :</strong><br>
+                        $N(t) =$ nombre d'événements jusqu'au temps $t$<br>
+                        $S(t) = \sum_{i=1}^{N(t)} Y_i$ où $Y_i$ = taille du saut
+                    </div>
+                    
+                    <ul class="text-sm text-gray-600 mt-4 space-y-2">
+                        <li><strong>Défauts de crédit :</strong> Modélisation des événements de défaut</li>
+                        <li><strong>Sauts de marché :</strong> Événements extrêmes (crash, annonces)</li>
+                        <li><strong>Modèles de Merton :</strong> Jump-diffusion pour les prix d'actifs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-area mr-2"></i>Distributions à Queues Épaisses et Leptokurticité
+                </h3>
+                <p class="text-gray-700 mb-6">Les distributions à queues épaisses capturent mieux la réalité des marchés financiers, caractérisés par une probabilité plus élevée d'événements extrêmes que ne le prédit la loi normale.</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-blue-600">Distribution de Pareto</h4>
+                        <p class="text-sm text-gray-700 mb-3">Modélise les pertes opérationnelles extrêmes et suit la règle 80-20.</p>
+                        <div class="formula-box text-xs">
+                            $F(x) = 1 - \left(\frac{x_m}{x}\right)^\alpha$ pour $x \geq x_m$<br>
+                            Paramètres : $x_m$ (minimum), $\alpha$ (forme)
+                        </div>
+                        <div class="text-xs text-gray-600 mt-2">
+                            <strong>Usage :</strong> Modélisation des pertes opérationnelles, distribution de richesse
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-green-600">Distribution t de Student</h4>
+                        <p class="text-sm text-gray-700 mb-3">Alternative robuste à la loi normale, particulièrement utile pour les petits échantillons.</p>
+                        <div class="formula-box text-xs">
+                            $f(x) = \frac{\Gamma(\frac{\nu+1}{2})}{\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})} \left(1 + \frac{x^2}{\nu}\right)^{-\frac{\nu+1}{2}}$<br>
+                            Paramètre : $\nu$ (degrés de liberté)
+                        </div>
+                        <div class="text-xs text-gray-600 mt-2">
+                            <strong>Propriété :</strong> Plus $\nu$ est petit, plus les queues sont épaisses
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-purple-600">Distribution Skewed t</h4>
+                        <p class="text-sm text-gray-700 mb-3">Extension asymétrique de la t de Student pour capturer le skewness des rendements.</p>
+                        <div class="formula-box text-xs">
+                            Paramètres supplémentaires :<br>
+                            • $\lambda$ : asymétrie (skewness)<br>
+                            • Queues épaisses + asymétrie
+                        </div>
+                        <div class="text-xs text-gray-600 mt-2">
+                            <strong>Avantage :</strong> Modélise simultanément leptokurticité et asymétrie
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Graphique comparatif -->
+                <div class="mt-8">
+                    <h4 class="font-semibold mb-4">Comparaison des Distributions</h4>
+                    <div class="chart-container">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tests statistiques -->
+            <div class="bg-white p-6 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-4 text-red-600">
+                    <i class="fas fa-vial mr-2"></i>Tests de Normalité et Ajustement
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Tests Classiques</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="covenant-tracker">
+                                <strong>Test de Jarque-Bera :</strong><br>
+                                $JB = \frac{n}{6}\left(S^2 + \frac{(K-3)^2}{4}\right)$<br>
+                                où S = skewness, K = kurtosis
+                            </div>
+                            <div class="covenant-tracker">
+                                <strong>Test de Kolmogorov-Smirnov :</strong><br>
+                                $D_n = \sup_x |F_n(x) - F(x)|$<br>
+                                Compare fonction de répartition empirique vs théorique
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Métriques d'Ajustement</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="covenant-tracker">
+                                <strong>Critères d'Information :</strong><br>
+                                • AIC = -2ln(L) + 2k<br>
+                                • BIC = -2ln(L) + k⋅ln(n)<br>
+                                L = vraisemblance, k = nb paramètres
+                            </div>
+                            <div class="covenant-tracker">
+                                <strong>Test de Anderson-Darling :</strong><br>
+                                Plus sensible aux queues que KS<br>
+                                Particulièrement adapté aux données financières
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Mathématiques Financières -->
+        <section id="mathematiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Mathématiques Financières Avancées</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-function mr-2"></i>Calcul Stochastique et Processus Aléatoires
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-4">Processus de Wiener (Mouvement Brownien)</h4>
+                        <p class="text-sm text-gray-700 mb-3">Le mouvement brownien standard W(t) est le processus aléatoire fondamental de la finance quantitative.</p>
+                        <div class="formula-box">
+                            <strong>Propriétés fondamentales :</strong><br>
+                            • $W(0) = 0$ (condition initiale)<br>
+                            • Accroissements indépendants et stationnaires<br>
+                            • $W(t) \sim N(0, t)$ pour tout $t > 0$<br>
+                            • Trajectoires continues mais non dérivables<br>
+                            • $E[dW_t] = 0$, $E[dW_t^2] = dt$
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Propriétés avancées :</strong><br>
+                            • Variation quadratique : $[W]_t = t$<br>
+                            • Propriété de Markov forte<br>
+                            • Invariance d'échelle : $W(ct) \stackrel{d}{=} \sqrt{c}W(t)$
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Intégrale Stochastique d'Itô</h4>
+                        <p class="text-sm text-gray-700 mb-3">Construction rigoureuse de l'intégrale par rapport au mouvement brownien.</p>
+                        <div class="formula-box">
+                            <strong>Définition :</strong><br>
+                            $\int_0^t H_s dW_s = \lim_{n \to \infty} \sum_{i=0}^{n-1} H_{t_i}(W_{t_{i+1}} - W_{t_i})$<br>
+                            où $H_t$ est un processus adapté
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Propriétés clés :</strong><br>
+                            • $E[\int_0^t H_s dW_s] = 0$ (martingale)<br>
+                            • Isométrie d'Itô : $E[(\int_0^t H_s dW_s)^2] = E[\int_0^t H_s^2 ds]$
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+                    <h4 class="font-semibold mb-4 text-blue-700">Lemme d'Itô : L'Outil Central</h4>
+                    <p class="text-sm text-gray-700 mb-4">Le lemme d'Itô est l'analogue stochastique de la règle de dérivation en chaîne, essentiel pour dériver les EDS.</p>
+                    
+                    <div class="formula-box mb-4">
+                        <strong>Forme générale :</strong><br>
+                        Pour $f(t, X_t)$ où $dX_t = \mu_t dt + \sigma_t dW_t$ :<br>
+
+                        $$df = \left(\frac{\partial f}{\partial t} + \mu_t \frac{\partial f}{\partial x} + \frac{1}{2}\sigma_t^2 \frac{\partial^2 f}{\partial x^2}\right)dt + \sigma_t \frac{\partial f}{\partial x}dW_t$$
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="formula-box text-sm">
+                            <strong>Exemple classique :</strong><br>
+                            $X_t = \ln(S_t)$, $dS_t = \mu S_t dt + \sigma S_t dW_t$<br>
+                            Alors : $dX_t = (\mu - \frac{\sigma^2}{2})dt + \sigma dW_t$
+                        </div>
+                        <div class="formula-box text-sm">
+                            <strong>Table de multiplication d'Itô :</strong><br>
+                            $dt \cdot dt = 0$, $dt \cdot dW_t = 0$<br>
+                            $dW_t \cdot dW_t = dt$ ⭐<br>
+                            (différence clé avec le calcul classique)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDS Fondamentales -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-project-diagram mr-2"></i>Équations Différentielles Stochastiques Fondamentales
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Mouvement Brownien Géométrique (MBG)</h4>
+                        <div class="formula-box">
+                            <strong>EDS :</strong> $dS_t = \mu S_t dt + \sigma S_t dW_t$<br>
+                            <strong>Solution explicite :</strong><br>
+                            $S_t = S_0 \exp\left((\mu - \frac{\sigma^2}{2})t + \sigma W_t\right)$
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Propriétés du MBG :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• $S_t > 0$ toujours (adapté aux prix)</li>
+                                <li>• $\ln(S_t/S_0) \sim N((\mu-\sigma^2/2)t, \sigma^2 t)$</li>
+                                <li>• Rendements i.i.d. sur intervalles disjoints</li>
+                                <li>• Base du modèle Black-Scholes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Processus d'Ornstein-Uhlenbeck</h4>
+                        <div class="formula-box">
+                            <strong>EDS :</strong> $dX_t = \kappa(\theta - X_t)dt + \sigma dW_t$<br>
+                            <strong>Solution :</strong><br>
+                            $X_t = \theta + (X_0 - \theta)e^{-\kappa t} + \sigma \int_0^t e^{-\kappa(t-s)} dW_s$
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Applications :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• Modèles de taux d'intérêt (Vasicek)</li>
+                                <li>• Volatilité stochastique</li>
+                                <li>• Retour vers la moyenne</li>
+                                <li>• Distribution stationnaire : $N(\theta, \sigma^2/2\kappa)$</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-semibold mb-4">Processus de Square-Root (CIR)</h4>
+                    <div class="formula-box mb-4">
+                        <strong>EDS :</strong> $dX_t = \kappa(\theta - X_t)dt + \sigma \sqrt{X_t} dW_t$<br>
+                        <strong>Condition de Feller :</strong> $2\kappa\theta \geq \sigma^2$ (garantit $X_t \geq 0$)
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <strong>Avantages :</strong>
+                            <ul class="space-y-1 mt-2">
+                                <li>• Processus toujours positif</li>
+                                <li>• Distribution gamma conditionnelle</li>
+                                <li>• Solution analytique des obligations</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Applications :</strong>
+                            <ul class="space-y-1 mt-2">
+                                <li>• Modèles de taux courts (CIR)</li>
+                                <li>• Volatilité stochastique (Heston)</li>
+                                <li>• Intensité de défaut</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Théorème de représentation des martingales -->
+            <div class="bg-white p-6 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-4 text-red-600">
+                    <i class="fas fa-balance-scale mr-2"></i>Martingales et Théorème de Représentation
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Définitions Fondamentales</h4>
+                        <div class="formula-box text-sm">
+                            <strong>Martingale :</strong><br>
+                            $E[M_t | \mathcal{F}_s] = M_s$ pour $s \leq t$<br><br>
+                            <strong>Sous-martingale :</strong> $E[M_t | \mathcal{F}_s] \geq M_s$<br>
+                            <strong>Sur-martingale :</strong> $E[M_t | \mathcal{F}_s] \leq M_s$
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Théorème de Représentation</h4>
+                        <div class="formula-box text-sm">
+                            Toute martingale $M_t$ peut s'écrire :<br>
+                            $M_t = M_0 + \int_0^t H_s dW_s$<br>
+                            pour un processus prévisible $H_t$
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Mesures de Probabilité -->
+        <section id="mesures" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Mesures de Probabilité et Théorie du Pricing</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-globe mr-2"></i>Mesure Physique (ℙ) - "Monde Réel"
+                    </h3>
+                    <p class="text-gray-700 mb-4">La mesure réelle reflète les probabilités observées sur le marché, intégrant les primes de risque et les préférences des investisseurs.</p>
+                    
+                    <div class="formula-box">
+                        <strong>Dynamique sous ℙ :</strong><br>
+                        $dS_t = \mu S_t dt + \sigma S_t dW_t^{\mathbb{P}}$<br>
+                        où $\mu$ = drift réel (> r en général)
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Usage :</strong> Analyse de risque, backtesting, prévisions</li>
+                        <li><strong>Caractéristique :</strong> Intègre la prime de risque $(\mu - r)$</li>
+                        <li><strong>Paramètres :</strong> Estimés à partir de données historiques</li>
+                    </ul>
+                    
+                    <div class="covenant-tracker mt-4">
+                        <strong>Exemple concret :</strong><br>
+                        Action CAC 40 : $\mu = 8\%$ (rendement espéré historique)<br>
+                        Taux sans risque : $r = 3\%$<br>
+                        Prime de risque : $5\%$ (compensation du risque)
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-balance-scale mr-2"></i>Mesure Risque-Neutre (ℚ) - "Monde Artificiel"
+                    </h3>
+                    <p class="text-gray-700 mb-4">Mesure artificielle où tous les actifs ont le même rendement espéré (taux sans risque). Fondamentale pour le pricing d'instruments dérivés.</p>
+                    
+                    <div class="formula-box">
+                        <strong>Dynamique sous ℚ :</strong><br>
+                        $dS_t = r S_t dt + \sigma S_t dW_t^{\mathbb{Q}}$<br>
+                        où tous les actifs "driftent" au taux $r$
+                    </div>
+                    
+                    <ul class="space-y-2 text-sm">
+                        <li><strong>Usage :</strong> Pricing d'instruments dérivés exclusivement</li>
+                        <li><strong>Avantage :</strong> Simplification drastique des calculs</li>
+                        <li><strong>Principe :</strong> Actualisation au taux sans risque uniquement</li>
+                    </ul>
+                    
+                    <div class="covenant-tracker mt-4">
+                        <strong>Formule fondamentale de pricing :</strong><br>
+                        $V_0 = e^{-rT} \times E^{\mathbb{Q}}[V_T]$<br>
+                        Prix = Valeur actualisée de l'espérance sous ℚ
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-exchange-alt mr-2"></i>Théorème de Girsanov et Changement de Mesure
+                </h3>
+                <p class="text-gray-700 mb-6">Le théorème de Girsanov permet le changement de mesure de probabilité, pierre angulaire pour passer de la mesure physique ℙ à la mesure risque-neutre ℚ.</p>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border border-blue-200 mb-6">
+                    <h4 class="font-semibold mb-4 text-blue-700">Construction du Changement de Mesure</h4>
+                    
+                    <div class="formula-box mb-4">
+                        <strong>Densité de Radon-Nikodym :</strong><br>
+                        $\frac{d\mathbb{Q}}{d\mathbb{P}} = \mathcal{E}(-\int_0^T \lambda_s dW_s^{\mathbb{P}}) = \exp\left(-\int_0^T \lambda_s dW_s^{\mathbb{P}} - \frac{1}{2}\int_0^T \lambda_s^2 ds\right)$
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-semibold mb-3">Prime de Risque de Marché</h5>
+                            <div class="formula-box text-sm">
+                                $\lambda_t = \frac{\mu_t - r}{\sigma_t}$ (Sharpe ratio instantané)<br>
+                                Mesure l'excès de rendement par unité de risque
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-3">Nouveau Mouvement Brownien</h5>
+                            <div class="formula-box text-sm">
+                                $W_t^{\mathbb{Q}} = W_t^{\mathbb{P}} + \int_0^t \lambda_s ds$<br>
+                                (Brownien sous la nouvelle mesure)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3 text-green-600">Sous ℙ (mesure physique)</h4>
+                        <div class="formula-box text-sm">
+                            $dS_t = \mu S_t dt + \sigma S_t dW_t^{\mathbb{P}}$<br>
+                            Rendement espéré : $\mu$ (intègre prime de risque)
+                        </div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <strong>Utilisation :</strong> Modélisation réaliste, prévisions, gestion de risque
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3 text-purple-600">Sous ℚ (mesure risque-neutre)</h4>
+                        <div class="formula-box text-sm">
+                            $dS_t = r S_t dt + \sigma S_t dW_t^{\mathbb{Q}}$<br>
+                            Rendement espéré : $r$ (taux sans risque)
+                        </div>
+                        <div class="text-sm text-gray-600 mt-2">
+                            <strong>Utilisation :</strong> Pricing d'options et dérivés exclusivement
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Théorèmes fondamentaux de la finance -->
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-landmark mr-2"></i>Théorèmes Fondamentaux de la Finance Mathématique
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+                        <h4 class="font-semibold mb-4 text-green-700">Premier Théorème Fondamental</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Absence d'arbitrage ⟺ Existence d'une mesure martingale équivalente</strong></p>
+                        <div class="formula-box text-xs">
+                            Un marché viable (sans arbitrage) si et seulement s'il existe une probabilité ℚ ~ ℙ telle que :<br>
+                            $\tilde{S}_t = \frac{S_t}{B_t}$ est une ℚ-martingale
+                        </div>
+                        <div class="text-xs text-gray-600 mt-3">
+                            <strong>Implication :</strong> Existence de prix "justes" pour tous les dérivés
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold mb-4 text-blue-700">Second Théorème Fondamental</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Marché complet ⟺ Unicité de la mesure martingale</strong></p>
+                        <div class="formula-box text-xs">
+                            Un marché sans arbitrage est complet si et seulement si la mesure martingale équivalente est unique
+                        </div>
+                        <div class="text-xs text-gray-600 mt-3">
+                            <strong>Implication :</strong> Tous les dérivés peuvent être parfaitement répliqués
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <h4 class="font-semibold mb-3 text-yellow-700">Conséquences Pratiques</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <strong>Marché Complet (ex: Black-Scholes) :</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• Prix unique pour chaque dérivé</li>
+                                <li>• Réplication parfaite possible</li>
+                                <li>• Hedging sans risque</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Marché Incomplet (ex: volatilité stochastique) :</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• Plage de prix "raisonnables"</li>
+                                <li>• Hedging imparfait</li>
+                                <li>• Risque résiduel non-hedgeable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Black-Scholes et Réplication -->
+        <section id="black-scholes" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Modèle Black-Scholes et Stratégies de Réplication</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-copy mr-2"></i>Construction du Portefeuille de Réplication
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-4">Principe de la Réplication Dynamique</h4>
+                        <p class="text-sm text-gray-700 mb-4">Le portefeuille réplicant est composé de Δ actions et d'un montant B en obligations, ajusté continuellement pour reproduire exactement les variations de l'option.</p>
+                        
+                        <div class="formula-box">
+                            <strong>Portefeuille Π :</strong><br>
+                            $\Pi_t = \Delta_t S_t + B_t$<br>
+                            <strong>Condition de réplication :</strong><br>
+                            $\Pi_t = V(t, S_t)$ (valeur de l'option)
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <strong>Contrainte d'auto-financement :</strong><br>
+                            $d\Pi_t = \Delta_t dS_t + B_t r dt$<br>
+                            (Pas d'apport/retrait de capital entre $t$ et $t+dt$)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Les "Grecques" : Sensibilités du Prix</h4>
+                        <p class="text-sm text-gray-700 mb-4">Les grecques mesurent la sensibilité du prix de l'option aux différents paramètres du marché.</p>
+                        
+                        <div class="space-y-3 text-sm">
+                            <div class="formula-box">
+                                <strong>Delta (Δ) :</strong> $\Delta = \frac{\partial V}{\partial S}$<br>
+                                Sensibilité au prix du sous-jacent
+                            </div>
+                            <div class="formula-box">
+                                <strong>Gamma (Γ) :</strong> $\Gamma = \frac{\partial^2 V}{\partial S^2} = \frac{\partial \Delta}{\partial S}$<br>
+                                Convexité (sensibilité du delta)
+                            </div>
+                            <div class="formula-box">
+                                <strong>Thêta (Θ) :</strong> $\Theta = \frac{\partial V}{\partial t}$<br>
+                                Décroissance temporelle (time decay)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg border border-indigo-200">
+                    <h4 class="font-semibold mb-4 text-indigo-700">Dérivation de l'EDP de Black-Scholes</h4>
+                    <p class="text-sm text-gray-700 mb-4">En utilisant le principe de réplication et le lemme d'Itô, on dérive l'équation aux dérivées partielles fondamentale.</p>
+                    
+                    <div class="formula-box mb-4">
+                        <strong>L'EDP de Black-Scholes :</strong><br>
+
+                        $$\frac{\partial V}{\partial t} + \frac{1}{2}\sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + rS\frac{\partial V}{\partial S} - rV = 0$$
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 text-sm">
+                        <div>
+                            <strong>Conditions aux limites (Call européen) :</strong>
+                            <ul class="mt-2 space-y-1">
+                                <li>• $V(S,T) = \max(S-K, 0)$ (payoff à maturité)</li>
+                                <li>• $V(0,t) = 0$ (valeur nulle si $S=0$)</li>
+                                <li>• $V(S,t) \sim S - Ke^{-r(T-t)}$ pour $S \to \infty$</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Solution analytique :</strong>
+                            <div class="formula-box text-xs mt-2">
+                                $C = S_0 N(d_1) - Ke^{-rT}N(d_2)$<br>
+                                $d_1 = \frac{\ln(S_0/K) + (r+\frac{\sigma^2}{2})T}{\sigma\sqrt{T}}$<br>
+                                $d_2 = d_1 - \sigma\sqrt{T}$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delta-hedging pratique -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-shield-alt mr-2"></i>Delta-Hedging en Pratique
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold mb-3 text-blue-700">Hedging Théorique</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Fréquence :</strong> Continue</li>
+                            <li><strong>Coûts :</strong> Nuls</li>
+                            <li><strong>Résultat :</strong> Hedging parfait</li>
+                            <li><strong>P&L :</strong> Déterministe (taux sans risque)</li>
+                        </ul>
+                        <div class="formula-box text-xs mt-4">
+                            $d\Pi = r\Pi dt$ (croissance au taux sans risque)
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+                        <h4 class="font-semibold mb-3 text-yellow-700">Hedging Pratique</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Fréquence :</strong> Discrète (quotidienne/intraday)</li>
+                            <li><strong>Coûts :</strong> Bid-ask, commissions</li>
+                            <li><strong>Résultat :</strong> Hedging imparfait</li>
+                            <li><strong>P&L :</strong> Stochastique</li>
+                        </ul>
+                        <div class="text-xs mt-4 text-gray-600">
+                            <strong>Erreur de hedging ∝ √(fréquence de rebalancement)</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                        <h4 class="font-semibold mb-3 text-green-700">Optimisation</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Seuils de rebalancement :</strong> |ΔS| > seuil</li>
+                            <li><strong>Hedging par bandes :</strong> Γ-neutral hedging</li>
+                            <li><strong>Coûts de transaction :</strong> Modèles d'impact</li>
+                        </ul>
+                        <div class="formula-box text-xs mt-4">
+                            Seuil optimal ∝ √(coût transaction / Γ)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Calculateur Delta-Hedging -->
+                <div class="mt-8 interactive-calculator">
+                    <h4 class="font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Calculateur Delta-Hedging
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Prix du sous-jacent (S)</label>
+                            <input type="number" id="spot" class="calculator-input w-full" value="100" step="0.1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Strike (K)</label>
+                            <input type="number" id="strike" class="calculator-input w-full" value="100" step="0.1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Volatilité (%)</label>
+                            <input type="number" id="volatility" class="calculator-input w-full" value="20" step="0.1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Temps à maturité (années)</label>
+                            <input type="number" id="maturity" class="calculator-input w-full" value="0.25" step="0.01">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Taux sans risque (%)</label>
+                            <input type="number" id="rate" class="calculator-input w-full" value="5" step="0.1">
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="calculateBS()" class="cta-button w-full">
+                                <i class="fas fa-chart-line"></i>Calculer
+                            </button>
+                        </div>
+                    </div>
+                    <div id="bsResults" class="mt-6 grid md:grid-cols-2 gap-4"></div>
+                </div>
+            </div>
+
+            <!-- Extensions du modèle -->
+            <div class="bg-white p-6 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-4 text-red-600">
+                    <i class="fas fa-expand mr-2"></i>Extensions et Limitations du Modèle Black-Scholes
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3 text-orange-600">Hypothèses du Modèle</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Volatilité constante</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Taux d'intérêt constant</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Pas de dividendes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Marchés complets et liquides</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Trading continu sans coûts</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3 text-red-600">Limitations Observées</h4>
+                        <ul class="text-sm space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">✗</span>
+                                <span><strong>Volatility Smile :</strong> σ varie avec K et T</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">✗</span>
+                                <span><strong>Sauts de Prix :</strong> Discontinuités de marché</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">✗</span>
+                                <span><strong>Coûts de Transaction :</strong> Impact sur la réplication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">✗</span>
+                                <span><strong>Liquidité :</strong> Bid-ask spreads variables</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2">✗</span>
+                                <span><strong>Queues Épaisses :</strong> Événements extrêmes sous-estimés</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Modèles de Pricing -->
+        <section id="modeles" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Modèles de Pricing Avancés et Extensions</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-percentage mr-2"></i>Modèles de Taux d'Intérêt
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong class="text-blue-600">Vasicek (1977) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $dr_t = \kappa(\theta - r_t)dt + \sigma dW_t$
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">Avantage: Solution analytique. Inconvénient: Taux négatifs possibles.</p>
+                        </div>
+                        <div>
+                            <strong class="text-green-600">Cox-Ingersoll-Ross (1985) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $dr_t = \kappa(\theta - r_t)dt + \sigma\sqrt{r_t} dW_t$
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">Avantage: Taux toujours positifs. Condition: $2\kappa\theta \geq \sigma^2$.</p>
+                        </div>
+                        <div>
+                            <strong class="text-purple-600">Hull-White (1990) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $dr_t = [\theta(t) - \alpha r_t]dt + \sigma dW_t$
+                            </div>
+                            <p class="text-xs text-gray-600 mt-1">Avantage: Calibration parfaite aux taux de marché.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-wave-square mr-2"></i>Volatilité Stochastique
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong class="text-indigo-600">Modèle de Heston (1993) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $dS_t = rS_t dt + \sqrt{v_t} S_t dW_1$<br>
+                                $dv_t = \kappa(\theta - v_t)dt + \epsilon\sqrt{v_t} dW_2$<br>
+                                $dW_1 dW_2 = \rho dt$
+                            </div>
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Avantages du modèle Heston :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• Reproduit le smile de volatilité</li>
+                                <li>• Corrélation vol/prix ($\rho < 0$ typique)</li>
+                                <li>• Formule semi-analytique disponible</li>
+                                <li>• Calibration robuste aux options vanilles</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-teal-600">SABR (2002) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $dF_t = \alpha_t F_t^\beta dW_1$<br>
+                                $d\alpha_t = \nu \alpha_t dW_2$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-bolt mr-2"></i>Modèles à Sauts
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong class="text-orange-600">Merton Jump-Diffusion (1976) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                $\frac{dS_t}{S_t} = \mu dt + \sigma dW_t + J dN_t$<br>
+                                où $N_t$ = processus de Poisson($\lambda$)
+                            </div>
+                        </div>
+                        <div class="covenant-tracker">
+                            <strong>Caractéristiques :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• Sauts log-normaux : $J \sim N(\mu_J, \sigma_J^2)$</li>
+                                <li>• Intensité constante : $\lambda$</li>
+                                <li>• Prix fermé pour options européennes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-red-600">Processus de Lévy :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                Variance Gamma, NIG, CGMY<br>
+                                Activité infinie de sauts petits
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparaison visuelle des modèles -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-line mr-2"></i>Analyse Comparative des Modèles de Pricing
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="chart-container">
+                            <canvas id="modelsChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Critères d'Évaluation</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span>Simplicité d'implémentation</span>
+                                <span class="text-gray-500">Facilité de codage et calibration</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Précision de pricing</span>
+                                <span class="text-gray-500">Adéquation aux prix de marché</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Facilité de calibration</span>
+                                <span class="text-gray-500">Stabilité des paramètres</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Vitesse de calcul</span>
+                                <span class="text-gray-500">Temps d'exécution</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Robustesse</span>
+                                <span class="text-gray-500">Stabilité face aux perturbations</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Flexibilité</span>
+                                <span class="text-gray-500">Adaptabilité à différents marchés</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implémentation pratique -->
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-code mr-2"></i>Implémentation Pratique : Modèle de Heston
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Code Python - Simulation Monte Carlo</h4>
+                        <div class="code-block python">
+import numpy as np
+from scipy.stats import norm
+
+def heston_mc_simulation(S0, V0, r, kappa, theta, sigma, rho, T, n_steps, n_paths):
+    """
+    Simulation Monte Carlo du modèle de Heston
+    """
+    dt = T / n_steps
+    
+    # Matrices pour stocker les trajectoires
+    S = np.zeros((n_paths, n_steps + 1))
+    V = np.zeros((n_paths, n_steps + 1))
+    
+    # Conditions initiales
+    S[:, 0] = S0
+    V[:, 0] = V0
+    
+    # Génération des nombres aléatoires corrélés
+    for i in range(1, n_steps + 1):
+        Z1 = np.random.normal(0, 1, n_paths)
+        Z2 = rho * Z1 + np.sqrt(1 - rho**2) * np.random.normal(0, 1, n_paths)
+        
+        # Schéma d'Euler pour la volatilité (avec troncature)
+        V[:, i] = np.maximum(
+            V[:, i-1] + kappa * (theta - V[:, i-1]) * dt + 
+            sigma * np.sqrt(V[:, i-1] * dt) * Z2,
+            0
+        )
+        
+        # Processus du prix
+        S[:, i] = S[:, i-1] * np.exp(
+            (r - 0.5 * V[:, i-1]) * dt + 
+            np.sqrt(V[:, i-1] * dt) * Z1
+        )
+    
+    return S, V
+
+# Exemple d'utilisation
+S_paths, V_paths = heston_mc_simulation(
+    S0=100, V0=0.04, r=0.05, 
+    kappa=2, theta=0.04, sigma=0.3, rho=-0.7,
+    T=1, n_steps=252, n_paths=10000
+)
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Calibration aux Prix de Marché</h4>
+                        <div class="code-block python">
+import scipy.optimize as opt
+
+def heston_call_price_fft(S0, K, T, r, kappa, theta, sigma, rho, V0):
+    """
+    Prix d'un call européen par FFT (Carr-Madan)
+    """
+    # Paramètres FFT
+    alpha = 1.25
+    eta = 0.25
+    n = 2**12
+    
+    # ... (implémentation FFT complète)
+    # Retourne le prix théorique
+    pass
+
+def calibration_objective(params, market_data):
+    """
+    Fonction objectif pour la calibration
+    """
+    kappa, theta, sigma, rho, V0 = params
+    
+    error = 0
+    for strike, maturity, market_price in market_data:
+        model_price = heston_call_price_fft(
+            S0, strike, maturity, r, kappa, theta, sigma, rho, V0
+        )
+        error += (model_price - market_price)**2
+    
+    return error
+
+# Calibration
+initial_params = [2.0, 0.04, 0.3, -0.7, 0.04]
+bounds = [(0.1, 10), (0.001, 1), (0.01, 2), (-0.99, 0.99), (0.001, 1)]
+
+optimal_params = opt.minimize(
+    calibration_objective, 
+    initial_params,
+    args=(market_data,),
+    bounds=bounds,
+    method='L-BFGS-B'
+)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Produits Structurés -->
+        <section id="produits-structures" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Produits Structurés et Instruments Complexes</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-layer-group mr-2"></i>Classification et Architecture des Produits Structurés
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-blue-600">Structure Générale</h4>
+                        <p class="text-sm text-gray-700 mb-4">Un produit structuré combine typiquement un investissement sécurisé (obligation zéro-coupon) et un investissement dérivé (options) pour offrir un profil rendement/risque spécifique.</p>
+                        
+                        <div class="formula-box">
+                            <strong>Décomposition générale :</strong><br>
+                            Produit Structuré = Obligation ZC + Portefeuille d'Options<br>
+                            Prix = $Ze^{-rT} + \sum_i w_i \times Prix_{Option_i}$
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <strong>Composants principaux :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• <strong>Protection du capital :</strong> 0% à 100%</li>
+                                <li>• <strong>Participation :</strong> Taux de participation aux gains</li>
+                                <li>• <strong>Barrière :</strong> Niveaux de déclenchement</li>
+                                <li>• <strong>Sous-jacent :</strong> Actions, indices, paniers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-green-600">Types de Structures</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-blue-50 p-3 rounded border border-blue-200">
+                                <strong>Certificats à Capital Garanti :</strong><br>
+                                Protection 100% + participation aux gains<br>
+                                <span class="text-xs text-gray-600">Exemple: 100% protection + 80% de participation</span>
+                            </div>
+                            <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                                <strong>Reverse Convertibles :</strong><br>
+                                Coupon élevé + risque de conversion<br>
+                                <span class="text-xs text-gray-600">Exemple: 8% coupon mais conversion si S < 70%</span>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded border border-green-200">
+                                <strong>Autocallables :</strong><br>
+                                Remboursement anticipé possible<br>
+                                <span class="text-xs text-gray-600">Exemple: +10%/an si S > 100% à dates fixes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Options Exotiques -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-gem mr-2"></i>Options Exotiques : Pricing et Applications
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-lg border border-purple-200">
+                        <h4 class="font-semibold mb-4 text-purple-700">Options à Barrière</h4>
+                        <p class="text-sm text-gray-700 mb-3">Le payoff dépend du fait que le sous-jacent ait franchi ou non une barrière pendant la vie de l'option.</p>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="formula-box">
+                                <strong>Knock-Out (Down-and-Out Call) :</strong><br>
+                                Payoff = $\max(S_T - K, 0) \times \mathbf{1}_{\{S_t > B, \forall t \in [0,T]\}}$
+                            </div>
+                            <div class="formula-box">
+                                <strong>Knock-In (Up-and-In Put) :</strong><br>
+                                Payoff = $\max(K - S_T, 0) \times \mathbf{1}_{\{\exists t: S_t > B\}}$
+                            </div>
+                        </div>
+                        
+                        <div class="covenant-tracker text-xs">
+                            <strong>Pricing :</strong> Méthode de réflexion, Monte Carlo avec surveillance continue
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+                        <h4 class="font-semibold mb-4 text-green-700">Options Asiatiques</h4>
+                        <p class="text-sm text-gray-700 mb-3">Le payoff dépend de la moyenne du prix du sous-jacent sur une période donnée.</p>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="formula-box">
+                                <strong>Moyenne Arithmétique :</strong><br>
+                                $\bar{S} = \frac{1}{n}\sum_{i=1}^n S_{t_i}$<br>
+                                Payoff = $\max(\bar{S} - K, 0)$
+                            </div>
+                            <div class="formula-box">
+                                <strong>Moyenne Géométrique :</strong><br>
+                                $\bar{S}_{geo} = \left(\prod_{i=1}^n S_{t_i}\right)^{1/n}$<br>
+                                Prix fermé disponible
+                            </div>
+                        </div>
+                        
+                        <div class="covenant-tracker text-xs">
+                            <strong>Avantage :</strong> Volatilité réduite, protection contre manipulation
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg border border-orange-200">
+                        <h4 class="font-semibold mb-4 text-orange-700">Options Lookback</h4>
+                        <p class="text-sm text-gray-700 mb-3">Permettent de "regarder en arrière" et de choisir le prix le plus favorable sur toute la période.</p>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="formula-box">
+                                <strong>Fixed Lookback Call :</strong><br>
+                                Payoff = $\max(S_{max} - K, 0)$<br>
+                                où $S_{max} = \max_{0 \leq t \leq T} S_t$
+                            </div>
+                            <div class="formula-box">
+                                <strong>Floating Lookback Call :</strong><br>
+                                Payoff = $S_T - S_{min}$<br>
+                                où $S_{min} = \min_{0 \leq t \leq T} S_t$
+                            </div>
+                        </div>
+                        
+                        <div class="covenant-tracker text-xs">
+                            <strong>Prix :</strong> Très élevé, formules fermées complexes
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exemple concret de structuration -->
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-tools mr-2"></i>Exemple Concret : Structuration d'un Autocallable
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-blue-600">Caractéristiques du Produit</h4>
+                        <div class="covenant-tracker mb-4">
+                            <strong>Autocallable 3 ans sur CAC 40 :</strong>
+                            <ul class="text-sm mt-2 space-y-1">
+                                <li>• <strong>Sous-jacent :</strong> Indice CAC 40</li>
+                                <li>• <strong>Niveau initial :</strong> S₀ = 7000 points</li>
+                                <li>• <strong>Maturité :</strong> 3 ans</li>
+                                <li>• <strong>Observation :</strong> Trimestrielle</li>
+                                <li>• <strong>Coupon :</strong> 2.5% par trimestre</li>
+                                <li>• <strong>Barrière autocall :</strong> 100% du niveau initial</li>
+                                <li>• <strong>Barrière de protection :</strong> 65% du niveau initial</li>
+                            </ul>
+                        </div>
+                        
+                        <h5 class="font-semibold mb-3">Mécanisme de Remboursement</h5>
+                        <div class="space-y-2 text-sm">
+                            <div class="bg-green-50 p-3 rounded border border-green-200">
+                                <strong>Autocall (si S ≥ 100%) :</strong><br>
+                                Remboursement = 100% + Coupons accumulés
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded border border-blue-200">
+                                <strong>À maturité (si jamais autocall) :</strong><br>
+                                • Si S_final ≥ 65% : 100% + tous les coupons<br>
+                                • Si S_final < 65% : 100% × (S_final/S₀)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-red-600">Décomposition et Pricing</h4>
+                        <div class="formula-box mb-4">
+                            <strong>Décomposition en instruments vanilles :</strong><br>
+                            Autocallable = ZC + ∑ Digital Calls (autocall)<br>
+                            + ∑ Coupons + Put Protection
+                        </div>
+                        
+                        <h5 class="font-semibold mb-3">Pricing par Monte Carlo</h5>
+                        <div class="code-block python text-xs">
+def price_autocallable_mc(S0, r, sigma, barriers, coupon_dates, n_paths=100000):
+    """
+    Prix d'un autocallable par Monte Carlo
+    """
+    T = 3.0  # 3 ans
+    dt = 1/252  # pas quotidien
+    n_steps = int(T / dt)
+    
+    payoffs = []
+    
+    for _ in range(n_paths):
+        # Simulation d'une trajectoire
+        S = [S0]
+        for i in range(n_steps):
+            S_next = S[-1] * np.exp((r - 0.5*sigma**2)*dt + sigma*np.sqrt(dt)*np.random.normal())
+            S.append(S_next)
+        
+        # Vérification autocall aux dates d'observation
+        autocalled = False
+        payoff = 0
+        
+        for i, date in enumerate(coupon_dates):
+            idx = int(date * 252)
+            if S[idx] >= S0:  # Barrière 100%
+                payoff = 1.0 + (i+1) * 0.025  # Capital + coupons accumulés
+                autocalled = True
+                break
+        
+        if not autocalled:
+            # Payoff à maturité
+            S_final = S[-1]
+            if S_final >= 0.65 * S0:  # Au-dessus de la barrière de protection
+                payoff = 1.0 + len(coupon_dates) * 0.025  # Capital + tous les coupons
+            else:
+                payoff = S_final / S0  # Perte de capital
+        
+        payoffs.append(np.exp(-r*T) * payoff)
+    
+    return np.mean(payoffs), np.std(payoffs) / np.sqrt(n_paths)
+
+# Exemple
+prix, erreur = price_autocallable_mc(7000, 0.03, 0.20, [1.0, 0.65], [0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0])
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Risk Management -->
+        <section id="risk-management" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Risk Management Quantitatif Avancé</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-user-shield mr-2"></i>Risque de Contrepartie et CVA
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-4">Le risque de contrepartie mesure la perte potentielle en cas de défaut d'une contrepartie. Le CVA (Credit Valuation Adjustment) quantifie cette perte espérée.</p>
+                    
+                    <div class="formula-box mb-4">
+                        <strong>CVA (Credit Valuation Adjustment) :</strong><br>
+                        $CVA = -LGD \times \sum_{i=1}^n PD(t_{i-1}, t_i) \times EE(t_i) \times DF(t_i)$
+                    </div>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div class="covenant-tracker">
+                            <strong>Composants du CVA :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• <strong>PD :</strong> Probabilité de défaut marginale</li>
+                                <li>• <strong>LGD :</strong> Loss Given Default (typiquement 60%)</li>
+                                <li>• <strong>EE :</strong> Expected Exposure (exposition positive espérée)</li>
+                                <li>• <strong>DF :</strong> Discount Factor (facteur d'actualisation)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-3 rounded border border-red-200">
+                            <strong class="text-red-600">Extensions modernes :</strong>
+                            <ul class="text-xs mt-1 space-y-1">
+                                <li>• <strong>DVA :</strong> Debit Valuation Adjustment (propre risque)</li>
+                                <li>• <strong>FVA :</strong> Funding Valuation Adjustment (coût de financement)</li>
+                                <li>• <strong>MVA :</strong> Margin Valuation Adjustment (coût du collatéral)</li>
+                                <li>• <strong>KVA :</strong> Capital Valuation Adjustment (coût du capital)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Mesures de Risque Cohérentes
+                    </h3>
+                    <p class="text-sm text-gray-700 mb-4">Les mesures de risque quantifient l'exposition aux pertes. L'Expected Shortfall est devenu la référence réglementaire post-crise 2008.</p>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div class="formula-box">
+                            <strong>Value-at-Risk (VaR) :</strong><br>
+                            $P(L > VaR_\alpha) = 1 - \alpha$<br>
+                            Quantile de la distribution des pertes
+                        </div>
+                        
+                        <div class="formula-box">
+                            <strong>Expected Shortfall (ES) :</strong><br>
+                            $ES_\alpha = E[L | L > VaR_\alpha]$<br>
+                            Perte moyenne conditionnelle au dépassement du VaR
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <strong>Avantages de l'ES vs VaR :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• Mesure cohérente (sous-additivité)</li>
+                                <li>• Sensible aux queues de distribution</li>
+                                <li>• Encourage la diversification</li>
+                                <li>• Requis par les régulateurs (FRTB)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modèles de VaR -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-area mr-2"></i>Méthodologies VaR et Backtesting
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold mb-4 text-blue-700">VaR Historique</h4>
+                        <p class="text-xs text-gray-700 mb-3">Utilise directement les données historiques pour estimer la distribution des P&L.</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Méthode :</strong><br>
+                            1. Calculer les P&L historiques<br>
+                            2. Ordonner par ordre croissant<br>
+                            3. VaR = quantile empirique α
+                        </div>
+                        
+                        <div class="text-xs space-y-1 mt-3">
+                            <div class="text-green-600"><strong>+</strong> Pas d'hypothèse sur la distribution</div>
+                            <div class="text-green-600"><strong>+</strong> Capture les corrélations non-linéaires</div>
+                            <div class="text-red-600"><strong>-</strong> Dépend de l'historique disponible</div>
+                            <div class="text-red-600"><strong>-</strong> Réactivité limitée aux nouveaux risques</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg border border-green-200">
+                        <h4 class="font-semibold mb-4 text-green-700">VaR Paramétrique</h4>
+                        <p class="text-xs text-gray-700 mb-3">Suppose une distribution normale (ou t de Student) des rendements de portefeuille.</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Formule (normale) :</strong><br>
+                            $VaR_\alpha = \mu + \sigma \Phi^{-1}(\alpha)$<br>
+                            où $\Phi^{-1}$ = quantile normal inverse
+                        </div>
+                        
+                        <div class="text-xs space-y-1 mt-3">
+                            <div class="text-green-600"><strong>+</strong> Calcul très rapide</div>
+                            <div class="text-green-600"><strong>+</strong> Facile à interpréter et gérer</div>
+                            <div class="text-red-600"><strong>-</strong> Hypothèse de normalité restrictive</div>
+                            <div class="text-red-600"><strong>-</strong> Sous-estime les risques extrêmes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg border border-purple-200">
+                        <h4 class="font-semibold mb-4 text-purple-700">VaR Monte Carlo</h4>
+                        <p class="text-xs text-gray-700 mb-3">Simule un grand nombre de scénarios pour approximer la distribution complète des P&L.</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Algorithme :</strong><br>
+                            1. Simuler N scénarios de facteurs de risque<br>
+                            2. Calculer P&L pour chaque scénario<br>
+                            3. VaR = quantile empirique des P&L simulés
+                        </div>
+                        
+                        <div class="text-xs space-y-1 mt-3">
+                            <div class="text-green-600"><strong>+</strong> Très flexible (toute distribution)</div>
+                            <div class="text-green-600"><strong>+</strong> Capture corrélations complexes</div>
+                            <div class="text-red-600"><strong>-</strong> Temps de calcul élevé</div>
+                            <div class="text-red-600"><strong>-</strong> Erreur de simulation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backtesting -->
+                <div class="bg-gradient-to-r from-gray-50 to-blue-50 p-6 rounded-lg border border-gray-200">
+                    <h4 class="font-semibold mb-4 text-gray-700">Tests de Validation et Backtesting</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h5 class="font-semibold mb-3 text-blue-600">Test de Kupiec (Unconditional Coverage)</h5>
+                            <div class="formula-box text-sm">
+                                $LR_{UC} = -2\ln\left[\frac{(1-p)^{T-N}p^N}{(1-\hat{p})^{T-N}\hat{p}^N}\right] \sim \chi^2(1)$<br>
+                                où $\hat{p} = N/T$ (fréquence observée)
+                            </div>
+                            <p class="text-xs text-gray-600 mt-2">Test si le nombre de violations correspond au niveau de confiance théorique.</p>
+                        </div>
+                        
+                        <div>
+                            <h5 class="font-semibold mb-3 text-green-600">Test de Christoffersen (Independence)</h5>
+                            <div class="formula-box text-sm">
+                                Test l'indépendance des violations dans le temps<br>
+                                $LR_{IND} = -2\ln\left[\frac{\pi_0^{n_{00}}\pi_1^{n_{01}}\pi_0^{n_{10}}\pi_1^{n_{11}}}{\pi_{01}^{n_{01}}(1-\pi_{01})^{n_{00}}\pi_{11}^{n_{11}}(1-\pi_{11})^{n_{10}}}\right]$
+                            </div>
+                            <p class="text-xs text-gray-600 mt-2">Les violations ne doivent pas être clustérisées (indépendance conditionnelle).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stress Testing -->
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Stress Testing et Scénarios Extrêmes
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-orange-600">Types de Stress Tests</h4>
+                        <div class="space-y-4 text-sm">
+                            <div class="covenant-tracker">
+                                <strong>Stress Tests Historiques :</strong>
+                                <ul class="text-xs mt-2 space-y-1">
+                                    <li>• Krach d'octobre 1987 (-22% en un jour)</li>
+                                    <li>• Crise LTCM 1998 (écartement des spreads)</li>
+                                    <li>• Dot-com crash 2000-2002</li>
+                                    <li>• Crise financière 2008 (credit crunch)</li>
+                                    <li>• COVID-19 mars 2020 (volatilité extrême)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="covenant-tracker">
+                                <strong>Stress Tests Hypothétiques :</strong>
+                                <ul class="text-xs mt-2 space-y-1">
+                                    <li>• Chocs de taux : +/- 200 bp parallèle</li>
+                                    <li>• Chocs de volatilité : x2 ou /2</li>
+                                    <li>• Chocs de crédit : élargissement spreads</li>
+                                    <li>• Chocs de change : +/- 20% sur devises majeures</li>
+                                    <li>• Combinaisons de chocs multiples</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-purple-600">Reverse Stress Testing</h4>
+                        <p class="text-sm text-gray-700 mb-4">Identification des scénarios qui conduiraient à des pertes inacceptables pour l'institution.</p>
+                        
+                        <div class="formula-box mb-4">
+                            <strong>Méthodologie :</strong><br>
+                            1. Définir le seuil de perte critique<br>
+                            2. Rechercher les combinaisons de facteurs de risque<br>
+                            3. Évaluer la plausibilité des scénarios<br>
+                            4. Mettre en place des actions préventives
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded border border-yellow-200">
+                            <h5 class="font-semibold mb-2 text-yellow-700">Exemple pratique :</h5>
+                            <p class="text-xs text-gray-700">
+                                <strong>Question :</strong> Quels mouvements de marché conduiraient à une perte > 100M€ ?<br>
+                                <strong>Réponse :</strong> Baisse simultanée des actions européennes (-15%) + hausse EUR/USD (+8%) + élargissement spreads de crédit (+50bp)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Trading Algorithmique -->
+        <section id="trading-algo" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Trading Algorithmique et Exécution Optimale</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-robot mr-2"></i>Fondamentaux du Trading Algorithmique
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-6">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-blue-600">Microstructure des Marchés</h4>
+                        <p class="text-sm text-gray-700 mb-4">La microstructure étudie la formation des prix à très court terme et l'impact des ordres sur les cours.</p>
+                        
+                        <div class="formula-box mb-4">
+                            <strong>Modèle de Kyle (1985) :</strong><br>
+                            $p_{t+1} = p_t + \lambda \cdot (x_t + u_t)$<br>
+                            où $\lambda$ = coefficient d'impact, $x_t$ = ordre informé, $u_t$ = bruit
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <strong>Concepts clés :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• <strong>Bid-Ask Spread :</strong> Coût de liquidité immédiate</li>
+                                <li>• <strong>Market Impact :</strong> Effet des ordres sur les prix</li>
+                                <li>• <strong>Price Discovery :</strong> Processus de formation des prix</li>
+                                <li>• <strong>Order Flow :</strong> Flux d'ordres entrants</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-green-600">Coûts de Transaction</h4>
+                        <p class="text-sm text-gray-700 mb-4">Décomposition des coûts totaux de transaction en composantes mesurables et optimisables.</p>
+                        
+                        <div class="formula-box mb-4">
+                            <strong>Décomposition des coûts :</strong><br>
+                            Coût Total = Spread + Impact + Timing + Opportunité
+                        </div>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="bg-red-50 p-2 rounded border border-red-200">
+                                <strong>Spread Cost :</strong> Différence bid-ask au moment de l'exécution
+                            </div>
+                            <div class="bg-yellow-50 p-2 rounded border border-yellow-200">
+                                <strong>Market Impact :</strong> Mouvement de prix causé par l'ordre
+                            </div>
+                            <div class="bg-blue-50 p-2 rounded border border-blue-200">
+                                <strong>Timing Risk :</strong> Écart entre prix de décision et prix d'exécution
+                            </div>
+                            <div class="bg-purple-50 p-2 rounded border border-purple-200">
+                                <strong>Opportunity Cost :</strong> Coût des ordres non exécutés
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Algorithmes d'exécution -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-cogs mr-2"></i>Algorithmes d'Exécution Classiques
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+                        <h4 class="font-semibold mb-4 text-blue-700">TWAP (Time-Weighted Average Price)</h4>
+                        <p class="text-sm text-gray-700 mb-3">Répartit l'ordre de manière uniforme dans le temps pour minimiser l'impact de marché.</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Stratégie :</strong><br>
+                            $Q_i = \frac{Q_{total}}{n}$ pour $i = 1, ..., n$<br>
+                            Exécution uniforme sur n tranches temporelles
+                        </div>
+                        
+                        <div class="covenant-tracker text-xs">
+                            <strong>Avantages :</strong>
+                            <ul class="mt-1 space-y-1">
+                                <li>• Simple à implémenter</li>
+                                <li>• Prévisible</li>
+                                <li>• Réduit l'impact de marché</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-xs text-gray-600 mt-3">
+                            <strong>Usage :</strong> Ordres de grande taille, marchés peu liquides
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+                        <h4 class="font-semibold mb-4 text-green-700">VWAP (Volume-Weighted Average Price)</h4>
+                        <p class="text-sm text-gray-700 mb-3">Ajuste le rythme d'exécution en fonction du profil de volume historique intraday.</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Répartition :</strong><br>
+                            $Q_i = Q_{total} \times \frac{V_i^{hist}}{\sum_j V_j^{hist}}$<br>
+                            où $V_i^{hist}$ = volume historique moyen à l'heure i
+                        </div>
+                        
+                        <div class="covenant-tracker text-xs">
+                            <strong>Profil typique (actions européennes) :</strong>
+                            <ul class="mt-1 space-y-1">
+                                <li>• 09h-10h : 25% du volume</li>
+                                <li>• 10h-16h : 50% du volume</li>
+                                <li>• 16h-17h30 : 25% du volume</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-xs text-gray-600 mt-3">
+                            <strong>Usage :</strong> Benchmark de performance standard
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
+                        <h4 class="font-semibold mb-4 text-purple-700">Implementation Shortfall (IS)</h4>
+                        <p class="text-sm text-gray-700 mb-3">Optimise le trade-off entre impact de marché et risque de timing (volatilité).</p>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Fonction objectif (Almgren-Chriss) :</strong><br>
+                            $E[C] + \frac{\lambda}{2} Var[C]$<br>
+                            où $C$ = coût total, $\lambda$ = aversion au risque
+                        </div>
+                        
+                        <div class="formula-box text-xs">
+                            <strong>Solution optimale :</strong><br>
+                            $x_k = x_{k-1} - \frac{\sinh(\kappa(T-t_k))}{\sinh(\kappa T)} \times Q$<br>
+                            avec $\kappa = \sqrt{\lambda\sigma^2/\eta}$
+                        </div>
+                        
+                        <div class="text-xs text-gray-600 mt-3">
+                            <strong>Résultat :</strong> Exécution aggressive au début, puis ralentissement progressif
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stratégies de trading quantitatives -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-line mr-2"></i>Stratégies Quantitatives Avancées
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-indigo-600">Mean Reversion (Retour à la Moyenne)</h4>
+                        <p class="text-sm text-gray-700 mb-4">Exploite la tendance des prix à revenir vers leur moyenne historique après des écarts significatifs.</p>
+                        
+                        <div class="formula-box mb-4">
+                            <strong>Modèle d'Ornstein-Uhlenbeck :</strong><br>
+                            $dX_t = -\theta(X_t - \mu)dt + \sigma dW_t$<br>
+                            Signal de trading : $f(X_t - \mu)$
+                        </div>
+                        
+                        <div class="covenant-tracker">
+                            <strong>Indicateurs techniques :</strong>
+                            <ul class="text-xs mt-2 space-y-1">
+                                <li>• <strong>RSI :</strong> Relative Strength Index</li>
+                                <li>• <strong>Bollinger Bands :</strong> Bandes ± 2σ autour de MA</li>
+                                <li>• <strong>Z-score :</strong> $(P_t - \bar{P})/\sigma_P$</li>
+                                <li>• <strong>Half-life :</strong> Temps de retour à la moyenne</li>
+                            </ul>
+                        </div>
+                        
+                        <h5 class="font-semibold mb-2 mt-4 text-sm">Implémentation Python</h5>
+                        <div class="code-block python text-xs">
+import numpy as np
+import pandas as pd
+
+def ou_mean_reversion_signal(prices, window=20, threshold=2.0):
+    """
+    Signal de mean reversion basé sur le processus OU
+    """
+    # Calcul du z-score mobile
+    rolling_mean = prices.rolling(window).mean()
+    rolling_std = prices.rolling(window).std()
+    z_score = (prices - rolling_mean) / rolling_std
+    
+    # Signaux de trading
+    signal = np.where(z_score > threshold, -1,  # Vente (prix trop haut)
+             np.where(z_score < -threshold, 1,  # Achat (prix trop bas)
+                      0))  # Pas de position
+    
+    return signal, z_score
+
+# Test de stationnarité (ADF)
+from statsmodels.tsa.stattools import adfuller
+
+def test_stationarity(timeseries):
+    result = adfuller(timeseries.dropna())
+    return result[1] < 0.05  # p-value < 5% => stationnaire
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-orange
