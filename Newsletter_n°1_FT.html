@@ -3,335 +3,321 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Tutoring Newsletter - Édition #1</title>
+    <title>Finance Tutoring Newsletter - Édition #1 - 29 Août 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-        }
-        .newsletter-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-        }
-        .section-divider {
-            height: 3px;
-            background: linear-gradient(90deg, #dc2626, #000000);
-            margin: 2rem 0;
-        }
-        .article-header {
-            border-left: 4px solid #dc2626;
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .highlight-box {
-            background: linear-gradient(135deg, #fee2e2, #fef2f2);
-            border: 2px solid #dc2626;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .interview-section {
-            background: linear-gradient(135deg, #f9fafb, #ffffff);
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        .quote-style {
-            font-style: italic;
-            border-left: 3px solid #dc2626;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: #374151;
-        }
-        @media print {
-            body { margin: 0; }
-            .newsletter-container { max-width: none; }
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .newsletter-container { max-width: 800px; margin: 0 auto; background: white; }
+        .red-accent { color: #DC2626; }
+        .red-bg { background-color: #DC2626; }
+        .black-text { color: #000000; }
+        .section-divider { height: 2px; background: linear-gradient(90deg, #DC2626 0%, #000000 50%, #DC2626 100%); }
     </style>
 </head>
 <body class="bg-gray-50">
-    <div class="newsletter-container">
+    <div class="newsletter-container py-8 px-6">
+        
         <!-- Header avec Logo -->
-        <header class="text-center py-8 bg-white">
-            <img src="https://i.imgur.com/bpq2VrC.png" alt="Finance Tutoring Newsletter Logo" class="mx-auto mb-4 max-h-24 object-contain">
-            <h1 class="text-4xl font-bold text-black mb-2">Finance Tutoring Newsletter</h1>
-            <p class="text-red-600 text-lg font-semibold">Édition #1 - Septembre 2025</p>
-            <p class="text-gray-600 mt-2">Votre guide mensuel vers l'excellence financière</p>
+        <header class="text-center mb-8">
+            <img src="https://i.imgur.com/bpq2VrC.png" alt="Finance Tutoring Newsletter Logo" class="mx-auto mb-4 max-h-24">
+            <h1 class="text-4xl font-bold black-text mb-2">Finance Tutoring Newsletter</h1>
+            <div class="text-xl red-accent font-semibold">Édition #1 - 29 Août 2025</div>
+            <div class="section-divider mt-4 mb-6"></div>
         </header>
 
-        <div class="section-divider"></div>
-
         <!-- Introduction -->
-        <section class="px-6 py-4 bg-white">
-            <div class="article-header">
-                <h2 class="text-2xl font-bold text-black">
-                    <i class="fas fa-rocket text-red-600 mr-2"></i>
-                    Bienvenue dans votre parcours vers l'excellence financière
+        <section class="mb-12">
+            <div class="bg-black text-white p-6 rounded-lg">
+                <h2 class="text-2xl font-bold mb-4 flex items-center">
+                    <i class="fas fa-graduation-cap mr-3 red-accent"></i>
+                    Bienvenue dans votre Newsletter de Formation Financière
                 </h2>
-            </div>
-            
-            <p class="text-gray-700 mb-4">
-                Chers futurs professionnels de la finance, bienvenue dans la première édition de la Finance Tutoring Newsletter ! Cette publication mensuelle a été conçue spécialement pour vous accompagner dans votre préparation aux certifications les plus prestigieuses du secteur financier : <strong class="text-red-600">CFA, FRM et CAIA</strong>.
-            </p>
-            
-            <p class="text-gray-700 mb-4">
-                Chaque mois, vous découvrirez des conseils d'experts pour optimiser vos révisions, des analyses approfondies des marchés financiers (dette publique, private equity, dérivés), et des interviews exclusives avec des professionnels reconnus : quants, traders, risk managers, et gestionnaires de portefeuille.
-            </p>
-            
-            <div class="highlight-box">
-                <h3 class="font-semibold text-black mb-2">
-                    <i class="fas fa-target text-red-600 mr-2"></i>
-                    Notre mission
-                </h3>
-                <p class="text-gray-700">
-                    Transformer votre préparation aux certifications financières en un parcours structuré, efficace et motivant, tout en développant votre compréhension pratique des marchés financiers contemporains.
+                <p class="text-lg leading-relaxed mb-4">
+                    Chers futurs professionnels de la finance, nous sommes ravis de vous présenter cette première édition de notre newsletter mensuelle dédiée à votre réussite dans les certifications financières les plus prestigieuses.
+                </p>
+                <p class="leading-relaxed mb-4">
+                    Notre mission est de vous accompagner dans votre parcours vers l'excellence financière en vous proposant :
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-gray-200">
+                    <li><strong class="red-accent">Conseils d'experts</strong> pour réussir vos certifications CFA, FRM et CAIA</li>
+                    <li><strong class="red-accent">Analyses de marché approfondies</strong> sur la dette publique, le private equity et autres secteurs clés</li>
+                    <li><strong class="red-accent">Interviews exclusives</strong> avec des professionnels de la finance : quants, traders, risk managers</li>
+                    <li><strong class="red-accent">Décryptages pédagogiques</strong> des concepts financiers essentiels</li>
+                </ul>
+                <p class="mt-4 text-gray-200">
+                    Chaque mois, nous vous livrons les clés pour transformer vos ambitions en succès concrets sur les marchés financiers internationaux.
                 </p>
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
-        <!-- Article Actualités -->
-        <section class="px-6 py-4 bg-white">
-            <div class="article-header">
-                <h2 class="text-2xl font-bold text-black">
-                    <i class="fas fa-newspaper text-red-600 mr-2"></i>
-                    Actualités Financières : L'évolution des taux directeurs en 2024
+        <!-- Article Actualités Générales -->
+        <section class="mb-12">
+            <div class="border-l-4 border-red-600 pl-6">
+                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
+                    <i class="fas fa-newspaper mr-3 red-accent"></i>
+                    Actualités Financières
                 </h2>
-            </div>
-            
-            <p class="text-gray-700 mb-4">
-                Les banques centrales mondiales naviguent actuellement dans un environnement économique complexe, marqué par des pressions inflationnistes persistantes et des signes de ralentissement économique. La Federal Reserve américaine a maintenu son approche prudente avec une politique de taux restrictive, tandis que la BCE européenne ajuste graduellement sa stratégie face aux spécificités de la zone euro.
-            </p>
-            
-            <p class="text-gray-700 mb-4">
-                Cette divergence de politiques monétaires crée des opportunités d'arbitrage significatives sur les marchés de changes et obligataires. Les candidats aux certifications CFA et FRM doivent particulièrement comprendre l'impact de ces décisions sur la valorisation des actifs et la gestion des risques de taux d'intérêt.
-            </p>
-            
-            <div class="bg-gray-100 p-4 rounded-lg mb-4">
-                <h4 class="font-semibold text-black mb-2">
-                    <i class="fas fa-lightbulb text-red-600 mr-1"></i>
-                    Point clé pour vos examens
-                </h4>
-                <p class="text-gray-700 text-sm">
-                    Maîtrisez les concepts de duration, de convexité et d'immunisation de portefeuille - ces notions sont essentielles pour comprendre l'impact des variations de taux sur les portefeuilles obligataires.
+                <h3 class="text-2xl font-semibold red-accent mb-4">La Fed Ouvre la Voie aux Baisses de Taux : Perspectives pour Septembre 2025</h3>
+                
+                <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-chart-line red-accent mr-2"></i>
+                        <span class="font-semibold black-text">Points Clés du 29 Août 2025</span>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Taux directeur maintenu à 4,25%-4,50% pour la cinquième réunion consécutive</li>
+                        <li>• Christopher Waller prévoit des baisses sur les 3-6 prochains mois</li>
+                        <li>• Probabilité de 84% d'une baisse de 25 points de base en septembre</li>
+                    </ul>
+                </div>
+
+                <p class="text-lg leading-relaxed mb-4 black-text">
+                    Le paysage monétaire américain connaît un tournant décisif. Lors de ses déclarations du 28 août, le gouverneur de la Réserve fédérale <strong>Christopher Waller</strong> a clairement signalé l'orientation dovish de la banque centrale, annonçant des perspectives de baisses de taux dès septembre 2025.
+                </p>
+
+                <p class="leading-relaxed mb-4 text-gray-700">
+                    Cette évolution marque un contraste saisissant avec la politique restrictive maintenue depuis plus d'un an. Les marchés financiers, qui anticipaient déjà un assouplissement monétaire, ont réagi positivement à ces déclarations, avec une probabilité de baisse désormais évaluée à 84% par les traders.
+                </p>
+
+                <div class="bg-red-50 border border-red-200 p-4 rounded-lg mb-4">
+                    <h4 class="font-bold red-accent mb-2">Implications pour les Candidats CFA et FRM :</h4>
+                    <p class="text-gray-700">
+                        Cette période de transition monétaire représente un cas d'école parfait pour comprendre l'impact des politiques monétaires sur les valorisations d'actifs, un thème central des examens CFA Level II et III, ainsi que des certifications FRM.
+                    </p>
+                </div>
+
+                <p class="leading-relaxed text-gray-700">
+                    L'analyse de ce retournement de cycle illustre parfaitement les concepts de <em>duration risk</em>, de <em>yield curve dynamics</em> et d'<em>interest rate sensitivity</em> que vous devez maîtriser pour vos certifications. Les obligations d'entreprise, notamment, présentent des opportunités d'arbitrage intéressantes dans ce contexte de baisse anticipée des taux.
                 </p>
             </div>
-            
-            <p class="text-gray-700">
-                L'année 2024 restera probablement dans les annales comme une période charnière où les banquiers centraux ont dû concilier stabilité des prix et soutien à la croissance économique, offrant de nombreux cas d'étude concrets pour les futurs analystes financiers.
-            </p>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="section-divider mb-12"></div>
 
-        <!-- Asset Class Spotlight -->
-        <section class="px-6 py-4 bg-white">
-            <div class="article-header">
-                <h2 class="text-2xl font-bold text-black">
-                    <i class="fas fa-chart-line text-red-600 mr-2"></i>
-                    Focus Asset Class : Les Real Estate Investment Trusts (REITs)
+        <!-- Spotlight Classe d'Actifs -->
+        <section class="mb-12">
+            <div class="border-l-4 border-black pl-6">
+                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
+                    <i class="fas fa-chart-pie mr-3 red-accent"></i>
+                    Spotlight : Obligations d'Entreprise
                 </h2>
-            </div>
-            
-            <h3 class="text-xl font-semibold text-black mb-3">Qu'est-ce qu'un REIT ?</h3>
-            <p class="text-gray-700 mb-4">
-                Les Real Estate Investment Trusts (REITs) sont des sociétés qui possèdent, exploitent ou financent des biens immobiliers générateurs de revenus. Créés pour permettre aux investisseurs individuels d'accéder aux marchés immobiliers commerciaux, les REITs offrent une liquidité et une diversification impossibles avec l'immobilier direct.
-            </p>
-            
-            <h3 class="text-xl font-semibold text-black mb-3">Caractéristiques clés</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <h4 class="font-semibold text-red-600 mb-2">
-                        <i class="fas fa-percentage mr-1"></i>
-                        Distribution obligatoire
-                    </h4>
-                    <p class="text-gray-700 text-sm">90% des revenus imposables doivent être redistribués aux actionnaires sous forme de dividendes</p>
+                <h3 class="text-2xl font-semibold red-accent mb-4">L'Opportunité du Cycle : Corporate Bonds en Période de Transition Monétaire</h3>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-black text-white p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-3 red-accent">Caractéristiques Clés</h4>
+                        <ul class="space-y-2 text-gray-200">
+                            <li>• <strong>Émetteur :</strong> Entreprises privées</li>
+                            <li>• <strong>Duration :</strong> 1 à 30 ans typiquement</li>
+                            <li>• <strong>Rating :</strong> AAA à D (Moody's/S&P)</li>
+                            <li>• <strong>Liquidité :</strong> Variable selon l'émetteur</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 border-2 border-red-200 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-3 black-text">Métriques de Risque</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Credit Risk :</strong> Défaut de l'émetteur</li>
+                            <li>• <strong>Interest Rate Risk :</strong> Sensibilité aux taux</li>
+                            <li>• <strong>Liquidity Risk :</strong> Difficulté de revente</li>
+                            <li>• <strong>Call Risk :</strong> Remboursement anticipé</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                    <h4 class="font-semibold text-red-600 mb-2">
-                        <i class="fas fa-building mr-1"></i>
-                        Diversité sectorielle
-                    </h4>
-                    <p class="text-gray-700 text-sm">Bureaux, centres commerciaux, logistique, santé, résidentiel, data centers</p>
+
+                <h4 class="text-xl font-semibold black-text mb-3">Analyse dans le Contexte Actuel (Août 2025)</h4>
+                
+                <p class="leading-relaxed mb-4 text-gray-700">
+                    Avec les perspectives de baisse des taux de la Fed, les obligations d'entreprise se positionnent comme l'une des classes d'actifs les plus attractives du moment. La <strong>relation inverse entre taux d'intérêt et prix des obligations</strong> crée des opportunités de plus-values significatives.
+                </p>
+
+                <div class="bg-gray-100 p-5 rounded-lg mb-4">
+                    <h5 class="font-bold black-text mb-2">Calcul de la Duration Modifiée - Exemple Pratique :</h5>
+                    <p class="text-sm text-gray-600 mb-2">Pour une obligation corporate 10 ans, coupon 5%, yield actuel 4,5% :</p>
+                    <code class="bg-white px-2 py-1 rounded text-red-600">Modified Duration ≈ 8,2 années</code>
+                    <p class="text-sm text-gray-600 mt-2">Une baisse de 0,25% des taux génère un gain potentiel de ~2,05%</p>
+                </div>
+
+                <h4 class="text-xl font-semibold black-text mb-3">Stratégies d'Investissement</h4>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">1</div>
+                        <div>
+                            <h5 class="font-semibold black-text">Duration Matching</h5>
+                            <p class="text-gray-700">Adapter la duration du portefeuille aux anticipations de taux pour optimiser le rendement ajusté du risque.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">2</div>
+                        <div>
+                            <h5 class="font-semibold black-text">Credit Quality Ladder</h5>
+                            <p class="text-gray-700">Diversification par rating pour équilibrer rendement et risque de crédit dans un environnement de taux baissiers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">3</div>
+                        <div>
+                            <h5 class="font-semibold black-text">Sector Rotation</h5>
+                            <p class="text-gray-700">Privilégier les secteurs cycliques qui bénéficient de la relance économique permise par la baisse des taux.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mt-6">
+                    <h5 class="font-bold text-yellow-800 mb-2">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Points d'Attention pour vos Examens
+                    </h5>
+                    <p class="text-yellow-700">
+                        Les obligations d'entreprise constituent un sujet récurrent dans les examens CFA (notamment L2 Fixed Income) et FRM (Market Risk). Maîtrisez les concepts de spread de crédit, de courbe des taux et d'immunisation de portefeuille.
+                    </p>
                 </div>
             </div>
-            
-            <h3 class="text-xl font-semibold text-black mb-3">Risques et bénéfices</h3>
-            
-            <div class="highlight-box">
-                <h4 class="font-semibold text-black mb-3">
-                    <i class="fas fa-thumbs-up text-green-600 mr-2"></i>
-                    Avantages principaux
-                </h4>
-                <ul class="text-gray-700 space-y-2">
-                    <li><i class="fas fa-check text-green-600 mr-2"></i><strong>Rendement élevé :</strong> Dividendes réguliers et substantiels</li>
-                    <li><i class="fas fa-check text-green-600 mr-2"></i><strong>Liquidité :</strong> Négociation en bourse comme une action</li>
-                    <li><i class="fas fa-check text-green-600 mr-2"></i><strong>Diversification :</strong> Exposition immobilière sans gestion directe</li>
-                    <li><i class="fas fa-check text-green-600 mr-2"></i><strong>Protection inflation :</strong> Les loyers s'ajustent généralement à l'inflation</li>
-                </ul>
-            </div>
-            
-            <div class="bg-red-50 border border-red-200 p-4 rounded-lg mt-4">
-                <h4 class="font-semibold text-red-600 mb-3">
-                    <i class="fas fa-exclamation-triangle mr-2"></i>
-                    Risques à considérer
-                </h4>
-                <ul class="text-gray-700 space-y-2">
-                    <li><i class="fas fa-minus text-red-600 mr-2"></i><strong>Sensibilité aux taux :</strong> Performance inverse aux taux d'intérêt</li>
-                    <li><i class="fas fa-minus text-red-600 mr-2"></i><strong>Volatilité :</strong> Plus volatile que l'immobilier direct</li>
-                    <li><i class="fas fa-minus text-red-600 mr-2"></i><strong>Risque sectoriel :</strong> Exposition aux cycles immobiliers</li>
-                    <li><i class="fas fa-minus text-red-600 mr-2"></i><strong>Fiscalité :</strong> Dividendes souvent imposés comme revenus ordinaires</li>
-                </ul>
-            </div>
-            
-            <p class="text-gray-700 mt-4">
-                Pour les candidats CFA, maîtriser l'évaluation des REITs via les méthodes FFO (Funds From Operations) et AFFO (Adjusted Funds From Operations) est crucial, car ces métriques diffèrent significativement des ratios traditionnels d'évaluation des actions.
-            </p>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="section-divider mb-12"></div>
 
         <!-- Interview Exclusive -->
-        <section class="px-6 py-4 bg-white">
-            <div class="article-header">
-                <h2 class="text-2xl font-bold text-black">
-                    <i class="fas fa-microphone text-red-600 mr-2"></i>
-                    Interview Exclusive : Célya Matili
+        <section class="mb-12">
+            <div class="border-l-4 border-red-600 pl-6">
+                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
+                    <i class="fas fa-microphone mr-3 red-accent"></i>
+                    Interview Exclusive
                 </h2>
-                <p class="text-gray-600 mt-1">Training Sales Specialist chez Allplan France & Candidate CFA</p>
-            </div>
-            
-            <div class="interview-section">
-                <div class="flex flex-col md:flex-row items-start gap-6 mb-6">
-                    <img src="https://i.imgur.com/GUB0A32.jpeg" alt="Célya Matili" class="w-48 h-48 object-cover rounded-lg shadow-lg">
-                    <div class="flex-1">
-                        <h3 class="text-xl font-semibold text-black mb-3">Un parcours vers l'excellence financière</h3>
-                        <p class="text-gray-700 mb-4">
-                            Célya Matili incarne parfaitement l'ambition et la détermination des professionnels qui souhaitent faire évoluer leur carrière vers la finance. En tant que Training Sales Specialist chez Allplan France, elle a décidé de franchir le pas et de se lancer dans la préparation du prestigieux CFA, tout en jonglant avec ses responsabilités professionnelles.
+                
+                <div class="bg-gradient-to-r from-black to-gray-800 text-white p-8 rounded-lg mb-6">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                        <img src="https://i.imgur.com/GUB0A32.jpeg" alt="Célya Matili" class="w-48 h-48 rounded-full object-cover border-4 border-red-500">
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-3xl font-bold mb-2">Célya Matili</h3>
+                            <p class="text-xl red-accent mb-4">Training Sales Specialist, Allplan France</p>
+                            <p class="text-gray-300 leading-relaxed">
+                                Professionnelle expérimentée dans la formation technique B2B, Célya Matili prépare actuellement plusieurs certifications financières américaines, dont le prestigieux CFA. Son parcours unique entre vente spécialisée et finance lui apporte une perspective pratique précieuse pour les candidats.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold red-accent text-lg mb-3">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            Newsletter : Célya, pouvez-vous nous parler de votre parcours qui vous amène aujourd'hui vers les certifications financières ?
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Célya :</strong> Mon parcours est assez atypique ! En tant que Training Sales Specialist chez Allplan France, j'évolue dans l'univers de la formation technique B2B, notamment dans le secteur de la construction et de l'architecture. Mais j'ai toujours été passionnée par les marchés financiers. La rigueur analytique que demande mon métier actuel - comprendre des besoins complexes, structurer des formations sur mesure - se transpose parfaitement dans l'approche méthodique qu'exigent les certifications comme le CFA.
+                        </p>
+                    </div>
+
+                    <div class="bg-white border-2 border-gray-200 p-6 rounded-lg">
+                        <h4 class="font-bold red-accent text-lg mb-3">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            Vous préparez le CFA Level 1 pour septembre 2025. Quels sont vos conseils pour les dernières semaines de révisions ?
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            <strong>Célya :</strong> Excellente question ! Nous sommes fin août, donc en pleine ligne droite. Voici ma méthode en trois piliers :
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</div>
+                                <div>
+                                    <h5 class="font-semibold black-text">Practice Tests Intensifs</h5>
+                                    <p class="text-gray-600 text-sm">Minimum 2 mock exams par semaine. Le CFA Level 1, c'est 180 questions en 4h30. Il faut développer cette endurance mentale. Je chronométre chaque session et analyse immédiatement mes erreurs.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</div>
+                                <div>
+                                    <h5 class="font-semibold black-text">Révision Ciblée par Weakness</h5>
+                                    <p class="text-gray-600 text-sm">J'utilise une matrice Excel où je track mes scores par topic. Ethics, Financial Reporting & Analysis et Quantitative Methods sont mes priorités absolues car ils représentent 45% de l'examen.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</div>
+                                <div>
+                                    <h5 class="font-semibold black-text">Mémorisation Active des Formulas</h5>
+                                    <p class="text-gray-600 text-sm">Je me suis créé des flashcards pour les 150+ formules essentielles. Chaque matin, 15 minutes de révision avant mon café. La répétition espacée, c'est la clé !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border border-red-200 p-6 rounded-lg">
+                        <h4 class="font-bold red-accent text-lg mb-3">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            Quel conseil donneriez-vous spécifiquement pour la section Ethics, souvent sous-estimée ?
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Célya :</strong> Ethics, c'est 15% de l'examen et c'est souvent le point de bascule ! Mon approche : je lis chaque cas pratique comme si j'étais en situation réelle. Dans mon métier, l'intégrité commerciale est cruciale - on ne peut pas survendre une formation qui ne correspond pas aux besoins du client. 
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-3">
+                            Pour Ethics, je recommande de créer un "decision tree" mental : 1) Est-ce légal ? 2) Est-ce dans l'intérêt du client ? 3) Est-ce que j'accepterais que ce soit public ? Cette méthode m'a fait passer de 65% à 80% de réussite sur cette section.
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold red-accent text-lg mb-3">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            Comment gérez-vous le stress et maintenez-vous votre motivation dans cette dernière ligne droite ?
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            <strong>Célya :</strong> La gestion du stress, c'est mon défi quotidien entre mon travail chez Allplan et cette préparation intense ! Mon secret : je traite cette préparation comme un projet client à forte valeur ajoutée. J'ai défini des jalons, des livrables concrets.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-3">
+                            Concrètement : sport 3 fois par semaine (ça oxygène le cerveau !), sommeil de 7h minimum, et surtout, je me projette déjà sur les opportunités de carrière que cette certification va m'ouvrir. Quand on visualise l'objectif final, la motivation reste intacte.
+                        </p>
+                    </div>
+
+                    <div class="bg-black text-white p-6 rounded-lg">
+                        <h4 class="font-bold text-red-400 text-lg mb-3">
+                            <i class="fas fa-quote-left mr-2"></i>
+                            Un dernier conseil pour nos lecteurs qui passent leur examen en septembre ?
+                        </h4>
+                        <p class="text-gray-200 leading-relaxed">
+                            <strong>Célya :</strong> Faites confiance à votre préparation ! Vous avez investi des centaines d'heures, vous connaissez le programme. Le jour J, c'est 70% de connaissances et 30% de stratégie d'examen. 
+                        </p>
+                        <p class="text-gray-200 leading-relaxed mt-3">
+                            Ma technique : je commence toujours par Ethics (ça met en confiance), puis Quantitative Methods (pour "chauffer" le cerveau), et je garde Corporate Finance et Economics pour la fin car ces sujets me passionnent - ça me porte vers la ligne d'arrivée !
+                        </p>
+                        <p class="text-red-400 font-semibold mt-4">
+                            "Remember: You don't have to be perfect, you just have to be better than 70% of the candidates. Stay focused, stay confident!"
                         </p>
                     </div>
                 </div>
-                
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="font-semibold text-red-600 mb-2">
-                            <i class="fas fa-question-circle mr-1"></i>
-                            Célya, qu'est-ce qui vous a motivée à entreprendre la préparation du CFA ?
-                        </h4>
-                        <div class="quote-style">
-                            "Ma passion pour l'analyse financière et mon désir d'approfondir ma compréhension des marchés financiers m'ont naturellement dirigée vers le CFA. En tant que professionnelle de la vente de formation, je comprends l'importance de l'excellence académique et de la crédibilité professionnelle. Le CFA représente l'étalon-or de la profession financière."
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold text-red-600 mb-2">
-                            <i class="fas fa-clock mr-1"></i>
-                            Comment organisez-vous votre temps entre travail et préparation ?
-                        </h4>
-                        <div class="quote-style">
-                            "L'organisation est absolument cruciale. Je dédie 2-3 heures chaque matin avant le travail aux matières quantitatives comme les mathématiques financières et les statistiques, quand mon esprit est le plus frais. Les weekends sont réservés à l'éthique professionnelle et à l'analyse financière. La régularité prime sur l'intensité ponctuelle."
-                        </div>
-                    </div>
-                    
-                    <div class="highlight-box">
-                        <h4 class="font-semibold text-black mb-3">
-                            <i class="fas fa-star text-red-600 mr-2"></i>
-                            Les conseils de Célya pour réussir le CFA Level 1
-                        </h4>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <h5 class="font-semibold text-red-600 mb-2">Stratégie d'étude</h5>
-                                <ul class="text-gray-700 text-sm space-y-1">
-                                    <li>• Commencez par les mathématiques financières</li>
-                                    <li>• Maîtrisez parfaitement l'éthique (20% de l'examen)</li>
-                                    <li>• Pratiquez quotidiennement avec des QCM</li>
-                                    <li>• Utilisez des flashcards pour les formules</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h5 class="font-semibold text-red-600 mb-2">Gestion du temps</h5>
-                                <ul class="text-gray-700 text-sm space-y-1">
-                                    <li>• 300 heures minimum de préparation</li>
-                                    <li>• Sessions courtes mais régulières</li>
-                                    <li>• Semaine intensive avant l'examen</li>
-                                    <li>• Mock exams toutes les 2 semaines</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold text-red-600 mb-2">
-                            <i class="fas fa-lightbulb mr-1"></i>
-                            Quel conseil donneriez-vous aux candidats qui passent l'examen en septembre ?
-                        </h4>
-                        <div class="quote-style">
-                            "Ne sous-estimez jamais l'importance des révisions actives. Relire passivement n'est pas suffisant. Créez vos propres résumés, expliquez les concepts à voix haute, et surtout, chronométrez-vous constamment. Le CFA Level 1 teste autant vos connaissances que votre vitesse d'exécution. Préparez-vous à gérer le stress de l'examen computerized."
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold text-red-600 mb-2">
-                            <i class="fas fa-trophy mr-1"></i>
-                            Quelle est votre vision de l'après-CFA ?
-                        </h4>
-                        <div class="quote-style">
-                            "Le CFA n'est qu'un début. Mon objectif est d'évoluer vers l'analyse financière ou la gestion de portefeuille. Cette certification m'ouvrira des portes vers des postes plus techniques et analytiques. C'est un investissement sur le long terme dans ma carrière professionnelle."
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-black text-white p-4 rounded-lg mt-6">
-                    <p class="text-center font-semibold">
-                        <i class="fas fa-quote-left mr-2"></i>
-                        "La persévérance et la discipline sont vos meilleurs alliés. Chaque heure d'étude vous rapproche de votre objectif."
-                        <i class="fas fa-quote-right ml-2"></i>
+
+                <div class="bg-yellow-50 border-2 border-yellow-300 p-4 rounded-lg mt-6">
+                    <p class="text-yellow-800 text-center">
+                        <strong>Merci à Célya Matili pour ce partage d'expérience authentique et ces conseils pratiques !</strong><br>
+                        <span class="text-sm">Suivez ses conseils et rejoignez la communauté des futurs CFA charterholders.</span>
                     </p>
-                    <p class="text-center text-red-400 mt-2">- Célya Matili</p>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider"></div>
-
         <!-- Footer -->
-        <footer class="px-6 py-8 bg-black text-white">
-            <div class="text-center">
-                <h3 class="text-xl font-bold mb-4">
-                    <i class="fas fa-envelope text-red-500 mr-2"></i>
-                    Restez connectés
-                </h3>
-                <p class="mb-4">
-                    La Finance Tutoring Newsletter paraît chaque mois avec du contenu exclusif pour votre réussite professionnelle.
-                </p>
-                <div class="flex justify-center space-x-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-calendar-alt text-red-500 text-xl mb-1"></i>
-                        <p class="text-sm">Prochaine édition</p>
-                        <p class="text-red-400 font-semibold">Novembre 2024</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-users text-red-500 text-xl mb-1"></i>
-                        <p class="text-sm">Communauté</p>
-                        <p class="text-red-400 font-semibold">500+ lecteurs</p>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-graduation-cap text-red-500 text-xl mb-1"></i>
-                        <p class="text-sm">Taux de réussite</p>
-                        <p class="text-red-400 font-semibold">85% CFA L1</p>
-                    </div>
-                </div>
-                <p class="text-gray-400 text-sm">
-                    © 2024 Finance Tutoring Newsletter. Tous droits réservés.
-                </p>
+        <footer class="text-center mt-12 pt-8 border-t-2 border-gray-200">
+            <div class="section-divider mb-6"></div>
+            <p class="text-gray-600 mb-2">
+                <strong class="black-text">Finance Tutoring Newsletter</strong> - Votre partenaire vers l'excellence financière
+            </p>
+            <p class="text-sm text-gray-500">
+                Édition #1 - 29 Août 2025 | Prochaine édition : Septembre 2025
+            </p>
+            <div class="flex justify-center space-x-6 mt-4 text-red-600">
+                <i class="fab fa-linkedin text-2xl"></i>
+                <i class="fab fa-twitter text-2xl"></i>
+                <i class="fas fa-envelope text-2xl"></i>
             </div>
         </footer>
+
     </div>
 </body>
 </html>
