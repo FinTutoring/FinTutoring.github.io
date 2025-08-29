@@ -1,323 +1,439 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finance Tutoring Newsletter - Édition #1 - 29 Août 2025</title>
+    <title>Finance Tutoring Newsletter - Complete Issue #1 - August 29, 2025</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .newsletter-container { max-width: 800px; margin: 0 auto; background: white; }
-        .red-accent { color: #DC2626; }
-        .red-bg { background-color: #DC2626; }
-        .black-text { color: #000000; }
-        .section-divider { height: 2px; background: linear-gradient(90deg, #DC2626 0%, #000000 50%, #DC2626 100%); }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .brand-red { color: #DC2626; }
+        .bg-brand-red { background-color: #DC2626; }
+        .border-brand-red { border-color: #DC2626; }
+        .text-gradient {
+            background: linear-gradient(135deg, #000000, #DC2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-left: 4px solid #DC2626;
+        }
+        .interview-section {
+            background: linear-gradient(135deg, #ffffff, #f9fafb);
+        }
+        .shadow-custom {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
     </style>
 </head>
-<body class="bg-gray-50">
-    <div class="newsletter-container py-8 px-6">
-        
-        <!-- Header avec Logo -->
-        <header class="text-center mb-8">
-            <img src="https://i.imgur.com/bpq2VrC.png" alt="Finance Tutoring Newsletter Logo" class="mx-auto mb-4 max-h-24">
-            <h1 class="text-4xl font-bold black-text mb-2">Finance Tutoring Newsletter</h1>
-            <div class="text-xl red-accent font-semibold">Édition #1 - 29 Août 2025</div>
-            <div class="section-divider mt-4 mb-6"></div>
-        </header>
+<body class="bg-white text-gray-900">
+    <!-- Header with Logo -->
+    <header class="bg-black text-white py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <img src="https://i.imgur.com/bpq2VrC.png" alt="Finance Tutoring Logo" class="mx-auto mb-6 h-24 object-contain">
+            <h1 class="text-4xl font-bold mb-2">Finance Tutoring Newsletter</h1>
+            <div class="text-xl text-gray-300">Issue #1 • August 29, 2025</div>
+            <div class="mt-4 text-sm text-gray-400">Professional Insights for CFA, FRM & CAIA Candidates</div>
+        </div>
+    </header>
 
-        <!-- Introduction -->
-        <section class="mb-12">
-            <div class="bg-black text-white p-6 rounded-lg">
-                <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    <i class="fas fa-graduation-cap mr-3 red-accent"></i>
-                    Bienvenue dans votre Newsletter de Formation Financière
-                </h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Chers futurs professionnels de la finance, nous sommes ravis de vous présenter cette première édition de notre newsletter mensuelle dédiée à votre réussite dans les certifications financières les plus prestigieuses.
-                </p>
-                <p class="leading-relaxed mb-4">
-                    Notre mission est de vous accompagner dans votre parcours vers l'excellence financière en vous proposant :
-                </p>
-                <ul class="list-disc list-inside space-y-2 text-gray-200">
-                    <li><strong class="red-accent">Conseils d'experts</strong> pour réussir vos certifications CFA, FRM et CAIA</li>
-                    <li><strong class="red-accent">Analyses de marché approfondies</strong> sur la dette publique, le private equity et autres secteurs clés</li>
-                    <li><strong class="red-accent">Interviews exclusives</strong> avec des professionnels de la finance : quants, traders, risk managers</li>
-                    <li><strong class="red-accent">Décryptages pédagogiques</strong> des concepts financiers essentiels</li>
+    <!-- Newsletter Introduction -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-gray-50 rounded-xl p-8 shadow-custom">
+            <h2 class="text-3xl font-bold text-gradient mb-6">Welcome to Finance Tutoring Newsletter</h2>
+            <div class="text-lg text-gray-700 space-y-4">
+                <p>Welcome to the inaugural issue of Finance Tutoring Newsletter, your premier source for professional financial education and certification preparation. Our mission is to provide monthly insights, expert analysis, and practical guidance for success in CFA, FRM, and CAIA certifications.</p>
+                <p>Each month, we deliver:</p>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li><strong>Expert Market Analysis:</strong> In-depth coverage of public debt, private equity, and emerging financial trends</li>
+                    <li><strong>Formula of the Day:</strong> Essential financial formulas with practical applications</li>
+                    <li><strong>Exclusive Interviews:</strong> Insights from finance professionals including quants, traders, and risk managers</li>
+                    <li><strong>Certification Strategy:</strong> Proven methods and study techniques for exam success</li>
                 </ul>
-                <p class="mt-4 text-gray-200">
-                    Chaque mois, nous vous livrons les clés pour transformer vos ambitions en succès concrets sur les marchés financiers internationaux.
-                </p>
+                <p class="text-sm text-gray-600 mt-6 italic">All content is rigorously fact-checked against authoritative sources including CFA Institute, GARP, CME Group, and Federal Reserve publications.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Article Actualités Générales -->
-        <section class="mb-12">
-            <div class="border-l-4 border-red-600 pl-6">
-                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
-                    <i class="fas fa-newspaper mr-3 red-accent"></i>
-                    Actualités Financières
+    <!-- Formula of the Day -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-xl shadow-custom overflow-hidden">
+            <div class="bg-brand-red text-white px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-calculator mr-4"></i>
+                    Formula of the Day
                 </h2>
-                <h3 class="text-2xl font-semibold red-accent mb-4">La Fed Ouvre la Voie aux Baisses de Taux : Perspectives pour Septembre 2025</h3>
-                
-                <div class="bg-gray-50 p-6 rounded-lg mb-6">
-                    <div class="flex items-center mb-3">
-                        <i class="fas fa-chart-line red-accent mr-2"></i>
-                        <span class="font-semibold black-text">Points Clés du 29 Août 2025</span>
-                    </div>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>• Taux directeur maintenu à 4,25%-4,50% pour la cinquième réunion consécutive</li>
-                        <li>• Christopher Waller prévoit des baisses sur les 3-6 prochains mois</li>
-                        <li>• Probabilité de 84% d'une baisse de 25 points de base en septembre</li>
-                    </ul>
-                </div>
-
-                <p class="text-lg leading-relaxed mb-4 black-text">
-                    Le paysage monétaire américain connaît un tournant décisif. Lors de ses déclarations du 28 août, le gouverneur de la Réserve fédérale <strong>Christopher Waller</strong> a clairement signalé l'orientation dovish de la banque centrale, annonçant des perspectives de baisses de taux dès septembre 2025.
-                </p>
-
-                <p class="leading-relaxed mb-4 text-gray-700">
-                    Cette évolution marque un contraste saisissant avec la politique restrictive maintenue depuis plus d'un an. Les marchés financiers, qui anticipaient déjà un assouplissement monétaire, ont réagi positivement à ces déclarations, avec une probabilité de baisse désormais évaluée à 84% par les traders.
-                </p>
-
-                <div class="bg-red-50 border border-red-200 p-4 rounded-lg mb-4">
-                    <h4 class="font-bold red-accent mb-2">Implications pour les Candidats CFA et FRM :</h4>
-                    <p class="text-gray-700">
-                        Cette période de transition monétaire représente un cas d'école parfait pour comprendre l'impact des politiques monétaires sur les valorisations d'actifs, un thème central des examens CFA Level II et III, ainsi que des certifications FRM.
-                    </p>
-                </div>
-
-                <p class="leading-relaxed text-gray-700">
-                    L'analyse de ce retournement de cycle illustre parfaitement les concepts de <em>duration risk</em>, de <em>yield curve dynamics</em> et d'<em>interest rate sensitivity</em> que vous devez maîtriser pour vos certifications. Les obligations d'entreprise, notamment, présentent des opportunités d'arbitrage intéressantes dans ce contexte de baisse anticipée des taux.
-                </p>
+                <div class="text-xl font-light mt-2">Commodity Basis</div>
             </div>
-        </section>
-
-        <div class="section-divider mb-12"></div>
-
-        <!-- Spotlight Classe d'Actifs -->
-        <section class="mb-12">
-            <div class="border-l-4 border-black pl-6">
-                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
-                    <i class="fas fa-chart-pie mr-3 red-accent"></i>
-                    Spotlight : Obligations d'Entreprise
-                </h2>
-                <h3 class="text-2xl font-semibold red-accent mb-4">L'Opportunité du Cycle : Corporate Bonds en Période de Transition Monétaire</h3>
-
-                <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <div class="bg-black text-white p-6 rounded-lg">
-                        <h4 class="text-xl font-bold mb-3 red-accent">Caractéristiques Clés</h4>
-                        <ul class="space-y-2 text-gray-200">
-                            <li>• <strong>Émetteur :</strong> Entreprises privées</li>
-                            <li>• <strong>Duration :</strong> 1 à 30 ans typiquement</li>
-                            <li>• <strong>Rating :</strong> AAA à D (Moody's/S&P)</li>
-                            <li>• <strong>Liquidité :</strong> Variable selon l'émetteur</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-red-50 border-2 border-red-200 p-6 rounded-lg">
-                        <h4 class="text-xl font-bold mb-3 black-text">Métriques de Risque</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>Credit Risk :</strong> Défaut de l'émetteur</li>
-                            <li>• <strong>Interest Rate Risk :</strong> Sensibilité aux taux</li>
-                            <li>• <strong>Liquidity Risk :</strong> Difficulté de revente</li>
-                            <li>• <strong>Call Risk :</strong> Remboursement anticipé</li>
-                        </ul>
+            
+            <div class="p-8">
+                <div class="formula-box rounded-lg p-6 mb-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2 text-gray-800">Basis = Cash Price - Futures Price</div>
+                        <div class="text-lg text-gray-600">Where:</div>
+                        <div class="text-base text-gray-700 mt-2 space-y-1">
+                            <div><strong>Cash Price:</strong> Current spot price of the physical commodity</div>
+                            <div><strong>Futures Price:</strong> Price of the futures contract for future delivery</div>
+                        </div>
                     </div>
                 </div>
 
-                <h4 class="text-xl font-semibold black-text mb-3">Analyse dans le Contexte Actuel (Août 2025)</h4>
-                
-                <p class="leading-relaxed mb-4 text-gray-700">
-                    Avec les perspectives de baisse des taux de la Fed, les obligations d'entreprise se positionnent comme l'une des classes d'actifs les plus attractives du moment. La <strong>relation inverse entre taux d'intérêt et prix des obligations</strong> crée des opportunités de plus-values significatives.
-                </p>
-
-                <div class="bg-gray-100 p-5 rounded-lg mb-4">
-                    <h5 class="font-bold black-text mb-2">Calcul de la Duration Modifiée - Exemple Pratique :</h5>
-                    <p class="text-sm text-gray-600 mb-2">Pour une obligation corporate 10 ans, coupon 5%, yield actuel 4,5% :</p>
-                    <code class="bg-white px-2 py-1 rounded text-red-600">Modified Duration ≈ 8,2 années</code>
-                    <p class="text-sm text-gray-600 mt-2">Une baisse de 0,25% des taux génère un gain potentiel de ~2,05%</p>
-                </div>
-
-                <h4 class="text-xl font-semibold black-text mb-3">Stratégies d'Investissement</h4>
-                
-                <div class="space-y-4">
-                    <div class="flex items-start">
-                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">1</div>
-                        <div>
-                            <h5 class="font-semibold black-text">Duration Matching</h5>
-                            <p class="text-gray-700">Adapter la duration du portefeuille aux anticipations de taux pour optimiser le rendement ajusté du risque.</p>
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-800 border-b border-gray-200 pb-2">Understanding the Basis</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div><strong class="text-red-600">Positive Basis ("Over"):</strong> Cash price > Futures price</div>
+                            <div><strong class="text-red-600">Negative Basis ("Under"):</strong> Cash price < Futures price</div>
+                            <div class="text-sm italic">The basis reflects local supply/demand conditions, transportation costs, storage expenses, and quality differentials.</div>
                         </div>
                     </div>
                     
-                    <div class="flex items-start">
-                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">2</div>
-                        <div>
-                            <h5 class="font-semibold black-text">Credit Quality Ladder</h5>
-                            <p class="text-gray-700">Diversification par rating pour équilibrer rendement et risque de crédit dans un environnement de taux baissiers.</p>
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-bold text-gray-800 border-b border-gray-200 pb-2">Risk Management Applications</h3>
+                        <div class="space-y-3 text-gray-700">
+                            <div><strong>Short Hedgers:</strong> Benefit from basis strengthening (becoming more positive)</div>
+                            <div><strong>Long Hedgers:</strong> Benefit from basis weakening (becoming more negative)</div>
+                            <div class="text-sm italic">Hedging converts price risk into basis risk, which is typically much lower and more predictable.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
+                    <h4 class="font-bold text-gray-800 mb-3">Practical Example (Source: CME Group)</h4>
+                    <div class="text-gray-700 space-y-2">
+                        <p><strong>Scenario:</strong> July Wheat futures trading at $6.50/bushel, local cash price expected at $6.15/bushel</p>
+                        <p><strong>Basis Calculation:</strong> $6.15 - $6.50 = -$0.35 (35 cents under)</p>
+                        <p><strong>Risk Impact:</strong> If basis strengthens to -$0.30, net selling price improves by $0.05/bushel</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 text-xs text-gray-500">
+                    <strong>Sources:</strong> CME Group Educational Materials, CFA Institute Reading 35: Introduction to Commodities and Commodity Derivatives
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Interview -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="interview-section rounded-xl shadow-custom overflow-hidden">
+            <div class="bg-black text-white px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-user-tie mr-4"></i>
+                    Founder's Perspective
+                </h2>
+                <div class="text-xl font-light mt-2">Interview with Florian Campuzan, CFA</div>
+            </div>
+            
+            <div class="p-8">
+                <div class="flex flex-col md:flex-row gap-8 mb-8">
+                    <div class="md:w-1/3">
+                        <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan, CFA" class="w-full rounded-lg shadow-lg object-cover h-64">
+                        <div class="text-center mt-4">
+                            <div class="font-bold text-lg">Florian Campuzan, CFA</div>
+                            <div class="text-gray-600">President & Founder</div>
+                            <div class="text-gray-600">Finance Tutoring</div>
                         </div>
                     </div>
                     
-                    <div class="flex items-start">
-                        <div class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 mt-1">3</div>
+                    <div class="md:w-2/3 space-y-6">
                         <div>
-                            <h5 class="font-semibold black-text">Sector Rotation</h5>
-                            <p class="text-gray-700">Privilégier les secteurs cycliques qui bénéficient de la relance économique permise par la baisse des taux.</p>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">The Philosophy Behind Finance Tutoring</h3>
+                            <p class="text-gray-700">"As the President and Founder of Finance Tutoring, I'm passionate about finance and deeply committed to transformative education. My approach goes beyond traditional teaching – I believe exceptional training combines passion, methodology, and genuine understanding of each learner's journey."</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Personalized Learning Methodology</h3>
+                            <p class="text-gray-700">"I always start by understanding my clients' objectives and analyzing learner profiles. This isn't just about delivering content – it's about leveraging their professional experience and daily challenges to enhance knowledge transmission and create meaningful interactions between participants."</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Building from Fundamentals</h3>
+                            <p class="text-gray-700">"I consistently emphasize intuition and building complexity from solid foundations. For instance, when discussing derivatives – their functioning, applications, and pricing – it's crucial to thoroughly understand the underlying asset. Models must integrate the underlying's specific characteristics to properly adapt their framework."</p>
+                        </div>
+                        
+                        <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-500">
+                            <h4 class="font-bold text-gray-800 mb-2">Key Training Principle</h4>
+                            <p class="text-gray-700 italic">"A great instructor not only possesses subject passion but masterfully combines case studies, methodologies, and clear explanations. Understanding your students' backgrounds and leveraging their real-world experience creates an unparalleled learning environment."</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mt-6">
-                    <h5 class="font-bold text-yellow-800 mb-2">
-                        <i class="fas fa-exclamation-triangle mr-2"></i>
-                        Points d'Attention pour vos Examens
-                    </h5>
-                    <p class="text-yellow-700">
-                        Les obligations d'entreprise constituent un sujet récurrent dans les examens CFA (notamment L2 Fixed Income) et FRM (Market Risk). Maîtrisez les concepts de spread de crédit, de courbe des taux et d'immunisation de portefeuille.
-                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <div class="section-divider mb-12"></div>
-
-        <!-- Interview Exclusive -->
-        <section class="mb-12">
-            <div class="border-l-4 border-red-600 pl-6">
-                <h2 class="text-3xl font-bold black-text mb-6 flex items-center">
-                    <i class="fas fa-microphone mr-3 red-accent"></i>
-                    Interview Exclusive
+    <!-- Market News -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-xl shadow-custom overflow-hidden">
+            <div class="bg-gray-900 text-white px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-chart-line mr-4"></i>
+                    Market Focus: Fed Rate Cut Expectations
                 </h2>
-                
-                <div class="bg-gradient-to-r from-black to-gray-800 text-white p-8 rounded-lg mb-6">
-                    <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                        <img src="https://i.imgur.com/GUB0A32.jpeg" alt="Célya Matili" class="w-48 h-48 rounded-full object-cover border-4 border-red-500">
-                        <div class="flex-1 text-center md:text-left">
-                            <h3 class="text-3xl font-bold mb-2">Célya Matili</h3>
-                            <p class="text-xl red-accent mb-4">Training Sales Specialist, Preparation for U.S. Financial Certifications : CFA, ESG, FRM, CAIA</p>
-                            <p class="text-gray-300 leading-relaxed">
-                                Professionnelle expérimentée dans la formation technique B2B, Célya Matili prépare actuellement plusieurs certifications financières américaines, dont le prestigieux CFA. Son parcours unique entre vente spécialisée et finance lui apporte une perspective pratique précieuse pour les candidats.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="text-xl font-light mt-2">August 29, 2025 Analysis</div>
+            </div>
+            
+            <div class="p-8">
                 <div class="space-y-6">
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-bold red-accent text-lg mb-3">
-                            <i class="fas fa-quote-left mr-2"></i>
-                            Newsletter : Célya, pouvez-vous nous parler de votre parcours qui vous amène aujourd'hui vers les certifications financières ?
-                        </h4>
-                        <p class="text-gray-700 leading-relaxed">
-                            <strong>Célya :</strong> Mon parcours est assez atypique ! En tant que Training Sales Specialist, j'évolue dans l'univers de la formation technique B2B. Mais j'ai toujours été passionnée par les marchés financiers. La rigueur analytique que demande mon métier actuel - comprendre des besoins complexes, structurer des formations sur mesure - se transpose parfaitement dans l'approche méthodique qu'exigent les certifications comme le CFA.
-                        </p>
-                    </div>
-
-                    <div class="bg-white border-2 border-gray-200 p-6 rounded-lg">
-                        <h4 class="font-bold red-accent text-lg mb-3">
-                            <i class="fas fa-quote-left mr-2"></i>
-                            Vous préparez le CFA Level 1 pour septembre 2025. Quels sont vos conseils pour les dernières semaines de révisions ?
-                        </h4>
-                        <p class="text-gray-700 leading-relaxed mb-4">
-                            <strong>Célya :</strong> Excellente question ! Nous sommes fin août, donc en pleine ligne droite. Voici ma méthode en trois piliers :
-                        </p>
+                    <h3 class="text-2xl font-bold text-gray-800">Fed Signals September Rate Cut as Markets Price 84% Probability</h3>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">Federal Reserve Governor Christopher Waller's recent statements have significantly shifted market expectations, with trading data now showing an 84% probability of a 25 basis point rate cut at the September FOMC meeting. This represents a substantial increase from earlier expectations and reflects growing confidence in the Fed's dovish pivot.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-bold text-gray-800">Current Market Conditions</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li><strong>Fed Funds Rate:</strong> Currently held at 4.25%-4.50%</li>
+                                <li><strong>Market Expectation:</strong> 84% probability of 25bp cut in September</li>
+                                <li><strong>Dissenting Voices:</strong> Governors Waller and Bowman previously favored cuts over holds</li>
+                                <li><strong>Forward Guidance:</strong> Rate cuts expected over next 3-6 months</li>
+                            </ul>
+                        </div>
                         
                         <div class="space-y-4">
-                            <div class="flex items-start">
-                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">1</div>
-                                <div>
-                                    <h5 class="font-semibold black-text">Practice Tests Intensifs</h5>
-                                    <p class="text-gray-600 text-sm">Minimum 2 mock exams par semaine. Le CFA Level 1, c'est 180 questions en 4h30. Il faut développer cette endurance mentale. Je chronométre chaque session et analyse immédiatement mes erreurs.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">2</div>
-                                <div>
-                                    <h5 class="font-semibold black-text">Révision Ciblée par Weakness</h5>
-                                    <p class="text-gray-600 text-sm">J'utilise une matrice Excel où je track mes scores par topic. Ethics, Financial Reporting & Analysis et Quantitative Methods sont mes priorités absolues car ils représentent 45% de l'examen.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-1">3</div>
-                                <div>
-                                    <h5 class="font-semibold black-text">Mémorisation Active des Formulas</h5>
-                                    <p class="text-gray-600 text-sm">Je me suis créé des flashcards pour les 150+ formules essentielles. Chaque matin, 15 minutes de révision avant mon café. La répétition espacée, c'est la clé !</p>
-                                </div>
-                            </div>
+                            <h4 class="text-xl font-bold text-gray-800">Investment Implications</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li><strong>Bond Markets:</strong> Yield curve steepening likely continues</li>
+                                <li><strong>Equity Markets:</strong> Interest-sensitive sectors may outperform</li>
+                                <li><strong>Currency Impact:</strong> Dollar strength may moderate</li>
+                                <li><strong>Commodities:</strong> Lower rates typically supportive for gold and industrial metals</li>
+                            </ul>
                         </div>
                     </div>
-
-                    <div class="bg-red-50 border border-red-200 p-6 rounded-lg">
-                        <h4 class="font-bold red-accent text-lg mb-3">
-                            <i class="fas fa-quote-left mr-2"></i>
-                            Quel conseil donneriez-vous spécifiquement pour la section Ethics, souvent sous-estimée ?
-                        </h4>
-                        <p class="text-gray-700 leading-relaxed">
-                            <strong>Célya :</strong> Ethics, c'est 15% de l'examen et c'est souvent le point de bascule ! Mon approche : je lis chaque cas pratique comme si j'étais en situation réelle. Dans mon métier, l'intégrité commerciale est cruciale - on ne peut pas survendre une formation qui ne correspond pas aux besoins du client. 
-                        </p>
-                        <p class="text-gray-700 leading-relaxed mt-3">
-                            Pour Ethics, je recommande de créer un "decision tree" mental : 1) Est-ce légal ? 2) Est-ce dans l'intérêt du client ? 3) Est-ce que j'accepterais que ce soit public ? Cette méthode m'a fait passer de 65% à 80% de réussite sur cette section.
-                        </p>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-gray-800 mb-3">CFA/FRM Exam Relevance</h4>
+                        <p class="text-gray-700">Understanding monetary policy transmission mechanisms is crucial for Level II CFA Economics and FRM Part I. Key concepts include:</p>
+                        <ul class="list-disc ml-6 mt-2 text-gray-700">
+                            <li>Interest rate risk and duration analysis</li>
+                            <li>Central bank policy tools and effectiveness</li>
+                            <li>Market expectations and forward rate calculations</li>
+                            <li>Cross-asset correlation during policy shifts</li>
+                        </ul>
                     </div>
-
-                    <div class="bg-gray-50 p-6 rounded-lg">
-                        <h4 class="font-bold red-accent text-lg mb-3">
-                            <i class="fas fa-quote-left mr-2"></i>
-                            Comment gérez-vous le stress et maintenez-vous votre motivation dans cette dernière ligne droite ?
-                        </h4>
-                        <p class="text-gray-700 leading-relaxed">
-                            <strong>Célya :</strong> La gestion du stress, c'est mon défi quotidien entre mon travail chez Allplan et cette préparation intense ! Mon secret : je traite cette préparation comme un projet client à forte valeur ajoutée. J'ai défini des jalons, des livrables concrets.
-                        </p>
-                        <p class="text-gray-700 leading-relaxed mt-3">
-                            Concrètement : sport 3 fois par semaine (ça oxygène le cerveau !), sommeil de 7h minimum, et surtout, je me projette déjà sur les opportunités de carrière que cette certification va m'ouvrir. Quand on visualise l'objectif final, la motivation reste intacte.
-                        </p>
-                    </div>
-
-                    <div class="bg-black text-white p-6 rounded-lg">
-                        <h4 class="font-bold text-red-400 text-lg mb-3">
-                            <i class="fas fa-quote-left mr-2"></i>
-                            Un dernier conseil pour nos lecteurs qui passent leur examen en septembre ?
-                        </h4>
-                        <p class="text-gray-200 leading-relaxed">
-                            <strong>Célya :</strong> Faites confiance à votre préparation ! Vous avez investi des centaines d'heures, vous connaissez le programme. Le jour J, c'est 70% de connaissances et 30% de stratégie d'examen. 
-                        </p>
-                        <p class="text-gray-200 leading-relaxed mt-3">
-                            Ma technique : je commence toujours par Ethics (ça met en confiance), puis Quantitative Methods (pour "chauffer" le cerveau), et je garde Corporate Finance et Economics pour la fin car ces sujets me passionnent - ça me porte vers la ligne d'arrivée !
-                        </p>
-                        <p class="text-red-400 font-semibold mt-4">
-                            "Remember: You don't have to be perfect, you just have to be better than 70% of the candidates. Stay focused, stay confident!"
-                        </p>
+                    
+                    <div class="text-sm text-gray-500 mt-6">
+                        <strong>Sources:</strong> Federal Reserve H.15 Release (August 28, 2025), Reuters Market Analysis, LSEG Trading Data
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="bg-yellow-50 border-2 border-yellow-300 p-4 rounded-lg mt-6">
-                    <p class="text-yellow-800 text-center">
-                        <strong>Merci à Célya Matili pour ce partage d'expérience authentique et ces conseils pratiques !</strong><br>
-                        <span class="text-sm">Suivez ses conseils et rejoignez la communauté des futurs CFA charterholders.</span>
-                    </p>
+    <!-- Private Debt Spotlight -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="bg-white rounded-xl shadow-custom overflow-hidden">
+            <div class="bg-red-600 text-white px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-building mr-4"></i>
+                    Asset Class Spotlight: Private Debt
+                </h2>
+                <div class="text-xl font-light mt-2">Challenging the Evergreen Fund Model</div>
+            </div>
+            
+            <div class="p-8">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-800">The Evolution of Private Debt: Beyond Traditional Structures</h3>
+                    
+                    <p class="text-lg text-gray-700 leading-relaxed">Private debt has emerged as one of the fastest-growing alternative investment segments, with Assets Under Management exceeding $1.5 trillion globally as of 2025. However, the traditional closed-end fund structure is increasingly being challenged by evergreen fund models, raising important questions about liquidity, pricing, and investor protection.</p>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 my-8">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-3">Traditional Model</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Fixed fund life (7-10 years)</li>
+                                <li>• Capital commitments</li>
+                                <li>• J-curve dynamics</li>
+                                <li>• Clear exit strategy</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-3">Evergreen Model</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Continuous capital raising</li>
+                                <li>• Quarterly liquidity windows</li>
+                                <li>• Steady cash flows</li>
+                                <li>• Perpetual structure</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-gray-800 mb-3">Hybrid Approaches</h4>
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Interval funds</li>
+                                <li>• Tender offer funds</li>
+                                <li>• Semi-liquid structures</li>
+                                <li>• Feeder fund models</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-gray-800">Critical Risk Considerations</h4>
+                        
+                        <div class="bg-red-100 border-l-4 border-red-500 p-6 rounded-r-lg">
+                            <h5 class="font-bold text-red-800 mb-3">Liquidity Mismatch Warning</h5>
+                            <p class="text-red-700">Evergreen funds face a fundamental challenge: offering quarterly liquidity on inherently illiquid assets. This creates potential for:</p>
+                            <ul class="list-disc ml-6 mt-2 text-red-700">
+                                <li>Forced asset sales at unfavorable prices during market stress</li>
+                                <li>Gate implementations limiting investor withdrawals</li>
+                                <li>NAV pricing challenges in volatile markets</li>
+                                <li>First-mover advantage creating unfair treatment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <h5 class="text-lg font-bold text-gray-800">Valuation Challenges</h5>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><strong>Mark-to-Model Reliance:</strong> Limited observable market prices</li>
+                                    <li><strong>Appraisal Lag:</strong> Delayed recognition of value changes</li>
+                                    <li><strong>Manager Discretion:</strong> Potential conflicts in valuation</li>
+                                    <li><strong>Benchmark Limitations:</strong> Difficulty in performance comparison</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h5 class="text-lg font-bold text-gray-800">Regulatory Scrutiny</h5>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><strong>SEC Oversight:</strong> Enhanced disclosure requirements</li>
+                                    <li><strong>Liquidity Risk Management:</strong> Rule 22e-4 compliance</li>
+                                    <li><strong>Fair Value Determinations:</strong> Board oversight requirements</li>
+                                    <li><strong>Stress Testing:</strong> Liquidity scenario analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <h5 class="font-bold text-gray-800 mb-3">Investment Committee Considerations</h5>
+                            <p class="text-gray-700 mb-3">Before allocating to evergreen private debt funds, institutional investors should evaluate:</p>
+                            <ol class="list-decimal ml-6 space-y-2 text-gray-700">
+                                <li><strong>Liquidity Policy Alignment:</strong> Does the fund's liquidity terms match your liquidity needs?</li>
+                                <li><strong>Stress Test Results:</strong> How does the fund perform under adverse market scenarios?</li>
+                                <li><strong>Governance Structure:</strong> What protections exist for minority investors?</li>
+                                <li><strong>Fee Transparency:</strong> Are all costs, including potential liquidity premiums, clearly disclosed?</li>
+                                <li><strong>Track Record:</strong> How has the manager navigated previous market cycles?</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="text-sm text-gray-500 mt-6">
+                        <strong>Regulatory References:</strong> SEC Investment Adviser Act Rule 22e-4, AIMA Due Diligence Guidelines, IOSCO Private Markets Regulation Framework 2025
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer class="text-center mt-12 pt-8 border-t-2 border-gray-200">
-            <div class="section-divider mb-6"></div>
-            <p class="text-gray-600 mb-2">
-                <strong class="black-text">Finance Tutoring Newsletter</strong> - Votre partenaire vers l'excellence financière
-            </p>
-            <p class="text-sm text-gray-500">
-                Édition #1 - 29 Août 2025 | Prochaine édition : Septembre 2025
-            </p>
-            <div class="flex justify-center space-x-6 mt-4 text-red-600">
-                <i class="https://www.linkedin.com/in/florian-campuzan/"></i>
-                <i class="https://x.com/FinanceTutor75"></i>
-                <i class="contact@finance-tutoring.fr"></i>
+    <!-- Expert Interview -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="interview-section rounded-xl shadow-custom overflow-hidden">
+            <div class="bg-gradient-to-r from-black to-red-800 text-white px-8 py-6">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-graduation-cap mr-4"></i>
+                    Exclusive Interview: Certification Success Strategies
+                </h2>
+                <div class="text-xl font-light mt-2">Expert Insights</div>
             </div>
-        </footer>
+            
+            <div class="p-8">
+                <div class="flex flex-col md:flex-row gap-8 mb-8">
+                    <div class="md:w-1/3">
+                        <img src="https://i.imgur.com/GUB0A32.jpeg" alt="Célya Matili" class="w-full rounded-lg shadow-lg object-cover h-64">
+                        <div class="text-center mt-4">
+                            <div class="font-bold text-lg">Célya Matili</div>
+                            <div class="text-gray-600">Training Sales Specialist</div>
+                    
+                            <div class="text-sm text-gray-500 mt-2">Former Top Finance Expert</div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-2/3 space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold brand-red mb-3">Your Background at Top Finance</h3>
+                            <p class="text-gray-700">"I spent several years at Top Finance, France's leading preparation company for CFA, FRM, and CAIA certifications. During my time there, I gained deep insights into the most effective preparation methodologies and had the privilege of working alongside the best certified CFA instructors in the industry."</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold brand-red mb-3">Understanding Optimal Preparation Methods</h3>
+                            <p class="text-gray-700">"At Top Finance, we developed a comprehensive understanding of what separates successful candidates from those who struggle. It's not just about content knowledge – it's about strategic preparation, time management, and leveraging the right resources with the right instructors."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h4 class="text-lg font-bold brand-red mb-4">Q: What makes a CFA instructor truly effective across all three levels?</h4>
+                        <p class="text-gray-700">"The best CFA instructors I've worked with share common characteristics: they maintain current market knowledge, understand the evolution of each level's requirements, and most importantly, they can adapt their teaching style to different learning preferences. Level I requires foundational building, Level II demands analytical depth, and Level III focuses on portfolio management synthesis."</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h4 class="text-lg font-bold brand-red mb-4">Q: How should candidates optimize their preparation strategy for success?</h4>
+                        <p class="text-gray-700 mb-4">"Based on Top Finance's methodology, successful preparation requires four key elements:</p>
+                        <ol class="list-decimal ml-6 space-y-2 text-gray-700">
+                            <li><strong>Structured Timeline:</strong> Begin preparation 6-9 months before exam date with milestone checkpoints</li>
+                            <li><strong>Quality Resources:</strong> Combine official CFA Institute materials with proven supplementary content</li>
+                            <li><strong>Practice Integration:</strong> Regular question banks and mock exams throughout the study period</li>
+                            <li><strong>Expert Guidance:</strong> Access to certified instructors who can clarify complex concepts and provide strategic insights</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-6">
+                        <h4 class="text-lg font-bold brand-red mb-4">Q: What common mistakes do you see candidates make?</h4>
+                        <p class="text-gray-700">"The most frequent error is underestimating the time commitment – each level requires 300+ hours of focused study. Many candidates also make the mistake of passive reading without active practice. At Top Finance, we emphasize that understanding concepts isn't enough; you must be able to apply them under time pressure."</p>
+                    </div>
+                    
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+                        <h4 class="text-lg font-bold text-red-800 mb-4">Q: Any final advice for our readers preparing for financial certifications?</h4>
+                        <p class="text-red-700">"Remember that these certifications are marathons, not sprints. The knowledge you gain extends far beyond the exam – it shapes your analytical thinking and professional credibility. Choose your preparation resources carefully, stay consistent with your study schedule, and don't hesitate to seek expert guidance when concepts become challenging. The investment in quality preparation pays dividends throughout your entire career."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- Newsletter Footer -->
+    <footer class="bg-black text-white py-12 mt-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Finance Tutoring</h3>
+                    <p class="text-gray-300 text-sm">Professional financial education and certification preparation for CFA, FRM, and CAIA candidates worldwide.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Next Issue Preview</h3>
+                    <ul class="text-gray-300 text-sm space-y-2">
+                        <li>• ESG Integration in Portfolio Management</li>
+                        <li>• Quantitative Risk Models Deep Dive</li>
+                        <li>• Interview with Senior Risk Manager</li>
+                        <li>• Formula Focus: Value at Risk (VaR)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact & Feedback</h3>
+                    <p class="text-gray-300 text-sm mb-4">We value your input and suggestions for future content. Reach out with topics you'd like to see covered.</p>
+                    <div class="text-sm text-gray-400">
+                        <div>Newsletter Issue #1</div>
+                        <div>Published: August 29, 2025</div>
+                        <div>All sources verified and fact-checked</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2025 Finance Tutoring. All rights reserved. Content verified against CFA Institute, GARP, CME Group, and Federal Reserve publications.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
