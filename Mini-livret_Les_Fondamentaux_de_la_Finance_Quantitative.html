@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-livret Complet: Les Fondamentaux de la Finance Quantitative</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            margin: 12px 0;
+        }
+        .risk-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .risk-low { background: #dcfce7; color: #16a34a; }
+        .risk-medium { background: #fef3c7; color: #d97706; }
+        .risk-high { background: #fef2f2; color: #dc2626; }
+        .covenant-tracker {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .calculator-input {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            transition: border-color 0.3s ease;
+        }
+        .calculator-input:focus {
+            border-color: #dc2626;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        .distribution-chart {
+            height: 400px;
+            margin: 20px 0;
+        }
+        .comparison-table th {
+            background: #dc2626;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        .comparison-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .distribution-selector {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .distribution-button {
+            padding: 8px 16px;
+            border: 2px solid #dc2626;
+            background: white;
+            color: #dc2626;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .distribution-button.active {
+            background: #dc2626;
+            color: white;
+        }
+        .parameter-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12px; }
+            .page-break { page-break-before: always; }
+        }
+        @media (max-width: 768px) {
+            .mobile-stack { flex-direction: column; }
+            .mobile-full { width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="bg-white text-gray-900 pt-10 pb-8 border-b-4 border-red-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-48 h-48 bg-red-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-chart-line text-white text-6xl"></i>
+                </div>
+            </div>
+            <h1 class="text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-500 mb-6">Excellence en Formation Financière</p>
+            <h1 class="text-4xl font-bold text-gradient mb-4">Mini-livret: Les Fondamentaux de la Finance Quantitative</h1>
+            <p class="text-xl text-gray-700 max-w-4xl mx-auto">Guide expert pour maîtriser les mathématiques financières, les modèles de pricing et les applications en risk management dans un environnement de complexité croissante.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#contexte" class="hover:text-red-600 transition-colors">Contexte</a>
+                <a href="#distributions" class="hover:text-red-600 transition-colors">Distributions</a>
+                <a href="#comparaisons" class="hover:text-red-600 transition-colors">Comparaisons</a>
+                <a href="#mathematiques" class="hover:text-red-600 transition-colors">Mathématiques</a>
+                <a href="#black-scholes" class="hover:text-red-600 transition-colors">Black-Scholes</a>
+                <a href="#modeles" class="hover:text-red-600 transition-colors">Modèles</a>
+                <a href="#risk-management" class="hover:text-red-600 transition-colors">Risk Management</a>
+                <a href="#applications" class="hover:text-red-600 transition-colors">Applications</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Contexte Actuel -->
+        <section id="contexte" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Contexte Actuel et Enjeux</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Dans un environnement de <strong class="text-red-600">complexité croissante</strong> des produits structurés, la finance quantitative devient incontournable. Les évolutions réglementaires (FRTB, Basel IV) et la volatilité accrue des marchés exigent une maîtrise technique approfondie.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Cette formation répond aux enjeux critiques du secteur financier moderne, où les compétences quantitatives avancées sont devenues un facteur différenciant majeur.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>Enjeux Clés 2024
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-chart-line text-red-500 mr-2"></i>Volatilité accrue des marchés financiers</li>
+                            <li><i class="fas fa-balance-scale text-blue-500 mr-2"></i>Évolution rapide des réglementations (FRTB, Basel IV)</li>
+                            <li><i class="fas fa-brain text-purple-500 mr-2"></i>Besoin croissant en compétences quantitatives avancées</li>
+                            <li><i class="fas fa-layer-group text-green-500 mr-2"></i>Complexification des produits dérivés et structurés</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fondements des Distributions -->
+        <section id="distributions" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Fondements des Distributions en Finance</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-chart-bell mr-2"></i>Loi Normale et Log-Normale
+                    </h3>
+                    <p class="text-gray-700 mb-4">Fondamentales pour le modèle Black-Scholes et la modélisation des rendements d'actifs.</p>
+                    <div class="formula-box">
+                        <strong>Loi Normale :</strong> X ~ N(μ, σ²)<br>
+                        f(x) = (1/σ√2π) × exp(-(x-μ)²/2σ²)
+                    </div>
+                    <div class="formula-box">
+                        <strong>Loi Log-Normale :</strong><br>
+                        Si ln(X) ~ N(μ, σ²), alors X suit une loi log-normale<br>
+                        Usage : Prix des actifs financiers
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-bolt mr-2"></i>Distribution de Student et Pareto
+                    </h3>
+                    <p class="text-gray-700 mb-4">Captures les événements extrêmes et les queues épaisses des marchés financiers.</p>
+                    <div class="formula-box">
+                        <strong>Student t :</strong> Paramètre ν (degrés de liberté)<br>
+                        Plus ν est petit, plus les queues sont épaisses
+                    </div>
+                    <div class="formula-box">
+                        <strong>Pareto :</strong> F(x) = 1 - (x_m/x)^α<br>
+                        Modélise les pertes opérationnelles extrêmes
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Complète des Comparaisons des Distributions -->
+        <section id="comparaisons" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h2 class="text-3xl font-bold text-gradient mb-8">
+                    <i class="fas fa-balance-scale mr-3"></i>Comparaisons des Distributions
+                </h2>
+
+                <!-- Sélecteur de Distributions -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Visualisation Interactive des Distributions</h3>
+                    <div class="distribution-selector">
+                        <button class="distribution-button active" onclick="updateDistribution('normal')">
+                            <i class="fas fa-chart-bell mr-2"></i>Normale
+                        </button>
+                        <button class="distribution-button" onclick="updateDistribution('lognormal')">
+                            <i class="fas fa-chart-area mr-2"></i>Log-Normale
+                        </button>
+                        <button class="distribution-button" onclick="updateDistribution('student')">
+                            <i class="fas fa-chart-line mr-2"></i>Student-t
+                        </button>
+                        <button class="distribution-button" onclick="updateDistribution('pareto')">
+                            <i class="fas fa-chart-bar mr-2"></i>Pareto
+                        </button>
+                        <button class="distribution-button" onclick="updateDistribution('compare')">
+                            <i class="fas fa-layer-group mr-2"></i>Comparaison
+                        </button>
+                    </div>
+
+                    <!-- Contrôles des Paramètres -->
+                    <div class="parameter-controls">
+                        <div class="slider-container" id="param1-container">
+                            <label class="font-semibold text-gray-700">Paramètre 1 (μ/α): <span id="param1-value">0</span></label>
+                            <input type="range" class="slider" id="param1-slider" min="-3" max="3" step="0.1" value="0">
+                        </div>
+                        <div class="slider-container" id="param2-container">
+                            <label class="font-semibold text-gray-700">Paramètre 2 (σ/ν): <span id="param2-value">1</span></label>
+                            <input type="range" class="slider" id="param2-slider" min="0.1" max="5" step="0.1" value="1">
+                        </div>
+                        <div class="slider-container" id="param3-container" style="display: none;">
+                            <label class="font-semibold text-gray-700">Paramètre 3: <span id="param3-value">1</span></label>
+                            <input type="range" class="slider" id="param3-slider" min="0.1" max="10" step="0.1" value="1">
+                        </div>
+                    </div>
+
+                    <!-- Graphique Principal -->
+                    <div class="distribution-chart">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Tableau Comparatif -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Tableau Comparatif des Caractéristiques</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full comparison-table border border-gray-300 rounded-lg overflow-hidden">
+                            <thead>
+                                <tr>
+                                    <th>Distribution</th>
+                                    <th>Paramètres</th>
+                                    <th>Moyenne</th>
+                                    <th>Variance</th>
+                                    <th>Asymétrie (Skewness)</th>
+                                    <th>Kurtosis</th>
+                                    <th>Queue</th>
+                                    <th>Usage Finance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Normale</strong></td>
+                                    <td>μ, σ</td>
+                                    <td>μ</td>
+                                    <td>σ²</td>
+                                    <td>0</td>
+                                    <td>3</td>
+                                    <td>Légère</td>
+                                    <td>Rendements, Black-Scholes</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td><strong>Log-Normale</strong></td>
+                                    <td>μ, σ</td>
+                                    <td>exp(μ + σ²/2)</td>
+                                    <td>[exp(σ²) - 1] × exp(2μ + σ²)</td>
+                                    <td>> 0</td>
+                                    <td>> 3</td>
+                                    <td>Droite épaisse</td>
+                                    <td>Prix d'actifs positifs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Student-t</strong></td>
+                                    <td>ν (d.d.l.)</td>
+                                    <td>0 (si ν > 1)</td>
+                                    <td>ν/(ν-2) (si ν > 2)</td>
+                                    <td>0</td>
+                                    <td>6/(ν-4) + 3</td>
+                                    <td>Très épaisse</td>
+                                    <td>Événements extrêmes, VaR</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td><strong>Pareto</strong></td>
+                                    <td>α, x_m</td>
+                                    <td>αx_m/(α-1) (si α > 1)</td>
+                                    <td>Définie si α > 2</td>
+                                    <td>Définie si α > 3</td>
+                                    <td>Définie si α > 4</td>
+                                    <td>Queue de puissance</td>
+                                    <td>Pertes opérationnelles</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Applications Pratiques -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4 text-red-600">
+                            <i class="fas fa-coins mr-2"></i>Applications en Pricing
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Normale :</strong> Options vanilles européennes (Black-Scholes)
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Log-Normale :</strong> Prix d'actions, taux de change
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Student-t :</strong> Options avec volatilité stochastique
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Pareto :</strong> Produits catastrophe, insurance-linked securities
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4 text-blue-600">
+                            <i class="fas fa-shield-alt mr-2"></i>Applications en Risk Management
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Normale :</strong> VaR paramétrique classique
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Log-Normale :</strong> Modélisation des pertes de crédit
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Student-t :</strong> VaR avec queues épaisses, Expected Shortfall
+                            </div>
+                            <div class="bg-white p-3 rounded shadow-sm">
+                                <strong>Pareto :</strong> Risque opérationnel, pertes extrêmes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tests Statistiques -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Tests Statistiques pour le Choix de Distribution</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg border border-gray-200">
+                            <h4 class="font-semibold mb-3 text-gray-800">
+                                <i class="fas fa-vial mr-2 text-green-600"></i>Tests de Normalité
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><strong>Shapiro-Wilk :</strong> Puissant pour petits échantillons (n < 50)</li>
+                                <li><strong>Kolmogorov-Smirnov :</strong> Compare distribution empirique vs théorique</li>
+                                <li><strong>Jarque-Bera :</strong> Basé sur skewness et kurtosis</li>
+                                <li><strong>Anderson-Darling :</strong> Plus sensible aux queues</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg border border-gray-200">
+                            <h4 class="font-semibold mb-3 text-gray-800">
+                                <i class="fas fa-chart-pie mr-2 text-purple-600"></i>Tests de Comparaison
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li><strong>AIC/BIC :</strong> Critères d'information pour sélection de modèle</li>
+                                <li><strong>Test de Vuong :</strong> Compare modèles non-emboîtés</li>
+                                <li><strong>Q-Q Plot :</strong> Visualisation graphique des quantiles</li>
+                                <li><strong>Test de Hill :</strong> Estimation de l'index de queue</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculateurs Interactifs -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Calculateurs de Probabilités</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-3 gap-4 mb-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Valeur x :</label>
+                                <input type="number" id="calc-x" class="calculator-input w-full" value="0" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Distribution :</label>
+                                <select id="calc-dist" class="calculator-input w-full">
+                                    <option value="normal">Normale</option>
+                                    <option value="lognormal">Log-Normale</option>
+                                    <option value="student">Student-t</option>
+                                    <option value="pareto">Pareto</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button onclick="calculateProbabilities()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                                    <i class="fas fa-calculator mr-2"></i>Calculer
+                                </button>
+                            </div>
+                        </div>
+                        <div id="calc-results" class="grid md:grid-cols-4 gap-4 text-sm">
+                            <!-- Résultats du calculateur -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mélanges de Distributions -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">Mélanges de Distributions</h3>
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h4 class="font-semibold mb-3 text-gray-800">Concept</h4>
+                                <p class="text-sm text-gray-700 mb-4">
+                                    Un mélange de distributions combine plusieurs distributions avec des poids spécifiques pour mieux capturer la complexité des données financières.
+                                </p>
+                                <div class="formula-box text-sm">
+                                    <strong>Mélange :</strong><br>
+                                    f(x) = Σᵢ πᵢ × fᵢ(x)<br>
+                                    où Σπᵢ = 1, πᵢ ≥ 0
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-semibold mb-3 text-gray-800">Applications en Finance</h4>
+                                <ul class="space-y-2 text-sm">
+                                    <li><i class="fas fa-dot-circle text-red-500 mr-2"></i><strong>Régimes de marché :</strong> Normale + Student-t</li>
+                                    <li><i class="fas fa-dot-circle text-blue-500 mr-2"></i><strong>Jump-diffusion :</strong> Normale + Poisson</li>
+                                    <li><i class="fas fa-dot-circle text-green-500 mr-2"></i><strong>Volatility clustering :</strong> Mélanges gaussiens</li>
+                                    <li><i class="fas fa-dot-circle text-purple-500 mr-2"></i><strong>Risque de crédit :</strong> Loi normale + défaut</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Graphique des mélanges -->
+                        <div class="mt-6">
+                            <div class="distribution-chart">
+                                <canvas id="mixtureChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact sur le Pricing et Risk Management -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4 text-red-600">
+                            <i class="fas fa-tag mr-2"></i>Impact sur le Pricing
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <h5 class="font-semibold text-sm mb-2">Sous-estimation avec Normale</h5>
+                                <p class="text-xs text-gray-600">La loi normale sous-estime les probabilités d'événements extrêmes, conduisant à des prix d'options trop faibles pour les queues.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <h5 class="font-semibold text-sm mb-2">Smile de Volatilité</h5>
+                                <p class="text-xs text-gray-600">Les distributions à queues épaisses expliquent mieux le smile de volatilité observé sur les marchés d'options.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-4 text-blue-600">
+                            <i class="fas fa-shield-alt mr-2"></i>Impact sur le Risk Management
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <h5 class="font-semibold text-sm mb-2">VaR Sous-estimée</h5>
+                                <p class="text-xs text-gray-600">L'usage de la loi normale conduit à une sous-estimation systématique du VaR, particulièrement dangereux pour les niveaux de confiance élevés.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded shadow-sm">
+                                <h5 class="font-semibold text-sm mb-2">Capital Réglementaire</h5>
+                                <p class="text-xs text-gray-600">Les réglementations comme Basel III exigent la prise en compte des queues épaisses pour le calcul du capital économique.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mathématiques Financières -->
+        <section id="mathematiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Mathématiques Financières Avancées</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-function mr-2"></i>Calcul Stochastique Fondamental
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4">Processus de Wiener</h4>
+                        <p class="text-sm text-gray-700 mb-3">Mouvement brownien standard, fondement de la modélisation financière.</p>
+                        <div class="formula-box">
+                            <strong>Propriétés :</strong><br>
+                            • W(0) = 0<br>
+                            • Accroissements indépendants<br>
+                            • W(t) ~ N(0, t)<br>
+                            • Trajectoires continues
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4">Lemme d'Itô</h4>
+                        <p class="text-sm text-gray-700 mb-3">Outil central pour dériver les équations différentielles stochastiques.</p>
+                        <div class="formula-box text-sm">
+                            <strong>Pour f(t, X_t) :</strong><br>
+                            df = (∂f/∂t + μ∂f/∂x + ½σ²∂²f/∂x²)dt + σ(∂f/∂x)dW
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Black-Scholes -->
+        <section id="black-scholes" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Modèle Black-Scholes et Applications</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-calculator mr-2"></i>Calculateur Black-Scholes Interactif
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Prix du sous-jacent (S₀):</label>
+                                <input type="number" id="bs-spot" class="calculator-input w-full" value="100" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Strike (K):</label>
+                                <input type="number" id="bs-strike" class="calculator-input w-full" value="100" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Maturité (années):</label>
+                                <input type="number" id="bs-maturity" class="calculator-input w-full" value="1" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Volatilité (%):</label>
+                                <input type="number" id="bs-volatility" class="calculator-input w-full" value="20" step="0.1">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Taux sans risque (%):</label>
+                                <input type="number" id="bs-rate" class="calculator-input w-full" value="5" step="0.01">
+                            </div>
+                            <button onclick="calculateBlackScholes()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                                <i class="fas fa-calculator mr-2"></i>Calculer Prix et Grecques
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="bs-results" class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4">Résultats du Pricing</h4>
+                        <div id="bs-output" class="space-y-2 text-sm">
+                            <!-- Résultats Black-Scholes -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modèles de Pricing -->
+        <section id="modeles" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Modèles de Pricing Avancés</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-percentage mr-2"></i>Modèles de Taux
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong>Vasicek :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                dr_t = κ(θ - r_t)dt + σdW_t
+                            </div>
+                        </div>
+                        <div>
+                            <strong>CIR :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                dr_t = κ(θ - r_t)dt + σ√r_t dW_t
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-wave-square mr-2"></i>Volatilité Stochastique
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong>Modèle de Heston :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                dS_t = rS_t dt + √v_t S_t dW₁<br>
+                                dv_t = κ(θ - v_t)dt + ε√v_t dW₂
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">
+                        <i class="fas fa-bolt mr-2"></i>Modèles à Sauts
+                    </h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <strong>Merton Jump-Diffusion :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                dS_t/S_t = μdt + σdW_t + JdN_t
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Management -->
+        <section id="risk-management" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Risk Management Quantitatif</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Calculateur VaR
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Valeur du portefeuille:</label>
+                            <input type="number" id="var-portfolio" class="calculator-input w-full" value="1000000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Volatilité (% annuelle):</label>
+                            <input type="number" id="var-volatility" class="calculator-input w-full" value="15" step="0.1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Niveau de confiance (%):</label>
+                            <select id="var-confidence" class="calculator-input w-full">
+                                <option value="95">95%</option>
+                                <option value="99">99%</option>
+                                <option value="99.9">99.9%</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Horizon (jours):</label>
+                            <input type="number" id="var-horizon" class="calculator-input w-full" value="1">
+                        </div>
+                        <button onclick="calculateVaR()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                            <i class="fas fa-shield-alt mr-2"></i>Calculer VaR
+                        </button>
+                    </div>
+                    <div id="var-results" class="mt-4 p-4 bg-gray-50 rounded">
+                        <!-- Résultats VaR -->
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-user-shield mr-2"></i>Mesures de Risque
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="bg-gray-50 p-3 rounded">
+                            <strong>Value-at-Risk (VaR) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                P(L > VaR_α) = 1 - α
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <strong>Expected Shortfall (ES) :</strong>
+                            <div class="formula-box text-xs mt-1">
+                                ES_α = E[L | L > VaR_α]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Pratiques -->
+        <section id="applications" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Applications et Simulations</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-dice mr-2"></i>Simulation Monte Carlo Interactive
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Prix initial:</label>
+                                <input type="number" id="mc-s0" class="calculator-input w-full" value="100" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Drift (μ):</label>
+                                <input type="number" id="mc-mu" class="calculator-input w-full" value="0.05" step="0.001">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Volatilité (σ):</label>
+                                <input type="number" id="mc-sigma" class="calculator-input w-full" value="0.2" step="0.01">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Maturité (années):</label>
+                                <input type="number" id="mc-maturity" class="calculator-input w-full" value="1" step="0.1">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold mb-2">Nombre de simulations:</label>
+                                <select id="mc-sims" class="calculator-input w-full">
+                                    <option value="1000">1,000</option>
+                                    <option value="10000">10,000</option>
+                                    <option value="100000">100,000</option>
+                                </select>
+                            </div>
+                            <button onclick="runMonteCarlo()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                                <i class="fas fa-play mr-2"></i>Lancer Simulation
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="distribution-chart">
+                        <canvas id="monteCarloChart"></canvas>
+                    </div>
+                </div>
+                
+                <div id="mc-results" class="mt-6 grid md:grid-cols-4 gap-4 text-sm">
+                    <!-- Résultats Monte Carlo -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion et CTA -->
+        <section class="mb-12">
+            <div class="bg-gradient-red text-white p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6">Excellence en Finance Quantitative</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-red-100 leading-relaxed mb-4">
+                            La maîtrise des fondamentaux de la finance quantitative représente un avantage concurrentiel majeur dans l'environnement financier moderne. De la compréhension des distributions statistiques aux applications en risk management, chaque concept se révèle essentiel pour naviguer avec succès dans la complexité des marchés.
+                        </p>
+                        <p class="text-red-100 leading-relaxed">
+                            Cette formation complète vous a donné les clés pour comprendre, modéliser et gérer les risques financiers avec les outils mathématiques les plus performants du secteur.
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4">Points Clés Maîtrisés</h3>
+                        <ul class="space-y-2 text-sm text-red-100">
+                            <li>✓ Comparaison approfondie des distributions statistiques</li>
+                            <li>✓ Applications pratiques en pricing et risk management</li>
+                            <li>✓ Calcul stochastique et EDS</li>
+                            <li>✓ Modèle Black-Scholes et réplication</li>
+                            <li>✓ Modèles avancés (Heston, sauts, taux)</li>
+                            <li>✓ VaR et mesures de risque quantitatives</li>
+                            <li>✓ Simulations Monte Carlo interactives</li>
+                            <li>✓ Tests statistiques et sélection de modèles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-red-400 text-center">
+                    <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-xl">Finance Tutoring</h4>
+                            <p class="text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <p class="text-red-100 mb-4">Découvrez nos formations spécialisées en finance quantitative</p>
+                    <a href="https://www.finance-tutoring.fr" class="inline-flex items-center px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Visitez Finance Tutoring
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400">
+                © 2024 Finance Tutoring. Livret basé sur l'expertise de quants professionnels et les dernières recherches académiques en finance quantitative.
+            </p>
+            <div class="mt-4 space-x-6 text-sm text-gray-500">
+                <span>Sources : Hull, Shreve, Wilmott, Gatheral, McNeil</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables globales pour les graphiques
+        let distributionChart = null;
+        let mixtureChart = null;
+        let monteCarloChart = null;
+        
+        // Fonctions mathématiques utilitaires
+        function normalPDF(x, mu = 0, sigma = 1) {
+            return (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
+        }
+        
+        function lognormalPDF(x, mu = 0, sigma = 1) {
+            if (x <= 0) return 0;
+            return (1 / (x * sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((Math.log(x) - mu) / sigma, 2));
+        }
+        
+        function studentTPDF(x, df) {
+            const gamma = (n) => n <= 0 ? Infinity : n < 12 ? [1,1,2,6,24,120,720,5040,40320,362880,3628800,39916800][Math.floor(n)] : Math.sqrt(2*Math.PI*n)*Math.pow(n/Math.E,n);
+            const coeff = gamma((df + 1) / 2) / (Math.sqrt(df * Math.PI) * gamma(df / 2));
+            return coeff * Math.pow(1 + (x * x) / df, -(df + 1) / 2);
+        }
+        
+        function paretoPDF(x, alpha = 1, xm = 1) {
+            if (x < xm) return 0;
+            return (alpha * Math.pow(xm, alpha)) / Math.pow(x, alpha + 1);
+        }
+        
+        // Fonction normale cumulative (approximation)
+        function normalCDF(x, mu = 0, sigma = 1) {
+            const z = (x - mu) / sigma;
+            const t = 1.0 / (1.0 + 0.2316419 * Math.abs(z));
+            const d = 0.3989423 * Math.exp(-z * z / 2);
+            let prob = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))));
+            if (z > 0) prob = 1 - prob;
+            return prob;
+        }
+        
+        // Initialisation des graphiques
+        window.onload = function() {
+            setupDistributionChart();
+            setupMixtureChart();
+            setupEventListeners();
+            updateDistribution('normal');
+        };
+        
+        function setupDistributionChart() {
+            const ctx = document.getElementById('distributionChart').getContext('2d');
+            distributionChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: []
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index'
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distribution Interactive',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Valeur'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Densité de Probabilité'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function setupMixtureChart() {
+            const ctx = document.getElementById('mixtureChart').getContext('2d');
+            mixtureChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: []
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Mélange de Distributions: 70% Normale + 30% Student-t',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'top'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Valeur' }
+                        },
+                        y: {
+                            title: { display: true, text: 'Densité' }
+                        }
+                    }
+                }
+            });
+            
+            // Générer le graphique du mélange
+            generateMixtureChart();
+        }
+        
+        function setupEventListeners() {
+            // Sliders pour paramètres
+            document.getElementById('param1-slider').addEventListener('input', updateDistributionFromSliders);
+            document.getElementById('param2-slider').addEventListener('input', updateDistributionFromSliders);
+            document.getElementById('param3-slider').addEventListener('input', updateDistributionFromSliders);
+        }
+        
+        function updateDistribution(type) {
+            // Mise à jour des boutons
+            document.querySelectorAll('.distribution-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Configuration des paramètres selon le type
+            const param1Container = document.getElementById('param1-container');
+            const param2Container = document.getElementById('param2-container');
+            const param3Container = document.getElementById('param3-container');
+            
+            const param1Slider = document.getElementById('param1-slider');
+            const param2Slider = document.getElementById('param2-slider');
+            const param3Slider = document.getElementById('param3-slider');
+            
+            const param1Value = document.getElementById('param1-value');
+            const param2Value = document.getElementById('param2-value');
+            const param3Value = document.getElementById('param3-value');
+            
+            switch(type) {
+                case 'normal':
+                    param1Container.querySelector('label').innerHTML = 'Moyenne (μ): <span id="param1-value">0</span>';
+                    param2Container.querySelector('label').innerHTML = 'Écart-type (σ): <span id="param2-value">1</span>';
+                    param3Container.style.display = 'none';
+                    param1Slider.min = -5; param1Slider.max = 5; param1Slider.step = 0.1; param1Slider.value = 0;
+                    param2Slider.min = 0.1; param2Slider.max = 3; param2Slider.step = 0.1; param2Slider.value = 1;
+                    break;
+                    
+                case 'lognormal':
+                    param1Container.querySelector('label').innerHTML = 'Paramètre μ: <span id="param1-value">0</span>';
+                    param2Container.querySelector('label').innerHTML = 'Paramètre σ: <span id="param2-value">0.5</span>';
+                    param3Container.style.display = 'none';
+                    param1Slider.min = -2; param1Slider.max = 2; param1Slider.step = 0.1; param1Slider.value = 0;
+                    param2Slider.min = 0.1; param2Slider.max = 2; param2Slider.step = 0.1; param2Slider.value = 0.5;
+                    break;
+                    
+                case 'student':
+                    param1Container.querySelector('label').innerHTML = 'Degrés de liberté (ν): <span id="param1-value">5</span>';
+                    param2Container.style.display = 'none';
+                    param3Container.style.display = 'none';
+                    param1Slider.min = 1; param1Slider.max = 30; param1Slider.step = 1; param1Slider.value = 5;
+                    break;
+                    
+                case 'pareto':
+                    param1Container.querySelector('label').innerHTML = 'Paramètre α: <span id="param1-value">2</span>';
+                    param2Container.querySelector('label').innerHTML = 'Paramètre x_m: <span id="param2-value">1</span>';
+                    param3Container.style.display = 'none';
+                    param1Slider.min = 0.5; param1Slider.max = 5; param1Slider.step = 0.1; param1Slider.value = 2;
+                    param2Slider.min = 0.1; param2Slider.max = 3; param2Slider.step = 0.1; param2Slider.value = 1;
+                    break;
+                    
+                case 'compare':
+                    param1Container.style.display = 'none';
+                    param2Container.style.display = 'none';
+                    param3Container.style.display = 'none';
+                    generateComparisonChart();
+                    return;
+            }
+            
+            generateDistributionChart(type);
+        }
+        
+        function updateDistributionFromSliders() {
+            const activeButton = document.querySelector('.distribution-button.active');
+            if (activeButton) {
+                const type = activeButton.onclick.toString().match(/'(.+)'/)[1];
+                generateDistributionChart(type);
+            }
+        }
+        
+        function generateDistributionChart(type) {
+            const param1 = parseFloat(document.getElementById('param1-slider').value);
+            const param2 = parseFloat(document.getElementById('param2-slider').value);
+            const param3 = parseFloat(document.getElementById('param3-slider').value);
+            
+            // Mise à jour des valeurs affichées
+            document.getElementById('param1-value').textContent = param1;
+            if (document.getElementById('param2-container').style.display !== 'none') {
+                document.getElementById('param2-value').textContent = param2;
+            }
+            if (document.getElementById('param3-container').style.display !== 'none') {
+                document.getElementById('param3-value').textContent = param3;
+            }
+            
+            let xValues, yValues, xMin, xMax;
+            
+            switch(type) {
+                case 'normal':
+                    xMin = param1 - 4 * param2;
+                    xMax = param1 + 4 * param2;
+                    break;
+                case 'lognormal':
+                    xMin = 0.1;
+                    xMax = Math.exp(param1 + 3 * param2);
+                    break;
+                case 'student':
+                    xMin = -5;
+                    xMax = 5;
+                    break;
+                case 'pareto':
+                    xMin = param2;
+                    xMax = param2 + 10;
+                    break;
+            }
+            
+            xValues = [];
+            yValues = [];
+            
+            for (let i = 0; i <= 200; i++) {
+                const x = xMin + (xMax - xMin) * i / 200;
+                xValues.push(x.toFixed(2));
+                
+                let y;
+                switch(type) {
+                    case 'normal':
+                        y = normalPDF(x, param1, param2);
+                        break;
+                    case 'lognormal':
+                        y = lognormalPDF(x, param1, param2);
+                        break;
+                    case 'student':
+                        y = studentTPDF(x, param1);
+                        break;
+                    case 'pareto':
+                        y = paretoPDF(x, param1, param2);
+                        break;
+                }
+                yValues.push(y);
+            }
+            
+            distributionChart.data.labels = xValues;
+            distributionChart.data.datasets = [{
+                label: `Distribution ${type.charAt(0).toUpperCase() + type.slice(1)}`,
+                data: yValues,
+                borderColor: '#dc2626',
+                backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                borderWidth: 2,
+                fill: true,
+                pointRadius: 0
+            }];
+            
+            distributionChart.update();
+        }
+        
+        function generateComparisonChart() {
+            const xMin = -4, xMax = 4;
+            const xValues = [];
+            
+            for (let i = 0; i <= 200; i++) {
+                const x = xMin + (xMax - xMin) * i / 200;
+                xValues.push(x.toFixed(2));
+            }
+            
+            const datasets = [
+                {
+                    label: 'Normale (μ=0, σ=1)',
+                    data: xValues.map(x => normalPDF(parseFloat(x), 0, 1)),
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 0
+                },
+                {
+                    label: 'Student-t (ν=3)',
+                    data: xValues.map(x => studentTPDF(parseFloat(x), 3)),
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 0
+                },
+                {
+                    label: 'Student-t (ν=10)',
+                    data: xValues.map(x => studentTPDF(parseFloat(x), 10)),
+                    borderColor: '#16a34a',
+                    backgroundColor: 'rgba(22, 163, 74, 0.1)',
+                    borderWidth: 2,
+                    pointRadius: 0
+                }
+            ];
+            
+            distributionChart.data.labels = xValues;
+            distributionChart.data.datasets = datasets;
+            distributionChart.update();
+        }
+        
+        function generateMixtureChart() {
+            const xMin = -5, xMax = 5;
+            const xValues = [];
+            
+            for (let i = 0; i <= 200; i++) {
+                const x = xMin + (xMax - xMin) * i / 200;
+                xValues.push(x.toFixed(2));
+            }
+            
+            const normalData = xValues.map(x => normalPDF(parseFloat(x), 0, 1));
+            const studentData = xValues.map(x => studentTPDF(parseFloat(x), 3));
+            const mixtureData = xValues.map((x, i) => 0.7 * normalData[i] + 0.3 * studentData[i]);
+            
+            const datasets = [
+                {
+                    label: 'Normale (70%)',
+                    data: normalData,
+                    borderColor: '#dc2626',
+                    backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    pointRadius: 0
+                },
+                {
+                    label: 'Student-t (30%)',
+                    data: studentData,
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    pointRadius: 0
+                },
+                {
+                    label: 'Mélange',
+                    data: mixtureData,
+                    borderColor: '#16a34a',
+                    backgroundColor: 'rgba(22, 163, 74, 0.2)',
+                    borderWidth: 3,
+                    fill: true,
+                    pointRadius: 0
+                }
+            ];
+            
+            mixtureChart.data.labels = xValues;
+            mixtureChart.data.datasets = datasets;
+            mixtureChart.update();
+        }
+        
+        function calculateProbabilities() {
+            const x = parseFloat(document.getElementById('calc-x').value);
+            const dist = document.getElementById('calc-dist').value;
+            const results = document.getElementById('calc-results');
+            
+            let pdf, cdf, mean, variance;
+            
+            switch(dist) {
+                case 'normal':
+                    pdf = normalPDF(x, 0, 1);
+                    cdf = normalCDF(x, 0, 1);
+                    mean = 0;
+                    variance = 1;
+                    break;
+                case 'lognormal':
+                    pdf = lognormalPDF(x, 0, 1);
+                    cdf = x > 0 ? normalCDF(Math.log(x), 0, 1) : 0;
+                    mean = Math.exp(0.5);
+                    variance = (Math.exp(1) - 1) * Math.exp(1);
+                    break;
+                case 'student':
+                    pdf = studentTPDF(x, 3);
+                    cdf = 0.5; // Approximation
+                    mean = 0;
+                    variance = 3;
+                    break;
+                case 'pareto':
+                    pdf = paretoPDF(x, 2, 1);
+                    cdf = x >= 1 ? 1 - Math.pow(1/x, 2) : 0;
+                    mean = 2;
+                    variance = 2;
+                    break;
+            }
+            
+            results.innerHTML = `
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <strong>Densité (PDF)</strong><br>
+                    <span class="text-red-600">${pdf.toFixed(6)}</span>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <strong>Probabilité Cumulative (CDF)</strong><br>
+                    <span class="text-blue-600">${cdf.toFixed(6)}</span>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <strong>Moyenne Théorique</strong><br>
+                    <span class="text-green-600">${mean.toFixed(3)}</span>
+                </div>
+                <div class="bg-white p-3 rounded shadow-sm">
+                    <strong>Variance Théorique</strong><br>
+                    <span class="text-purple-600">${variance.toFixed(3)}</span>
+                </div>
+            `;
+        }
+        
+        function calculateBlackScholes() {
+            const S = parseFloat(document.getElementById('bs-spot').value);
+            const K = parseFloat(document.getElementById('bs-strike').value);
+            const T = parseFloat(document.getElementById('bs-maturity').value);
+            const sigma = parseFloat(document.getElementById('bs-volatility').value) / 100;
+            const r = parseFloat(document.getElementById('bs-rate').value) / 100;
+            
+            const d1 = (Math.log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * Math.sqrt(T));
+            const d2 = d1 - sigma * Math.sqrt(T);
+            
+            const callPrice = S * normalCDF(d1) - K * Math.exp(-r * T) * normalCDF(d2);
+            const putPrice = K * Math.exp(-r * T) * normalCDF(-d2) - S * normalCDF(-d1);
+            
+            const delta = normalCDF(d1);
+            const gamma = normalPDF(d1) / (S * sigma * Math.sqrt(T));
+            const theta = -(S * normalPDF(d1) * sigma) / (2 * Math.sqrt(T)) - r * K * Math.exp(-r * T) * normalCDF(d2);
+            const vega = S * normalPDF(d1) * Math.sqrt(T);
+            const rho = K * T * Math.exp(-r * T) * normalCDF(d2);
+            
+            document.getElementById('bs-output').innerHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-red-50 p-3 rounded">
+                        <strong>Prix Call:</strong> ${callPrice.toFixed(4)}
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded">
+                        <strong>Prix Put:</strong> ${putPrice.toFixed(4)}
+                    </div>
+                    <div class="bg-green-50 p-3 rounded">
+                        <strong>Delta:</strong> ${delta.toFixed(4)}
+                    </div>
+                    <div class="bg-yellow-50 p-3 rounded">
+                        <strong>Gamma:</strong> ${gamma.toFixed(6)}
+                    </div>
+                    <div class="bg-purple-50 p-3 rounded">
+                        <strong>Theta:</strong> ${theta.toFixed(4)}
+                    </div>
+                    <div class="bg-indigo-50 p-3 rounded">
+                        <strong>Vega:</strong> ${vega.toFixed(4)}
+                    </div>
+                </div>
+            `;
+        }
+        
+        function calculateVaR() {
+            const portfolio = parseFloat(document.getElementById('var-portfolio').value);
+            const volatility = parseFloat(document.getElementById('var-volatility').value) / 100;
+            const confidence = parseFloat(document.getElementById('var-confidence').value) / 100;
+            const horizon = parseFloat(document.getElementById('var-horizon').value);
+            
+            // Calcul VaR paramétrique
+            const dailyVol = volatility / Math.sqrt(252);
+            const horizonVol = dailyVol * Math.sqrt(horizon);
+            
+            let zScore;
+            if (confidence === 0.95) zScore = 1.645;
+            else if (confidence === 0.99) zScore = 2.326;
+            else if (confidence === 0.999) zScore = 3.090;
+            
+            const varAmount = portfolio * horizonVol * zScore;
+            const varPercent = horizonVol * zScore * 100;
+            
+            // Expected Shortfall (approximation)
+            const es = varAmount * 1.2; // Approximation simple
+            
+            document.getElementById('var-results').innerHTML = `
+                <h5 class="font-semibold mb-3">Résultats VaR (${(confidence * 100).toFixed(1)}%, ${horizon} jour(s))</h5>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>VaR Absolu:</span>
+                        <span class="font-semibold text-red-600">${varAmount.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>VaR Relatif:</span>
+                        <span class="font-semibold text-red-600">${varPercent.toFixed(2)}%</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Expected Shortfall:</span>
+                        <span class="font-semibold text-red-700">${es.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Volatilité Annuelle:</span>
+                        <span class="font-semibold">${(volatility * 100).toFixed(2)}%</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function runMonteCarlo() {
+            const S0 = parseFloat(document.getElementById('mc-s0').value);
+            const mu = parseFloat(document.getElementById('mc-mu').value);
+            const sigma = parseFloat(document.getElementById('mc-sigma').value);
+            const T = parseFloat(document.getElementById('mc-maturity').value);
+            const sims = parseInt(document.getElementById('mc-sims').value);
+            
+            const finalPrices = [];
+            const dt = T / 252; // Pas quotidien
+            
+            for (let i = 0; i < sims; i++) {
+                let S = S0;
+                for (let t = 0; t < 252 * T; t++) {
+                    const dW = Math.sqrt(dt) * (Math.random() * 2 - 1) * Math.sqrt(3); // Approximation normale
+                    S = S * Math.exp((mu - 0.5 * sigma * sigma) * dt + sigma * dW);
+                }
+                finalPrices.push(S);
+            }
+            
+            // Calcul des statistiques
+            finalPrices.sort((a, b) => a - b);
+            const mean = finalPrices.reduce((a, b) => a + b, 0) / sims;
+            const variance = finalPrices.reduce((acc, x) => acc + (x - mean) ** 2, 0) / sims;
+            const std = Math.sqrt(variance);
+            const median = finalPrices[Math.floor(sims / 2)];
+            const percentile5 = finalPrices[Math.floor(sims * 0.05)];
+            const percentile95 = finalPrices[Math.floor(sims * 0.95)];
+            
+            // Création de l'histogramme
+            const bins = 50;
+            const minPrice = Math.min(...finalPrices);
+            const maxPrice = Math.max(...finalPrices);
+            const binWidth = (maxPrice - minPrice) / bins;
+            
+            const histogram = new Array(bins).fill(0);
+            const labels = [];
+            
+            for (let i = 0; i < bins; i++) {
+                const binStart = minPrice + i * binWidth;
+                labels.push(binStart.toFixed(2));
+            }
+            
+            finalPrices.forEach(price => {
+                const binIndex = Math.min(Math.floor((price - minPrice) / binWidth), bins - 1);
+                histogram[binIndex]++;
+            });
+            
+            // Mise à jour du graphique
+            const ctx = document.getElementById('monteCarloChart').getContext('2d');
+            if (monteCarloChart) {
+                monteCarloChart.destroy();
+            }
+            
+            monteCarloChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Fréquence',
+                        data: histogram,
+                        backgroundColor: 'rgba(220, 38, 38, 0.6)',
+                        borderColor: '#dc2626',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `Distribution des Prix Finaux (${sims.toLocaleString()} simulations)`,
+                            font: { size: 16 }
+                        }
+                    },
+                    scales: {
+                        x: { title: { display: true, text: 'Prix Final' } },
+                        y: { title: { display: true, text: 'Fréquence' } }
+                    }
+                }
+            });
+            
+            // Affichage des résultats
+            document.getElementById('mc-results').innerHTML = `
+                <div class="bg-white p-4 rounded shadow border">
+                    <strong>Prix Moyen</strong><br>
+                    <span class="text-lg text-red-600">${mean.toFixed(2)}</span>
+                </div>
+                <div class="bg-white p-4 rounded shadow border">
+                    <strong>Écart-Type</strong><br>
+                    <span class="text-lg text-blue-600">${std.toFixed(2)}</span>
+                </div>
+                <div class="bg-white p-4 rounded shadow border">
+                    <strong>VaR 95%</strong><br>
+                    <span class="text-lg text-red-700">${(S0 - percentile5).toFixed(2)}</span>
+                </div>
+                <div class="bg-white p-4 rounded shadow border">
+                    <strong>Médiane</strong><br>
+                    <span class="text-lg text-green-600">${median.toFixed(2)}</span>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
