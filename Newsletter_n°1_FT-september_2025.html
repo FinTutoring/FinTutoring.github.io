@@ -1303,14 +1303,17 @@ print(f"Delta: {result['delta']:.3f}")
                             </div>
                         </div>
                         
-                        <div class="bg-gray-900 text-white p-8 rounded-lg">
-                            <h4 class="text-2xl font-bold text-white mb-6">Implementation Framework: ML-Enhanced Risk Engine</h4>
-                            
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div>
-                                    <h5 class="text-xl font-bold text-gray-200 mb-4">Architecture Components</h5>
-                                    <div class="code-block p-4 rounded text-sm">
-                                        <pre class="text-green-400">
+                       <div class="bg-gray-900 text-white p-8 rounded-lg">
+  <h4 class="text-2xl font-bold text-white mb-6">
+    Implementation Framework: ML-Enhanced Risk Engine
+  </h4>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Colonne gauche -->
+    <div>
+      <h5 class="text-xl font-bold text-gray-200 mb-4">Architecture Components</h5>
+      <div class="code-block p-4 rounded text-sm overflow-x-auto">
+        <pre class="text-green-400 min-w-max">
 # Risk Engine Architecture
 class MLRiskEngine:
     def __init__(self):
@@ -1344,41 +1347,45 @@ class MLRiskEngine:
             'expected_shortfall': expected_shortfall,
             'component_contributions': self.decompose_risk(predictions)
         }
-                                        </pre>
-                                    </div>
-                                </div>
-                                
-                                <div>
-                                    <h5 class="text-xl font-bold text-gray-200 mb-4">Model Validation Pipeline</h5>
-                                    <div class="space-y-4">
-                                        <div class="bg-gray-800 p-4 rounded">
-                                            <h6 class="font-bold text-gray-200">1. Backtesting Framework</h6>
-                                            <ul class="text-sm text-gray-300 mt-2 space-y-1">
-                                                <li>• Rolling window validation (252-day periods)</li>
-                                                <li>• Out-of-sample testing on crisis periods</li>
-                                                <li>• Kupiec and Christoffersen tests</li>
-                                                <li>• Model confidence intervals</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="bg-gray-800 p-4 rounded">
-                                            <h6 class="font-bold text-gray-200">2. Performance Metrics</h6>
-                                            <ul class="text-sm text-gray-300 mt-2 space-y-1">
-                                                <li>• Hit rate accuracy: 97.3% (target: >95%)</li>
-                                                <li>• Conditional coverage: Pass at 99% confidence</li>
-                                                <li>• Model stability: R² > 0.85 across regimes</li>
-                                                <li>• Computational efficiency: <200ms latency</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <div class="bg-blue-900 p-4 rounded">
-                                            <h6 class="font-bold text-blue-200">3. Regulatory Compliance</h6>
-                                            <p class="text-sm text-blue-300 mt-2">Model governance framework aligned with SR 11-7, Basel Committee guidance on AI/ML applications, and CCAR/DFAST requirements</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        </pre>
+      </div>
+    </div>
+
+    <!-- Colonne droite -->
+    <div>
+      <h5 class="text-xl font-bold text-gray-200 mb-4">Model Validation Pipeline</h5>
+      <div class="space-y-4">
+        <div class="bg-gray-800 p-4 rounded">
+          <h6 class="font-bold text-gray-200">1. Backtesting Framework</h6>
+          <ul class="text-sm text-gray-300 mt-2 space-y-1">
+            <li>• Rolling window validation (252-day periods)</li>
+            <li>• Out-of-sample testing on crisis periods</li>
+            <li>• Kupiec and Christoffersen tests</li>
+            <li>• Model confidence intervals</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded">
+          <h6 class="font-bold text-gray-200">2. Performance Metrics</h6>
+          <ul class="text-sm text-gray-300 mt-2 space-y-1">
+            <li>• Hit rate accuracy: 97.3% (target: &gt;95%)</li>
+            <li>• Conditional coverage: Pass at 99% confidence</li>
+            <li>• Model stability: R² &gt; 0.85 across regimes</li>
+            <li>• Computational efficiency: &lt;200ms latency</li>
+          </ul>
+        </div>
+
+        <div class="bg-blue-900 p-4 rounded">
+          <h6 class="font-bold text-blue-200">3. Regulatory Compliance</h6>
+          <p class="text-sm text-blue-300 mt-2">
+            Model governance framework aligned with SR 11-7, Basel Committee guidance on AI/ML applications, and CCAR/DFAST requirements
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
                         
                         <div class="bg-red-100 border-l-4 border-red-500 p-6 rounded-r-lg">
                             <h4 class="text-xl font-bold text-red-800 mb-4">Critical Implementation Challenges and Risk Mitigation</h4>
@@ -1521,3 +1528,4 @@ class MLRiskEngine:
 </footer>
 </body>
 </html>
+
