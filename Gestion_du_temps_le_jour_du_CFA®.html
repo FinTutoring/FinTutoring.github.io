@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer son Temps Efficacement le Jour du CFA®</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.3);
+        }
+        .time-block {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-left: 4px solid #dc2626;
+        }
+        .strategy-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec logo centré et agrandi -->
+    <header class="bg-gradient-red text-white pt-10 pb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo centré et agrandi -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+            </div>
+
+            <!-- Nom et slogan -->
+            <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal -->
+            <h1 class="text-4xl font-bold mb-4">Gérer son Temps Efficacement le Jour du CFA®</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">Maîtrisez les stratégies de gestion du temps pour optimiser vos performances le jour J et maximiser vos chances de réussite à l'examen CFA®.</p>
+        </div>
+    </header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#specificites-niveaux" class="hover:text-red-600 transition-colors">Spécificités par Niveau</a>
+                <a href="#strategies-repartition" class="hover:text-red-600 transition-colors">Stratégies de Répartition</a>
+                <a href="#techniques-priorisation" class="hover:text-red-600 transition-colors">Techniques de Priorisation</a>
+                <a href="#gestion-stress" class="hover:text-red-600 transition-colors">Gestion du Stress</a>
+                <a href="#erreurs-eviter" class="hover:text-red-600 transition-colors">Erreurs à Éviter</a>
+                <a href="#checklist-jour-j" class="hover:text-red-600 transition-colors">Check-list Jour J</a>
+                <a href="#formation-cfa" class="hover:text-red-600 transition-colors">Formation CFA</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">L'Art de la Gestion du Temps le Jour du CFA®</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La gestion efficace du temps le jour de l'examen CFA® peut faire la différence entre le succès et l'échec. Avec des contraintes temporelles strictes et un volume important de questions, une stratégie bien rodée est essentielle pour maximiser vos performances.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ce guide vous fournira les techniques éprouvées et les stratégies pratiques pour gérer votre temps de manière optimale, quel que soit le niveau CFA® que vous passez. Chaque seconde compte dans cette course contre la montre.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-clock mr-2"></i>Enjeux Temporels CFA®
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-stopwatch text-blue-500 mr-2"></i>Niveau 1 : 90 sec/question (MCQ)</li>
+                            <li><i class="fas fa-calculator text-green-500 mr-2"></i>Niveau 2 : 18 min/vignette (6 questions)</li>
+                            <li><i class="fas fa-edit text-purple-500 mr-2"></i>Niveau 3 : Essays + MCQ mixtes</li>
+                            <li><i class="fas fa-trophy text-orange-500 mr-2"></i>Impact direct sur le score final</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spécificités par niveau -->
+        <section id="specificites-niveaux" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Spécificités Temporelles par Niveau CFA®</h2>
+            
+            <div class="space-y-8">
+                <!-- Level 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-2xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-layer-group mr-3"></i>CFA® Level 1 - Questions à Choix Multiples
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <div class="time-block p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4">Contraintes Temporelles</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-red-500 mr-3"></i>
+                                    <div>
+                                        <strong>180 questions totales</strong>
+                                        <p class="text-sm text-gray-600">Réparties en 2 sessions de 90 questions</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-hourglass-half text-red-500 mr-3"></i>
+                                    <div>
+                                        <strong>135 minutes par session</strong>
+                                        <p class="text-sm text-gray-600">Soit 90 secondes par question maximum</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-pause text-red-500 mr-3"></i>
+                                    <div>
+                                        <strong>Pause de 30 minutes</strong>
+                                        <p class="text-sm text-gray-600">Entre les deux sessions</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-green-600">Stratégie Recommandée</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• <strong>60 secondes</strong> : Questions conceptuelles simples</li>
+                                <li>• <strong>90 secondes</strong> : Questions avec calculs moyens</li>
+                                <li>• <strong>120 secondes</strong> : Questions complexes (maximum)</li>
+                                <li>• <strong>15 minutes</strong> : Réservées pour révision finale</li>
+                                <li>• <strong>Marquer</strong> les questions difficiles pour y revenir</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-2xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-th-list mr-3"></i>CFA® Level 2 - Vignettes (Item Sets)
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-6">
+                        <div class="time-block p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4">Format Spécifique</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-file-alt text-blue-500 mr-3"></i>
+                                    <div>
+                                        <strong>22 vignettes totales</strong>
+                                        <p class="text-sm text-gray-600">11 par session, 6 questions par vignette</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-stopwatch text-blue-500 mr-3"></i>
+                                    <div>
+                                        <strong>18 minutes par vignette</strong>
+                                        <p class="text-sm text-gray-600">Lecture + 6 questions = 3 min/question</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-book-open text-blue-500 mr-3"></i>
+                                    <div>
+                                        <strong>Lecture du cas</strong>
+                                        <p class="text-sm text-gray-600">3-5 minutes de lecture active nécessaires</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="strategy-card p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-green-600">Répartition Optimale</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>• <strong>4-5 minutes</strong> : Lecture attentive de la vignette</li>
+                                <li>• <strong>12-13 minutes</strong> : Résolution des 6 questions</li>
+                                <li>• <strong>1 minute</strong> : Révision des réponses</li>
+                                <li>• <strong>Technique</strong> : Lire d'abord les questions</li>
+                                <li>• <strong>Priorité</strong> : Questions faciles en premier</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-2xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-edit mr-3"></i>CFA® Level 3 - Essays + Questions à Choix Multiples
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="time-block p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4">Session Essays (Matinée)</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-pencil-alt text-purple-500 mr-3"></i>
+                                    <div>
+                                        <strong>135 minutes totales</strong>
+                                        <p class="text-sm text-gray-600">Pour 8-12 questions essays</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-calculator text-purple-500 mr-3"></i>
+                                    <div>
+                                        <strong>Points par minute</strong>
+                                        <p class="text-sm text-gray-600">≈ 1.5 minute par point attribué</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="time-block p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4">Session MCQ (Après-midi)</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <i class="fas fa-list text-purple-500 mr-3"></i>
+                                    <div>
+                                        <strong>44 questions MCQ</strong>
+                                        <p class="text-sm text-gray-600">Format similaire au Level 1</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-purple-500 mr-3"></i>
+                                    <div>
+                                        <strong>3 minutes par question</strong>
+                                        <p class="text-sm text-gray-600">Plus de temps que le Level 1</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stratégies de répartition -->
+        <section id="strategies-repartition" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Stratégies de Répartition du Temps</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-tachometer-alt text-blue-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-center">Technique du Chronométrage</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>• Utiliser la montre de l'écran</li>
+                        <li>• Points de contrôle réguliers</li>
+                        <li>• Ajustement en temps réel</li>
+                        <li>• Alertes mentales programmées</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-sort-amount-up text-green-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-center">Méthode de Priorisation</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>• Questions faciles d'abord</li>
+                        <li>• Marquer les difficiles</li>
+                        <li>• Revenir en fin de session</li>
+                        <li>• Ne jamais laisser vide</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center mb-4">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                            <i class="fas fa-flag-checkered text-red-600 text-2xl"></i>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-3 text-center">Système de Marquage</h3>
+                    <ul class="text-sm space-y-2">
+                        <li>• Fonction "Flag" pour marquer</li>
+                        <li>• Différents niveaux de difficulté</li>
+                        <li>• Révision systématique</li>
+                        <li>• Validation finale</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-line mr-2"></i>Répartition Optimale du Temps par Niveau
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Level 1 Breakdown -->
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-blue-600">Level 1 (135 min/session)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span>Questions 1-30</span>
+                                    <span class="font-semibold">45 min</span>
+                                </div>
+                                <div class="w-full bg-blue-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 33%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Questions 31-60</span>
+                                    <span class="font-semibold">45 min</span>
+                                </div>
+                                <div class="w-full bg-blue-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 33%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Questions 61-90</span>
+                                    <span class="font-semibold">30 min</span>
+                                </div>
+                                <div class="w-full bg-blue-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 22%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Révision</span>
+                                    <span class="font-semibold">15 min</span>
+                                </div>
+                                <div class="w-full bg-blue-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 12%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Level 2 Breakdown -->
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-green-600">Level 2 (135 min/session)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span>Vignettes 1-4</span>
+                                    <span class="font-semibold">72 min</span>
+                                </div>
+                                <div class="w-full bg-green-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 53%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Vignettes 5-8</span>
+                                    <span class="font-semibold">54 min</span>
+                                </div>
+                                <div class="w-full bg-green-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 40%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Révision</span>
+                                    <span class="font-semibold">9 min</span>
+                                </div>
+                                <div class="w-full bg-green-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 7%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Level 3 Breakdown -->
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-4 text-purple-600">Level 3 Essays (135 min)</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span>Lecture rapide</span>
+                                    <span class="font-semibold">10 min</span>
+                                </div>
+                                <div class="w-full bg-purple-200 rounded-full h-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 7%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Réponses</span>
+                                    <span class="font-semibold">110 min</span>
+                                </div>
+                                <div class="w-full bg-purple-200 rounded-full h-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 81%"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <span>Révision</span>
+                                    <span class="font-semibold">15 min</span>
+                                </div>
+                                <div class="w-full bg-purple-200 rounded-full h-2">
+                                    <div class="bg-purple-600 h-2 rounded-full" style="width: 12%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques de priorisation -->
+        <section id="techniques-priorisation" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Techniques de Priorisation Avancées</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-brain mr-2"></i>Méthode de Tri Rapide
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-4 text-green-600">Catégories de Questions</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-check text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-green-600">Questions Faciles (Vert)</strong>
+                                        <p class="text-sm text-gray-600">Réponse immédiate, concepts maîtrisés, calculs simples</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-clock text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-yellow-600">Questions Moyennes (Jaune)</strong>
+                                        <p class="text-sm text-gray-600">Nécessitent réflexion, calculs intermédiaires</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                                        <i class="fas fa-exclamation text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <strong class="text-red-600">Questions Difficiles (Rouge)</strong>
+                                        <p class="text-sm text-gray-600">Complexes, incertitude, calculs longs</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-4 text-blue-600">Stratégie de Traitement</h4>
+                            <div class="space-y-3">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <strong>Phase 1 - Tri Initial (5 min)</strong>
+                                    <p class="text-sm text-gray-600">Parcourir rapidement toutes les questions pour les catégoriser</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <strong>Phase 2 - Traitement Vert (30-40 min)</strong>
+                                    <p class="text-sm text-gray-600">Répondre à toutes les questions faciles en premier</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <strong>Phase 3 - Traitement Jaune (40-60 min)</strong>
+                                    <p class="text-sm text-gray-600">S'attaquer aux questions de difficulté moyenne</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <strong>Phase 4 - Traitement Rouge (Temps restant)</strong>
+                                    <p class="text-sm text-gray-600">Questions difficiles avec le temps disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-stopwatch mr-2"></i>Règle des "3 Passes" pour le Level 2
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-blue-600">1</span>
+                            </div>
+                            <h4 class="font-semibold mb-3">Première Passe</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Vignettes les plus familières</li>
+                                <li>• Lecture rapide du cas</li>
+                                <li>• Questions évidentes</li>
+                                <li>• 60-70 minutes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-green-600">2</span>
+                            </div>
+                            <h4 class="font-semibold mb-3">Deuxième Passe</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Vignettes de difficulté moyenne</li>
+                                <li>• Calculs plus complexes</li>
+                                <li>• Analyse approfondie</li>
+                                <li>• 45-50 minutes</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl font-bold text-red-600">3</span>
+                            </div>
+                            <h4 class="font-semibold mb-3">Troisième Passe</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Vignettes les plus difficiles</li>
+                                <li>• Questions marquées</li>
+                                <li>• Révision générale</li>
+                                <li>• 20-30 minutes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gestion du stress temporal -->
+        <section id="gestion-stress" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Gestion du Stress Temporel</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-heart-broken mr-2"></i>Signaux d'Alarme
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Retard de 10+ minutes</strong>
+                                <p class="text-sm text-gray-600">Par rapport au planning initial</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-tachometer-alt text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Vitesse de lecture diminuée</strong>
+                                <p class="text-sm text-gray-600">Signe de fatigue mentale</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-redo text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Relecture excessive</strong>
+                                <p class="text-sm text-gray-600">Perte de confiance en soi</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-question-circle text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Indécision prolongée</strong>
+                                <p class="text-sm text-gray-600">Plus de 2 minutes sur une question</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-green-600">
+                        <i class="fas fa-leaf mr-2"></i>Techniques de Récupération
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-wind text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Respiration 4-7-8</strong>
+                                <p class="text-sm text-gray-600">Inspirer 4s, retenir 7s, expirer 8s</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-eye text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Détournement du regard</strong>
+                                <p class="text-sm text-gray-600">5 secondes loin de l'écran</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-brain text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Reset mental</strong>
+                                <p class="text-sm text-gray-600">"Je maîtrise, je continue"</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-forward text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Passage à la suivante</strong>
+                                <p class="text-sm text-gray-600">Ne pas s'obstiner</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-purple-600">
+                    <i class="fas fa-lightbulb mr-2"></i>Mantras Anti-Stress pour l'Examen
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="font-medium text-gray-800">"Chaque question est indépendante"</p>
+                        <p class="text-sm text-gray-600">Une erreur n'affecte pas les suivantes</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="font-medium text-gray-800">"Je me concentre sur ce que je contrôle"</p>
+                        <p class="text-sm text-gray-600">Mon rythme et mes choix</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="font-medium text-gray-800">"Ma préparation me guide"</p>
+                        <p class="text-sm text-gray-600">Faire confiance à son entraînement</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="font-medium text-gray-800">"Le temps travaille pour moi"</p>
+                        <p class="text-sm text-gray-600">Chaque seconde bien utilisée compte</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Erreurs à éviter -->
+        <section id="erreurs-eviter" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Erreurs Fatales à Éviter le Jour J</h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-600">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-ban mr-2"></i>Top 10 des Erreurs de Gestion du Temps
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">1</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">S'obstiner sur une question</strong>
+                                    <p class="text-sm text-gray-600">Plus de 3 minutes sur une seule question MCQ</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">2</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Ignorer l'horloge de l'examen</strong>
+                                    <p class="text-sm text-gray-600">Ne pas vérifier régulièrement le temps restant</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">3</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Perfectionnisme excessif</strong>
+                                    <p class="text-sm text-gray-600">Vouloir être sûr à 100% de chaque réponse</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">4</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Changer ses réponses sans raison</strong>
+                                    <p class="text-sm text-gray-600">La première intuition est souvent la bonne</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">5</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Laisser des questions vides</strong>
+                                    <p class="text-sm text-gray-600">Toujours répondre, même par élimination</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">6</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Commencer par les questions difficiles</strong>
+                                    <p class="text-sm text-gray-600">Prioriser les "quick wins" d'abord</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">7</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Paniquer en voyant le temps</strong>
+                                    <p class="text-sm text-gray-600">Garder son calme et ajuster sa stratégie</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">8</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Négliger la révision finale</strong>
+                                    <p class="text-sm text-gray-600">Réserver 10-15 minutes pour vérifier</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">9</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Calculer sur du brouillon</strong>
+                                    <p class="text-sm text-gray-600">Utiliser la calculatrice autorisée uniquement</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                    <span class="text-red-600 font-bold">10</span>
+                                </div>
+                                <div>
+                                    <strong class="text-red-600">Se comparer aux autres candidats</strong>
+                                    <p class="text-sm text-gray-600">Chacun a son rythme et sa stratégie</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Check-list jour J -->
+        <section id="checklist-jour-j" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Check-list Complète pour le Jour J</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-blue-600">
+                        <i class="fas fa-sun mr-2"></i>Préparation Matinale (H-2h)
+                    </h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Petit-déjeuner léger et énergétique</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Révision rapide des formules clés (15 min max)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Vérification du matériel autorisé</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Test de la calculatrice (piles, fonctions)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Exercices de respiration (5 min)</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Confirmation de l'itinéraire au centre</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-green-600">
+                        <i class="fas fa-building mr-2"></i>Arrivée au Centre (H-30min)
+                    </h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Présentation du passeport valide</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Enregistrement et attribution de poste</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Test des équipements informatiques</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Ajustement du siège et de l'écran</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Placement de la calculatrice</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 text-red-600">
+                            <span class="text-gray-700">Dernière visualisation mentale positive</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mt-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-play mr-2"></i>Stratégie de Démarrage (Premières 10 minutes)
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-eye text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3">Minutes 1-3</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Lire les instructions</li>
+                            <li>• Vérifier le nombre de questions</li>
+                            <li>• Configurer l'horloge mentale</li>
+                            <li>• Première respiration profonde</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-green-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3">Minutes 4-7</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Survol rapide des questions</li>
+                            <li>• Identification des "quick wins"</li>
+                            <li>• Repérage des formules nécessaires</li>
+                            <li>• Planification des priorités</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-red-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-semibold mb-3">Minutes 8-10</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Début par la première question facile</li>
+                            <li>• Établissement du rythme</li>
+                            <li>• Confiance en ses capacités</li>
+                            <li>• Focus total sur l'examen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formation CFA Call-to-Action -->
+        <section id="formation-cfa" class="mb-12">
+            <div class="bg-gradient-red text-white p-8 rounded-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white bg-opacity-10 rounded-full -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-white bg-opacity-10 rounded-full -ml-12 -mb-12"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold mb-4">
+                            <i class="fas fa-graduation-cap mr-3"></i>Maximisez Vos Chances de Réussite avec Finance Tutoring
+                        </h2>
+                        <p class="text-xl text-red-100 max-w-4xl mx-auto">
+                            La gestion du temps s'apprend et se perfectionne. Nos formations CFA® vous préparent à exceller le jour J avec des stratégies éprouvées et un accompagnement personnalisé.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                            <i class="fas fa-clock text-4xl mb-4 text-red-200"></i>
+                            <h3 class="font-semibold text-lg mb-2">Entraînement Chronométré</h3>
+                            <p class="text-sm text-red-100">Simulations d'examen dans les conditions réelles pour maîtriser votre timing</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                            <i class="fas fa-brain text-4xl mb-4 text-red-200"></i>
+                            <h3 class="font-semibold text-lg mb-2">Techniques Avancées</h3>
+                            <p class="text-sm text-red-100">Stratégies de priorisation et méthodes de résolution rapide exclusives</p>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                            <i class="fas fa-users text-4xl mb-4 text-red-200"></i>
+                            <h3 class="font-semibold text-lg mb-2">Accompagnement Personnalisé</h3>
+                            <p class="text-sm text-red-100">Suivi individuel et conseils adaptés à votre profil et vos difficultés</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://www.finance-tutoring.fr/formations/preparation-au-cfa/" 
+                           class="inline-flex items-center px-8 py-4 bg-white text-red-600 font-semibold rounded-lg cta-button hover:bg-red-50 transition-all duration-300">
+                            <i class="fas fa-arrow-right mr-3"></i>
+                            Découvrir Nos Formations CFA®
+                        </a>
+                        <p class="text-sm text-red-200 mt-4">
+                            Rejoignez les 85% de nos étudiants qui réussissent leur CFA® du premier coup
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-red-400">
+                        <div class="grid md:grid-cols-2 gap-6 text-sm text-red-100">
+                            <div>
+                                <h4 class="font-semibold mb-2">✓ Ce que vous obtiendrez :</h4>
+                                <ul class="space-y-1">
+                                    <li>• Stratégies de gestion du temps personnalisées</li>
+                                    <li>• Banque de questions chronométrées</li>
+                                    <li>• Simulations d'examens complets</li>
+                                    <li>• Techniques de gestion du stress</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">✓ Nos garanties :</h4>
+                                <ul class="space-y-1">
+                                    <li>• Formateurs certifiés CFA® Charterholders</li>
+                                    <li>• Méthodes validées par nos anciens étudiants</li>
+                                    <li>• Support jusqu'à la date d'examen</li>
+                                    <li>• Satisfaction garantie ou remboursé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-white p-8 rounded-lg shadow-red">
+            <h2 class="text-3xl font-bold text-gradient mb-6">Maîtrisez Votre Temps, Maîtrisez Votre Réussite</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        La gestion efficace du temps le jour de l'examen CFA® n'est pas un talent inné, mais une compétence qui se développe avec la pratique et les bonnes stratégies. Les techniques présentées dans ce guide ont été testées et validées par des milliers de candidats réussissant leur examen.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        L'application rigoureuse de ces méthodes, combinée à une préparation solide et un entraînement régulier aux conditions d'examen, vous donnera l'avantage décisif pour transformer votre stress temporel en atout stratégique.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4 text-red-600">Points Clés à Retenir</h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li>✓ Connaître parfaitement les contraintes temporelles de son niveau</li>
+                        <li>✓ Pratiquer la technique de tri rapide et de priorisation</li>
+                        <li>✓ Maîtriser les signaux d'alarme et les techniques de récupération</li>
+                        <li>✓ Éviter les 10 erreurs fatales de gestion du temps</li>
+                        <li>✓ Suivre religieusement sa check-list du jour J</li>
+                        <li>✓ S'entraîner régulièrement dans les conditions réelles</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-stopwatch text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-gray-600">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-gray-500">
+                        <p>Votre temps est précieux,</p>
+                        <p>optimisez-le pour réussir !</p>
+                        <p class="font-semibold">Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+
+            <p class="text-gray-400">
+                © 2024 Finance Tutoring. Ce guide est basé sur les meilleures pratiques de gestion du temps pour l'examen CFA® et l'expérience de nos formateurs certifiés.
+            </p>
+            
+            <div class="mt-4 space-x-6">
+                <span class="text-sm text-gray-500">Sources : CFA Institute, retours d'expérience candidats, Finance Tutoring</span>
+            </div>
+
+            <div class="mt-6">
+                <a href="https://www.finance-tutoring.fr/formations/preparation-au-cfa/" 
+                   class="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors">
+                    <i class="fas fa-graduation-cap mr-2"></i>
+                    Nos Formations CFA®
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
