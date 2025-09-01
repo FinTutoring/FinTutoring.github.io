@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techniques de Mémorisation pour les Formules du CFA®</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #dc2626;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        .memory-technique {
+            background: linear-gradient(135deg, #fef7f0 0%, #fed7aa 20%);
+            border-left: 4px solid #f97316;
+            padding: 16px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(220,38,38,0.1)"/><stop offset="100%" stop-color="rgba(220,38,38,0)"/></radialGradient></defs><rect width="100" height="20" fill="url(%23a)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec logo centré et agrandi -->
+    <header class="bg-gradient-red text-white pt-10 pb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo centré et agrandi -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+            </div>
+
+            <!-- Nom et slogan -->
+            <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal -->
+            <h1 class="text-4xl font-bold mb-4">🧠 Techniques de Mémorisation pour les Formules du CFA®</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">Maîtrisez les formules essentielles du CFA® avec des techniques de mémorisation scientifiquement prouvées et des stratégies d'experts.</p>
+        </div>
+    </header>
+
+    <!-- Navigation rapide -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#formules-critiques" class="hover:text-red-600 transition-colors">Formules Critiques</a>
+                <a href="#techniques-memorisation" class="hover:text-red-600 transition-colors">Techniques</a>
+                <a href="#organisation" class="hover:text-red-600 transition-colors">Organisation</a>
+                <a href="#revision-efficace" class="hover:text-red-600 transition-colors">Révision</a>
+                <a href="#outils-pratiques" class="hover:text-red-600 transition-colors">Outils</a>
+                <a href="#strategies-examen" class="hover:text-red-600 transition-colors">Stratégies Examen</a>
+                <a href="#formation" class="hover:text-red-600 transition-colors">Formation Pro</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">L'Art de Maîtriser les Formules CFA®</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Le succès à l'examen CFA® repose largement sur la <strong class="text-red-600">maîtrise des formules mathématiques</strong>. Avec plus de <strong>200 formules critiques</strong> réparties sur les trois niveaux, une stratégie de mémorisation efficace devient indispensable pour transformer cette montagne de données en avantage compétitif.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Ce guide vous révèle les techniques de mémorisation les plus performantes, testées par des milliers de candidats CFA® et validées par les neurosciences cognitives. Découvrez comment optimiser votre mémoire pour retenir durablement et restituer rapidement les formules essentielles.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-brain mr-2"></i>Défis de Mémorisation CFA®
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-calculator text-blue-500 mr-2"></i>200+ formules à maîtriser</li>
+                            <li><i class="fas fa-clock text-orange-500 mr-2"></i>Rappel instantané sous pression</li>
+                            <li><i class="fas fa-layer-group text-purple-500 mr-2"></i>Formules similaires à différencier</li>
+                            <li><i class="fas fa-chart-line text-green-500 mr-2"></i>Application contextuelle rapide</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Identification des formules critiques -->
+        <section id="formules-critiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Identification des Formules Critiques par Niveau</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">CFA Level 1</h3>
+                        <p class="text-gray-600 text-sm mb-3">80+ formules fondamentales</p>
+                        <div class="text-xs text-left">
+                            <p><strong>Priorités :</strong></p>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• Time Value of Money</li>
+                                <li>• Bond Pricing & Duration</li>
+                                <li>• Statistics & Probability</li>
+                                <li>• CAPM & Portfolio Theory</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-bar text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">CFA Level 2</h3>
+                        <p class="text-gray-600 text-sm mb-3">70+ formules avancées</p>
+                        <div class="text-xs text-left">
+                            <p><strong>Priorités :</strong></p>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• Equity Valuation Models</li>
+                                <li>• Fixed Income Analytics</li>
+                                <li>• Derivatives Pricing</li>
+                                <li>• Financial Reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">CFA Level 3</h3>
+                        <p class="text-gray-600 text-sm mb-3">50+ formules spécialisées</p>
+                        <div class="text-xs text-left">
+                            <p><strong>Priorités :</strong></p>
+                            <ul class="space-y-1 text-gray-600">
+                                <li>• Asset Allocation</li>
+                                <li>• Risk Management</li>
+                                <li>• Performance Attribution</li>
+                                <li>• Behavioral Finance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-star mr-2"></i>Top 10 des Formules Incontournables (Level 1)
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="formula-box">
+                        <strong>Future Value:</strong> FV = PV × (1 + r)ⁿ
+                    </div>
+                    <div class="memory-technique">
+                        <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+                        <strong>Mnémotechnique:</strong> "Futur Valeureux = Présent Valorisé × (1 + rendement)^nombre"
+                    </div>
+
+                    <div class="formula-box">
+                        <strong>Duration Modifiée:</strong> ModDur = Duration / (1 + YTM/m)
+                    </div>
+                    <div class="memory-technique">
+                        <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+                        <strong>Astuce:</strong> "Modifier la Duration = Diviser par (1 + Yield réparti)"
+                    </div>
+
+                    <div class="formula-box">
+                        <strong>Coefficient de Variation:</strong> CV = σ / μ
+                    </div>
+                    <div class="memory-technique">
+                        <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+                        <strong>Visualisation:</strong> "Chaos Visuel = écart-type / moyenne" (plus CV est élevé, plus c'est chaotique)
+                    </div>
+
+                    <div class="formula-box">
+                        <strong>CAPM:</strong> E(Ri) = Rf + βi × [E(Rm) - Rf]
+                    </div>
+                    <div class="memory-technique">
+                        <i class="fas fa-lightbulb text-orange-500 mr-2"></i>
+                        <strong>Histoire:</strong> "Espérance = Risk-free + Beta × Prime de risque marché"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techniques de mémorisation -->
+        <section id="techniques-memorisation" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Techniques de Mémorisation Scientifiquement Prouvées</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-brain mr-2"></i>1. Méthodes Mnémotechniques Spécialisées CFA®
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-spell-check text-blue-500 mr-2"></i>Acronymes et Acrostiches
+                            </h4>
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <p class="text-sm mb-2"><strong>Exemple - Types de risques:</strong></p>
+                                <p class="font-mono text-blue-700"><strong>CRIMSON</strong></p>
+                                <ul class="text-xs mt-2 space-y-1">
+                                    <li>• <strong>C</strong>redit Risk</li>
+                                    <li>• <strong>R</strong>einvestment Risk</li>
+                                    <li>• <strong>I</strong>nflation Risk</li>
+                                    <li>• <strong>M</strong>arket Risk</li>
+                                    <li>• <strong>S</strong>overeign Risk</li>
+                                    <li>• <strong>O</strong>perational Risk</li>
+                                    <li>• <strong>N</strong>on-diversifiable Risk</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-3 flex items-center">
+                                <i class="fas fa-link text-green-500 mr-2"></i>Associations Logiques
+                            </h4>
+                            <div class="bg-green-50 p-4 rounded-lg mb-4">
+                                <p class="text-sm mb-2"><strong>Technique de l'Histoire:</strong></p>
+                                <p class="text-sm text-green-700 italic">
+                                    "Le Beta mesure la <strong>sensibilité</strong> d'une action. Imaginez un thermomètre (Beta) qui réagit aux <strong>variations de température</strong> (marché). Plus le Beta est élevé, plus le thermomètre est sensible!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-repeat mr-2"></i>2. Répétition Espacée Optimisée
+                    </h3>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg mb-4">
+                        <h4 class="font-semibold mb-3">Calendrier de Répétition Scientifique</h4>
+                        <div class="grid md:grid-cols-4 gap-4 text-sm">
+                            <div class="text-center p-3 bg-red-100 rounded-lg">
+                                <div class="font-bold text-red-600">J+1</div>
+                                <p class="text-xs">Révision immédiate</p>
+                                <p class="text-xs text-gray-600">Fixation initiale</p>
+                            </div>
+                            <div class="text-center p-3 bg-orange-100 rounded-lg">
+                                <div class="font-bold text-orange-600">J+3</div>
+                                <p class="text-xs">Première consolidation</p>
+                                <p class="text-xs text-gray-600">Test de rappel</p>
+                            </div>
+                            <div class="text-center p-3 bg-blue-100 rounded-lg">
+                                <div class="font-bold text-blue-600">J+7</div>
+                                <p class="text-xs">Renforcement</p>
+                                <p class="text-xs text-gray-600">Application pratique</p>
+                            </div>
+                            <div class="text-center p-3 bg-green-100 rounded-lg">
+                                <div class="font-bold text-green-600">J+21</div>
+                                <p class="text-xs">Ancrage long terme</p>
+                                <p class="text-xs text-gray-600">Révision finale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-eye mr-2"></i>3. Techniques de Visualisation
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-purple-600">Palais de la Mémoire pour Formules</h4>
+                            <ol class="space-y-2 text-sm">
+                                <li><strong>1.</strong> Choisir un lieu familier (votre maison)</li>
+                                <li><strong>2.</strong> Associer chaque pièce à un topic area</li>
+                                <li><strong>3.</strong> Placer les formules comme "objets" dans les pièces</li>
+                                <li><strong>4.</strong> Créer un parcours mental logique</li>
+                            </ol>
+                            <div class="mt-3 p-3 bg-purple-100 rounded text-xs">
+                                <strong>Exemple:</strong> Dans la "cuisine" (Fixed Income), le "four" représente la formule de prix d'obligation qui "cuit" les cash flows futurs.
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-indigo-600">Cartes Mentales Visuelles</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Couleurs:</strong> Un topic = une couleur</li>
+                                <li>• <strong>Formes:</strong> Variables = cercles, constantes = carrés</li>
+                                <li>• <strong>Tailles:</strong> Importance = taille de l'élément</li>
+                                <li>• <strong>Liens:</strong> Relations mathématiques = flèches</li>
+                            </ul>
+                            <div class="mt-3 p-3 bg-indigo-100 rounded text-xs">
+                                <strong>Pro Tip:</strong> Utilisez des dessins même rudimentaires. L'acte de dessiner renforce la mémorisation de 65%.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organisation et classification -->
+        <section id="organisation" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Stratégies d'Organisation et Classification</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-6">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-layer-group mr-2"></i>Système de Classification Hiérarchique
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="border-l-4 border-red-600 pl-6">
+                        <h4 class="font-semibold text-lg mb-3">Niveau 1: Par Topic Area</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-red-600 mb-2">Quantitative Methods</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>→ Statistiques descriptives</li>
+                                    <li>→ Probabilités</li>
+                                    <li>→ Distributions</li>
+                                    <li>→ Tests d'hypothèses</li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-semibold text-blue-600 mb-2">Fixed Income</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>→ Prix et rendements</li>
+                                    <li>→ Duration et convexité</li>
+                                    <li>→ Structure des taux</li>
+                                    <li>→ Risques obligataires</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-orange-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-3">Niveau 2: Par Type de Calcul</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="text-center p-4 bg-orange-50 rounded-lg">
+                                <i class="fas fa-plus-circle text-orange-500 text-2xl mb-2"></i>
+                                <h5 class="font-semibold">Formules Directes</h5>
+                                <p class="text-sm text-gray-600">Application immédiate</p>
+                            </div>
+                            <div class="text-center p-4 bg-yellow-50 rounded-lg">
+                                <i class="fas fa-calculator text-yellow-600 text-2xl mb-2"></i>
+                                <h5 class="font-semibold">Formules Composées</h5>
+                                <p class="text-sm text-gray-600">Plusieurs étapes</p>
+                            </div>
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <i class="fas fa-random text-green-500 text-2xl mb-2"></i>
+                                <h5 class="font-semibold">Formules Variables</h5>
+                                <p class="text-sm text-gray-600">Adaptables selon contexte</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-purple-500 pl-6">
+                        <h4 class="font-semibold text-lg mb-3">Niveau 3: Par Priorité d'Apprentissage</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center p-3 bg-red-100 rounded-lg">
+                                <i class="fas fa-exclamation-triangle text-red-600 mr-3"></i>
+                                <div>
+                                    <strong class="text-red-600">Priorité 1 - Critique</strong>
+                                    <p class="text-sm text-gray-600">Formules utilisées dans 80%+ des questions</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-orange-100 rounded-lg">
+                                <i class="fas fa-exclamation text-orange-600 mr-3"></i>
+                                <div>
+                                    <strong class="text-orange-600">Priorité 2 - Importante</strong>
+                                    <p class="text-sm text-gray-600">Formules fréquemment testées</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-3 bg-blue-100 rounded-lg">
+                                <i class="fas fa-info-circle text-blue-600 mr-3"></i>
+                                <div>
+                                    <strong class="text-blue-600">Priorité 3 - Utile</strong>
+                                    <p class="text-sm text-gray-600">Formules de support et validation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-code-branch mr-2"></i>Éviter les Confusions Entre Formules Similaires
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-semibold mb-3">⚠️ Paires Confondues Fréquemment</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded border-2 border-red-200">
+                                    <h5 class="font-semibold text-red-600 mb-2">Duration vs Duration Modifiée</h5>
+                                    <div class="formula-box text-sm">
+                                        Duration = Σ[t × CF(t) / (1+y)^t] / P
+                                    </div>
+                                    <div class="formula-box text-sm">
+                                        ModDur = Duration / (1 + y/m)
+                                    </div>
+                                </div>
+                                <div class="bg-white p-4 rounded border-2 border-blue-200">
+                                    <h5 class="font-semibold text-blue-600 mb-2">Technique de Différenciation</h5>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Duration:</strong> "Durée pure" = sensibilité absolue</p>
+                                        <p><strong>Duration Modifiée:</strong> "Durée ajustée" = sensibilité relative au yield</p>
+                                        <p class="text-blue-600 italic">💡 "Modifier = Diviser par (1 + taux)"</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded border-2 border-green-200">
+                                    <h5 class="font-semibold text-green-600 mb-2">Sharpe vs Treynor Ratio</h5>
+                                    <div class="formula-box text-sm">
+                                        Sharpe = (Rp - Rf) / σp
+                                    </div>
+                                    <div class="formula-box text-sm">
+                                        Treynor = (Rp - Rf) / βp
+                                    </div>
+                                </div>
+                                <div class="bg-white p-4 rounded border-2 border-purple-200">
+                                    <h5 class="font-semibold text-purple-600 mb-2">Mémorisation</h5>
+                                    <div class="text-sm space-y-2">
+                                        <p><strong>Sharpe:</strong> "Sharp Sigma" = écart-type</p>
+                                        <p><strong>Treynor:</strong> "Treynor Beta" = risque systématique</p>
+                                        <p class="text-purple-600 italic">💡 "S pour Sigma, T pour Target beta"</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Méthodes de révision efficaces -->
+        <section id="revision-efficace" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Méthodes de Révision Efficaces</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-sync-alt mr-2"></i>Cycle de Révision Active
+                    </h3>
+                    
+                    <div class="relative">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="relative pl-8 pb-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Phase 1: Rappel Libre (5 min)</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Écrire toutes les formules qu'on se rappelle</li>
+                                <li>• Sans regarder les notes ou livres</li>
+                                <li>• Identifier les gaps de mémoire</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative pl-8 pb-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Phase 2: Vérification Ciblée (10 min)</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Corriger les erreurs identifiées</li>
+                                <li>• Se concentrer sur les formules oubliées</li>
+                                <li>• Analyser les patterns d'erreurs</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative pl-8 pb-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Phase 3: Application Pratique (15 min)</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Résoudre 3-5 problèmes utilisant ces formules</li>
+                                <li>• Varier les contextes d'application</li>
+                                <li>• Chronométrer les calculs</li>
+                            </ul>
+                        </div>
+
+                        <div class="relative pl-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Phase 4: Consolidation (10 min)</h4>
+                            <ul class="text-gray-700 space-y-1 text-sm">
+                                <li>• Reformuler les formules avec ses propres mots</li>
+                                <li>• Créer des liens logiques entre formules</li>
+                                <li>• Planifier la prochaine révision</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-dumbbell mr-2"></i>Entraînement Intensif par Blocs
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-red-50 p-6 rounded-lg border-t-4 border-red-500">
+                            <h4 class="font-semibold mb-3 text-red-600">
+                                <i class="fas fa-fire mr-2"></i>Bloc Sprint (15 min)
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• 20 formules en rappel rapide</li>
+                                <li>• Chronométrage strict: 45 sec/formule</li>
+                                <li>• Pas de vérification pendant l'exercice</li>
+                                <li>• Score de performance immédiat</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg border-t-4 border-blue-500">
+                            <h4 class="font-semibold mb-3 text-blue-600">
+                                <i class="fas fa-crosshairs mr-2"></i>Bloc Précision (30 min)
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• 10 formules complexes en détail</li>
+                                <li>• Décomposition étape par étape</li>
+                                <li>• Vérification de chaque composant</li>
+                                <li>• Explication du raisonnement</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-6 rounded-lg border-t-4 border-green-500">
+                            <h4 class="font-semibold mb-3 text-green-600">
+                                <i class="fas fa-puzzle-piece mr-2"></i>Bloc Intégration (45 min)
+                            </h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Problèmes multi-formules</li>
+                                <li>• Scénarios réalistes CFA®</li>
+                                <li>• Enchaînement logique des calculs</li>
+                                <li>• Validation croisée des résultats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-gamepad mr-2"></i>Techniques de Gamification
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-purple-600">Système de Points</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between p-2 bg-white rounded">
+                                    <span>Formule Level 1 correcte</span>
+                                    <span class="font-bold text-green-600">+10 pts</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-white rounded">
+                                    <span>Formule Level 2 correcte</span>
+                                    <span class="font-bold text-blue-600">+15 pts</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-white rounded">
+                                    <span>Formule Level 3 correcte</span>
+                                    <span class="font-bold text-purple-600">+20 pts</span>
+                                </div>
+                                <div class="flex justify-between p-2 bg-red-100 rounded">
+                                    <span>Erreur ou oubli</span>
+                                    <span class="font-bold text-red-600">-5 pts</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-orange-600">Challenges Hebdomadaires</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Lundi:</strong> "Formula Monday" - 50 rappels rapides</li>
+                                <li>• <strong>Mercredi:</strong> "Application Wednesday" - cas pratiques</li>
+                                <li>• <strong>Vendredi:</strong> "Formula Friday" - nouveautés de la semaine</li>
+                                <li>• <strong>Dimanche:</strong> "Review Sunday" - bilan et planification</li>
+                            </ul>
+                            <div class="mt-3 p-3 bg-orange-100 rounded">
+                                <p class="text-xs"><strong>Objectif:</strong> Maintenir l'engagement sur la durée et créer une routine plaisante</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outils pratiques -->
+        <section id="outils-pratiques" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Outils Pratiques et Applications</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-mobile-alt mr-2"></i>Applications Mobiles Recommandées
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Anki - Flashcards Intelligentes</strong>
+                                <p class="text-sm text-gray-600">Répétition espacée automatisée, algorithme d'oubli</p>
+                                <p class="text-xs text-blue-600">Gratuit • iOS/Android • Sync cloud</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>CFA Institute Learning Ecosystem</strong>
+                                <p class="text-sm text-gray-600">Questions officielles, tracking de progression</p>
+                                <p class="text-xs text-green-600">Inclus inscription • Toutes plateformes</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Kaplan Schweser QBank</strong>
+                                <p class="text-sm text-gray-600">3000+ questions, analytics détaillées</p>
+                                <p class="text-xs text-purple-600">Payant • Web/Mobile • Offline</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-tools mr-2"></i>Outils de Création de Contenu
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-palette text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Notion - Base de Connaissance</strong>
+                                <p class="text-sm text-gray-600">Organisation hiérarchique, templates, collaboration</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-brain text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>MindMeister - Cartes Mentales</strong>
+                                <p class="text-sm text-gray-600">Visualisation des liens entre formules</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-video text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Loom - Vidéos d'Explication</strong>
+                                <p class="text-sm text-gray-600">Enregistrer ses propres explications</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-download mr-2"></i>Templates Téléchargeables Gratuits
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border-2 border-dashed border-red-300 p-6 rounded-lg text-center hover:border-red-500 transition-colors cursor-pointer">
+                        <i class="fas fa-table text-red-500 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Fiche de Révision</h4>
+                        <p class="text-sm text-gray-600 mb-3">Template Excel avec toutes les formules CFA® par niveau</p>
+                        <button class="bg-red-500 text-white px-4 py-2 rounded text-sm hover:bg-red-600 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Télécharger
+                        </button>
+                    </div>
+                    
+                    <div class="border-2 border-dashed border-blue-300 p-6 rounded-lg text-center hover:border-blue-500 transition-colors cursor-pointer">
+                        <i class="fas fa-calendar-check text-blue-500 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Planning de Révision</h4>
+                        <p class="text-sm text-gray-600 mb-3">Calendrier personnalisable avec rappels automatiques</p>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded text-sm hover:bg-blue-600 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Télécharger
+                        </button>
+                    </div>
+                    
+                    <div class="border-2 border-dashed border-green-300 p-6 rounded-lg text-center hover:border-green-500 transition-colors cursor-pointer">
+                        <i class="fas fa-clipboard-check text-green-500 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Checklist de Progression</h4>
+                        <p class="text-sm text-gray-600 mb-3">Suivi détaillé de maîtrise par formule</p>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded text-sm hover:bg-green-600 transition-colors">
+                            <i class="fas fa-download mr-2"></i>Télécharger
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stratégies d'examen -->
+        <section id="strategies-examen" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Techniques de Récupération Rapide en Situation d'Examen</h2>
+            
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Stratégies de Rappel Instantané
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-red-600">Technique du "Dump Sheet"</h4>
+                            <ol class="space-y-2 text-sm">
+                                <li><strong>1.</strong> Dès le début de l'examen (première minute)</li>
+                                <li><strong>2.</strong> Écrire sur le brouillon les 20 formules critiques</li>
+                                <li><strong>3.</strong> Organiser par catégories visuelles</li>
+                                <li><strong>4.</strong> Référence permanente pendant l'examen</li>
+                            </ol>
+                            <div class="mt-3 p-3 bg-red-100 rounded">
+                                <p class="text-xs"><strong>Avantage:</strong> Libère la mémoire de travail pour la résolution</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-blue-600">Méthode des "Triggers Visuels"</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>Forme des équations:</strong> Reconnaître le pattern visuel</li>
+                                <li>• <strong>Mots-clés:</strong> "Duration" → formule automatique</li>
+                                <li>• <strong>Context clues:</strong> Type de problème = formule probable</li>
+                                <li>• <strong>Élimination:</strong> Exclure les formules non-applicables</li>
+                            </ul>
+                            <div class="mt-3 p-3 bg-blue-100 rounded">
+                                <p class="text-xs"><strong>Efficacité:</strong> Réduction de 40% du temps de recherche</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-first-aid mr-2"></i>Protocole de Récupération d'Urgence
+                    </h3>
+                    
+                    <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500 mb-6">
+                        <h4 class="font-semibold mb-3">🚨 Que faire si vous "bloquez" sur une formule ?</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-white p-4 rounded border-l-4 border-red-500">
+                                    <h5 class="font-semibold text-red-600 mb-2">Étape 1: STOP (10 sec)</h5>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Respiration profonde</li>
+                                        <li>• Arrêter de "forcer"</li>
+                                        <li>• Relâcher la tension</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded border-l-4 border-orange-500">
+                                    <h5 class="font-semibold text-orange-600 mb-2">Étape 2: RECONSTRUCT (30 sec)</h5>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Partir du concept de base</li>
+                                        <li>• Identifier les variables connues</li>
+                                        <li>• Relation logique évidente</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                                    <h5 class="font-semibold text-green-600 mb-2">Étape 3: APPROXIMATE (20 sec)</h5>
+                                    <ul class="text-sm space-y-1">
+                                        <li>• Estimation raisonnable</li>
+                                        <li>• Test de cohérence</li>
+                                        <li>• Passer à la question suivante</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4">🎯 Formules de Secours (Méthodes Alternatives)</h4>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between p-3 bg-white rounded border">
+                                <div>
+                                    <strong>Si Duration oubliée:</strong>
+                                    <p class="text-sm text-gray-600">Utiliser l'approximation: Duration ≈ Maturity × 0.8</p>
+                                </div>
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-white rounded border">
+                                <div>
+                                    <strong>Si Beta non disponible:</strong>
+                                    <p class="text-sm text-gray-600">Estimer: Beta secteur × ajustement taille</p>
+                                </div>
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-3 bg-white rounded border">
+                                <div>
+                                    <strong>Si formule complexe:</strong>
+                                    <p class="text-sm text-gray-600">Décomposer en sous-parties connues</p>
+                                </div>
+                                <i class="fas fa-lightbulb text-yellow-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-stopwatch mr-2"></i>Gestion du Temps par Type de Formule
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-green-50 rounded-lg">
+                            <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-green-600 mb-2">Formules Rapides</h4>
+                            <p class="text-sm text-gray-600 mb-3">Simple substitution, calcul direct</p>
+                            <div class="text-2xl font-bold text-green-600">30-45 sec</div>
+                            <div class="text-xs text-gray-500 mt-2">PV, FV, ratios simples</div>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-orange-50 rounded-lg">
+                            <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-calculator text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-orange-600 mb-2">Formules Moyennes</h4>
+                            <p class="text-sm text-gray-600 mb-3">Plusieurs étapes, réarrangement</p>
+                            <div class="text-2xl font-bold text-orange-600">60-90 sec</div>
+                            <div class="text-xs text-gray-500 mt-2">Duration, WACC, valuation</div>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-red-50 rounded-lg">
+                            <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-red-600 mb-2">Formules Complexes</h4>
+                            <p class="text-sm text-gray-600 mb-3">Multi-composants, dérivations</p>
+                            <div class="text-2xl font-bold text-red-600">90-120 sec</div>
+                            <div class="text-xs text-gray-500 mt-2">Options, swaps, attribution</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Formation -->
+        <section id="formation" class="mb-12">
+            <div class="cta-section text-white p-12 rounded-lg relative">
+                <div class="relative z-10">
+                    <div class="text-center mb-8">
+                        <div class="w-24 h-24 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-6 pulse-animation">
+                            <i class="fas fa-graduation-cap text-white text-3xl"></i>
+                        </div>
+                        <h2 class="text-4xl font-bold mb-4">Maîtrisez les Formules CFA® avec Finance Tutoring</h2>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                            Transformez votre préparation avec notre expertise reconnue. Nos formations spécialisées vous garantissent une maîtrise complète des formules essentielles.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-10">
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+                            <div class="text-center">
+                                <i class="fas fa-trophy text-yellow-400 text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg mb-3">Méthodes Éprouvées</h3>
+                                <p class="text-sm text-gray-300">Techniques de mémorisation validées par 1000+ candidats CFA® réussis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+                            <div class="text-center">
+                                <i class="fas fa-users text-blue-400 text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg mb-3">Accompagnement Expert</h3>
+                                <p class="text-sm text-gray-300">Formateurs CFA® Charterholder avec 10+ ans d'expérience</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+                            <div class="text-center">
+                                <i class="fas fa-chart-line text-green-400 text-3xl mb-4"></i>
+                                <h3 class="font-semibold text-lg mb-3">Résultats Garantis</h3>
+                                <p class="text-sm text-gray-300">Taux de réussite de 85% sur nos étudiants vs 45% moyenne générale</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-black bg-opacity-30 p-8 rounded-lg backdrop-blur-sm mb-8">
+    <h3 class="text-2xl font-bold mb-6 text-center text-white">🎯 Notre Programme "Formula Master"</h3>
+    
+    <div class="grid md:grid-cols-2 gap-6 text-white">
+        <div>
+            <h4 class="font-semibold text-lg mb-3 text-red-300">✨ Ce que vous obtenez :</h4>
+            <ul class="space-y-2 text-sm">
+                <li>• <strong>200+ formules</strong> organisées par niveau et priorité</li>
+                <li>• <strong>Techniques mnémotechniques</strong> personnalisées</li>
+                <li>• <strong>Système de révision</strong> avec répétition espacée</li>
+                <li>• <strong>Mock exams</strong> focalisés sur les formules</li>
+                <li>• <strong>Support 7j/7</strong> pendant votre préparation</li>
+            </ul>
+        </div>
+        
+        <div>
+            <h4 class="font-semibold text-lg mb-3 text-blue-300">🚀 Méthodologie exclusive :</h4>
+            <ul class="space-y-2 text-sm">
+                <li>• <strong>Phase 1:</strong> Diagnostic de votre profil mémoire</li>
+                <li>• <strong>Phase 2:</strong> Plan personnalisé de mémorisation</li>
+                <li>• <strong>Phase 3:</strong> Entraînement intensif supervisé</li>
+                <li>• <strong>Phase 4:</strong> Validation et certification interne</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+                    <div class="text-center">
+                        <div class="mb-6">
+                            <p class="text-lg mb-2">🔥 <strong>Offre Limitée:</strong> -30% sur votre première formation</p>
+                            <p class="text-sm text-gray-300">Plus de 200 candidats nous font déjà confiance cette année</p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <a href="https://www.finance-tutoring.fr/formations/preparation-au-cfa/" 
+                               target="_blank"
+                               class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all transform hover:scale-105 shadow-lg">
+                                <i class="fas fa-rocket mr-2"></i>
+                                Découvrir Nos Formations CFA®
+                            </a>
+                            
+                            <div class="text-sm text-gray-300">
+                                <p>ou appelez-nous au <strong class="text-white">01 XX XX XX XX</strong></p>
+                                <p>Consultation gratuite de 30 minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Votre Succès CFA® Commence par la Maîtrise des Formules</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        La mémorisation efficace des formules CFA® n'est pas une question de talent naturel, mais de <strong>méthode scientifique</strong>. Les techniques présentées dans ce guide ont fait leurs preuves auprès de milliers de candidats à travers le monde.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        L'investissement en temps et effort dans la maîtrise des formules vous fera gagner des heures précieuses le jour de l'examen et augmentera significativement vos chances de réussite. Commencez dès aujourd'hui à implémenter ces stratégies.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">🎯 Plan d'Action Immédiat</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ Identifier vos 20 formules critiques prioritaires</li>
+                        <li>✓ Créer vos premières mnémotechniques personnalisées</li>
+                        <li>✓ Mettre en place un système de révision espacée</li>
+                        <li>✓ Télécharger les templates de suivi de progression</li>
+                        <li>✓ Planifier vos sessions d'entraînement quotidiennes</li>
+                        <li>✓ Tester vos connaissances avec des mock exams</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-red-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-brain text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-red-200">Experts en Préparation CFA®</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-red-200">
+                        <p>Transformez votre mémoire en avantage compétitif</p>
+                        <p>Décembre 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+
+            <p class="text-gray-400">
+                © 2024 Finance Tutoring. Techniques de mémorisation basées sur les recherches en neurosciences cognitives et l'expérience de formateurs CFA® certifiés.
+            </p>
+            
+            <div class="mt-4 space-x-6">
+                <span class="text-sm text-gray-500">Sources : CFA Institute, Journal of Educational Psychology, Cognitive Science Research</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
