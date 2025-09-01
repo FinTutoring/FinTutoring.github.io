@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFA Niveau 1 – Guide complet de préparation</title>
+    <title>Planning de Révision Efficace pour l'Examen CFA</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -56,39 +56,48 @@
             width: 2px;
             background: #dc2626;
         }
+        .study-schedule {
+            background: linear-gradient(45deg, #f8fafc, #f1f5f9);
+        }
+        .topic-weight {
+            transition: all 0.3s ease;
+        }
+        .topic-weight:hover {
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Header avec logo centré et agrandi -->
-<header class="bg-gradient-red text-white pt-10 pb-8">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        <!-- Logo centré et agrandi -->
-        <div class="flex justify-center mb-6">
-            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+    <!-- Header -->
+    <header class="bg-gradient-red text-white pt-10 pb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Logo -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+            </div>
+
+            <!-- Nom et slogan -->
+            <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
+
+            <!-- Titre principal -->
+            <h1 class="text-4xl font-bold mb-4">Planning de Révision Efficace pour l'Examen CFA</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">Maîtrisez l'art de la planification pour réussir votre certification CFA : stratégies éprouvées pour optimiser vos 300+ heures d'étude et maximiser vos chances de réussite.</p>
         </div>
+    </header>
 
-        <!-- Nom et slogan -->
-        <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
-        <p class="text-sm text-red-200 mb-6">Excellence en Formation Financière</p>
-
-        <!-- Titre principal -->
-        <h1 class="text-4xl font-bold mb-4">CFA Niveau 1 – Guide Complet de Préparation</h1>
-        <p class="text-xl text-red-100 max-w-4xl mx-auto">Découvrez comment structurer votre préparation pour le CFA Level 1, avec planning d'étude, ressources essentielles et techniques pour maximiser votre score.</p>
-    </div>
-</header>
-
-
-    <!-- Navigation rapide -->
+    <!-- Navigation -->
     <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
         <div class="max-w-6xl mx-auto px-4 py-4">
             <div class="flex flex-wrap gap-4 text-sm">
                 <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
-                <a href="#comprendre-examen" class="hover:text-red-600 transition-colors">Comprendre l'Examen</a>
-                <a href="#curriculum" class="hover:text-red-600 transition-colors">Curriculum</a>
-                <a href="#planning" class="hover:text-red-600 transition-colors">Planning d'Étude</a>
-                <a href="#ressources" class="hover:text-red-600 transition-colors">Ressources</a>
-                <a href="#techniques" class="hover:text-red-600 transition-colors">Techniques</a>
-                <a href="#jour-j" class="hover:text-red-600 transition-colors">Jour J</a>
+                <a href="#defis-cfa" class="hover:text-red-600 transition-colors">Défis CFA</a>
+                <a href="#analyse-niveaux" class="hover:text-red-600 transition-colors">Analyse par Niveau</a>
+                <a href="#planification-thematique" class="hover:text-red-600 transition-colors">Planification Thématique</a>
+                <a href="#integration-mocks" class="hover:text-red-600 transition-colors">Mock Exams</a>
+                <a href="#memorisation-formules" class="hover:text-red-600 transition-colors">Mémorisation</a>
+                <a href="#equilibre-vie" class="hover:text-red-600 transition-colors">Équilibre Vie</a>
+                <a href="#outils-ressources" class="hover:text-red-600 transition-colors">Outils & Ressources</a>
             </div>
         </div>
     </nav>
@@ -97,506 +106,277 @@
         <!-- Introduction -->
         <section id="introduction" class="mb-12">
             <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
-                <h2 class="text-3xl font-bold text-gradient mb-6">Votre Chemin vers la Réussite au CFA Level 1</h2>
+                <h2 class="text-3xl font-bold text-gradient mb-6">La Planification : Clé du Succès CFA</h2>
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
                         <p class="text-gray-700 leading-relaxed mb-4">
-                            Le CFA (Chartered Financial Analyst) Level 1 représente la première étape cruciale vers l'obtention de l'une des certifications les plus prestigieuses dans le domaine de la finance. Avec un taux de réussite de <strong class="text-red-600">43-45%</strong> en 2024, la préparation nécessite une approche méthodique et rigoureuse.
+                            La certification CFA (Chartered Financial Analyst) représente l'un des défis académiques les plus exigeants du secteur financier. Avec un curriculum de plus de 3000 pages et une recommandation officielle de <strong class="text-red-600">300+ heures d'étude minimum</strong>, la réussite dépend largement de la qualité de votre planification.
                         </p>
-                        <p class="text-gray-700 leading-relaxed">
-                            Ce guide complet vous accompagnera dans votre préparation, depuis la compréhension de la structure de l'examen jusqu'aux stratégies avancées pour maximiser votre score. Basé sur les dernières informations du CFA Institute et les meilleures pratiques éprouvées.
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Un planning de révision bien structuré ne se contente pas d'organiser votre temps : il optimise votre apprentissage, réduit le stress, et maximise vos chances de réussite. Ce guide vous accompagne dans la création d'un planning personnalisé et efficace, adapté aux spécificités uniques de l'examen CFA.
                         </p>
+                        <div class="bg-red-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-red-600 mb-2"><i class="fas fa-lightbulb mr-2"></i>Statistiques Motivantes</h4>
+                            <p class="text-sm text-gray-700">Les candidats qui suivent un planning structuré augmentent leurs chances de réussite de <strong>35% à 50%</strong> selon les études du CFA Institute.</p>
+                        </div>
                     </div>
                     <div class="bg-gray-50 p-6 rounded-lg">
                         <h3 class="font-semibold text-lg mb-4 text-red-600">
-                            <i class="fas fa-chart-bar mr-2"></i>Statistiques Clés 2024
+                            <i class="fas fa-chart-bar mr-2"></i>Réalités CFA 2024
                         </h3>
-                        <ul class="space-y-2 text-sm">
-                            <li><i class="fas fa-check text-green-500 mr-2"></i>Taux de réussite : 43-45%</li>
-                            <li><i class="fas fa-clock text-blue-500 mr-2"></i>Temps de préparation recommandé : 300+ heures</li>
-                            <li><i class="fas fa-calculator text-purple-500 mr-2"></i>Score minimum estimé : 68-69%</li>
-                            <li><i class="fas fa-users text-orange-500 mr-2"></i>Moyenne 10 ans : 41%</li>
-                        </ul>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between">
+                                <span>Level 1 - Taux réussite</span>
+                                <span class="font-bold text-red-600">43-45%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Level 2 - Taux réussite</span>
+                                <span class="font-bold text-red-600">46-48%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Level 3 - Taux réussite</span>
+                                <span class="font-bold text-red-600">52-55%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Heures moyenne candidats</span>
+                                <span class="font-bold text-blue-600">350-400h</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tentatives avant réussite</span>
+                                <span class="font-bold text-purple-600">1.8 moyenne</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Comprendre l'examen -->
-        <section id="comprendre-examen" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Comprendre l'Examen CFA Level 1</h2>
+        <!-- Défis spécifiques CFA -->
+        <section id="defis-cfa" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Les Défis Uniques de la Préparation CFA</h2>
             
             <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-question-circle text-red-600 text-2xl"></i>
-                        </div>
-                        <h3 class="font-semibold text-lg mb-2">Format</h3>
-                        <p class="text-gray-600">180 questions à choix multiples</p>
-                    </div>
-                </div>
-                
                 <div class="bg-white p-6 rounded-lg shadow-red card-hover">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-clock text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-lg mb-2">Durée</h3>
-                        <p class="text-gray-600">2 sessions de 135 min<br/>≈ 90 secondes/question</p>
+                        <h3 class="font-semibold text-lg mb-3">Volume Massive</h3>
+                        <p class="text-gray-600 text-sm">300-400 heures d'étude réparties sur 10 domaines thématiques complexes</p>
                     </div>
                 </div>
                 
                 <div class="bg-white p-6 rounded-lg shadow-red card-hover">
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-computer text-red-600 text-2xl"></i>
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-briefcase text-blue-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-semibold text-lg mb-2">Modalité</h3>
-                        <p class="text-gray-600">Examen informatisé<br/>Dans centres agréés</p>
+                        <h3 class="font-semibold text-lg mb-3">Conciliation Pro</h3>
+                        <p class="text-gray-600 text-sm">85% des candidats travaillent à temps plein pendant leur préparation</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calculator text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Formules Critiques</h3>
+                        <p class="text-gray-600 text-sm">Plus de 200 formules essentielles à maîtriser parfaitement</p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white p-8 rounded-lg shadow-red">
                 <h3 class="text-xl font-semibold mb-6 text-red-600">
-                    <i class="fas fa-info-circle mr-2"></i>Caractéristiques Importantes
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Erreurs de Planification Courantes
                 </h3>
-                <div class="grid md:grid-cols-2 gap-6">
+                <div class="grid md:grid-cols-2 gap-8">
                     <div>
-                        <h4 class="font-semibold mb-3">Structure des Questions</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• 3 choix de réponse (A, B, C)</li>
-                            <li>• Pas de pénalité pour mauvaise réponse</li>
-                            <li>• Utilisation de qualificatifs : "most likely", "least likely"</li>
-                            <li>• Aucune question "vrai/faux" ou "sauf"</li>
+                        <h4 class="font-semibold mb-4 text-red-500">❌ Pièges à Éviter</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Sous-estimation du temps</strong>
+                                    <p class="text-sm text-gray-600">Planifier moins de 300h ou négliger les révisions</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Négligence d'Ethics</strong>
+                                    <p class="text-sm text-gray-600">Répartition insuffisante pour ce domaine décisif</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Mock exams tardifs</strong>
+                                    <p class="text-sm text-gray-600">Intégrer les mocks trop près de l'examen</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-semibold mb-3">Calendrier 2024-2025</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>Février 2025</strong> : Taux 45%</li>
-                            <li>• <strong>Mai 2025</strong> : Taux 45%</li>
-                            <li>• <strong>Août 2024</strong> : Taux 44%</li>
-                            <li>• <strong>Novembre 2024</strong> : Taux 43%</li>
+                        <h4 class="font-semibold mb-4 text-green-500">✅ Meilleures Pratiques</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Buffer de sécurité</strong>
+                                    <p class="text-sm text-gray-600">Ajouter 20% de temps supplémentaire</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Révisions cycliques</strong>
+                                    <p class="text-sm text-gray-600">Revoir régulièrement les domaines étudiés</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Practice continue</strong>
+                                    <p class="text-sm text-gray-600">Intégrer des questions dès le début</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Curriculum et pondérations -->
-        <section id="curriculum" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Structure du Curriculum et Pondérations</h2>
-            
-            <div class="bg-white p-8 rounded-lg shadow-red mb-6">
-                <p class="text-gray-700 mb-6">Le curriculum CFA Level 1 couvre 10 domaines thématiques répartis sur environ 3 000 pages. Voici la répartition officielle des pondérations pour 2024 :</p>
-                
-                <div class="space-y-4">
-                    <!-- Ethics -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Ethical and Professional Standards</h4>
-                            <span class="text-red-600 font-bold">15-20%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 17.5%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Fondements éthiques et normes professionnelles de l'industrie financière</p>
-                    </div>
-
-                    <!-- Financial Statement Analysis -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Financial Statement Analysis</h4>
-                            <span class="text-red-600 font-bold">11-14%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 12.5%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Analyse des états financiers selon IFRS et US GAAP</p>
-                    </div>
-
-                    <!-- Equity Investments -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Equity Investments</h4>
-                            <span class="text-red-600 font-bold">11-14%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 12.5%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Investissements en actions et méthodes de valorisation</p>
-                    </div>
-
-                    <!-- Fixed Income -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Fixed Income</h4>
-                            <span class="text-red-600 font-bold">11-14%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 12.5%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Obligations et instruments à revenu fixe</p>
-                    </div>
-
-                    <!-- Portfolio Management -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Portfolio Management</h4>
-                            <span class="text-red-600 font-bold">8-12%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 10%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Gestion de portefeuille et théorie moderne</p>
-                    </div>
-
-                    <!-- Alternative Investments -->
-                    <div class="border-l-4 border-red-600 pl-4">
-                        <div class="flex justify-between items-center mb-2">
-                            <h4 class="font-semibold text-lg">Alternative Investments</h4>
-                            <span class="text-red-600 font-bold">7-10%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
-                            <div class="progress-bar h-3 rounded-full" style="width: 8.5%"></div>
-                        </div>
-                        <p class="text-sm text-gray-600">Hedge funds, private equity, immobilier, matières premières</p>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-4 mt-6">
-                    <div class="space-y-3">
-                        <div class="flex justify-between">
-                            <span class="font-medium">Quantitative Methods</span>
-                            <span class="text-red-600 font-bold">6-9%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-medium">Economics</span>
-                            <span class="text-red-600 font-bold">6-9%</span>
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between">
-                            <span class="font-medium">Corporate Issuers</span>
-                            <span class="text-red-600 font-bold">6-9%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="font-medium">Derivatives</span>
-                            <span class="text-red-600 font-bold">5-8%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Planning d'étude -->
-        <section id="planning" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Planning d'Étude Recommandé</h2>
-            
-            <div class="bg-red-50 p-6 rounded-lg mb-8">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-exclamation-triangle text-red-600 text-xl mr-3"></i>
-                    <h3 class="text-lg font-semibold text-red-600">Recommandation Officielle</h3>
-                </div>
-                <p class="text-gray-700">
-                    <strong>Le CFA Institute recommande minimum 300 heures d'étude</strong> pour le Level 1. Les candidats qui réussissent rapportent généralement avoir étudié entre 300 et 400 heures.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
-                    <h3 class="font-semibold text-lg mb-4 text-red-600">
-                        <i class="fas fa-calendar-alt mr-2"></i>Plan 6 Mois
-                    </h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• <strong>50 heures/mois</strong></li>
-                        <li>• 12-13 heures/semaine</li>
-                        <li>• Idéal pour débutants</li>
-                        <li>• Révisions approfondies</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
-                    <h3 class="font-semibold text-lg mb-4 text-red-600">
-                        <i class="fas fa-clock mr-2"></i>Plan 4 Mois
-                    </h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• <strong>75 heures/mois</strong></li>
-                        <li>• 18-19 heures/semaine</li>
-                        <li>• Rythme soutenu</li>
-                        <li>• Base finance requise</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
-                    <h3 class="font-semibold text-lg mb-4 text-red-600">
-                        <i class="fas fa-bolt mr-2"></i>Plan 3 Mois
-                    </h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• <strong>100 heures/mois</strong></li>
-                        <li>• 25 heures/semaine</li>
-                        <li>• Très intensif</li>
-                        <li>• Expérience recommandée</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-red">
-                <h3 class="text-xl font-semibold mb-6 text-red-600">
-                    <i class="fas fa-road mr-2"></i>Timeline de Préparation (Plan 4 Mois)
-                </h3>
-                
-                <div class="relative">
-                    <div class="timeline-line"></div>
-                    
-                    <div class="relative pl-8 pb-8 timeline-item">
-                        <h4 class="font-semibold text-lg mb-2">Mois 1 - Fondations</h4>
-                        <ul class="text-gray-700 space-y-1">
-                            <li>• Ethics & Professional Standards</li>
-                            <li>• Quantitative Methods</li>
-                            <li>• Economics (début)</li>
-                            <li>• <strong>Objectif :</strong> 75 heures</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative pl-8 pb-8 timeline-item">
-                        <h4 class="font-semibold text-lg mb-2">Mois 2 - Analyse Financière</h4>
-                        <ul class="text-gray-700 space-y-1">
-                            <li>• Economics (fin)</li>
-                            <li>• Financial Statement Analysis</li>
-                            <li>• Corporate Issuers</li>
-                            <li>• <strong>Objectif :</strong> 75 heures</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative pl-8 pb-8 timeline-item">
-                        <h4 class="font-semibold text-lg mb-2">Mois 3 - Investissements</h4>
-                        <ul class="text-gray-700 space-y-1">
-                            <li>• Equity Investments</li>
-                            <li>• Fixed Income</li>
-                            <li>• Derivatives (début)</li>
-                            <li>• <strong>Objectif :</strong> 75 heures</li>
-                        </ul>
-                    </div>
-
-                    <div class="relative pl-8 timeline-item">
-                        <h4 class="font-semibold text-lg mb-2">Mois 4 - Finalisation</h4>
-                        <ul class="text-gray-700 space-y-1">
-                            <li>• Derivatives (fin)</li>
-                            <li>• Alternative Investments</li>
-                            <li>• Portfolio Management</li>
-                            <li>• Révisions et mocks</li>
-                            <li>• <strong>Objectif :</strong> 75 heures</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ressources essentielles -->
-        <section id="ressources" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Ressources Essentielles</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white p-6 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-4 text-red-600">
-                        <i class="fas fa-book mr-2"></i>Matériel Officiel CFA Institute
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>CFA Program Curriculum (Digital)</strong>
-                                <p class="text-sm text-gray-600">Contenu officiel complet, 93 modules d'apprentissage</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>Learning Ecosystem</strong>
-                                <p class="text-sm text-gray-600">Questions pratiques, mocks, outils d'étude</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>Practice Pack (Optionnel)</strong>
-                                <p class="text-sm text-gray-600">Questions supplémentaires et examens blancs</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-4 text-red-600">
-                        <i class="fas fa-graduation-cap mr-2"></i>Providers Tiers Recommandés
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>Kaplan Schweser</strong>
-                                <p class="text-sm text-gray-600">Notes concises, QBank robuste, mocks réputés</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>UWorld Finance</strong>
-                                <p class="text-sm text-gray-600">Explications visuelles, questions adaptatives</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-star text-yellow-500 mr-3 mt-1"></i>
-                            <div>
-                                <strong>300Hours.com</strong>
-                                <p class="text-sm text-gray-600">Ressources gratuites, conseils pratiques</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bg-gray-50 p-6 rounded-lg">
-                <h3 class="text-lg font-semibold mb-4">
-                    <i class="fas fa-calculator mr-2 text-red-600"></i>Outils Indispensables
-                </h3>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Calculatrices Autorisées</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Texas Instruments BA II Plus</li>
-                            <li>• HP 12C ou HP 12C Platinum</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Applications Mobiles</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• CFA Institute App</li>
-                            <li>• Flashcards providers</li>
-                            <li>• Formula sheets</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-4 rounded-lg">
-                        <h4 class="font-semibold mb-2">Matériel d'Étude</h4>
-                        <ul class="text-sm space-y-1">
-                            <li>• Cahiers de formules</li>
-                            <li>• Tableaux de révision</li>
-                            <li>• Calendrier de planification</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Techniques pour maximiser le score -->
-        <section id="techniques" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Techniques pour Maximiser Votre Score</h2>
+        <!-- Analyse par niveau -->
+        <section id="analyse-niveaux" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Stratégies Spécifiques par Niveau CFA</h2>
             
             <div class="space-y-8">
+                <!-- Level 1 -->
                 <div class="bg-white p-8 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-6 text-red-600">
-                        <i class="fas fa-target mr-2"></i>Stratégies d'Étude Efficaces
-                    </h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-red-600 font-bold text-xl">I</span>
+                        </div>
                         <div>
-                            <h4 class="font-semibold mb-3 flex items-center">
-                                <i class="fas fa-book-open text-blue-500 mr-2"></i>Méthode de Lecture Active
-                            </h4>
-                            <ul class="space-y-2 text-gray-700">
-                                <li>1. <strong>Survol</strong> : Parcourir les Learning Outcome Statements</li>
-                                <li>2. <strong>Lecture</strong> : Prendre des notes structurées</li>
-                                <li>3. <strong>Synthèse</strong> : Créer des résumés par section</li>
-                                <li>4. <strong>Application</strong> : Résoudre les exemples</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-3 flex items-center">
-                                <i class="fas fa-repeat text-green-500 mr-2"></i>Technique de Répétition Espacée
-                            </h4>
-                            <ul class="space-y-2 text-gray-700">
-                                <li>• <strong>J+1</strong> : Relire les notes du cours</li>
-                                <li>• <strong>J+7</strong> : Révision rapide des concepts</li>
-                                <li>• <strong>J+30</strong> : Test de mémoire et formules</li>
-                                <li>• <strong>J+90</strong> : Révision complète avant exam</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-6 text-red-600">
-                        <i class="fas fa-brain mr-2"></i>Mémorisation des Formules
-                    </h3>
-                    
-                    <div class="bg-gray-50 p-6 rounded-lg mb-4">
-                        <h4 class="font-semibold mb-3">Formules Critiques à Maîtriser</h4>
-                        <div class="grid md:grid-cols-2 gap-4 text-sm">
-                            <div>
-                                <strong>Quantitative Methods :</strong>
-                                <ul class="mt-1 space-y-1 text-gray-600">
-                                    <li>• Moyennes géométriques et harmoniques</li>
-                                    <li>• Coefficient de variation</li>
-                                    <li>• Formules de probabilité</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <strong>Fixed Income :</strong>
-                                <ul class="mt-1 space-y-1 text-gray-600">
-                                    <li>• Duration modifiée et effective</li>
-                                    <li>• Yield to Maturity</li>
-                                    <li>• Prix des obligations</li>
-                                </ul>
-                            </div>
+                            <h3 class="text-2xl font-bold text-red-600">CFA Level 1</h3>
+                            <p class="text-gray-600">Fondations & Concepts de Base</p>
                         </div>
                     </div>
                     
-                    <div class="grid md:grid-cols-3 gap-4">
-                        <div class="text-center p-4 bg-blue-50 rounded-lg">
-                            <i class="fas fa-sticky-note text-blue-600 text-2xl mb-2"></i>
-                            <h5 class="font-semibold">Flashcards</h5>
-                            <p class="text-sm text-gray-600">Révision quotidienne 15-20 min</p>
-                        </div>
-                        <div class="text-center p-4 bg-green-50 rounded-lg">
-                            <i class="fas fa-pen-fancy text-green-600 text-2xl mb-2"></i>
-                            <h5 class="font-semibold">Écriture Répétée</h5>
-                            <p class="text-sm text-gray-600">Mémorisation kinesthésique</p>
-                        </div>
-                        <div class="text-center p-4 bg-purple-50 rounded-lg">
-                            <i class="fas fa-puzzle-piece text-purple-600 text-2xl mb-2"></i>
-                            <h5 class="font-semibold">Mnémotechniques</h5>
-                            <p class="text-sm text-gray-600">Associations créatives</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white p-8 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-6 text-red-600">
-                        <i class="fas fa-stopwatch mr-2"></i>Gestion du Temps d'Examen
-                    </h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
+                    <div class="grid md:grid-cols-3 gap-6">
                         <div class="bg-red-50 p-6 rounded-lg">
-                            <h4 class="font-semibold mb-3 text-red-600">Timing Optimal</h4>
-                            <ul class="space-y-2">
-                                <li>• <strong>90 secondes maximum</strong> par question</li>
-                                <li>• <strong>60 secondes</strong> pour questions simples</li>
-                                <li>• <strong>120 secondes</strong> pour calculs complexes</li>
-                                <li>• <strong>15 minutes</strong> réservées pour révision</li>
+                            <h4 class="font-semibold mb-3 text-red-600">Caractéristiques</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• 180 questions QCM</li>
+                                <li>• 10 domaines thématiques</li>
+                                <li>• Accent sur les concepts</li>
+                                <li>• 4h30 d'examen total</li>
                             </ul>
                         </div>
-                        
                         <div class="bg-blue-50 p-6 rounded-lg">
-                            <h4 class="font-semibold mb-3 text-blue-600">Stratégie "Flag & Skip"</h4>
-                            <ul class="space-y-2">
-                                <li>• Marquer les questions difficiles</li>
-                                <li>• Passer rapidement aux suivantes</li>
-                                <li>• Revenir aux questions marquées</li>
-                                <li>• Ne jamais laisser de case vide</li>
+                            <h4 class="font-semibold mb-3 text-blue-600">Planning Recommandé</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>300-350 heures</strong></li>
+                                <li>• 4-6 mois préparation</li>
+                                <li>• 70% lecture, 30% practice</li>
+                                <li>• 6-8 mock exams</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-green-600">Points Clés</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Ethics = déterminant</li>
+                                <li>• FSA = complexité élevée</li>
+                                <li>• Formules de base</li>
+                                <li>• QBank intensif</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold text-xl">II</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-600">CFA Level 2</h3>
+                            <p class="text-gray-600">Application & Analyse de Cas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-blue-600">Caractéristiques</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• 88 questions case-based</li>
+                                <li>• 22 vignettes (4 questions/each)</li>
+                                <li>• Analyse plus poussée</li>
+                                <li>• Complexité accrue</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-purple-600">Planning Recommandé</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>350-400 heures</strong></li>
+                                <li>• 5-7 mois préparation</li>
+                                <li>• 60% lecture, 40% practice</li>
+                                <li>• 8-10 mock exams</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-orange-600">Points Clés</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• FSA = 25% du score</li>
+                                <li>• Equity valuation critique</li>
+                                <li>• Fixed Income avancé</li>
+                                <li>• Vignettes intensives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-green-600 font-bold text-xl">III</span>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-green-600">CFA Level 3</h3>
+                            <p class="text-gray-600">Synthèse & Portfolio Management</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-green-600">Caractéristiques</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Format hybride</li>
+                                <li>• Questions constructed response</li>
+                                <li>• Portfolio focus</li>
+                                <li>• Rédaction extensive</li>
+                            </ul>
+                        </div>
+                        <div class="bg-teal-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-teal-600">Planning Recommandé</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• <strong>300-350 heures</strong></li>
+                                <li>• 4-6 mois préparation</li>
+                                <li>• 50% lecture, 50% writing</li>
+                                <li>• 6-8 mock exams</li>
+                            </ul>
+                        </div>
+                        <div class="bg-indigo-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-3 text-indigo-600">Points Clés</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Techniques rédaction</li>
+                                <li>• IPS (Investment Policy)</li>
+                                <li>• Behavioral Finance</li>
+                                <li>• Practice writing</li>
                             </ul>
                         </div>
                     </div>
@@ -604,159 +384,711 @@
             </div>
         </section>
 
-        <!-- Conseils pour le jour J -->
-        <section id="jour-j" class="mb-12">
-            <h2 class="text-3xl font-bold text-gradient mb-8">Conseils Pratiques pour le Jour J</h2>
+        <!-- Planification thématique -->
+        <section id="planification-thematique" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Planification par Domaines Thématiques</h2>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-4 text-red-600">
-                        <i class="fas fa-suitcase mr-2"></i>À Apporter Obligatoirement
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-passport text-blue-500 mr-3"></i>
-                            <div>
-                                <strong>Passeport international valide</strong>
-                                <p class="text-sm text-gray-600">Seule pièce d'identité acceptée</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-calculator text-green-500 mr-3"></i>
-                            <div>
-                                <strong>Calculatrice approuvée</strong>
-                                <p class="text-sm text-gray-600">BA II Plus ou HP 12C uniquement</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-tint text-cyan-500 mr-3"></i>
-                            <div>
-                                <strong>Bouteille d'eau transparente</strong>
-                                <p class="text-sm text-gray-600">Sans étiquette, bouchon autorisé</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-6 rounded-lg shadow-red">
-                    <h3 class="text-xl font-semibold mb-4 text-red-600">
-                        <i class="fas fa-ban mr-2"></i>Strictement Interdit
-                    </h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
-                            <i class="fas fa-mobile-alt text-red-500 mr-3"></i>
-                            <div>
-                                <strong>Appareils électroniques</strong>
-                                <p class="text-sm text-gray-600">Téléphones, montres connectées, etc.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-file-alt text-red-500 mr-3"></i>
-                            <div>
-                                <strong>Notes et documents</strong>
-                                <p class="text-sm text-gray-600">Aucun matériel de référence</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-cookie-bite text-red-500 mr-3"></i>
-                            <div>
-                                <strong>Nourriture</strong>
-                                <p class="text-sm text-gray-600">Sauf prescription médicale</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-lg shadow-red mt-8">
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
                 <h3 class="text-xl font-semibold mb-6 text-red-600">
-                    <i class="fas fa-clock mr-2"></i>Planning de la Journée d'Examen
+                    <i class="fas fa-chart-pie mr-2"></i>Allocation Optimale du Temps (Level 1)
                 </h3>
                 
                 <div class="space-y-4">
-                    <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                        <div class="w-20 text-center font-bold text-blue-600">H-2h</div>
-                        <div class="ml-4">
-                            <strong>Préparation finale</strong>
-                            <p class="text-sm text-gray-600">Petit-déjeuner léger, révision rapide des formules clés</p>
+                    <div class="topic-weight border-l-4 border-red-600 pl-4 bg-red-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Ethical and Professional Standards</h4>
+                            <div class="text-right">
+                                <span class="text-red-600 font-bold text-lg">15-20%</span>
+                                <p class="text-sm text-gray-600">45-60 heures</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-3">
+                            <div class="progress-bar h-3 rounded-full" style="width: 17.5%"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <strong>Stratégie :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• Commencer tôt et réviser souvent</li>
+                                    <li>• Mémoriser le Code and Standards</li>
+                                    <li>• Pratiquer avec cas concrets</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Répartition :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• 60% lecture et compréhension</li>
+                                    <li>• 40% practice et application</li>
+                                    <li>• Révision avant chaque mock</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                        <div class="w-20 text-center font-bold text-green-600">H-30min</div>
-                        <div class="ml-4">
-                            <strong>Arrivée centre d'examen</strong>
-                            <p class="text-sm text-gray-600">Contrôle d'identité, installation, test matériel</p>
+
+                    <div class="topic-weight border-l-4 border-blue-600 pl-4 bg-blue-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Financial Statement Analysis</h4>
+                            <div class="text-right">
+                                <span class="text-blue-600 font-bold text-lg">11-14%</span>
+                                <p class="text-sm text-gray-600">40-50 heures</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-3">
+                            <div class="bg-blue-600 h-3 rounded-full" style="width: 12.5%"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <strong>Défis :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• Complexité IFRS vs US GAAP</li>
+                                    <li>• Ratios nombreux à mémoriser</li>
+                                    <li>• Ajustements techniques</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Approche :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• Maîtriser les 3 états financiers</li>
+                                    <li>• Créer des fiches ratios</li>
+                                    <li>• Pratiquer les ajustements</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="flex items-center p-4 bg-red-50 rounded-lg">
-                        <div class="w-20 text-center font-bold text-red-600">H</div>
-                        <div class="ml-4">
-                            <strong>Session 1 (135 min)</strong>
-                            <p class="text-sm text-gray-600">90 questions - Gérer son stress, rester concentré</p>
+
+                    <div class="topic-weight border-l-4 border-green-600 pl-4 bg-green-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Equity Investments</h4>
+                            <div class="text-right">
+                                <span class="text-green-600 font-bold text-lg">11-14%</span>
+                                <p class="text-sm text-gray-600">40-50 heures</p>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-3">
+                            <div class="bg-green-600 h-3 rounded-full" style="width: 12.5%"></div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4 text-sm">
+                            <div>
+                                <strong>Focus :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• Méthodes de valorisation</li>
+                                    <li>• Market efficiency</li>
+                                    <li>• Industry analysis</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Pratique :</strong>
+                                <ul class="mt-1 space-y-1 text-gray-700">
+                                    <li>• Calculs DDM et DCF</li>
+                                    <li>• Multiples comparables</li>
+                                    <li>• Questions conceptuelles</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                        <div class="w-20 text-center font-bold text-purple-600">H+2h30</div>
-                        <div class="ml-4">
-                            <strong>Pause (30 min)</strong>
-                            <p class="text-sm text-gray-600">Déjeuner léger, détente, préparation session 2</p>
+                </div>
+
+                <div class="mt-8 grid md:grid-cols-4 gap-4 text-sm">
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">
+                        <strong>Fixed Income</strong><br>
+                        <span class="text-purple-600 font-bold">11-14%</span><br>
+                        <span class="text-gray-600">40-50h</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">
+                        <strong>Portfolio Mgmt</strong><br>
+                        <span class="text-orange-600 font-bold">8-12%</span><br>
+                        <span class="text-gray-600">30-40h</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">
+                        <strong>Alternatives</strong><br>
+                        <span class="text-teal-600 font-bold">7-10%</span><br>
+                        <span class="text-gray-600">25-35h</span>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">
+                        <strong>Autres Topics</strong><br>
+                        <span class="text-indigo-600 font-bold">25-30%</span><br>
+                        <span class="text-gray-600">75-100h</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intégration des mock exams -->
+        <section id="integration-mocks" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Intégration Stratégique des Mock Exams</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-clipboard-check mr-2"></i>Planning Mock Exams Optimal
+                </h3>
+                
+                <div class="study-schedule p-6 rounded-lg mb-6">
+                    <div class="relative">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="relative pl-8 pb-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Premier Mock (50% curriculum terminé)</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <strong>Objectifs :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• Évaluer le niveau initial</li>
+                                        <li>• Identifier les lacunes majeures</li>
+                                        <li>• S'habituer au format</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Actions post-mock :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• Analyser chaque erreur</li>
+                                        <li>• Ajuster le planning</li>
+                                        <li>• Renforcer domaines faibles</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-8 pb-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Mocks Intermédiaires (75% curriculum)</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <strong>Fréquence :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• 1 mock tous les 10-15 jours</li>
+                                        <li>• Alterner sources (CFA, Kaplan)</li>
+                                        <li>• Conditions d'examen réelles</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Métriques à suivre :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• Score global et par domaine</li>
+                                        <li>• Temps par question</li>
+                                        <li>• Progression constante</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative pl-8 timeline-item">
+                            <h4 class="font-semibold text-lg mb-2">Mocks Finaux (dernières 3 semaines)</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <strong>Intensification :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• 2-3 mocks par semaine</li>
+                                        <li>• Focus sur la rapidité</li>
+                                        <li>• Révision ciblée post-mock</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <strong>Objectif cible :</strong>
+                                    <ul class="text-gray-700 space-y-1 mt-1">
+                                        <li>• Score constant >70%</li>
+                                        <li>• Timing maîtrisé</li>
+                                        <li>• Confiance établie</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-red-600">Sources Mock Recommandées</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• <strong>CFA Institute</strong> (2 mocks gratuits)</li>
+                            <li>• <strong>Kaplan Schweser</strong> (6+ mocks)</li>
+                            <li>• <strong>UWorld</strong> (mocks adaptatifs)</li>
+                            <li>• <strong>AnalystNotes</strong> (gratuits)</li>
+                        </ul>
+                    </div>
                     
-                    <div class="flex items-center p-4 bg-red-50 rounded-lg">
-                        <div class="w-20 text-center font-bold text-red-600">H+3h</div>
-                        <div class="ml-4">
-                            <strong>Session 2 (135 min)</strong>
-                            <p class="text-sm text-gray-600">90 questions - Maintenir l'énergie et la concentration</p>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-blue-600">Méthode d'Analyse</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Noter chaque réponse incorrecte</li>
+                            <li>• Catégoriser les erreurs</li>
+                            <li>• Réviser immédiatement les concepts</li>
+                            <li>• Refaire les questions 48h après</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-green-600">Conditions Optimales</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Environnement silencieux</li>
+                            <li>• Calculatrice CFA autorisée</li>
+                            <li>• Respect strict du timing</li>
+                            <li>• Pause de 30 min entre sessions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mémorisation des formules -->
+        <section id="memorisation-formules" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Maîtrise et Mémorisation des Formules CFA</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-calculator mr-2"></i>Formules Critiques par Domaine
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-blue-600">Quantitative Methods (Must-Know)</h4>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm">
+                            <div>
+                                <strong>Statistiques Descriptives :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• Moyenne géométrique: [(1+R₁)(1+R₂)...(1+Rₙ)]^(1/n) - 1</li>
+                                    <li>• Coefficient variation: CV = σ/μ</li>
+                                    <li>• Coefficient corrélation: ρ = Cov(X,Y)/(σₓσᵧ)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Probabilités :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• P(A|B) = P(A∩B)/P(B)</li>
+                                    <li>• E(X) = ΣP(xᵢ)×xᵢ</li>
+                                    <li>• Var(X) = E(X²) - [E(X)]²</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-green-600">Fixed Income (Essentielles)</h4>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm">
+                            <div>
+                                <strong>Prix et Yield :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• Prix obligation: PV = Σ[PMT/(1+r)ᵗ] + FV/(1+r)ᴺ</li>
+                                    <li>• Duration modifiée: ModDur = MacDur/(1+YTM)</li>
+                                    <li>• Convexity approximation: ΔP ≈ -Dur×ΔY + ½×Conv×(ΔY)²</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Mesures de Risque :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• Macaulay Duration: Σ[t×PV(CFₜ)]/Prix</li>
+                                    <li>• Effective Duration: (P₋ - P₊)/(2×ΔCurve×P₀)</li>
+                                    <li>• Money Duration: MonDur = ModDur × P × 0.01</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-purple-600">Equity Valuation (Clés)</h4>
+                        <div class="grid md:grid-cols-2 gap-6 text-sm">
+                            <div>
+                                <strong>Dividend Discount Models :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• Gordon Growth: P₀ = D₁/(r-g)</li>
+                                    <li>• Two-stage: P₀ = ΣD_t/(1+r)ᵗ + P_n/(1+r)ⁿ</li>
+                                    <li>• H-Model: P₀ = D₁/(r-g_L) + D₁×H×(g_S-g_L)/(r-g_L)²</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Multiples :</strong>
+                                <ul class="mt-2 space-y-1 font-mono text-xs">
+                                    <li>• P/E = (D/E)/(r-g) = Payout ratio/(r-g)</li>
+                                    <li>• PEG = P/E ratio / Growth rate</li>
+                                    <li>• P/B = (ROE - g)/(r-g)</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="bg-green-50 p-6 rounded-lg mt-8">
-                <h3 class="text-lg font-semibold mb-4 text-green-600">
-                    <i class="fas fa-lightbulb mr-2"></i>Conseils Psychologiques
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-red-600">
+                        <i class="fas fa-sticky-note mr-2"></i>Technique Flashcards
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>• <strong>Création :</strong> 1 formule par carte</li>
+                        <li>• <strong>Recto :</strong> Concept et variables</li>
+                        <li>• <strong>Verso :</strong> Formule complète</li>
+                        <li>• <strong>Révision :</strong> 15-20 min/jour</li>
+                        <li>• <strong>Apps :</strong> Anki, Quizlet, Brainscape</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-blue-600">
+                        <i class="fas fa-pen mr-2"></i>Formula Sheets
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>• <strong>Organisation :</strong> Par domaine thématique</li>
+                        <li>• <strong>Format :</strong> A4, police lisible</li>
+                        <li>• <strong>Codes couleur :</strong> Par importance</li>
+                        <li>• <strong>Mise à jour :</strong> Après chaque lecture</li>
+                        <li>• <strong>Révision :</strong> Avant chaque mock</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-green-600">
+                        <i class="fas fa-calculator mr-2"></i>Practice Intensive
+                    </h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>• <strong>Quotidien :</strong> 10 calculs/jour minimum</li>
+                        <li>• <strong>Chronométré :</strong> Maîtriser la rapidité</li>
+                        <li>• <strong>Variantes :</strong> Différents paramètres</li>
+                        <li>• <strong>Calculatrice :</strong> BA II Plus exclusivement</li>
+                        <li>• <strong>Vérification :</strong> Double-check systématique</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Équilibre vie professionnelle -->
+        <section id="equilibre-vie" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Équilibre Vie Professionnelle & Préparation CFA</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-balance-scale mr-2"></i>Stratégies pour Professionnels Actifs
                 </h3>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <ul class="space-y-2">
-                        <li>• <strong>Gestion du stress :</strong> Techniques de respiration</li>
-                        <li>• <strong>Confiance :</strong> Se rappeler sa préparation</li>
-                        <li>• <strong>Positivité :</strong> Éviter les discussions post-session 1</li>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4 text-blue-600">Planning Semaine Type</h4>
+                        <div class="space-y-3 text-sm">
+                            <div class="bg-blue-50 p-3 rounded-lg">
+                                <strong>Lundi - Mercredi - Vendredi</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• 6h00-7h30: Étude intensive (1h30)</li>
+                                    <li>• Trajet: Révision audio/podcasts</li>
+                                    <li>• Pause déjeuner: Questions rapides (30min)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-3 rounded-lg">
+                                <strong>Samedi</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• 8h00-12h00: Session longue (4h)</li>
+                                    <li>• 14h00-16h00: Mock exam ou révisions</li>
+                                    <li>• Total: 6 heures</li>
+                                </ul>
+                            </div>
+                            <div class="bg-purple-50 p-3 rounded-lg">
+                                <strong>Dimanche</strong>
+                                <ul class="mt-1 space-y-1">
+                                    <li>• 9h00-12h00: Révision et planning</li>
+                                    <li>• Après-midi: Repos ou léger</li>
+                                    <li>• Total: 3 heures</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 text-orange-600">Optimisation du Temps</h4>
+                        <div class="space-y-4">
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <strong>Micro-sessions (15-30 min)</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Révision de formules</li>
+                                    <li>• Flashcards</li>
+                                    <li>• Questions rapides</li>
+                                    <li>• Lecture de résumés</li>
+                                </ul>
+                            </div>
+                            <div class="bg-teal-50 p-4 rounded-lg">
+                                <strong>Sessions moyennes (1-2h)</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Lecture de nouveaux chapitres</li>
+                                    <li>• Résolution de problèmes</li>
+                                    <li>• Révision approfondie</li>
+                                    <li>• QBank sessions</li>
+                                </ul>
+                            </div>
+                            <div class="bg-indigo-50 p-4 rounded-lg">
+                                <strong>Sessions longues (3h+)</strong>
+                                <ul class="mt-2 space-y-1 text-sm">
+                                    <li>• Mock exams complets</li>
+                                    <li>• Étude de domaines complexes</li>
+                                    <li>• Révisions globales</li>
+                                    <li>• Préparation intensive</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-red-600">
+                        <i class="fas fa-users mr-2"></i>Support Social
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-family text-green-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Famille</strong>
+                                <p class="text-gray-600">Expliquer l'engagement temporel et obtenir le soutien</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-briefcase text-blue-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Employeur</strong>
+                                <p class="text-gray-600">Négocier flexibilité horaire si possible</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-user-friends text-purple-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Candidats CFA</strong>
+                                <p class="text-gray-600">Rejoindre groupes d'étude et forums</p>
+                            </div>
+                        </li>
                     </ul>
-                    <ul class="space-y-2">
-                        <li>• <strong>Concentration :</strong> Ignorer les autres candidats</li>
-                        <li>• <strong>Endurance :</strong> Maintenir le rythme 4h30</li>
-                        <li>• <strong>Pragmatisme :</strong> Accepter les questions difficiles</li>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-blue-600">
+                        <i class="fas fa-heart mr-2"></i>Bien-être Mental
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-bed text-indigo-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Sommeil</strong>
+                                <p class="text-gray-600">Minimum 6-7h par nuit, qualité primordiale</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-running text-orange-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Exercice</strong>
+                                <p class="text-gray-600">30 min, 2-3x/semaine pour le stress</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-pause text-teal-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Pauses</strong>
+                                <p class="text-gray-600">1 jour complet off par semaine</p>
+                            </div>
+                        </li>
                     </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h4 class="font-semibold mb-4 text-green-600">
+                        <i class="fas fa-rocket mr-2"></i>Motivation Durable
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-target text-red-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Objectifs clairs</strong>
+                                <p class="text-gray-600">Visualiser bénéfices carrière post-CFA</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chart-line text-blue-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Tracking progrès</strong>
+                                <p class="text-gray-600">Célébrer petites victoires régulièrement</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-gift text-purple-500 mr-2 mt-1"></i>
+                            <div>
+                                <strong>Récompenses</strong>
+                                <p class="text-gray-600">System reward pour étapes atteintes</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outils et ressources -->
+        <section id="outils-ressources" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Outils et Ressources pour un Planning Efficace</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-calendar-alt mr-2"></i>Applications de Planification
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-blue-500 pl-4 bg-blue-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-blue-600">Notion</h4>
+                            <p class="text-sm text-gray-700 mb-2">Base de données tout-en-un pour tracking détaillé</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Templates CFA préconfigurés</li>
+                                <li>• Tracking heures par domaine</li>
+                                <li>• Base de connaissances personnelle</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-4 bg-green-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-green-600">Google Calendar + Sheets</h4>
+                            <p class="text-sm text-gray-700 mb-2">Combinaison gratuite et efficace</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Planification horaire détaillée</li>
+                                <li>• Tracking automatique du temps</li>
+                                <li>• Synchronisation multi-appareils</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-500 pl-4 bg-purple-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-purple-600">Forest / Focus Apps</h4>
+                            <p class="text-sm text-gray-700 mb-2">Gestion focus et élimination distractions</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Sessions Pomodoro intégrées</li>
+                                <li>• Blocage applications distrayantes</li>
+                                <li>• Statistiques temps productif</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-6 text-red-600">
+                        <i class="fas fa-tools mr-2"></i>Outils d'Étude Spécialisés
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-orange-500 pl-4 bg-orange-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-orange-600">Anki (Flashcards)</h4>
+                            <p class="text-sm text-gray-700 mb-2">Système de répétition espacée optimisé</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Algorithme SRS scientifique</li>
+                                <li>• Decks CFA partagés</li>
+                                <li>• Synchronisation cloud</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-teal-500 pl-4 bg-teal-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-teal-600">CFA Institute Learning Ecosystem</h4>
+                            <p class="text-sm text-gray-700 mb-2">Plateforme officielle avec tracking intégré</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Progress tracking automatique</li>
+                                <li>• Questions pratiques adaptatives</li>
+                                <li>• Mocks officiels</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="border-l-4 border-indigo-500 pl-4 bg-indigo-50 p-4 rounded-r-lg">
+                            <h4 class="font-semibold text-indigo-600">Schweser OnDemand</h4>
+                            <p class="text-sm text-gray-700 mb-2">QBank et mocks avec analytics avancés</p>
+                            <ul class="text-xs space-y-1 text-gray-600">
+                                <li>• Performance analytics détaillés</li>
+                                <li>• Adaptive practice questions</li>
+                                <li>• Benchmark vs autres candidats</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-download mr-2"></i>Templates de Planning Téléchargeables
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-calendar-week text-red-600 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Planning Hebdomadaire</h4>
+                        <p class="text-sm text-gray-600 mb-4">Template détaillé avec répartition par domaine et tracking heures</p>
+                        <button class="bg-red-600 text-white px-4 py-2 rounded text-sm hover:bg-red-700 transition-colors">
+                            <i class="fas fa-download mr-1"></i>Télécharger Excel
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-chart-gantt text-blue-600 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Gantt CFA Complet</h4>
+                        <p class="text-sm text-gray-600 mb-4">Diagramme de Gantt pour planification 6 mois avec jalons</p>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-download mr-1"></i>Télécharger Project
+                        </button>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg text-center">
+                        <i class="fas fa-clipboard-check text-green-600 text-3xl mb-4"></i>
+                        <h4 class="font-semibold mb-2">Checklist Révision</h4>
+                        <p class="text-sm text-gray-600 mb-4">Liste complète des concepts à maîtriser par domaine</p>
+                        <button class="bg-green-600 text-white px-4 py-2 rounded text-sm hover:bg-green-700 transition-colors">
+                            <i class="fas fa-download mr-1"></i>Télécharger PDF
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-yellow-50 p-6 rounded-lg">
+                    <h4 class="font-semibold mb-3 text-yellow-600">
+                        <i class="fas fa-lightbulb mr-2"></i>Conseils d'Utilisation des Templates
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <ul class="space-y-2">
+                            <li>• <strong>Personnalisation :</strong> Adapter selon votre rythme et contraintes</li>
+                            <li>• <strong>Flexibilité :</strong> Prévoir 20% de buffer pour imprévus</li>
+                            <li>• <strong>Révision :</strong> Réajuster le planning toutes les 2 semaines</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li>• <strong>Tracking :</strong> Noter heures réelles vs prévues quotidiennement</li>
+                            <li>• <strong>Couleurs :</strong> Utiliser codes couleur pour status (fait, en cours, retard)</li>
+                            <li>• <strong>Sauvegarde :</strong> Backup régulier sur cloud drive</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Conclusion -->
         <section class="bg-gradient-red text-white p-8 rounded-lg">
-            <h2 class="text-3xl font-bold mb-6">Votre Réussite au CFA Level 1</h2>
+            <h2 class="text-3xl font-bold mb-6">Votre Succès CFA Commence Aujourd'hui</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div>
                     <p class="text-red-100 leading-relaxed mb-4">
-                        La réussite au CFA Level 1 demande rigueur, méthode et persévérance. Avec un taux de réussite de 43-45%, c'est un défi exigeant mais parfaitement réalisable avec une préparation structurée.
+                        Un planning de révision efficace pour le CFA n'est pas qu'un simple calendrier : c'est votre feuille de route vers le succès. Avec les stratégies, outils et templates de ce guide, vous avez maintenant tous les éléments pour construire un planning personnalisé, réaliste et optimisé.
                     </p>
-                    <p class="text-red-100 leading-relaxed">
-                        Suivez ce guide, respectez votre planning d'étude, utilisez les bonnes ressources et appliquez les techniques recommandées. Votre investissement de 300+ heures sera récompensé par l'obtention de cette première étape vers la certification CFA.
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        Rappelez-vous : la constance et l'adaptabilité sont les clés. Votre planning doit évoluer avec vos progrès et contraintes. Restez discipliné mais flexible, et ajustez régulièrement votre approche.
                     </p>
+                    <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2"><i class="fas fa-quote-left mr-2"></i>Citation Motivation</h4>
+                        <p class="italic text-sm">"Le succès au CFA n'est pas une question d'intelligence pure, mais de planification intelligente et d'exécution disciplinée."</p>
+                    </div>
                 </div>
                 <div class="bg-white bg-opacity-10 p-6 rounded-lg">
-                    <h3 class="font-semibold text-lg mb-4">Points Clés à Retenir</h3>
-                    <ul class="space-y-2 text-sm text-red-100">
-                        <li>✓ 300+ heures d'étude minimum</li>
-                        <li>✓ Maîtriser les 10 domaines du curriculum</li>
-                        <li>✓ Pratiquer avec mocks et QBank</li>
-                        <li>✓ Mémoriser les formules essentielles</li>
-                        <li>✓ Gérer son temps efficacement</li>
-                        <li>✓ Se préparer mentalement pour le jour J</li>
-                    </ul>
+                    <h3 class="font-semibold text-lg mb-4">Plan d'Action Immédiat</h3>
+                    <div class="space-y-3 text-sm text-red-100">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">1</div>
+                            <span>Évaluer votre situation actuelle (temps disponible, niveau, contraintes)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">2</div>
+                            <span>Choisir et télécharger les templates adaptés à vos besoins</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">3</div>
+                            <span>Créer votre planning personnalisé avec objectifs SMART</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">4</div>
+                            <span>Commencer dès aujourd'hui avec votre première session d'étude</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-red-600 rounded-full flex items-center justify-center text-xs font-bold mr-3">5</div>
+                            <span>Réviser et ajuster votre planning chaque semaine</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -768,11 +1100,11 @@
                         </div>
                         <div>
                             <h4 class="font-semibold">Finance Tutoring</h4>
-                            <p class="text-sm text-red-200">Excellence en Formation Financière</p>
+                            <p class="text-sm text-red-200">Votre partenaire pour la réussite CFA</p>
                         </div>
                     </div>
                     <div class="text-right text-sm text-red-200">
-                        <p>Bonne chance pour votre examen !</p>
+                        <p>Planifiez. Exécutez. Réussissez.</p>
                         <p>Décembre 2024</p>
                     </div>
                 </div>
@@ -780,33 +1112,44 @@
         </section>
     </main>
 
-<!-- Footer -->
-<footer class="bg-black text-white py-8 mt-12">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-        
-        <!-- Logo -->
-        <div class="flex justify-center mb-4">
-            <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
-        </div>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
 
-        <p class="text-gray-400">
-            © 2024 Finance Tutoring. Ce guide est basé sur les informations officielles du CFA Institute et les meilleures pratiques de l'industrie.
-        </p>
-        
-        <div class="mt-4 space-x-6">
-            <span class="text-sm text-gray-500">Sources : CFA Institute, Kaplan Schweser, UWorld Finance, 300Hours</span>
+            <p class="text-gray-400 mb-4">
+                © 2024 Finance Tutoring. Guide spécialisé basé sur les meilleures pratiques CFA et retours d'expérience de candidats réussis.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <h4 class="font-semibold mb-2 text-red-400">Ressources Officielles</h4>
+                    <ul class="space-y-1 text-gray-500">
+                        <li>CFA Institute Learning Ecosystem</li>
+                        <li>Official Curriculum & Mock Exams</li>
+                        <li>CFA Institute Standards</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2 text-red-400">Providers Recommandés</h4>
+                    <ul class="space-y-1 text-gray-500">
+                        <li>Kaplan Schweser</li>
+                        <li>UWorld Finance</li>
+                        <li>AnalystNotes</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-2 text-red-400">Communauté CFA</h4>
+                    <ul class="space-y-1 text-gray-500">
+                        <li>300Hours.com</li>
+                        <li>Reddit CFA Community</li>
+                        <li>Local CFA Societies</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>
-    <script id="html_badge_script1">
-        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
-            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDuMH7Q3xGltufLPGifFJqNtV07EvTzxUlzXk6s7jzC1%2F%2FpMT%2F9W0%2Fyz3ta62UU4otwvuKMHNaCSgINrqBHrVeXz5jt3TuCi0poF9uoFfUGXe3GlwyWcUuGvphmaqoGt7JwFhP%2BPZXfNami6BkCDd8kqWXeOLcJ7xWD870DiNBSEAZwWqXJ99SEWC7Hq%2FZvHN0Z47EKtzyvgDj0L5Kpp6P%2FUZKoXnAKp9cHa3X7TqnOktY7y3GzhiSqU2wssVNJQVLYcCCNxhfpUMcPu9%2BOKDSnCCCgEPqlqK9ah4rLFgThbrQcyfuEQN%2FpPqO7peYlr4xnDUWHCtkGjZlQ08fnnYy9p5Y1cnguehrwR2g4ilhh8RqQbf1VB7pekt4KgbylJTnMAxJuRk88J%2BKAHlPFKcxRJ0ZSmy3ApHGbW7KNq4iVhscqTD2tUbIzfG0qZqnfCH7ALL7cUrOctp6DqGWGDN9VrdKFAXzLYc3QHHHv%2FNo51PH08I9d1dKQWfHvmDto4yu3a5pqNjEKh04wDvRQK%2FelA%3D";
-        window.__genspark_locale = "en-US";
-        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDuMH7Q3xGltufLPGifFJqNtV07EvTzxUlzXk6s7jzC1//pMT/9W0/yz3ta62UU4otwvuKMHNaCSgINrqBHrVeXz5jt3TuCi0poF9uoFfUGXe3GlwyWcUuGvphmaqoGt7JwFhP+PZXfNami6BkCDd8kqWXeOLcJ7xWD870DiNBSEAZwWqXJ99SEWC7Hq/ZvHN0Z47EKtzyvgDj0L5Kpp6P/UZKoXnAKp9cHa3X7TqnOktY7y3GzhiSqU2wssVNJQVLYcCCNxhfpUMcPu9+OKDSnCCCgEPqlqK9ah4rLFgThbrQcyfuEQN/pPqO7peYlr4xnDUWHCtkGjZlQ08fnnYy9p5Y1cnguehrwR2g4ilhh8RqQbf1VB7pekt4KgbylJTnMAxJuRk88J+KAHlPFKcxRJ0ZSmy3ApHGbW7KNq4iVhscqTD2tUbIzfG0qZqnfCH7ALL7cUrOctp6DqGWGDN9VrdKFAXzLYc3QHHHv/No51PH08I9d1dKQWfHvmDto4yu3a5pqNjEKh04wDvRQK/elA=";
-    </script>
-    
-    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
-    
