@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prioritize your revisions with topic weightings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .bordeaux { color: #D32F2F; }
+        .bg-bordeaux { background-color: #D32F2F; }
+        .border-bordeaux { border-color: #D32F2F; }
+        .hover-bordeaux:hover { background-color: #D32F2F; }
+        
+        .section-spacing { margin-bottom: 2rem; }
+        
+         {
+            body { margin: 0; padding: 20px; }
+            .no-print { display: none; }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #D32F2F 0%, #8B0000 100%);
+        }
+        
+        .shadow-custom {
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-black leading-relaxed">
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Logo Header -->
+        <div class="text-center mb-8">
+            <img src="https://imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="mx-auto" style="max-width: 300px; height: auto;">
+        </div>
+
+        <!-- Title Section -->
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold bordeaux mb-4">Prioritize your revisions with topic weightings</h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">A methodological guide to optimize your study time and maximize your chances of exam success</p>
+        </div>
+
+        <!-- Introduction -->
+        <section class="section-spacing bg-gray-50 p-6 rounded-lg shadow-custom">
+            <h2 class="text-2xl font-bold bordeaux mb-4 flex items-center">
+                <i class="fas fa-lightbulb mr-3"></i>
+                Introduction: The art of smart studying
+            </h2>
+            <p class="text-gray-700 mb-4">
+                Faced with a dense exam syllabus and tight deadlines, knowing how to prioritize your revisions becomes a decisive advantage. The weighting method allows you to allocate study time strategically according to each subject’s relative importance in the final evaluation.
+            </p>
+            <p class="text-gray-700">
+                This data-driven approach transforms exam preparation into a scientific process where every hour invested yields a measurable return on investment in potential points.
+            </p>
+        </section>
+
+        <!-- Understanding Weightings -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-balance-scale mr-3"></i>
+                Understanding weightings
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-5 border-l-4 border-bordeaux shadow-custom">
+                    <h3 class="text-xl font-semibold mb-3 bordeaux">
+                        <i class="fas fa-percentage mr-2"></i>
+                        What is a weighting?
+                    </h3>
+                    <p class="text-gray-700">
+                        The weighting represents the relative importance of a subject in the final grade. A topic weighted at 30% contributes three times more to the result than one weighted at 10%.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-5 border-l-4 border-bordeaux shadow-custom">
+                    <h3 class="text-xl font-semibold mb-3 bordeaux">
+                        <i class="fas fa-search mr-2"></i>
+                        Where to find this information?
+                    </h3>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• Official exam syllabus</li>
+                        <li>• Candidate guide</li>
+                        <li>• Past papers from previous years</li>
+                        <li>• Specialized forums and experience feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priority Matrix -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-th mr-3"></i>
+                The prioritization matrix
+            </h2>
+            
+            <div class="bg-gray-50 p-6 rounded-lg shadow-custom mb-6">
+                <h3 class="text-xl font-semibold mb-4 bordeaux">4-step methodology:</h3>
+                
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded border-l-4 border-bordeaux">
+                        <h4 class="font-semibold bordeaux mb-2">1. Potential Impact</h4>
+                        <p class="text-sm text-gray-700">Subject weighting × Probability of appearing in the exam</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border-l-4 border-bordeaux">
+                        <h4 class="font-semibold bordeaux mb-2">2. Difficulty Level</h4>
+                        <p class="text-sm text-gray-700">Subjective complexity of the topic (scale 1–5)</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border-l-4 border-bordeaux">
+                        <h4 class="font-semibold bordeaux mb-2">3. Time Required</h4>
+                        <p class="text-sm text-gray-700">Estimated hours needed to master the topic</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border-l-4 border-bordeaux">
+                        <h4 class="font-semibold bordeaux mb-2">4. Priority Score</h4>
+                        <p class="text-sm text-gray-700">Impact / (Difficulty × Time) = Efficiency ratio</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 border border-bordeaux rounded-lg">
+                <h3 class="text-xl font-semibold mb-4 bordeaux">Priority classifications:</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-red-500 rounded mr-3"></div>
+                        <span class="font-semibold">Priority 1:</span>
+                        <span class="ml-2 text-gray-700">High weighting + Relative ease (Quick wins)</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded mr-3"></div>
+                        <span class="font-semibold">Priority 2:</span>
+                        <span class="ml-2 text-gray-700">Medium weighting + Moderate difficulty</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-green-500 rounded mr-3"></div>
+                        <span class="font-semibold">Priority 3:</span>
+                        <span class="ml-2 text-gray-700">Low weighting or very high difficulty</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Planning -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-calendar-alt mr-3"></i>
+                Strategic revision planning
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-b from-red-50 to-white p-5 rounded-lg border border-red-200">
+                    <h3 class="text-lg font-semibold bordeaux mb-3">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Phase 1: Foundation
+                    </h3>
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li>• Priority 1 topics (60% of time)</li>
+                        <li>• Consolidating basics</li>
+                        <li>• Typical exercises and past papers</li>
+                        <li>• Summary sheets</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-b from-yellow-50 to-white p-5 rounded-lg border border-yellow-200">
+                    <h3 class="text-lg font-semibold bordeaux mb-3">
+                        <i class="fas fa-expand-arrows-alt mr-2"></i>
+                        Phase 2: Extension
+                    </h3>
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li>• Priority 2 topics (30% of time)</li>
+                        <li>• Selective deepening</li>
+                        <li>• Connections between topics</li>
+                        <li>• Advanced case studies</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-gradient-to-b from-green-50 to-white p-5 rounded-lg border border-green-200">
+                    <h3 class="text-lg font-semibold bordeaux mb-3">
+                        <i class="fas fa-star mr-2"></i>
+                        Phase 3: Excellence
+                    </h3>
+                    <ul class="text-gray-700 space-y-2 text-sm">
+                        <li>• Priority 3 topics (10% of time)</li>
+                        <li>• Potential bonus points</li>
+                        <li>• Topics of personal interest</li>
+                        <li>• Detailed refinement</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Optimization Techniques -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-cogs mr-3"></i>
+                Optimization techniques
+            </h2>
+            
+            <div class="bg-gray-50 p-6 rounded-lg shadow-custom">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-semibold bordeaux mb-4">
+                            <i class="fas fa-clock mr-2"></i>
+                            Time management
+                        </h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li><strong>Adapted Pomodoro technique:</strong> 45min study + 15min break</li>
+                            <li><strong>Thematic blocks:</strong> Group related topics</li>
+                            <li><strong>Spaced repetition:</strong> Review according to the forgetting curve</li>
+                            <li><strong>Peak performance:</strong> Tackle hard topics during optimal hours</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold bordeaux mb-4">
+                            <i class="fas fa-brain mr-2"></i>
+                            Cognitive methods
+                        </h3>
+                        <ul class="text-gray-700 space-y-2">
+                            <li><strong>Active recall:</strong> Test your memory without support</li>
+                            <li><strong>Elaborative interrogation:</strong> Ask yourself “why”</li>
+                            <li><strong>Interleaving:</strong> Alternate between different problem types</li>
+                            <li><strong>Dual coding:</strong> Combine visual and textual</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Case Study -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-case-medical mr-3"></i>
+                Case study: CFA Level 1 Certification
+            </h2>
+            
+            <div class="bg-white border border-bordeaux rounded-lg p-6">
+                <h3 class="text-lg font-semibold bordeaux mb-4">CFA weightings analysis:</h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-bordeaux text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Topic</th>
+                                <th class="px-4 py-2 text-center">Weighting</th>
+                                <th class="px-4 py-2 text-center">Difficulty</th>
+                                <th class="px-4 py-2 text-center">Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-2">Ethics</td>
+                                <td class="px-4 py-2 text-center">15%</td>
+                                <td class="px-4 py-2 text-center">2/5</td>
+                                <td class="px-4 py-2 text-center"><span class="bg-red-100 text-red-800 px-2 py-1 rounded">1</span></td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-2">Financial Statement Analysis</td>
+                                <td class="px-4 py-2 text-center">20%</td>
+                                <td class="px-4 py-2 text-center">4/5</td>
+                                <td class="px-4 py-2 text-center"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">2</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">Corporate Finance</td>
+                                <td class="px-4 py-2 text-center">8%</td>
+                                <td class="px-4 py-2 text-center">3/5</td>
+                                <td class="px-4 py-2 text-center"><span class="bg-green-100 text-green-800 px-2 py-1 rounded">3</span></td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-2">Quantitative Methods</td>
+                                <td class="px-4 py-2 text-center">12%</td>
+                                <td class="px-4 py-2 text-center">3/5</td>
+                                <td class="px-4 py-2 text-center"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded">2</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-4 p-4 bg-gray-50 rounded">
+                    <p class="text-gray-700"><strong>Recommendation:</strong> Start with Ethics (high weighting, low difficulty) before tackling Financial Statement Analysis (maximum weighting but more complex).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools and Resources -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-tools mr-3"></i>
+                Recommended tools and resources
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 border border-gray-200 rounded-lg shadow-custom">
+                    <h3 class="text-lg font-semibold bordeaux mb-3">
+                        <i class="fas fa-laptop mr-2"></i>
+                        Digital tools
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>• <strong>Notion/Obsidian:</strong> Knowledge organization</li>
+                        <li>• <strong>Anki/Quizlet:</strong> Smart flashcards</li>
+                        <li>• <strong>Forest/Freedom:</strong> Distraction blockers</li>
+                        <li>• <strong>Toggl/RescueTime:</strong> Study time tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-5 border border-gray-200 rounded-lg shadow-custom">
+                    <h3 class="text-lg font-semibold bordeaux mb-3">
+                        <i class="fas fa-book mr-2"></i>
+                        Traditional methods
+                    </h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li>• <strong>Mind mapping:</strong> Visualizing connections</li>
+                        <li>• <strong>Bristol cards:</strong> Portable summaries</li>
+                        <li>• <strong>Wall planner:</strong> Overview of the syllabus</li>
+                        <li>• <strong>Study groups:</strong> Emulation and mutual help</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitoring and Adjustments -->
+        <section class="section-spacing">
+            <h2 class="text-2xl font-bold bordeaux mb-6 flex items-center">
+                <i class="fas fa-chart-line mr-3"></i>
+                Monitoring and adjustments
+            </h2>
+            
+            <div class="bg-gray-50 p-6 rounded-lg shadow-custom">
+                <h3 class="text-lg font-semibold bordeaux mb-4">Performance indicators:</h3>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold bordeaux">75%</div>
+                        <div class="text-sm text-gray-600">Optimal retention rate</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold bordeaux">2.5h</div>
+                        <div class="text-sm text-gray-600">Average time per priority 1 topic</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold bordeaux">90%</div>
+                        <div class="text-sm text-gray-600">Targeted syllabus coverage</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                        <div>
+                            <strong>Weekly review:</strong> Assess progress and readjust priorities according to identified gaps.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 mr-3 mt-1"></i>
+                        <div>
+                            <strong>Warning signals:</strong> Delay on more than 3 priority 1 topics or practice test score < 60%.
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-sync-alt bordeaux mr-3 mt-1"></i>
+                        <div>
+                            <strong>Adaptation strategy:</strong> Reduce scope rather than depth on priority topics.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion and Call-to-Action -->
+        <section class="mt-12 p-8 bg-white border-2 border-bordeaux rounded-lg shadow-custom">
+            <h2 class="text-2xl font-bold bordeaux mb-6 text-center flex items-center justify-center">
+                <i class="fas fa-graduation-cap mr-3"></i>
+                Towards academic excellence
+            </h2>
+            
+            <p class="text-lg bordeaux text-center mb-6 leading-relaxed">
+                Mastering weightings transforms your revision approach into a scientific and measurable strategy. This methodology enables you to maximize your intellectual return on investment while reducing stress linked to uncertainty.
+            </p>
+            
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold bordeaux mb-4 text-center">Key takeaways:</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <ul class="bordeaux space-y-2">
+                        <li>• Systematically analyze official weightings</li>
+                        <li>• Create a personalized impact/effort matrix</li>
+                        <li>• Allocate 60% of time to priority 1 topics</li>
+                    </ul>
+                    <ul class="bordeaux space-y-2">
+                        <li>• Track progress with precise metrics</li>
+                        <li>• Adjust strategy based on interim results</li>
+                        <li>• Favor depth over breadth for priorities</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <div class="border-t-2 border-bordeaux pt-6">
+                    <p class="text-lg bordeaux font-semibold mb-4">
+                        Ready to revolutionize your study method?
+                    </p>
+                    <p class="bordeaux text-base mb-6">
+                        Discover our specialized training and revision optimization tools to achieve your academic and professional goals.
+                    </p>
+                 <div class="bordeaux text-xl font-bold">
+    <i class="fas fa-external-link-alt mr-2"></i>
+    <a href="https://www.finance-tutoring.fr/formations/preparation-au-cfa/" 
+       class="bordeaux underline hover:text-red-700" 
+       target="_blank" rel="noopener">
+       Explore our courses at www.finance-tutoring.fr
+    </a>
+</div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
