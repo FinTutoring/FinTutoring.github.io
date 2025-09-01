@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effective Study Planning for the CFA Exam</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background: #dc2626;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #dc2626;
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1px;
+            top: 16px;
+            bottom: -16px;
+            width: 2px;
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header with centered logo -->
+    <header class="bg-gradient-red text-white pt-10 pb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <!-- Centered and enlarged logo -->
+            <div class="flex justify-center mb-6">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-48 object-contain">
+            </div>
+
+            <!-- Name and slogan -->
+            <h1 class="text-2xl font-semibold text-red-100 mb-1">Finance Tutoring</h1>
+            <p class="text-sm text-red-200 mb-6">Excellence in Financial Education</p>
+
+            <!-- Main title -->
+            <h1 class="text-4xl font-bold mb-4">Effective Study Planning for the CFA Exam</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto">Master your CFA preparation with strategic study planning, optimized scheduling, and proven techniques to maximize your success rate across all three levels.</p>
+        </div>
+    </header>
+
+    <!-- Quick navigation -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#profile-assessment" class="hover:text-red-600 transition-colors">Profile Assessment</a>
+                <a href="#study-plans" class="hover:text-red-600 transition-colors">Study Plans</a>
+                <a href="#topic-planning" class="hover:text-red-600 transition-colors">Topic Planning</a>
+                <a href="#mock-integration" class="hover:text-red-600 transition-colors">Mock Exams</a>
+                <a href="#work-life-balance" class="hover:text-red-600 transition-colors">Work-Life Balance</a>
+                <a href="#tools-resources" class="hover:text-red-600 transition-colors">Tools & Resources</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">Strategic CFA Study Planning for Success</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            The CFA program is one of the most challenging professional certifications in finance, requiring <strong class="text-red-600">300+ hours of dedicated study</strong> per level. With pass rates typically ranging from 40-50%, success depends heavily on strategic planning and disciplined execution.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            This comprehensive guide provides proven frameworks for creating realistic, effective study schedules that fit your professional commitments while maximizing your chances of passing on the first attempt. Based on successful candidate experiences and CFA Institute recommendations.
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-chart-bar mr-2"></i>CFA Success Statistics 2024
+                        </h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-trophy text-gold-500 mr-2"></i>Level I Pass Rate: 44-45%</li>
+                            <li><i class="fas fa-clock text-blue-500 mr-2"></i>Recommended Study Hours: 300+</li>
+                            <li><i class="fas fa-users text-green-500 mr-2"></i>Average Attempts: 1.8 per level</li>
+                            <li><i class="fas fa-graduation-cap text-purple-500 mr-2"></i>Charter Success Rate: 20%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Assessment -->
+        <section id="profile-assessment" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Assess Your Candidate Profile</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-graduate text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Finance Background</h3>
+                        <p class="text-gray-600 text-sm">Strong foundation in accounting, economics, and finance</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-briefcase text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Professional Level</h3>
+                        <p class="text-gray-600 text-sm">Entry-level to experienced professional</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-calendar-check text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2">Time Availability</h3>
+                        <p class="text-gray-600 text-sm">15-25 hours per week for study</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-clipboard-list mr-2"></i>Self-Assessment Checklist
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Academic Preparedness</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-square-check text-green-500 mr-2"></i>Undergraduate degree in finance/business</li>
+                            <li><i class="fas fa-square-check text-green-500 mr-2"></i>Strong quantitative skills</li>
+                            <li><i class="fas fa-square-check text-green-500 mr-2"></i>Financial statement analysis experience</li>
+                            <li><i class="fas fa-square-check text-green-500 mr-2"></i>Economics and statistics background</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Practical Considerations</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><i class="fas fa-clock text-blue-500 mr-2"></i><strong>Study Time:</strong> 15-25 hours/week available</li>
+                            <li><i class="fas fa-home text-purple-500 mr-2"></i><strong>Environment:</strong> Dedicated study space</li>
+                            <li><i class="fas fa-calendar text-orange-500 mr-2"></i><strong>Timeline:</strong> 4-6 months preparation window</li>
+                            <li><i class="fas fa-dollar-sign text-green-500 mr-2"></i><strong>Resources:</strong> Budget for materials and courses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Study Plans by Level -->
+        <section id="study-plans" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Customized Study Plans by CFA Level</h2>
+            
+            <!-- Level I Study Plan -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-2xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-layer-group mr-2"></i>CFA Level I - Foundation Building
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-red-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-red-600">6-Month Plan</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• <strong>300-350 hours total</strong></li>
+                            <li>• 12-15 hours/week</li>
+                            <li>• Comprehensive coverage</li>
+                            <li>• Multiple mock exam rounds</li>
+                            <li>• Ideal for beginners</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-blue-600">4-Month Plan</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• <strong>300-320 hours total</strong></li>
+                            <li>• 18-20 hours/week</li>
+                            <li>• Focused study approach</li>
+                            <li>• Some finance background helpful</li>
+                            <li>• Most popular choice</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-orange-600">3-Month Plan</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• <strong>300+ hours total</strong></li>
+                            <li>• 25+ hours/week</li>
+                            <li>• Very intensive</li>
+                            <li>• Strong background required</li>
+                            <li>• High discipline needed</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h4 class="font-semibold mb-4">Level I Timeline (4-Month Plan)</h4>
+                    <div class="relative">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="relative pl-8 pb-6 timeline-item">
+                            <h5 class="font-semibold mb-2">Month 1: Foundation Topics</h5>
+                            <p class="text-sm text-gray-600">Ethics, Quantitative Methods, Economics (75-80 hours)</p>
+                        </div>
+
+                        <div class="relative pl-8 pb-6 timeline-item">
+                            <h5 class="font-semibold mb-2">Month 2: Core Analysis</h5>
+                            <p class="text-sm text-gray-600">Financial Statement Analysis, Corporate Issuers (75-80 hours)</p>
+                        </div>
+
+                        <div class="relative pl-8 pb-6 timeline-item">
+                            <h5 class="font-semibold mb-2">Month 3: Investment Topics</h5>
+                            <p class="text-sm text-gray-600">Equity, Fixed Income, Derivatives (75-80 hours)</p>
+                        </div>
+
+                        <div class="relative pl-8 timeline-item">
+                            <h5 class="font-semibold mb-2">Month 4: Portfolio & Review</h5>
+                            <p class="text-sm text-gray-600">Portfolio Management, Alternative Investments, Mock Exams (75-80 hours)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Level II Study Plan -->
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-2xl font-semibold mb-6 text-blue-600">
+                    <i class="fas fa-layer-group mr-2"></i>CFA Level II - Advanced Application
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Key Differences from Level I</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Vignette-based format:</strong> Item sets with 4-6 questions</li>
+                            <li>• <strong>Deeper analysis:</strong> More complex calculations</li>
+                            <li>• <strong>Case study focus:</strong> Application-based scenarios</li>
+                            <li>• <strong>Time management critical:</strong> 88 minutes per session</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Study Strategy Adjustments</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Practice-heavy approach:</strong> More time on problems</li>
+                            <li>• <strong>Topic integration:</strong> Cross-functional thinking</li>
+                            <li>• <strong>Formula mastery:</strong> Complex calculations</li>
+                            <li>• <strong>Mock exam emphasis:</strong> Timing practice crucial</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-blue-600">Recommended Timeline: 5-6 Months</h4>
+                    <p class="text-sm text-gray-600">Level II requires additional time for mastering the vignette format and complex calculations. Plan for 350-400 study hours.</p>
+                </div>
+            </div>
+
+            <!-- Level III Study Plan -->
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-2xl font-semibold mb-6 text-green-600">
+                    <i class="fas fa-layer-group mr-2"></i>CFA Level III - Portfolio Management Focus
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-3">Unique Format Challenges</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Essay questions:</strong> Written responses (AM session)</li>
+                            <li>• <strong>Multiple choice:</strong> Item sets (PM session)</li>
+                            <li>• <strong>Portfolio focus:</strong> Practical application</li>
+                            <li>• <strong>Writing skills:</strong> Clear, concise explanations</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-3">Success Strategies</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• <strong>Essay practice:</strong> Daily writing exercises</li>
+                            <li>• <strong>Template development:</strong> Standard response formats</li>
+                            <li>• <strong>Time allocation:</strong> Strict session timing</li>
+                            <li>• <strong>Integration focus:</strong> Holistic thinking</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-green-50 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-green-600">Recommended Timeline: 4-5 Months</h4>
+                    <p class="text-sm text-gray-600">Focus heavily on essay writing practice and portfolio management integration. Plan for 320-350 study hours.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topic Area Planning -->
+        <section id="topic-planning" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Strategic Topic Area Planning</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-6">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-chart-pie mr-2"></i>CFA Level I Topic Weights & Study Allocation
+                </h3>
+                
+                <div class="space-y-4">
+                    <!-- Ethics -->
+                    <div class="border-l-4 border-red-600 pl-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Ethical and Professional Standards</h4>
+                            <span class="text-red-600 font-bold">15-20% | 45-60 hours</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                            <div class="progress-bar h-3 rounded-full" style="width: 17.5%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Foundation topic - Start here, review frequently. Critical for borderline cases.</p>
+                    </div>
+
+                    <!-- Financial Statement Analysis -->
+                    <div class="border-l-4 border-blue-600 pl-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Financial Statement Analysis</h4>
+                            <span class="text-blue-600 font-bold">11-14% | 35-45 hours</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                            <div class="bg-blue-600 h-3 rounded-full" style="width: 12.5%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Complex topic requiring significant practice time. Foundation for other areas.</p>
+                    </div>
+
+                    <!-- Equity Investments -->
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Equity Investments</h4>
+                            <span class="text-green-600 font-bold">11-14% | 35-45 hours</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                            <div class="bg-green-600 h-3 rounded-full" style="width: 12.5%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Valuation models and market analysis. Moderate difficulty.</p>
+                    </div>
+
+                    <!-- Fixed Income -->
+                    <div class="border-l-4 border-purple-600 pl-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <h4 class="font-semibold text-lg">Fixed Income</h4>
+                            <span class="text-purple-600 font-bold">11-14% | 35-45 hours</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                            <div class="bg-purple-600 h-3 rounded-full" style="width: 12.5%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">Mathematical intensive. Duration, convexity calculations critical.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Portfolio Management</span>
+                                <span class="text-orange-600 font-bold">8-12% | 25-35 hours</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Quantitative Methods</span>
+                                <span class="text-cyan-600 font-bold">6-9% | 20-30 hours</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Economics</span>
+                                <span class="text-indigo-600 font-bold">6-9% | 20-30 hours</span>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Alternative Investments</span>
+                                <span class="text-yellow-600 font-bold">7-10% | 20-30 hours</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Corporate Issuers</span>
+                                <span class="text-pink-600 font-bold">6-9% | 20-30 hours</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium">Derivatives</span>
+                                <span class="text-gray-600 font-bold">5-8% | 15-25 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-red-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-red-600">
+                    <i class="fas fa-lightbulb mr-2"></i>Topic Prioritization Strategy
+                </h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-green-600">High Priority</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Ethics (15-20%)</li>
+                            <li>• FSA (11-14%)</li>
+                            <li>• Equity (11-14%)</li>
+                            <li>• Fixed Income (11-14%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-orange-600">Medium Priority</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Portfolio Mgmt (8-12%)</li>
+                            <li>• Alternative Inv (7-10%)</li>
+                            <li>• Quant Methods (6-9%)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-gray-600">Lower Priority</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Economics (6-9%)</li>
+                            <li>• Corporate Issuers (6-9%)</li>
+                            <li>• Derivatives (5-8%)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mock Exam Integration -->
+        <section id="mock-integration" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Strategic Mock Exam Integration</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-target mr-2"></i>Mock Exam Timeline & Strategy
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-4 flex items-center">
+                            <i class="fas fa-calendar-alt text-blue-500 mr-2"></i>Optimal Mock Schedule
+                        </h4>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-blue-50 rounded-lg">
+                                <h5 class="font-semibold">First Mock (Week 12)</h5>
+                                <p class="text-sm text-gray-600">Baseline assessment after completing 75% of curriculum</p>
+                            </div>
+                            <div class="p-3 bg-green-50 rounded-lg">
+                                <h5 class="font-semibold">Second Mock (Week 14)</h5>
+                                <p class="text-sm text-gray-600">Progress check and weak area identification</p>
+                            </div>
+                            <div class="p-3 bg-orange-50 rounded-lg">
+                                <h5 class="font-semibold">Third Mock (Week 16)</h5>
+                                <p class="text-sm text-gray-600">Final confidence builder and timing practice</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-4 flex items-center">
+                            <i class="fas fa-chart-line text-green-500 mr-2"></i>Performance Analysis Process
+                        </h4>
+                        <ol class="space-y-2 text-gray-700">
+                            <li><strong>1. Immediate Review:</strong> Analyze results within 24 hours</li>
+                            <li><strong>2. Topic Analysis:</strong> Identify weak areas by subject</li>
+                            <li><strong>3. Question Review:</strong> Understand wrong answers</li>
+                            <li><strong>4. Study Adjustment:</strong> Reallocate time to weak areas</li>
+                            <li><strong>5. Follow-up Practice:</strong> Targeted question banks</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-bullseye mr-2"></i>Mock Exam Performance Benchmarks
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-red-50 rounded-lg">
+                        <div class="text-3xl font-bold text-red-600 mb-2">< 60%</div>
+                        <h4 class="font-semibold mb-2">High Risk</h4>
+                        <p class="text-sm text-gray-600">Significant study plan revision needed. Consider additional preparation time.</p>
+                    </div>
+                    <div class="text-center p-6 bg-yellow-50 rounded-lg">
+                        <div class="text-3xl font-bold text-yellow-600 mb-2">60-70%</div>
+                        <h4 class="font-semibold mb-2">Moderate Risk</h4>
+                        <p class="text-sm text-gray-600">Focus on weak areas. Increase practice intensity in final weeks.</p>
+                    </div>
+                    <div class="text-center p-6 bg-green-50 rounded-lg">
+                        <div class="text-3xl font-bold text-green-600 mb-2">70%+</div>
+                        <h4 class="font-semibold mb-2">Good Position</h4>
+                        <p class="text-sm text-gray-600">Maintain current pace. Fine-tune weak areas and maintain confidence.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-blue-600">
+                        <i class="fas fa-info-circle mr-2"></i>Mock Exam Sources Recommendation
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <strong>Official CFA Institute:</strong>
+                            <ul class="mt-1 space-y-1 text-gray-600">
+                                <li>• Learning Ecosystem mocks (2 included)</li>
+                                <li>• Most representative of actual exam</li>
+                                <li>• Use for final preparation phase</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Third-Party Providers:</strong>
+                            <ul class="mt-1 space-y-1 text-gray-600">
+                                <li>• Schweser, UWorld, Mark Meldrum</li>
+                                <li>• More practice variety</li>
+                                <li>• Good for skill building phase</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work-Life Balance -->
+        <section id="work-life-balance" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Balancing CFA Studies with Professional Life</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-clock mr-2"></i>Time Management Strategies
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-sun text-yellow-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Early Morning Sessions (5:30-7:30 AM)</strong>
+                                <p class="text-sm text-gray-600">Peak mental energy, minimal distractions</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-subway text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Commute Utilization</strong>
+                                <p class="text-sm text-gray-600">Audio reviews, flashcards, formula memorization</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-moon text-indigo-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Evening Deep Study (7:00-10:00 PM)</strong>
+                                <p class="text-sm text-gray-600">Problem solving, complex topics</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calendar-week mr-2"></i>Weekly Schedule Template
+                    </h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between p-2 bg-gray-50 rounded">
+                            <span class="font-medium">Monday-Friday</span>
+                            <span class="text-blue-600">2-3 hours/day (14-18h)</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-gray-50 rounded">
+                            <span class="font-medium">Saturday</span>
+                            <span class="text-green-600">4-6 hours (deep study)</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-gray-50 rounded">
+                            <span class="font-medium">Sunday</span>
+                            <span class="text-orange-600">2-3 hours (review)</span>
+                        </div>
+                        <div class="flex justify-between p-2 bg-red-50 rounded font-semibold">
+                            <span>Total Weekly</span>
+                            <span class="text-red-600">20-25 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-balance-scale mr-2"></i>Maintaining Work Performance During CFA Prep
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-green-600">Energy Management</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Maintain regular sleep schedule (7+ hours)</li>
+                            <li>• Strategic caffeine usage</li>
+                            <li>• Regular exercise (3x/week minimum)</li>
+                            <li>• Healthy meal planning</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-blue-600">Workplace Efficiency</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Communicate goals with supervisor</li>
+                            <li>• Minimize non-essential meetings</li>
+                            <li>• Batch similar tasks together</li>
+                            <li>• Use lunch breaks for quick reviews</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3 text-purple-600">Social Life Balance</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li>• Set expectations with family/friends</li>
+                            <li>• Schedule regular break activities</li>
+                            <li>• Join CFA study groups</li>
+                            <li>• Plan post-exam celebrations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4 text-yellow-600">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>Stress Management & Burnout Prevention
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-2">Warning Signs</h4>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Declining work performance</li>
+                            <li>• Chronic fatigue or insomnia</li>
+                            <li>• Loss of motivation to study</li>
+                            <li>• Irritability or mood swings</li>
+                            <li>• Physical symptoms (headaches, etc.)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Prevention Strategies</h4>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Build rest days into schedule</li>
+                            <li>• Practice mindfulness/meditation</li>
+                            <li>• Maintain social connections</li>
+                            <li>• Seek support when needed</li>
+                            <li>• Remember: it's temporary</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools and Resources -->
+        <section id="tools-resources" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Essential Tools & Resources</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-laptop mr-2"></i>Digital Study Tools
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-mobile-alt text-blue-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>CFA Institute Learning Ecosystem</strong>
+                                <p class="text-sm text-gray-600">Official platform with curriculum, practice questions, and progress tracking</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Time Tracking Apps</strong>
+                                <p class="text-sm text-gray-600">Toggl, RescueTime for monitoring study hours and productivity</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-sticky-note text-purple-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Flashcard Applications</strong>
+                                <p class="text-sm text-gray-600">Anki, Quizlet for formula memorization and concept review</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-calculator mr-2"></i>Physical Tools
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-calculator text-orange-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Approved Calculators</strong>
+                                <p class="text-sm text-gray-600">Texas Instruments BA II Plus or HP 12C (practice extensively)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-book text-cyan-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Formula Sheets</strong>
+                                <p class="text-sm text-gray-600">Laminated reference cards for quick review and memorization</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-calendar text-pink-500 mr-3 mt-1"></i>
+                            <div>
+                                <strong>Physical Planner</strong>
+                                <p class="text-sm text-gray-600">Wall calendar or planner for visual progress tracking</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red mb-8">
+                <h3 class="text-xl font-semibold mb-6 text-red-600">
+                    <i class="fas fa-graduation-cap mr-2"></i>Recommended Study Materials by Provider
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-blue-600">CFA Institute (Official)</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Curriculum (Digital)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Learning Ecosystem</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Practice Pack (Optional)</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i>Mock Exams (2 included)</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-blue-50 rounded text-xs">
+                            <strong>Best for:</strong> Comprehensive official content
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-orange-600">Kaplan Schweser</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-star text-yellow-500 mr-2"></i>SchweserNotes</li>
+                            <li><i class="fas fa-star text-yellow-500 mr-2"></i>QBank (3,000+ questions)</li>
+                            <li><i class="fas fa-star text-yellow-500 mr-2"></i>Mock Exams</li>
+                            <li><i class="fas fa-star text-yellow-500 mr-2"></i>Video Classes</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-orange-50 rounded text-xs">
+                            <strong>Best for:</strong> Condensed study materials
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 p-6 rounded-lg">
+                        <h4 class="font-semibold text-lg mb-3 text-green-600">UWorld Finance</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><i class="fas fa-lightbulb text-purple-500 mr-2"></i>Visual explanations</li>
+                            <li><i class="fas fa-lightbulb text-purple-500 mr-2"></i>Adaptive learning</li>
+                            <li><i class="fas fa-lightbulb text-purple-500 mr-2"></i>Performance analytics</li>
+                            <li><i class="fas fa-lightbulb text-purple-500 mr-2"></i>Question bank</li>
+                        </ul>
+                        <div class="mt-3 p-2 bg-green-50 rounded text-xs">
+                            <strong>Best for:</strong> Interactive learning experience
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-download mr-2 text-red-600"></i>Downloadable Planning Templates
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <i class="fas fa-file-excel text-green-600 text-2xl mb-2"></i>
+                        <h5 class="font-semibold text-sm">Study Schedule Template</h5>
+                        <p class="text-xs text-gray-600">Excel/Google Sheets</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <i class="fas fa-tasks text-blue-600 text-2xl mb-2"></i>
+                        <h5 class="font-semibold text-sm">Progress Tracker</h5>
+                        <p class="text-xs text-gray-600">Daily/Weekly monitoring</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <i class="fas fa-chart-bar text-purple-600 text-2xl mb-2"></i>
+                        <h5 class="font-semibold text-sm">Mock Performance Log</h5>
+                        <p class="text-xs text-gray-600">Score tracking & analysis</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg text-center">
+                        <i class="fas fa-calculator text-orange-600 text-2xl mb-2"></i>
+                        <h5 class="font-semibold text-sm">Formula Reference</h5>
+                        <p class="text-xs text-gray-600">Key formulas by topic</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-8 rounded-lg">
+            <h2 class="text-3xl font-bold mb-6">Your Path to CFA Success</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-4">
+                        Success in the CFA program requires more than just intelligence – it demands strategic planning, disciplined execution, and adaptive management of your study approach. The 300+ hours of preparation represent an investment in your future that pays dividends throughout your career.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        Remember that this is a marathon, not a sprint. Consistency, patience, and strategic planning will serve you better than last-minute cramming. Use this guide to create your personalized roadmap, but be prepared to adapt as you progress through your preparation.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4">Success Checklist</h3>
+                    <ul class="space-y-2 text-sm text-red-100">
+                        <li>✓ Realistic study schedule created</li>
+                        <li>✓ Study materials selected and acquired</li>
+                        <li>✓ Mock exam schedule planned</li>
+                        <li>✓ Work-life balance strategy defined</li>
+                        <li>✓ Progress tracking system in place</li>
+                        <li>✓ Support system activated</li>
+                        <li>✓ Exam registration completed</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-red-400">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Finance Tutoring</h4>
+                            <p class="text-sm text-red-200">Excellence in Financial Education</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-sm text-red-200">
+                        <p>Best of luck on your CFA journey!</p>
+                        <p>January 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            
+            <!-- Logo -->
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-24 object-contain">
+            </div>
+
+            <p class="text-gray-400">
+                © 2025 Finance Tutoring. This guide is based on official CFA Institute information and best practices from successful candidates.
+            </p>
+            
+            <div class="mt-4 space-x-6">
+                <span class="text-sm text-gray-500">Sources: CFA Institute, Kaplan Schweser, UWorld Finance, Mark Meldrum, 300Hours</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
