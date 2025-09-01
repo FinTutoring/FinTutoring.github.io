@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📘 Understand and Retain Key CFA® Formulas - Memorize Smartly to Apply Quickly in MCQs</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D3748;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 20, 60, 0.15);
+        }
+        .border-red-custom {
+            border-color: #DC143C;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #DC143C 0%, #8B0000 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(220, 20, 60, 0.1);
+        }
+        .formula-box {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border: 2px solid #DC143C;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .technique-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #DC143C, #8B0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .memory-card {
+            background: white;
+            border-left: 4px solid #DC143C;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 16px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .accent-red { color: #DC143C; }
+        .accent-bordeaux { color: #8B0000; }
+        .bg-red-light { background-color: #fef2f2; }
+        .bg-bordeaux-light { background-color: #fdf2f8; }
+    </style>
+</head>
+<body>
+    <!-- Header with Finance Tutoring logo -->
+    <header class="bg-gradient-red text-white py-16">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center mb-8">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-20 object-contain">
+            </div>
+            <h1 class="text-2xl font-bold mb-2">Finance Tutoring</h1>
+            <p class="text-red-200 mb-8">Excellence in Financial Training</p>
+            
+            <h1 class="text-5xl font-bold mb-6">📘 Understand and Retain Key CFA® Formulas</h1>
+            <p class="text-xl text-red-100 max-w-4xl mx-auto leading-relaxed">
+                Memorize Smartly to Apply Quickly in MCQs: Proven Scientific Techniques, Effective Mnemonics, and Optimization Strategies to Pass the CFA® Level 1
+            </p>
+        </div>
+    </header>
+
+    <!-- Quick Navigation -->
+    <nav class="bg-red-light border-b-2 border-red-custom sticky top-0 z-50 bg-opacity-95 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex flex-wrap gap-6 text-sm font-medium">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#ecosystem" class="hover:text-red-600 transition-colors">Ecosystem</a>
+                <a href="#techniques" class="hover:text-red-600 transition-colors">Techniques</a>
+                <a href="#formulas" class="hover:text-red-600 transition-colors">Key Formulas</a>
+                <a href="#repetition" class="hover:text-red-600 transition-colors">Repetition</a>
+                <a href="#application" class="hover:text-red-600 transition-colors">Application</a>
+                <a href="#calculator" class="hover:text-red-600 transition-colors">Calculator</a>
+                <a href="#strategies" class="hover:text-red-600 transition-colors">Strategies</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-16">
+            <div class="bg-white p-10 rounded-xl shadow-red">
+                <h2 class="text-4xl font-bold text-gradient mb-8">The Key to Success: Smart Memorization</h2>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                            The CFA® Level 1 requires mastery of <strong class="accent-red">30 to 40 critical formulas</strong> across 10 domains. With only <strong class="accent-bordeaux">90 seconds per question</strong>, speed of application becomes crucial.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            According to <strong>AnalystPrep</strong> and data from the <strong>CFA Institute</strong>, successful candidates not only master the formulas but know how to <em>apply them instantly</em> without hesitation.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            This guide presents <strong class="accent-red">proven scientific techniques</strong> to memorize effectively and apply formulas quickly in an exam setting.
+                        </p>
+                    </div>
+                    <div class="bg-red-light p-8 rounded-xl">
+                        <h3 class="font-bold text-xl mb-6 accent-red">
+                            <i class="fas fa-chart-line mr-3"></i>Key 2024 Statistics
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold accent-red">43%</div>
+                                <div class="text-sm text-gray-600">Pass Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold accent-bordeaux">90s</div>
+                                <div class="text-sm text-gray-600">Per question</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold accent-red">35</div>
+                                <div class="text-sm text-gray-600">Core formulas</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="text-3xl font-bold accent-bordeaux">300h</div>
+                                <div class="text-sm text-gray-600">Min. study</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formula Ecosystem -->
+        <section id="ecosystem" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Understanding the CFA® Formula Ecosystem</h2>
+            
+            <div class="memory-card mb-8">
+                <h3 class="text-2xl font-bold accent-red mb-6">
+                    <i class="fas fa-sitemap mr-3"></i>Smart Classification by Impact
+                </h3>
+                <p class="text-gray-700 mb-6">
+                    According to <strong>300Hours.com</strong> and <strong>UWorld Finance</strong>, CFA® formulas are classified into 3 categories based on their frequency of appearance:
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-light p-6 rounded-lg border-l-4 border-red-custom">
+                        <h4 class="font-bold text-lg accent-red mb-3">🔥 Critical (12 formulas)</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Time Value of Money (TVM)</li>
+                            <li>• Present/Future Value</li>
+                            <li>• Holding Period Return</li>
+                            <li>• Bond Pricing</li>
+                            <li>• Portfolio Return/Risk</li>
+                        </ul>
+                        <p class="text-xs text-gray-600 mt-3">Appearance: 40-50% of questions</p>
+                    </div>
+                    
+                    <div class="bg-bordeaux-light p-6 rounded-lg border-l-4" style="border-color: #8B0000;">
+                        <h4 class="font-bold text-lg accent-bordeaux mb-3">⚡ Important (15 formulas)</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Duration & Convexity</li>
+                            <li>• CAPM & Beta</li>
+                            <li>• Financial ratios</li>
+                            <li>• Probabilities</li>
+                            <li>• Linear regression</li>
+                        </ul>
+                        <p class="text-xs text-gray-600 mt-3">Appearance: 30-35% of questions</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-400">
+                        <h4 class="font-bold text-lg text-gray-700 mb-3">📋 Specialized (15+ formulas)</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Complex derivatives</li>
+                            <li>• Alternative investments</li>
+                            <li>• Advanced statistical tests</li>
+                            <li>• Sector-specific formulas</li>
+                        </ul>
+                        <p class="text-xs text-gray-600 mt-3">Appearance: 15-20% of questions</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-red">
+                <h3 class="text-xl font-bold accent-red mb-6">
+                    <i class="fas fa-brain mr-3"></i>Pareto Principle Applied to Formulas
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 mb-4">
+                            <strong>80% of your score</strong> comes from perfect mastery of <strong>20% of the formulas</strong> (the 12 critical ones).
+                        </p>
+                        <p class="text-gray-700">
+                            This approach, validated by success data from <strong>AnalystPrep</strong>, optimizes your study time.
+                        </p>
+                    </div>
+                    <div class="formula-box">
+                        <h4 class="font-bold accent-red mb-3">Prioritization Formula:</h4>
+                        <p class="font-mono text-center text-lg">
+                            <strong>Score = (Frequency × Complexity × Mastery Time)⁻¹</strong>
+                        </p>
+                        <p class="text-xs text-gray-600 mt-2">The higher the score, the higher the formula priority</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memorization Techniques -->
+        <section id="techniques" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Scientific Memorization Techniques</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-brain text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Mnemonics</h3>
+                    <p class="text-gray-700 mb-4">Creating mental associations to durably anchor formulas.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Example:</strong>
+                        <p class="text-sm mt-2">ROI = "Reward Of Investment"<br/>
+                        <em>FV = PV(1+r)ⁿ</em> = "Future Vault = Present Vault × Growth Power"</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Visualization</h3>
+                    <p class="text-gray-700 mb-4">Transforming abstract formulas into concrete mental images.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Technique:</strong>
+                        <p class="text-sm mt-2">Duration = "Elastic sensitivity"<br/>
+                        Imagine an elastic band stretching with interest rates</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-puzzle-piece text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Pattern Recognition</h3>
+                    <p class="text-gray-700 mb-4">Identifying common structures between similar formulas.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Pattern:</strong>
+                        <p class="text-sm mt-2">All TVM formulas follow:<br/>
+                        <em>Value = Base × Growth Factor</em></p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-layer-group text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Chunking</h3>
+                    <p class="text-gray-700 mb-4">Grouping formulas into logical blocks to reduce cognitive load.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Group:</strong>
+                        <p class="text-sm mt-2">"Return Block":<br/>
+                        HPR → Geometric Mean → Arithmetic Mean</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-repeat text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Active Repetition</h3>
+                    <p class="text-gray-700 mb-4">Regular recitation with self-testing to reinforce long-term memory.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Method:</strong>
+                        <p class="text-sm mt-2">Write → Recite → Check → Correct<br/>
+                        15 min/day per formula block</p>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white p-8 rounded-xl shadow-red">
+                    <div class="technique-icon">
+                        <i class="fas fa-link text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl accent-red mb-4 text-center">Contextual Associations</h3>
+                    <p class="text-gray-700 mb-4">Linking each formula to its practical application context.</p>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <strong class="accent-bordeaux">Link:</strong>
+                        <p class="text-sm mt-2">Beta = "Systematic risk"<br/>
+                        → Think: "Stock market falls, Beta follows"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Formulas by Category -->
+        <section id="formulas" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Key Formulas by CFA® Domain</h2>
+            
+            <div class="space-y-8">
+                <!-- Quantitative Methods -->
+                <div class="memory-card">
+                    <h3 class="text-2xl font-bold accent-red mb-6">
+                        <i class="fas fa-calculator mr-3"></i>Quantitative Methods (6-9%)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Time Value of Money</h4>
+                            <p class="font-mono mb-2"><strong>FV = PV(1 + r)ⁿ</strong></p>
+                            <p class="font-mono mb-2"><strong>PV = FV / (1 + r)ⁿ</strong></p>
+                            <p class="text-sm text-gray-600">🧠 <em>Mnemonic: "Future Vault = Present Vault × Growth Magic"</em></p>
+                        </div>
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Average Returns</h4>
+                            <p class="font-mono mb-2"><strong>Arithmetic Mean = Σr / n</strong></p>
+                            <p class="font-mono mb-2"><strong>Geometric Mean = [(1+r₁)×...×(1+rₙ)]^(1/n) - 1</strong></p>
+                            <p class="text-sm text-gray-600">📊 <em>Relation: Arithmetic > Geometric > Harmonic</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fixed Income -->
+                <div class="memory-card">
+                    <h3 class="text-2xl font-bold accent-red mb-6">
+                        <i class="fas fa-coins mr-3"></i>Fixed Income (11-14%)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Bond Pricing</h4>
+                            <p class="font-mono mb-2"><strong>P = Σ[CFₜ / (1 + r)ᵗ]</strong></p>
+                            <p class="font-mono mb-2"><strong>YTM approximation ≈ (C + (FV-P)/n) / ((FV+P)/2)</strong></p>
+                            <p class="text-sm text-gray-600">💡 <em>Tip: Price ↑ when Rates ↓</em></p>
+                        </div>
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Duration & Sensitivity</h4>
+                            <p class="font-mono mb-2"><strong>Modified Duration = Macaulay Duration / (1 + YTM)</strong></p>
+                            <p class="font-mono mb-2"><strong>%ΔP ≈ -Duration × ΔYTM</strong></p>
+                            <p class="text-sm text-gray-600">🔗 <em>Link: Duration = "price elasticity to rates"</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equity Investments -->
+                <div class="memory-card">
+                    <h3 class="text-2xl font-bold accent-red mb-6">
+                        <i class="fas fa-chart-area mr-3"></i>Equity Investments (11-14%)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Dividend Discount Model</h4>
+                            <p class="font-mono mb-2"><strong>P = D₁ / (r - g)</strong></p>
+                            <p class="font-mono mb-2"><strong>P/E = D₁/E₁ / (r - g)</strong></p>
+                            <p class="text-sm text-gray-600">💰 <em>Condition: r > g (rate > growth)</em></p>
+                        </div>
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Valuation Ratios</h4>
+                            <p class="font-mono mb-2"><strong>ROE = Net Income / Shareholders' Equity</strong></p>
+                            <p class="font-mono mb-2"><strong>P/B = P/E × ROE</strong></p>
+                            <p class="text-sm text-gray-600">🎯 <em>Mnemonic: "Price-Book = Price-Earnings × Return-Equity"</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Management -->
+                <div class="memory-card">
+                    <h3 class="text-2xl font-bold accent-red mb-6">
+                        <i class="fas fa-briefcase mr-3"></i>Portfolio Management (8-12%)
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">Portfolio Return & Risk</h4>
+                            <p class="font-mono mb-2"><strong>E(Rₚ) = Σwᵢ × E(Rᵢ)</strong></p>
+                            <p class="font-mono mb-2"><strong>σₚ² = Σwᵢ²σᵢ² + 2ΣΣwᵢwⱼCov(i,j)</strong></p>
+                            <p class="text-sm text-gray-600">⚖️ <em>Weights × Individual Returns</em></p>
+                        </div>
+                        <div class="formula-box">
+                            <h4 class="font-bold accent-bordeaux mb-3">CAPM & Beta</h4>
+                            <p class="font-mono mb-2"><strong>E(Rᵢ) = Rₓ + βᵢ[E(Rₘ) - Rₓ]</strong></p>
+                            <p class="font-mono mb-2"><strong>β = Cov(Rᵢ,Rₘ) / Var(Rₘ)</strong></p>
+                            <p class="text-sm text-gray-600">📈 <em>Beta > 1 : riskier than market</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spaced Repetition -->
+        <section id="repetition" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Spaced Repetition: The Science of Retention</h2>
+            
+            <div class="memory-card mb-8">
+                <h3 class="text-2xl font-bold accent-red mb-6">
+                    <i class="fas fa-clock mr-3"></i>Optimized Revision Protocol
+                </h3>
+                <p class="text-gray-700 mb-6">
+                    Based on Ebbinghaus's forgetting curve and validated by <strong>UWorld Finance</strong>, this protocol maximizes long-term retention:
+                </p>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="bg-red-light p-6 rounded-lg text-center border-2 border-red-custom">
+                        <div class="text-3xl font-bold accent-red mb-2">D+1</div>
+                        <h4 class="font-semibold mb-2">First Revision</h4>
+                        <p class="text-sm text-gray-700">Review notes + simple exercises</p>
+                        <div class="mt-3 text-xs text-gray-600">Retention: 85%</div>
+                    </div>
+                    
+                    <div class="bg-bordeaux-light p-6 rounded-lg text-center border-2" style="border-color: #8B0000;">
+                        <div class="text-3xl font-bold accent-bordeaux mb-2">D+7</div>
+                        <h4 class="font-semibold mb-2">Consolidation</h4>
+                        <p class="text-sm text-gray-700">Flashcards + quick quiz</p>
+                        <div class="mt-3 text-xs text-gray-600">Retention: 90%</div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg text-center border-2 border-gray-400">
+                        <div class="text-3xl font-bold text-gray-700 mb-2">D+30</div>
+                        <h4 class="font-semibold mb-2">Anchoring</h4>
+                        <p class="text-sm text-gray-700">Complex applications</p>
+                        <div class="mt-3 text-xs text-gray-600">Retention: 95%</div>
+                    </div>
+                    
+                    <div class="bg-red-light p-6 rounded-lg text-center border-2 border-red-custom">
+                        <div class="text-3xl font-bold accent-red mb-2">D+90</div>
+                        <h4 class="font-semibold mb-2">Mastery</h4>
+                        <p class="text-sm text-gray-700">Quick pre-exam review</p>
+                        <div class="mt-3 text-xs text-gray-600">Retention: 98%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-red">
+                <h3 class="text-xl font-bold accent-red mb-6">
+                    <i class="fas fa-graduation-cap mr-3"></i>Revision Techniques by Phase
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg accent-bordeaux mb-4">Learning Phase (D+1)</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Active Reading:</strong> Write formula 3 times by hand
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Verbalization:</strong> Explain the formula out loud
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Application:</strong> 2-3 guided simple exercises
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg accent-bordeaux mb-4">Consolidation Phase (D+7)</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-lightning-bolt text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Flash Recall:</strong> Formula from memory in 30 seconds
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightning-bolt text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Flashcards:</strong> 15 minutes of active revision
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lightning-bolt text-yellow-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Quiz:</strong> 5-10 timed questions
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practical Application -->
+        <section id="application" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Practical Application: From Formula to MCQ</h2>
+            
+            <div class="memory-card mb-8">
+                <h3 class="text-2xl font-bold accent-red mb-6">
+                    <i class="fas fa-stopwatch mr-3"></i>90-Second Strategy
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-light p-6 rounded-lg">
+                        <h4 class="font-bold text-lg accent-red mb-3">0-20 seconds</h4>
+                        <h5 class="font-semibold mb-3">Reading & Identification</h5>
+                        <ul class="text-sm space-y-2">
+                            <li>• Scan the question</li>
+                            <li>• Identify keywords</li>
+                            <li>• Recognize the formula type</li>
+                            <li>• Spot the data</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-bordeaux-light p-6 rounded-lg">
+                        <h4 class="font-bold text-lg accent-bordeaux mb-3">20-70 seconds</h4>
+                        <h5 class="font-semibold mb-3">Calculation & Application</h5>
+                        <ul class="text-sm space-y-2">
+                            <li>• Automatic formula recall</li>
+                            <li>• Value substitution</li>
+                            <li>• Calculator calculation</li>
+                            <li>• Quick verification</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-700 mb-3">70-90 seconds</h4>
+                        <h5 class="font-semibold mb-3">Selection & Validation</h5>
+                        <ul class="text-sm space-y-2">
+                            <li>• Compare with options</li>
+                            <li>• Consistency test</li>
+                            <li>• Answer selection</li>
+                            <li>• Mark if uncertain</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-red">
+                <h3 class="text-xl font-bold accent-red mb-6">
+                    <i class="fas fa-target mr-3"></i>Practical Example: TVM Question
+                </h3>
+                
+                <div class="formula-box mb-6">
+                    <h4 class="font-bold accent-bordeaux mb-3">Typical CFA® Question:</h4>
+                    <p class="mb-4">
+                        <em>"An investor invests €10,000 at 6% annual compound interest. What will be the value in 5 years?"</em>
+                    </p>
+                    <p class="text-sm"><strong>A) €13,382</strong> • <strong>B) €13,000</strong> • <strong>C) €12,625</strong></p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-red-light p-4 rounded-lg">
+                        <h5 class="font-semibold accent-red mb-2">Step 1: Identification (15s)</h5>
+                        <p class="text-sm text-gray-700">Keywords: "compound interest", "5 years"<br/>
+                        → <strong>TVM Formula: FV = PV(1+r)ⁿ</strong></p>
+                    </div>
+                    
+                    <div class="bg-bordeaux-light p-4 rounded-lg">
+                        <h5 class="font-semibold accent-bordeaux mb-2">Step 2: Calculation (45s)</h5>
+                        <p class="text-sm text-gray-700">PV = 10,000, r = 6%, n = 5<br/>
+                        FV = 10,000 × (1.06)⁵<br/>
+                        FV = 10,000 × 1.3382 = <strong>€13,382</strong></p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h5 class="font-semibold text-gray-700 mb-2">Step 3: Validation (30s)</h5>
+                        <p class="text-sm text-gray-700">Verification: 13,382 > 13,000 ✓<br/>
+                        Consistency with 6% growth ✓<br/>
+                        → <strong>Answer A</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section id="calculator" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Mastering the BA II Plus Calculator</h2>
+            
+            <div class="memory-card mb-8">
+                <h3 class="text-2xl font-bold accent-red mb-6">
+                    <i class="fas fa-calculator mr-3"></i>Essential TVM Functions
+                </h3>
+                <p class="text-gray-700 mb-6">
+                    The <strong>Texas Instruments BA II Plus</strong> is your main ally. Master these sequences to save 30% time on calculations.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="formula-box">
+                        <h4 class="font-bold accent-bordeaux mb-4">Basic Configuration</h4>
+                        <div class="space-y-3 font-mono text-sm">
+                            <div><strong class="accent-red">2nd FORMAT:</strong> Decimals (9 recommended)</div>
+                            <div><strong class="accent-red">2nd P/Y:</strong> Payments/year (12 for monthly)</div>
+                            <div><strong class="accent-red">2nd BGN:</strong> Payment mode (END by default)</div>
+                            <div><strong class="accent-red">2nd CLR TVM:</strong> Clear TVM variables</div>
+                        </div>
+                    </div>
+                    
+                    <div class="formula-box">
+                        <h4 class="font-bold accent-bordeaux mb-4">Standard TVM Sequence</h4>
+                        <div class="space-y-3 font-mono text-sm">
+                            <div><strong class="accent-red">N:</strong> Number of periods</div>
+                            <div><strong class="accent-red">I/Y:</strong> Interest rate (% annual)</div>
+                            <div><strong class="accent-red">PV:</strong> Present value (negative if outflow)</div>
+                            <div><strong class="accent-red">FV:</strong> Future value</div>
+                            <div><strong class="accent-red">PMT:</strong> Periodic payment</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-red">
+                <h3 class="text-xl font-bold accent-red mb-6">
+                    <i class="fas fa-rocket mr-3"></i>Calculator Shortcuts by Formula
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold accent-bordeaux mb-4">Quick TVM Formulas</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Future Value:</strong>
+                                <p class="font-mono text-sm mt-1">CLR TVM → N → I/Y → PV ± → CPT FV</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Present Value:</strong>
+                                <p class="font-mono text-sm mt-1">CLR TVM → N → I/Y → FV ± → CPT PV</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Yield (Rate):</strong>
+                                <p class="font-mono text-sm mt-1">CLR TVM → N → PV ± → FV → CPT I/Y</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold accent-bordeaux mb-4">Statistical Functions</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Mean & Standard Deviation:</strong>
+                                <p class="font-mono text-sm mt-1">2nd DATA → [values] → 2nd STAT</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Linear Regression:</strong>
+                                <p class="font-mono text-sm mt-1">2nd DATA → X,Y → 2nd STAT → LinR</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <strong class="text-sm">Cash Flow NPV:</strong>
+                                <p class="font-mono text-sm mt-1">CF → CF0 → C01,F01... → NPV</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exam Strategies -->
+        <section id="strategies" class="mb-16">
+            <h2 class="text-4xl font-bold text-gradient mb-10">Exam Strategies & Avoiding Pitfalls</h2>
+            
+            <div class="memory-card mb-8">
+                <h3 class="text-2xl font-bold accent-red mb-6">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>Common Pitfalls & Solutions
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg accent-bordeaux mb-4">❌ Frequent Errors</h4>
+                        <div class="space-y-4">
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-custom">
+                                <strong class="text-sm accent-red">Sign Confusion:</strong>
+                                <p class="text-sm mt-2">Negative PV = cash outflow, Positive FV = cash inflow</p>
+                            </div>
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-custom">
+                                <strong class="text-sm accent-red">Time Units:</strong>
+                                <p class="text-sm mt-2">Always align I/Y and N on the same basis (annual/monthly)</p>
+                            </div>
+                            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-custom">
+                                <strong class="text-sm accent-red">Calculator Mode:</strong>
+                                <p class="text-sm mt-2">Check P/Y = 1 for simple annual calculations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-lg accent-bordeaux mb-4">✅ Validation Strategies</h4>
+                        <div class="space-y-4">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <strong class="text-sm text-green-700">Consistency Test:</strong>
+                                <p class="text-sm mt-2">FV > PV if positive rate, logical relationship</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <strong class="text-sm text-green-700">Quick Approximation:</strong>
+                                <p class="text-sm mt-2">Rule of 72: doubling in 72/rate years</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <strong class="text-sm text-green-700">Option Elimination:</strong>
+                                <p class="text-sm mt-2">Eliminate obviously incorrect answers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-red">
+                <h3 class="text-xl font-bold accent-red mb-6">
+                    <i class="fas fa-chess mr-3"></i>Time Management Tactics
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="technique-icon mx-auto mb-4">
+                            <i class="fas fa-flag text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold accent-red mb-3">Flag & Skip</h4>
+                        <p class="text-sm text-gray-700">Mark difficult questions and return to them after handling easier ones</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="technique-icon mx-auto mb-4">
+                            <i class="fas fa-tachometer-alt text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold accent-red mb-3">Speed Reading</h4>
+                        <p class="text-sm text-gray-700">First scan answer options to understand expected magnitude</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="technique-icon mx-auto mb-4">
+                            <i class="fas fa-bullseye text-white text-xl"></i>
+                        </div>
+                        <h4 class="font-bold accent-red mb-3">Pattern Matching</h4>
+                        <p class="text-sm text-gray-700">Recognize recurring question types to automatically apply the right formula</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-red text-white p-10 rounded-xl">
+            <div class="text-center mb-8">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-16 mx-auto mb-4">
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-8 text-center">Your CFA® Success: Mastered Memorization</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <p class="text-red-100 leading-relaxed mb-6 text-lg">
+                        Mastering CFA® formulas is not about talent, but about <strong>scientific method</strong>. By applying the proven memorization techniques presented in this guide, you transform abstract equations into automatic reflexes.
+                    </p>
+                    <p class="text-red-100 leading-relaxed">
+                        Remember: <strong>80% of your score</strong> depends on perfect mastery of the <strong>12 critical formulas</strong>. Invest your time wisely according to the Pareto principle.
+                    </p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                    <h3 class="font-bold text-xl mb-6 text-center">
+                        <i class="fas fa-check-circle mr-3"></i>Success Checklist
+                    </h3>
+                    <ul class="space-y-3 text-red-100">
+                        <li>✅ Master the 12 critical formulas by heart</li>
+                        <li>✅ Apply spaced repetition (D+1, D+7, D+30, D+90)</li>
+                        <li>✅ Perfectly configure the BA II Plus</li>
+                        <li>✅ Time each question type (90s max)</li>
+                        <li>✅ Create personalized mnemonics</li>
+                        <li>✅ Practice 300+ formula questions</li>
+                        <li>✅ Master Flag & Skip strategies</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10 pt-8 border-t border-red-400 text-center">
+                <p class="text-red-200 mb-4">
+                    <strong>Finance Tutoring</strong> - Excellence in Financial Training since 2020
+                </p>
+                <p class="text-sm text-red-300">
+                    Sources: CFA Institute, AnalystPrep, 300Hours.com, UWorld Finance | Updated December 2024
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8 mt-16">
+        <div class="max-w-6lx mx-auto px-6 text-center">
+            <div class="flex justify-center mb-4">
+                <img src="https://i.imgur.com/1ligggU.png" alt="Finance Tutoring Logo" class="h-10 object-contain opacity-80">
+            </div>
+            
+            <p class="text-gray-400 mb-4">
+                © 2024 Finance Tutoring. Specialized CFA® guide based on best scientific memorization practices and official CFA Institute data.
+            </p>
+            
+            <div class="flex justify-center space-x-8 text-sm text-gray-500">
+                <span>CFA Institute</span>
+                <span>AnalystPrep</span>
+                <span>300Hours</span>
+                <span>UWorld Finance</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
