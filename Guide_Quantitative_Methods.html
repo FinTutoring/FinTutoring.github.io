@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFA Level 1 Quantitative Methods - Complete Guide | Finance Tutoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #DC2626;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+        .intuition-box {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-left: 4px solid #1F2937;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+            animation: pulse-subtle 3s ease-in-out infinite;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+        }
+        .section-header {
+            background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+        .logo-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Logo -->
+    <header class="bg-white shadow-lg py-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <div class="logo-container">
+                    <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" alt="Finance Tutoring Logo" class="h-16 object-contain">
+                </div>
+                <h1 class="text-4xl font-bold text-gray-900">CFA Level 1 Quantitative Methods</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Call to Action - Top -->
+    <div class="cta-box text-white py-8 px-6 mx-6 my-8 rounded-lg">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">🎯 Ready to Master CFA Level 1? Join Finance Tutoring's Expert-Led CFA Programs!</h2>
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-graduation-cap text-2xl mr-3"></i>
+                    <span class="text-lg">📚 Personalized coaching & practice exams</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-chart-line text-2xl mr-3"></i>
+                    <span class="text-lg">📈 Proven strategies for success</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <i class="fas fa-rocket text-2xl mr-3"></i>
+                    <span class="text-lg">🚀 Boost your CFA success rate</span>
+                </div>
+            </div>
+            <div class="bg-white bg-opacity-20 p-4 rounded-lg">
+                <p class="text-xl font-semibold">Transform your CFA journey with Finance Tutoring's comprehensive training programs!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        
+        <!-- Table of Contents -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">📚 Complete Guide Contents</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Core Concepts</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#tvm" class="text-red-600 hover:underline">💰 Time Value of Money (TVM)</a></li>
+                        <li><a href="#statistics" class="text-red-600 hover:underline">📊 Descriptive Statistics & Probability</a></li>
+                        <li><a href="#distributions" class="text-red-600 hover:underline">📈 Statistical Distributions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Advanced Topics</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#portfolio" class="text-red-600 hover:underline">🎯 Modern Portfolio Theory</a></li>
+                        <li><a href="#hypothesis" class="text-red-600 hover:underline">🔍 Hypothesis Testing</a></li>
+                        <li><a href="#regression" class="text-red-600 hover:underline">📉 Regression & Correlation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Time Value of Money -->
+        <section id="tvm" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-dollar-sign mr-3"></i>
+                    Time Value of Money (TVM)
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">Money today is worth more than the same amount in the future due to its earning potential. This fundamental concept underlies all financial decision-making. Think of it as the "opportunity cost" of money - by having money today, you can invest it and earn returns.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Key Formulas</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Future Value (FV)</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">FV = PV × (1 + r)ⁿ</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>PV</strong> = Present Value</li>
+                    <li><strong>r</strong> = Interest rate per period</li>
+                    <li><strong>n</strong> = Number of periods</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Present Value (PV)</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">PV = FV / (1 + r)ⁿ</p>
+                <p class="mt-2">This is simply the inverse of the FV formula - discounting future cash flows back to today.</p>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Annuity Present Value</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">PVA = PMT × [1 - (1 + r)⁻ⁿ] / r</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>PMT</strong> = Payment per period</li>
+                    <li><strong>Used for</strong>: Mortgages, bonds, regular payments</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Practical Applications</h3>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h4 class="font-bold text-lg mb-3">Example: Investment Decision</h4>
+                <p><strong>Scenario:</strong> You can invest $10,000 today at 8% annual interest for 5 years.</p>
+                <p><strong>Calculation:</strong> FV = $10,000 × (1.08)⁵ = $14,693.28</p>
+                <p><strong>Insight:</strong> Your investment will grow by $4,693.28 over 5 years.</p>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mt-4">
+                <h4 class="font-bold text-red-600">🎯 CFA Exam Tips</h4>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Always identify the cash flow pattern first</li>
+                    <li>Draw a timeline for complex problems</li>
+                    <li>Remember: ordinary annuity vs. annuity due</li>
+                    <li>Practice with your calculator extensively</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Descriptive Statistics & Probability -->
+        <section id="statistics" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-chart-bar mr-3"></i>
+                    Descriptive Statistics & Probability
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">Statistics help us understand data patterns and make informed decisions under uncertainty. In finance, we use these tools to measure risk, return, and the likelihood of various outcomes. Think of statistics as your "data detective" tools.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Measures of Central Tendency</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Arithmetic Mean</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">X̄ = Σxᵢ / n</p>
+                <p class="mt-2"><strong>Use:</strong> Average return, typical value</p>
+                <p><strong>Limitation:</strong> Sensitive to outliers</p>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Geometric Mean</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">G = (x₁ × x₂ × ... × xₙ)^(1/n)</p>
+                <p class="mt-2"><strong>Use:</strong> Average growth rates, compound returns</p>
+                <p><strong>Key insight:</strong> Always less than arithmetic mean (except when all values are equal)</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Measures of Dispersion</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Variance</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">σ² = Σ(xᵢ - μ)² / n</p>
+                <p class="mt-2"><strong>Sample Variance:</strong> s² = Σ(xᵢ - x̄)² / (n-1)</p>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Standard Deviation</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">σ = √σ²</p>
+                <p class="mt-2"><strong>Interpretation:</strong> Average deviation from the mean</p>
+                <p><strong>Risk measure:</strong> Higher σ = higher volatility/risk</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Probability Concepts</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Expected Value</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">E(X) = Σ[P(xᵢ) × xᵢ]</p>
+                <p class="mt-2">Weighted average of all possible outcomes</p>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-lg mb-3">Example: Portfolio Return Analysis</h4>
+                <p><strong>Stock Returns:</strong> 5%, 12%, -3%, 8%, 15%</p>
+                <p><strong>Arithmetic Mean:</strong> (5+12-3+8+15)/5 = 7.4%</p>
+                <p><strong>Standard Deviation:</strong> √[(5-7.4)² + (12-7.4)² + ... ] / 4 = 6.77%</p>
+                <p><strong>Interpretation:</strong> Expected return of 7.4% with 6.77% volatility</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Statistical Distributions -->
+        <section id="distributions" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-bell mr-3"></i>
+                    Statistical Distributions
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">Distributions describe how data points are spread out. In finance, they help us model uncertainty and calculate probabilities. The normal distribution is the "gold standard" - many financial variables follow this bell-shaped pattern.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Normal Distribution</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Standardization Formula</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">Z = (X - μ) / σ</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>Z</strong> = Standard normal variable</li>
+                    <li><strong>X</strong> = Original variable</li>
+                    <li><strong>μ</strong> = Population mean</li>
+                    <li><strong>σ</strong> = Population standard deviation</li>
+                </ul>
+            </div>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                <h4 class="font-bold text-blue-600">Key Properties of Normal Distribution</h4>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li>Symmetric around the mean</li>
+                    <li>68% of data within 1 standard deviation</li>
+                    <li>95% of data within 2 standard deviations</li>
+                    <li>99.7% of data within 3 standard deviations</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Other Important Distributions</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="formula-box">
+                    <h4 class="font-bold text-lg mb-2">Student's t-Distribution</h4>
+                    <p><strong>When to use:</strong> Small samples (n < 30)</p>
+                    <p><strong>Key feature:</strong> Wider tails than normal</p>
+                    <p><strong>Degrees of freedom:</strong> n - 1</p>
+                </div>
+
+                <div class="formula-box">
+                    <h4 class="font-bold text-lg mb-2">Chi-Square Distribution</h4>
+                    <p><strong>When to use:</strong> Variance testing</p>
+                    <p><strong>Key feature:</strong> Always positive</p>
+                    <p><strong>Degrees of freedom:</strong> n - 1</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-lg mb-3">Example: Risk Assessment</h4>
+                <p><strong>Scenario:</strong> Stock returns are normally distributed with μ = 10%, σ = 15%</p>
+                <p><strong>Question:</strong> What's the probability of returns being negative?</p>
+                <p><strong>Solution:</strong> Z = (0 - 10) / 15 = -0.67</p>
+                <p><strong>Result:</strong> P(Z < -0.67) = 25.14% chance of negative returns</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Modern Portfolio Theory -->
+        <section id="portfolio" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    Modern Portfolio Theory
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">The famous "don't put all your eggs in one basket" principle, but with mathematical precision. By combining assets that don't move perfectly together, you can reduce risk without sacrificing expected return. It's about finding the optimal risk-return trade-off.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Portfolio Return & Risk</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Portfolio Expected Return</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">E(Rₚ) = Σ wᵢ × E(Rᵢ)</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>wᵢ</strong> = Weight of asset i</li>
+                    <li><strong>E(Rᵢ)</strong> = Expected return of asset i</li>
+                    <li><strong>Note:</strong> Σwᵢ = 1 (weights sum to 100%)</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Portfolio Variance (2 assets)</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">σₚ² = w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ₁₂</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>ρ₁₂</strong> = Correlation coefficient between assets 1 and 2</li>
+                    <li><strong>Key insight:</strong> Correlation determines diversification benefit</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Correlation & Covariance</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Correlation Coefficient</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">ρ = Cov(X,Y) / (σₓ × σᵧ)</p>
+                <p class="mt-2"><strong>Range:</strong> -1 ≤ ρ ≤ +1</p>
+                <ul class="mt-2 space-y-1">
+                    <li><strong>ρ = +1:</strong> Perfect positive correlation</li>
+                    <li><strong>ρ = 0:</strong> No linear relationship</li>
+                    <li><strong>ρ = -1:</strong> Perfect negative correlation</li>
+                </ul>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                <h4 class="font-bold text-green-600">Diversification Benefits</h4>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><strong>ρ < 1:</strong> Diversification reduces risk</li>
+                    <li><strong>Lower correlation = Greater diversification benefit</strong></li>
+                    <li><strong>Optimal:</strong> Mix of low-correlated assets</li>
+                    <li><strong>Limit:</strong> Cannot eliminate systematic risk</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-lg mb-3">Example: Two-Asset Portfolio</h4>
+                <p><strong>Asset A:</strong> E(R) = 12%, σ = 20%</p>
+                <p><strong>Asset B:</strong> E(R) = 8%, σ = 15%</p>
+                <p><strong>Correlation:</strong> ρ = 0.3</p>
+                <p><strong>Weights:</strong> 60% A, 40% B</p>
+                <p><strong>Portfolio Return:</strong> 0.6×12% + 0.4×8% = 10.4%</p>
+                <p><strong>Portfolio Risk:</strong> √[0.6²×20² + 0.4²×15² + 2×0.6×0.4×20×15×0.3] = 16.55%</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Hypothesis Testing -->
+        <section id="hypothesis" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-search mr-3"></i>
+                    Hypothesis Testing
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">Hypothesis testing is like being a detective with data. You start with a claim (hypothesis), gather evidence (sample data), and decide whether the evidence is strong enough to challenge your initial belief. It's a structured way to make decisions under uncertainty.</p>
+            </div>
+
+            <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-6">
+                <h4 class="font-bold text-red-600">⚠️ Critical Terminology Note</h4>
+                <p class="font-semibold">We NEVER "accept" a hypothesis in statistical testing!</p>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><strong>Correct:</strong> "Reject H₀" or "Fail to reject H₀"</li>
+                    <li><strong>Incorrect:</strong> "Accept H₀" or "Accept H₁"</li>
+                    <li><strong>Why:</strong> We can only determine if evidence contradicts our assumption, not prove it's true</li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Hypothesis Testing Framework</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Step-by-Step Process</h4>
+                <ol class="list-decimal list-inside space-y-2">
+                    <li><strong>State Hypotheses:</strong> H₀ (null) and H₁ (alternative)</li>
+                    <li><strong>Select Significance Level:</strong> α (typically 0.05)</li>
+                    <li><strong>Calculate Test Statistic:</strong> t, z, etc.</li>
+                    <li><strong>Determine Critical Value(s)</strong></li>
+                    <li><strong>Make Decision:</strong> Reject or fail to reject H₀</li>
+                    <li><strong>State Conclusion</strong> in context</li>
+                </ol>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Common Test Statistics</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="formula-box">
+                    <h4 class="font-bold text-lg mb-2">Z-Test (Known σ)</h4>
+                    <p class="text-xl font-mono bg-white p-3 rounded border">z = (x̄ - μ₀) / (σ/√n)</p>
+                    <p class="mt-2"><strong>Use when:</strong> Large sample OR known population σ</p>
+                </div>
+
+                <div class="formula-box">
+                    <h4 class="font-bold text-lg mb-2">t-Test (Unknown σ)</h4>
+                    <p class="text-xl font-mono bg-white p-3 rounded border">t = (x̄ - μ₀) / (s/√n)</p>
+                    <p class="mt-2"><strong>Use when:</strong> Small sample AND unknown σ</p>
+                    <p><strong>df:</strong> n - 1</p>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Types of Errors</h3>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-50 border border-red-200 p-4 rounded">
+                    <h4 class="font-bold text-red-600 mb-2">Type I Error (α)</h4>
+                    <p><strong>Definition:</strong> Rejecting H₀ when it's true</p>
+                    <p><strong>Probability:</strong> Significance level (α)</p>
+                    <p><strong>Consequence:</strong> False positive</p>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 p-4 rounded">
+                    <h4 class="font-bold text-blue-600 mb-2">Type II Error (β)</h4>
+                    <p><strong>Definition:</strong> Failing to reject H₀ when it's false</p>
+                    <p><strong>Power:</strong> 1 - β (probability of correctly rejecting false H₀)</p>
+                    <p><strong>Consequence:</strong> False negative</p>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-6">
+                <h4 class="font-bold text-yellow-600">Why We Don't "Accept" Hypotheses</h4>
+                <p class="mb-2"><strong>Philosophical Reason:</strong> We can never prove a hypothesis is definitively true with sample data.</p>
+                <p class="mb-2"><strong>Statistical Reason:</strong> "Failing to reject" ≠ "Accepting" - lack of evidence against H₀ doesn't prove H₀ is correct.</p>
+                <p><strong>Analogy:</strong> In court, "not guilty" doesn't mean "innocent" - it means insufficient evidence for conviction.</p>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-lg mb-3">Example: Testing Portfolio Performance</h4>
+                <p><strong>Claim:</strong> Fund manager achieves returns > 10% annually</p>
+                <p><strong>H₀:</strong> μ ≤ 10% (null hypothesis)</p>
+                <p><strong>H₁:</strong> μ > 10% (alternative hypothesis)</p>
+                <p><strong>Sample:</strong> n = 25, x̄ = 12%, s = 5%, α = 0.05</p>
+                <p><strong>Test statistic:</strong> t = (12 - 10) / (5/√25) = 2.0</p>
+                <p><strong>Critical value:</strong> t₀.₀₅,₂₄ = 1.711</p>
+                <p><strong>Decision:</strong> Since 2.0 > 1.711, we <strong>reject H₀</strong></p>
+                <p><strong>Conclusion:</strong> Evidence supports that returns exceed 10%</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Regression & Correlation -->
+        <section id="regression" class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    Regression & Correlation
+                </h2>
+            </div>
+
+            <div class="intuition-box">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">💡 Intuition</h3>
+                <p class="text-lg">Regression is like finding the "best-fit line" through scattered data points. It helps us understand relationships between variables and make predictions. In finance, we use it to model how stock prices relate to market movements, or how economic factors affect investment returns.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Simple Linear Regression</h3>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Regression Equation</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">Y = a + bX + ε</p>
+                <ul class="mt-3 space-y-1">
+                    <li><strong>Y</strong> = Dependent variable</li>
+                    <li><strong>X</strong> = Independent variable</li>
+                    <li><strong>a</strong> = Intercept (Y when X = 0)</li>
+                    <li><strong>b</strong> = Slope (change in Y per unit change in X)</li>
+                    <li><strong>ε</strong> = Error term</li>
+                </ul>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Slope Coefficient</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">b = Cov(X,Y) / Var(X)</p>
+                <p class="mt-2">Alternative formula: b = r × (sᵧ/sₓ)</p>
+                <p><strong>Interpretation:</strong> For each 1-unit increase in X, Y changes by b units</p>
+            </div>
+
+            <div class="formula-box">
+                <h4 class="font-bold text-lg mb-2">Coefficient of Determination (R²)</h4>
+                <p class="text-xl font-mono bg-white p-3 rounded border">R² = (Correlation)² = r²</p>
+                <p class="mt-2"><strong>Interpretation:</strong> Percentage of Y's variation explained by X</p>
+                <p><strong>Range:</strong> 0 ≤ R² ≤ 1</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">ANOVA Table</h3>
+
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <table class="w-full">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="p-2 text-left">Source</th>
+                            <th class="p-2 text-left">Sum of Squares</th>
+                            <th class="p-2 text-left">df</th>
+                            <th class="p-2 text-left">Mean Square</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-2">Regression</td>
+                            <td class="p-2">RSS</td>
+                            <td class="p-2">1</td>
+                            <td class="p-2">MSR = RSS/1</td>
+                        </tr>
+                        <tr>
+                            <td class="p-2">Error</td>
+                            <td class="p-2">SSE</td>
+                            <td class="p-2">n-2</td>
+                            <td class="p-2">MSE = SSE/(n-2)</td>
+                        </tr>
+                        <tr class="bg-gray-200">
+                            <td class="p-2">Total</td>
+                            <td class="p-2">TSS</td>
+                            <td class="p-2">n-1</td>
+                            <td class="p-2">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-3"><strong>F-statistic:</strong> F = MSR / MSE</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-red-600 mt-6 mb-4">Regression Assumptions</h3>
+
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4">
+                <h4 class="font-bold text-blue-600">Key Assumptions (Remember: LINE)</h4>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li><strong>L</strong>inearity: Relationship between X and Y is linear</li>
+                    <li><strong>I</strong>ndependence: Observations are independent</li>
+                    <li><strong>N</strong>ormality: Residuals are normally distributed</li>
+                    <li><strong>E</strong>qual variance: Constant variance of residuals (homoscedasticity)</li>
+                </ul>
+            </div>
+
+            <div class="bg-gray-100 p-6 rounded-lg mt-6">
+                <h4 class="font-bold text-lg mb-3">Example: Stock Beta Analysis</h4>
+                <p><strong>Model:</strong> R_stock = α + β × R_market + ε</p>
+                <p><strong>Data:</strong> Monthly returns for 36 months</p>
+                <p><strong>Results:</strong> α = 0.02, β = 1.25, R² = 0.64</p>
+                <p><strong>Interpretation:</strong></p>
+                <ul class="list-disc list-inside space-y-1 mt-2">
+                    <li>Stock has 2% monthly alpha (excess return)</li>
+                    <li>Stock is 25% more volatile than market (β = 1.25)</li>
+                    <li>Market explains 64% of stock's return variation</li>
+                </ul>
+            </div>
+
+            <div class="bg-red-50 border-l-4 border-red-500 p-4 mt-4">
+                <h4 class="font-bold text-red-600">🎯 CFA Exam Tips - Regression</h4>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Always check R² for explanatory power</li>
+                    <li>Correlation doesn't imply causation</li>
+                    <li>Watch for heteroscedasticity in residual plots</li>
+                    <li>Know when to use t-test vs F-test</li>
+                    <li>Understand confidence vs prediction intervals</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <div class="section-header">
+                <h2 class="text-3xl font-bold flex items-center">
+                    <i class="fas fa-key mr-3"></i>
+                    Key Takeaways for CFA Success
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">📊 Statistical Foundations</h3>
+                    <ul class="space-y-2">
+                        <li>• Master the difference between population and sample statistics</li>
+                        <li>• Understand when to use each type of distribution</li>
+                        <li>• Remember: correlation ≠ causation</li>
+                        <li>• Practice interpreting confidence intervals</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-red-600 mb-4">🎯 Exam Strategy</h3>
+                    <ul class="space-y-2">
+                        <li>• Know your calculator functions inside and out</li>
+                        <li>• Draw timelines for TVM problems</li>
+                        <li>• Always state hypotheses clearly</li>
+                        <li>• Check units and reasonableness of answers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">🚫 Common Mistakes to Avoid</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-red-50 p-4 rounded">
+                        <h4 class="font-bold text-red-600">TVM Errors</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Forgetting to clear calculator</li>
+                            <li>• Wrong sign conventions</li>
+                            <li>• Mixing up ordinary vs due annuities</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded">
+                        <h4 class="font-bold text-red-600">Statistics Errors</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Using wrong degrees of freedom</li>
+                            <li>• Confusing sample vs population formulas</li>
+                            <li>• Misinterpreting confidence levels</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 p-4 rounded">
+                        <h4 class="font-bold text-red-600">Hypothesis Testing</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Saying "accept" instead of "fail to reject"</li>
+                            <li>• Wrong tail test selection</li>
+                            <li>• Misinterpreting p-values</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action - Bottom -->
+        <div class="cta-box text-white py-8 px-6 rounded-lg mt-8">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">🚀 Take Your CFA Preparation to the Next Level!</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                        <i class="fas fa-user-graduate text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Expert Instruction</h3>
+                        <p>Learn from CFA charterholders with proven teaching experience and deep market knowledge.</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                        <i class="fas fa-chart-line text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Proven Results</h3>
+                        <p>Join thousands of successful candidates who passed with Finance Tutoring's comprehensive programs.</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg">
+                        <i class="fas fa-clock text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold mb-3">Flexible Learning</h3>
+                        <p>Study at your own pace with personalized coaching and 24/7 access to materials.</p>
+                    </div>
+                </div>
+
+            <div class="bg-white bg-opacity-30 p-6 rounded-lg mb-6">
+    <h3 class="text-2xl font-bold mb-4">📞 Ready to Start Your CFA Success Journey?</h3>
+    <p class="text-xl mb-4">Don't let quantitative methods hold you back from achieving your CFA dreams!</p>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        
+        <!-- Lien contact email -->
+        <a href="contact@finance-tutoring.fr" class="flex items-center hover:text-red-700 transition">
+            <i class="fas fa-envelope text-2xl mr-3"></i>
+            <span class="text-lg font-semibold">Contact Finance Tutoring Today</span>
+        </a>
+
+        <!-- Lien téléphone / Calendly -->
+        <a href="tel:0680319332" class="flex items-center hover:text-red-700 transition">
+            <i class="fas fa-phone text-2xl mr-3"></i>
+            <span class="text-lg font-semibold">Get Your Personalized Study Plan</span>
+        </a>
+        
+    </div>
+</div>
+
+
+                <div class="text-center">
+                    <p class="text-2xl font-bold">Transform your CFA preparation with Finance Tutoring's comprehensive training programs!</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="logo-container mb-4">
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" alt="Finance Tutoring Logo" class="h-12 object-contain mx-auto">
+            </div>
+            <p class="text-lg">© 2024 Finance Tutoring - Your Partner in CFA Success</p>
+            <p class="mt-2 text-gray-400">This guide covers essential quantitative methods for CFA Level 1 preparation</p>
+        </div>
+    </footer>
+</body>
+</html>
