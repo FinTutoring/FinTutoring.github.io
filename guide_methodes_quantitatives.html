@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide CFA Niveau 1 - Méthodes Quantitatives | Finance Tutoring</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .formula-box {
+            background: linear-gradient(135deg, #FEF2F2 0%, #FECACA 100%);
+            border-left: 4px solid #DC2626;
+        }
+        .concept-box {
+            background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
+            border-left: 4px solid #1F2937;
+        }
+        .intuition-box {
+            background: linear-gradient(135deg, #FEF2F2 0%, #DC2626 100%);
+            color: white;
+        }
+        .example-box {
+            background: linear-gradient(135deg, #FFFFFF 0%, #F3F4F6 100%);
+            border: 2px solid #DC2626;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+            color: white;
+        }
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    <!-- Header avec Logo -->
+    <header class="bg-red-600 text-white py-8 px-6">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" 
+                     alt="Finance Tutoring Logo" class="h-16 w-16 bg-white rounded-lg p-2">
+                <div>
+                    <h1 class="text-4xl font-bold">Guide CFA Niveau 1</h1>
+                    <p class="text-xl">Méthodes Quantitatives</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-lg font-semibold">Finance Tutoring</p>
+                <p class="text-sm opacity-90">Excellence en Formation Financière</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table des Matières -->
+    <nav class="bg-gray-50 py-6 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-2xl font-bold text-red-600 mb-4"><i class="fas fa-list-ul mr-2"></i>Table des Matières</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="#tvm" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">1. Valeur Temporelle de l'Argent</h3>
+                    <p class="text-sm text-gray-600">TVM, VAN, TRI, Annuités</p>
+                </a>
+                <a href="#stats" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">2. Statistiques Descriptives</h3>
+                    <p class="text-sm text-gray-600">Moyennes, Médiane, Écart-type</p>
+                </a>
+                <a href="#distributions" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">3. Distributions</h3>
+                    <p class="text-sm text-gray-600">Normale, Binomiale, t-Student</p>
+                </a>
+                <a href="#portfolio" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">4. Théorie du Portefeuille</h3>
+                    <p class="text-sm text-gray-600">Risque, Rendement, Diversification</p>
+                </a>
+                <a href="#hypothesis" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">5. Tests d'Hypothèses ⚠️</h3>
+                    <p class="text-sm text-gray-600">Terminologie Corrigée</p>
+                </a>
+                <a href="#regression" class="block p-4 bg-white rounded-lg border-l-4 border-red-600 hover:shadow-md transition-shadow">
+                    <h3 class="font-semibold text-gray-900">6. Régression & Corrélation</h3>
+                    <p class="text-sm text-gray-600">Analyse des Relations</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Section 1: Valeur Temporelle de l'Argent -->
+        <section id="tvm" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 border-b-2 border-red-600 pb-2">
+                <i class="fas fa-clock mr-3"></i>1. Valeur Temporelle de l'Argent (TVM)
+            </h2>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Intuition Fondamentale</h3>
+                <p class="text-lg">Un euro aujourd'hui vaut plus qu'un euro demain car il peut être investi pour générer des revenus. C'est le principe de base de toute la finance !</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Formule de Base - Valeur Future</h4>
+                    <div class="text-center text-2xl font-mono bg-white p-4 rounded">
+                        FV = PV × (1 + r)ⁿ
+                    </div>
+                    <div class="mt-3 text-sm">
+                        <p><strong>FV</strong> = Valeur Future</p>
+                        <p><strong>PV</strong> = Valeur Présente</p>
+                        <p><strong>r</strong> = Taux d'intérêt par période</p>
+                        <p><strong>n</strong> = Nombre de périodes</p>
+                    </div>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Valeur Actuelle Nette (VAN)</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        VAN = Σ [CFₜ / (1 + r)ⁿ] - Investissement Initial
+                    </div>
+                    <div class="mt-3 text-sm">
+                        <p><strong>CFₜ</strong> = Flux de trésorerie à la période t</p>
+                        <p><strong>r</strong> = Taux d'actualisation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3"><i class="fas fa-calculator mr-2"></i>Exemple Pratique</h4>
+                <p class="mb-3"><strong>Situation :</strong> Vous investissez 10 000€ à 5% pendant 3 ans.</p>
+                <div class="bg-gray-50 p-4 rounded">
+                    <p><strong>Calcul :</strong> FV = 10 000 × (1 + 0,05)³ = 10 000 × 1,157625 = <span class="text-red-600 font-bold">11 576,25€</span></p>
+                    <p><strong>Interprétation :</strong> Votre investissement vaudra 11 576,25€ dans 3 ans.</p>
+                </div>
+            </div>
+
+            <div class="concept-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Applications CFA</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li><strong>Évaluation d'obligations :</strong> Calcul du prix basé sur les flux futurs</li>
+                    <li><strong>Analyse d'investissement :</strong> Comparaison de projets avec VAN et TRI</li>
+                    <li><strong>Planification financière :</strong> Objectifs de retraite et d'épargne</li>
+                    <li><strong>Valorisation d'actions :</strong> Modèles de dividendes actualisés</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Statistiques Descriptives -->
+        <section id="stats" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 border-b-2 border-red-600 pb-2">
+                <i class="fas fa-chart-bar mr-3"></i>2. Statistiques Descriptives et Probabilités
+            </h2>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Intuition</h3>
+                <p class="text-lg">Les statistiques nous permettent de comprendre et quantifier le comportement des marchés financiers, notamment le risque et le rendement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Moyenne Arithmétique</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        x̄ = Σxᵢ / n
+                    </div>
+                    <p class="text-sm mt-2">Rendement moyen d'un actif</p>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Écart-Type (Volatilité)</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        σ = √[Σ(xᵢ - x̄)² / n]
+                    </div>
+                    <p class="text-sm mt-2">Mesure du risque</p>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Coefficient de Variation</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        CV = σ / μ
+                    </div>
+                    <p class="text-sm mt-2">Risque relatif au rendement</p>
+                </div>
+            </div>
+
+            <div class="example-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3"><i class="fas fa-chart-line mr-2"></i>Exemple : Analyse d'un Portefeuille</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="mb-2"><strong>Rendements mensuels d'une action :</strong></p>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <p>Jan: +2%, Fév: -1%, Mar: +3%, Avr: +1%, Mai: -2%</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Calculs :</strong></p>
+                        <div class="bg-gray-50 p-3 rounded text-sm">
+                            <p>Moyenne = (2-1+3+1-2)/5 = <strong>0,6%</strong></p>
+                            <p>Écart-type = <strong>1,95%</strong></p>
+                            <p>CV = 1,95/0,6 = <strong>3,25</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Distributions -->
+        <section id="distributions" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 border-b-2 border-red-600 pb-2">
+                <i class="fas fa-bell-curve mr-3"></i>3. Distributions Statistiques
+            </h2>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Intuition</h3>
+                <p class="text-lg">Les distributions décrivent comment les rendements se répartissent. La distribution normale est fondamentale en finance car de nombreux phénomènes financiers la suivent approximativement.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="concept-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Distribution Normale</h4>
+                    <ul class="list-disc ml-6 space-y-2 text-sm">
+                        <li><strong>68%</strong> des valeurs dans μ ± 1σ</li>
+                        <li><strong>95%</strong> des valeurs dans μ ± 2σ</li>
+                        <li><strong>99,7%</strong> des valeurs dans μ ± 3σ</li>
+                        <li>Symétrique autour de la moyenne</li>
+                        <li>Asymptote aux extrêmes</li>
+                    </ul>
+                </div>
+
+                <div class="concept-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Distribution t-Student</h4>
+                    <ul class="list-disc ml-6 space-y-2 text-sm">
+                        <li>Utilisée pour petits échantillons (n < 30)</li>
+                        <li>Plus large que la normale</li>
+                        <li>Converge vers normale quand n → ∞</li>
+                        <li>Degrés de liberté = n - 1</li>
+                        <li>Essentielle pour les tests d'hypothèses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="formula-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3">Calcul de Probabilité - Loi Normale</h4>
+                <div class="text-center text-xl font-mono bg-white p-4 rounded mb-3">
+                    Z = (X - μ) / σ
+                </div>
+                <div class="example-box p-4 rounded">
+                    <p><strong>Exemple :</strong> Si les rendements d'une action suivent N(8%, 15%), quelle est la probabilité d'avoir un rendement > 20% ?</p>
+                    <p class="mt-2"><strong>Solution :</strong> Z = (20-8)/15 = 0,8 → P(Z > 0,8) = 0,2119 = <span class="text-red-600 font-bold">21,19%</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Théorie du Portefeuille -->
+        <section id="portfolio" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 border-b-2 border-red-600 pb-2">
+                <i class="fas fa-briefcase mr-3"></i>4. Théorie Moderne du Portefeuille
+            </h2>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Intuition de Markowitz</h3>
+                <p class="text-lg">La diversification permet de réduire le risque sans sacrifier le rendement. "Ne mettez pas tous vos œufs dans le même panier" - principe mathématiquement prouvé !</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Rendement du Portefeuille</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        E(Rₚ) = Σ wᵢ × E(Rᵢ)
+                    </div>
+                    <p class="text-sm mt-2">Moyenne pondérée des rendements</p>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Risque du Portefeuille</h4>
+                    <div class="text-center text-lg font-mono bg-white p-4 rounded">
+                        σₚ² = Σ wᵢ²σᵢ² + 2Σ Σ wᵢwⱼσᵢⱼ
+                    </div>
+                    <p class="text-sm mt-2">Prend en compte les corrélations</p>
+                </div>
+            </div>
+
+            <div class="concept-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Effet de la Diversification</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-red-50 p-4 rounded">
+                        <h5 class="font-bold text-red-600">Corrélation = +1</h5>
+                        <p class="text-sm">Aucun bénéfice de diversification</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded">
+                        <h5 class="font-bold text-yellow-600">Corrélation = 0</h5>
+                        <p class="text-sm">Diversification modérée</p>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded">
+                        <h5 class="font-bold text-green-600">Corrélation = -1</h5>
+                        <p class="text-sm">Diversification parfaite</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3"><i class="fas fa-calculator mr-2"></i>Exemple : Portefeuille 2 Actifs</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="mb-2"><strong>Données :</strong></p>
+                        <div class="bg-gray-50 p-3 rounded text-sm">
+                            <p>Action A: E(R) = 10%, σ = 20%</p>
+                            <p>Action B: E(R) = 15%, σ = 30%</p>
+                            <p>Corrélation = 0,3</p>
+                            <p>Poids : 60% A, 40% B</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="mb-2"><strong>Résultats :</strong></p>
+                        <div class="bg-gray-50 p-3 rounded text-sm">
+                            <p>E(Rₚ) = 0,6×10% + 0,4×15% = <strong>12%</strong></p>
+                            <p>σₚ = √[(0,6²×20²) + (0,4²×30²) + 2×0,6×0,4×20×30×0,3]</p>
+                            <p>σₚ = <strong>19,2%</strong> (< 22,8% sans diversification)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Tests d'Hypothèses (CORRIGÉE) -->
+        <section id="hypothesis" class="mb-16">
+            <div class="bg-red-600 text-white p-4 rounded-t-lg">
+                <h2 class="text-3xl font-bold mb-2">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>5. Tests d'Hypothèses - TERMINOLOGIE CORRIGÉE
+                </h2>
+                <p class="text-lg opacity-90">Section avec corrections importantes sur la terminologie statistique</p>
+            </div>
+
+            <div class="warning-box p-6 rounded-b-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-ban mr-2"></i>ERREUR CRITIQUE À ÉVITER</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-500 p-4 rounded">
+                        <h4 class="font-bold text-lg mb-2">❌ INCORRECT</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• "Accepter l'hypothèse nulle"</li>
+                            <li>• "Accepter l'hypothèse alternative"</li>
+                            <li>• "L'hypothèse est prouvée"</li>
+                            <li>• "L'hypothèse est vraie"</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-600 p-4 rounded">
+                        <h4 class="font-bold text-lg mb-2">✅ CORRECT</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• "Rejeter l'hypothèse nulle"</li>
+                            <li>• "Ne pas être en mesure de rejeter H₀"</li>
+                            <li>• "Les données ne permettent pas de rejeter H₀"</li>
+                            <li>• "Insuffisant pour rejeter H₀"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Pourquoi cette distinction est CRUCIALE</h3>
+                <div class="space-y-3">
+                    <p><strong>Philosophie statistique :</strong> Un test d'hypothèse ne peut jamais "prouver" qu'une hypothèse est vraie, seulement qu'elle est compatible ou incompatible avec les données observées.</p>
+                    <p><strong>Analogie juridique :</strong> Un tribunal déclare "coupable" ou "non coupable", jamais "innocent". De même, on "rejette H₀" ou "ne rejette pas H₀".</p>
+                    <p><strong>Implications pratiques :</strong> "Ne pas rejeter H₀" ≠ "H₀ est vraie". Cela signifie simplement que les preuves sont insuffisantes.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="concept-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-gray-900 mb-3">Processus de Test</h4>
+                    <ol class="list-decimal ml-6 space-y-2 text-sm">
+                        <li><strong>Formuler H₀ et H₁</strong></li>
+                        <li><strong>Choisir le niveau de signification α</strong></li>
+                        <li><strong>Calculer la statistique de test</strong></li>
+                        <li><strong>Déterminer la valeur critique</strong></li>
+                        <li><strong>Conclusion : Rejeter ou ne pas rejeter H₀</strong></li>
+                    </ol>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Test t pour une Moyenne</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        t = (x̄ - μ₀) / (s / √n)
+                    </div>
+                    <p class="text-sm mt-2">Degrés de liberté = n - 1</p>
+                </div>
+            </div>
+
+            <div class="example-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3"><i class="fas fa-gavel mr-2"></i>Exemple avec Terminologie Correcte</h4>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded">
+                        <p><strong>Contexte :</strong> Test si le rendement moyen d'un fonds est différent de 8%</p>
+                        <p><strong>H₀ :</strong> μ = 8% vs <strong>H₁ :</strong> μ ≠ 8%</p>
+                        <p><strong>Données :</strong> n = 25, x̄ = 9,2%, s = 4%, α = 5%</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-bold mb-2">Calculs :</p>
+                            <div class="bg-white p-3 rounded border">
+                                <p>t = (9,2 - 8) / (4 / √25) = 1,5</p>
+                                <p>Valeur critique (bilatéral) = ±2,064</p>
+                                <p>|1,5| < 2,064</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="font-bold mb-2">Conclusion CORRECTE :</p>
+                            <div class="bg-green-50 p-3 rounded border border-green-200">
+                                <p class="text-green-700">✅ "Nous ne sommes pas en mesure de rejeter H₀ au seuil de 5%"</p>
+                                <p class="text-sm mt-2">❌ PAS : "Nous acceptons que μ = 8%"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold mb-3"><i class="fas fa-graduation-cap mr-2"></i>Conseils pour l'Examen CFA</h4>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li><strong>Vocabulaire précis :</strong> Utilisez toujours "rejeter" ou "ne pas rejeter", jamais "accepter"</li>
+                    <li><strong>Interprétation :</strong> "Ne pas rejeter H₀" signifie "preuves insuffisantes", pas "H₀ est vraie"</li>
+                    <li><strong>Erreurs de Type I et II :</strong> Liées aux fausses conclusions, pas aux "acceptations"</li>
+                    <li><strong>P-value :</strong> Probabilité d'observer des résultats au moins aussi extrêmes si H₀ était vraie</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 6: Régression et Corrélation -->
+        <section id="regression" class="mb-16">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 border-b-2 border-red-600 pb-2">
+                <i class="fas fa-chart-line mr-3"></i>6. Régression et Corrélation
+            </h2>
+
+            <div class="intuition-box p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-bold mb-3"><i class="fas fa-lightbulb mr-2"></i>Intuition</h3>
+                <p class="text-lg">La régression nous permet de modéliser et prédire les relations entre variables financières. C'est l'outil de base pour comprendre comment les facteurs influencent les rendements.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Équation de Régression</h4>
+                    <div class="text-center text-xl font-mono bg-white p-4 rounded">
+                        Y = α + βX + ε
+                    </div>
+                    <div class="mt-3 text-sm">
+                        <p><strong>α</strong> = Ordonnée à l'origine (alpha)</p>
+                        <p><strong>β</strong> = Pente (bêta)</p>
+                        <p><strong>ε</strong> = Terme d'erreur</p>
+                    </div>
+                </div>
+
+                <div class="formula-box p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-red-600 mb-3">Coefficient de Corrélation</h4>
+                    <div class="text-center text-lg font-mono bg-white p-4 rounded">
+                        r = Cov(X,Y) / (σₓ × σᵧ)
+                    </div>
+                    <div class="mt-3 text-sm">
+                        <p><strong>-1 ≤ r ≤ +1</strong></p>
+                        <p><strong>r²</strong> = Coefficient de détermination</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="concept-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-gray-900 mb-3">Interprétation du R²</h4>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-red-50 p-3 rounded text-center">
+                        <p class="font-bold text-red-600">R² = 0,25</p>
+                        <p class="text-sm">25% de la variance expliquée</p>
+                    </div>
+                    <div class="bg-yellow-50 p-3 rounded text-center">
+                        <p class="font-bold text-yellow-600">R² = 0,50</p>
+                        <p class="text-sm">Relation modérée</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded text-center">
+                        <p class="font-bold text-blue-600">R² = 0,75</p>
+                        <p class="text-sm">Forte relation</p>
+                    </div>
+                    <div class="bg-green-50 p-3 rounded text-center">
+                        <p class="font-bold text-green-600">R² = 0,90</p>
+                        <p class="text-sm">Très forte relation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box p-6 rounded-lg mt-6">
+                <h4 class="text-lg font-bold text-red-600 mb-3"><i class="fas fa-chart-area mr-2"></i>Application : Modèle CAPM</h4>
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-4 rounded">
+                        <p class="font-bold mb-2">Équation CAPM :</p>
+                        <div class="text-center text-xl font-mono bg-white p-3 rounded">
+                            Rᵢ - Rf = αᵢ + βᵢ(Rm - Rf) + εᵢ
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-bold mb-2">Interprétation du Bêta :</p>
+                            <ul class="text-sm space-y-1">
+                                <li>• β = 1 : Risque identique au marché</li>
+                                <li>• β > 1 : Plus risqué que le marché</li>
+                                <li>• β < 1 : Moins risqué que le marché</li>
+                                <li>• β < 0 : Corrélation négative</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-bold mb-2">Test de l'Alpha :</p>
+                            <div class="bg-white p-3 rounded border text-sm">
+                                <p><strong>H₀ :</strong> α = 0 (pas de sur-performance)</p>
+                                <p><strong>H₁ :</strong> α ≠ 0</p>
+                                <p class="mt-2 text-green-600">✅ Si on rejette H₀ : sur-performance significative</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Résumé et Conseil Final -->
+        <section class="bg-gray-900 text-white p-8 rounded-lg">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-3xl font-bold"><i class="fas fa-graduation-cap mr-3"></i>Points Clés pour l'Examen CFA</h2>
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" 
+                     alt="Finance Tutoring" class="h-12 w-12 bg-white rounded p-2">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-red-600 p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2">🎯 Formules Essentielles</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• TVM : FV = PV(1+r)ⁿ</li>
+                        <li>• VAN et TRI</li>
+                        <li>• Statistiques descriptives</li>
+                        <li>• Tests d'hypothèses</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-600 p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2">⚠️ Erreurs à Éviter</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Jamais "accepter" une hypothèse</li>
+                        <li>• Confondre corrélation et causalité</li>
+                        <li>• Mauvaise interprétation du R²</li>
+                        <li>• Erreurs de calcul TVM</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-red-600 p-4 rounded">
+                    <h3 class="font-bold text-lg mb-2">💡 Stratégies d'Examen</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Maîtriser la calculatrice financière</li>
+                        <li>• Comprendre l'intuition des concepts</li>
+                        <li>• Pratiquer les applications</li>
+                        <li>• Réviser la terminologie précise</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center bg-white text-gray-900 p-4 rounded">
+                <p class="text-lg font-semibold">
+                    <span class="text-red-600">Finance Tutoring</span> - Votre partenaire pour réussir le CFA
+                </p>
+                <p class="text-sm mt-1">Excellence • Rigueur • Réussite</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-6 mt-16">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex items-center justify-center space-x-4 mb-4">
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" 
+                     alt="Finance Tutoring Logo" class="h-12 w-12 bg-white rounded-lg p-2">
+                <div>
+                    <h3 class="text-xl font-bold">Finance Tutoring</h3>
+                    <p class="text-sm opacity-75">Guide CFA Niveau 1 - Méthodes Quantitatives</p>
+                </div>
+            </div>
+        
+        </div>
+    </footer>
+</body>
+</html>
