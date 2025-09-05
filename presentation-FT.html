@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme Webinaire Finance Tutoring - Formations Expertes en Finance</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #000000 0%, #dc2626 100%); }
+        .text-finance-red { color: #dc2626; }
+        .bg-finance-red { background-color: #dc2626; }
+        .border-finance-red { border-color: #dc2626; }
+        .timeline-item { position: relative; padding-left: 2rem; }
+        .timeline-item::before { 
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            background: #dc2626;
+            border-radius: 50%;
+        }
+        .formation-card { 
+            transition: all 0.3s ease;
+            border-left: 4px solid #dc2626;
+        }
+        .formation-card:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            body { print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header avec Logo -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center mb-6">
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" 
+                     alt="Finance Tutoring Logo" 
+                     class="h-44 w-auto">
+            </div>
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4">WEBINAIRE EXCLUSIF</h1>
+                <h2 class="text-2xl font-light mb-2">Formations Expertes en Finance</h2>
+                <p class="text-xl opacity-90">Développez votre expertise avec Finance Tutoring</p>
+                <div class="mt-6 bg-white bg-opacity-20 rounded-lg p-4 inline-block">
+                    <p class="text-lg"><i class="fas fa-clock mr-2"></i>Durée : 1 heure</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-6 py-8">
+        <!-- Programme du Webinaire -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Programme du Webinaire</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h3 class="font-semibold text-lg text-gray-800">Introduction</h3>
+                            <p class="text-gray-600">5 minutes - Présentation Finance Tutoring et vision</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="font-semibold text-lg text-gray-800">Nos Domaines d'Expertise</h3>
+                            <p class="text-gray-600">35 minutes - Tour d'horizon des formations</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="font-semibold text-lg text-gray-800">Pourquoi Finance Tutoring ?</h3>
+                            <p class="text-gray-600">10 minutes - Notre approche pédagogique</p>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h3 class="font-semibold text-lg text-gray-800">Questions & Réponses</h3>
+                            <p class="text-gray-600">8 minutes - Échanges avec l'audience</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3 class="font-semibold text-lg text-gray-800">Prochaines Étapes</h3>
+                            <p class="text-gray-600">2 minutes - Comment s'inscrire aux formations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nos Formations Détaillées -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Nos Domaines d'Expertise</h2>
+            
+            <!-- Finance d'Entreprise -->
+            <div class="formation-card bg-white rounded-lg shadow-lg p-8 mb-8">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-building text-3xl text-finance-red mr-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Finance d'Entreprise</h3>
+                </div>
+                <p class="text-gray-600 mb-6">Développez vos connaissances des principes financiers incontournables appliqués en entreprise, allant de l'analyse financière à la consolidation comptable et aux mécanismes de financement.</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Finance pour Non-Financiers</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Principes financiers de base</li>
+                            <li>• Analyse bilan et compte de résultat</li>
+                            <li>• Décisions d'investissement</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Fondamentaux du Private Equity</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Introduction au capital-investissement</li>
+                            <li>• Stratégies de Private Equity</li>
+                            <li>• Valorisation et structuration</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Comptes Consolidés</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Principes de consolidation</li>
+                            <li>• Analyse des états consolidés</li>
+                            <li>• Impacts financiers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600"><strong>Format :</strong> Présentiel et en ligne • <strong>Durée :</strong> 1 à 3 jours • <strong>À partir de :</strong> 1650€</p>
+                </div>
+            </div>
+
+            <!-- Finance Quantitative -->
+            <div class="formation-card bg-white rounded-lg shadow-lg p-8 mb-8">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-chart-line text-3xl text-finance-red mr-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Finance Quantitative</h3>
+                </div>
+                <p class="text-gray-600 mb-6">Développez des compétences avancées en finance quantitative pour l'analyse et la gestion des risques. Maîtrisez les modèles mathématiques et les méthodes numériques utilisés en finance.</p>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Fondamentaux Finance Quantitative</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Concepts fondamentaux</li>
+                            <li>• Types de modèles financiers</li>
+                            <li>• Applications pratiques</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Mathématiques Financières Niveau 1</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Calcul stochastique</li>
+                            <li>• Modèles d'évolution des prix</li>
+                            <li>• Valorisation binomiale</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Mathématiques Financières Niveau 2</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Processus stochastiques avancés</li>
+                            <li>• Modèles Black-Scholes et Greeks</li>
+                            <li>• Méthodes numériques Monte Carlo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gestion d'Actifs -->
+            <div class="formation-card bg-white rounded-lg shadow-lg p-8 mb-8">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-coins text-3xl text-finance-red mr-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Gestion d'Actifs</h3>
+                </div>
+                <p class="text-gray-600 mb-6">Apprenez à structurer des portefeuilles et à gérer des stratégies d'investissement avancées. Maîtrisez les principes d'allocation stratégique et les techniques d'optimisation.</p>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Fondamentaux de la Gestion d'Actifs</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Concepts clés et classes d'investissement</li>
+                            <li>• Allocation stratégique et tactique</li>
+                            <li>• Construction et optimisation de portefeuilles</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-finance-red mb-2">Fondamentaux des Hedge Funds</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Introduction aux stratégies alternatives</li>
+                            <li>• Analyse performances et risques</li>
+                            <li>• Études de cas stratégies d'investissement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-6 bg-gray-50 rounded-lg p-4">
+                    <p class="text-sm text-gray-600"><strong>Format :</strong> Présentiel et en ligne • <strong>Durée :</strong> 2 à 5 jours • <strong>À partir de :</strong> 1650€</p>
+                </div>
+            </div>
+
+            <!-- Autres Domaines -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Finance de Marché -->
+                <div class="formation-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-area text-2xl text-finance-red mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Finance de Marché</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Apprenez à utiliser et valoriser les produits dérivés dans une optique de gestion des risques et d'optimisation de portefeuille.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Produits dérivés</li>
+                        <li>• Gestion des risques</li>
+                        <li>• Optimisation de portefeuille</li>
+                    </ul>
+                </div>
+
+                <!-- Préparation CFA -->
+                <div class="formation-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-graduation-cap text-2xl text-finance-red mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Préparation au CFA® Program</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Préparez-vous efficacement à l'examen CFA® avec nos cours ciblés et notre expertise reconnue.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Accompagnement personnalisé</li>
+                        <li>• Modules d'accompagnement indépendants</li>
+                        <li>• Formation en ligne et hors Paris</li>
+                    </ul>
+                </div>
+
+                <!-- Risk Management -->
+                <div class="formation-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-finance-red mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Risk Management & Compliance</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Maîtrisez les techniques de gestion des risques financiers et comprenez les exigences réglementaires.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Mesure et gestion des risques</li>
+                        <li>• Conformité réglementaire</li>
+                        <li>• Cadres de contrôle</li>
+                    </ul>
+                </div>
+
+                <!-- Finance Comportementale -->
+                <div class="formation-card bg-white rounded-lg shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-2xl text-finance-red mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">Finance Comportementale</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Explorez l'impact de la psychologie sur les décisions financières et les marchés.</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Biais cognitifs en finance</li>
+                        <li>• Psychologie des investisseurs</li>
+                        <li>• Impact sur les marchés</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pourquoi Finance Tutoring -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Pourquoi Choisir Finance Tutoring ?</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-finance-red text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                        <h3 class="font-semibold text-lg mb-2">Formations Adaptées</h3>
+                        <p class="text-gray-600">Formations adaptées aux exigences des banques, investisseurs et institutions financières.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-finance-red text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                        <h3 class="font-semibold text-lg mb-2">Approche Interactive</h3>
+                        <p class="text-gray-600">Approche pédagogique interactive avec des cas pratiques concrets.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-finance-red text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                        <h3 class="font-semibold text-lg mb-2">Experts Reconnus</h3>
+                        <p class="text-gray-600">Intervention d'experts en finance de marché, gestion d'actifs et risk management.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-finance-red text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                        <h3 class="font-semibold text-lg mb-2">Flexibilité</h3>
+                        <p class="text-gray-600">Possibilité de formations en présentiel et à distance.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-finance-red text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto mb-4">5</div>
+                        <h3 class="font-semibold text-lg mb-2">Certification</h3>
+                        <p class="text-gray-600">Certification et reconnaissance professionnelle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center mb-12">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Prêt à Développer Votre Expertise ?</h2>
+                <p class="text-xl text-gray-600 mb-8">Rejoignez nos formations et donnez un nouvel élan à votre carrière en finance</p>
+                
+         <div class="space-y-4 mb-8 text-center">
+    <a href="https://www.finance-tutoring.fr" 
+       target="_blank" 
+       class="bg-finance-red text-white py-4 px-8 rounded-lg text-xl font-semibold hover:bg-red-700 transition inline-block">
+       Informations et Inscriptions
+    </a>
+</div>
+
+
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <i class="fas fa-calendar-alt text-2xl text-finance-red mb-2"></i>
+                        <h4 class="font-semibold">Formations Flexibles</h4>
+                        <p class="text-sm text-gray-600">Présentiel et distanciel</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <i class="fas fa-certificate text-2xl text-finance-red mb-2"></i>
+                        <h4 class="font-semibold">Certification</h4>
+                        <p class="text-sm text-gray-600">Attestation délivrée</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <i class="fas fa-users text-2xl text-finance-red mb-2"></i>
+                        <h4 class="font-semibold">Formateurs Experts</h4>
+                        <p class="text-sm text-gray-600">Praticiens expérimentés</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <img src="https://u.jimcdn.com/cms/o/s3b9779bb9e36c99a/userlayout/img/blanc-rouge-et-noir-2.png" 
+                     alt="Finance Tutoring Logo" 
+                     class="h-12 w-auto mx-auto mb-4">
+            </div>
+            <p class="text-gray-300 mb-2">Finance Tutoring - Conseil et Formation</p>
+            <p class="text-gray-400 text-sm">Formations expertes en finance pour professionnels</p>
+            <div class="mt-4">
+                <p class="text-finance-red font-semibold">www.finance-tutoring.fr</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
