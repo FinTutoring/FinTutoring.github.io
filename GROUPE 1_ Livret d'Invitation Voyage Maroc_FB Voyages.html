@@ -1,0 +1,1014 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livret d'Invitation Voyage Maroc - FB Voyages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      :root {
+        --primary: #ff6b35;
+        --secondary: #e55100;
+        --accent: #daa520;
+        --gold: #cd853f;
+        --blue-morocco: #1e3a8a;
+        --blue-light: #3b82f6;
+        --terracotta: #b7410e;
+        --cream: #fff8f0;
+        --warm-white: #fffcf7;
+        --text-dark: #2c1810;
+        --text-medium: #5d4e37;
+      }
+
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 40px; /* marges réduites pour élargir */
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
+  color: var(--text-dark);
+  position: relative;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.page {
+  background: var(--warm-white);
+  margin-bottom: 30px; /* moins de marge entre pages */
+  padding: 40px 50px; /* réduit mais confortable */
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15);
+  page-break-after: always;
+  border: 2px solid rgba(218, 165, 32, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+      .page::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary), var(--accent), var(--blue-morocco));
+      }
+
+      .fb-logo {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 20px;
+      }
+
+      .fb-logo .logo-text {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5em;
+        font-weight: 700;
+        color: var(--primary);
+        text-shadow: 2px 2px 4px rgba(255, 107, 53, 0.3);
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+      }
+
+      .fb-logo .selectour-badge {
+        background: var(--blue-morocco);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .cover-page {
+        text-align: center;
+        background: linear-gradient(45deg, rgba(30, 58, 138, 0.9), rgba(255, 107, 53, 0.9)),
+          url('https://rothschild-safaris.s3.amazonaws.com/images/Blog/2025-06-Morocco-Stargazing/Morocco-Stargazing_2025-07-21-084506_rfoe.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cover-page::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(0deg, rgba(218, 165, 32, 0.3), transparent);
+      }
+
+      .cover-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .cover-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 4em;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: white;
+        letter-spacing: 2px;
+        line-height: 1.1;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      }
+
+      .cover-subtitle {
+        font-size: 1.8em;
+        color: var(--accent);
+        margin-bottom: 35px;
+        font-weight: 400;
+        line-height: 1.3;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .cover-date {
+        background: linear-gradient(45deg, var(--primary), var(--accent));
+        padding: 15px 35px;
+        border-radius: 25px;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 25px;
+        font-size: 1.3em;
+        box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+      }
+
+      .page-title {
+        color: var(--blue-morocco);
+        font-family: 'Playfair Display', serif;
+        font-size: 2.4em;
+        font-weight: 600;
+        margin-bottom: 35px;
+        border-bottom: 3px solid var(--accent);
+        padding-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+      }
+
+      .page-title::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--primary);
+      }
+
+      .flight-info {
+        background: linear-gradient(135deg, var(--cream), var(--warm-white));
+        color: var(--text-dark);
+        padding: 30px;
+        border-radius: 12px;
+        margin: 25px 0;
+        border-left: 6px solid var(--primary);
+        box-shadow: 0 2px 10px rgba(255, 107, 53, 0.1);
+      }
+
+      .flight-details {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 18px 0;
+        border: 1px solid rgba(218, 165, 32, 0.3);
+        box-shadow: 0 1px 5px rgba(218, 165, 32, 0.1);
+      }
+
+      .warning-box {
+        background: linear-gradient(135deg, #fff4e6, #fff8f0);
+        color: var(--terracotta);
+        padding: 25px;
+        border-radius: 12px;
+        margin: 25px 0;
+        border-left: 6px solid var(--terracotta);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 1.05em;
+        box-shadow: 0 2px 10px rgba(183, 65, 14, 0.1);
+      }
+
+      .convocation-info {
+        background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+        padding: 25px;
+        border-radius: 12px;
+        margin: 25px 0;
+        border-left: 6px solid var(--blue-light);
+        font-size: 1.05em;
+        box-shadow: 0 2px 10px rgba(59, 130, 246, 0.1);
+      }
+
+      .day-program {
+        margin-bottom: 35px;
+        padding: 25px;
+        border-left: 6px solid var(--accent);
+        background: linear-gradient(135deg, var(--cream), var(--warm-white));
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 2px 10px rgba(218, 165, 32, 0.1);
+      }
+
+      .day-program::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+        background: var(--accent);
+        border-radius: 50%;
+        opacity: 0.1;
+      }
+
+      .day-program h3 {
+        margin-top: 0;
+        color: var(--blue-morocco);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 1.4em;
+        font-family: 'Playfair Display', serif;
+      }
+
+      .desert-poetry {
+        font-style: italic;
+        color: var(--text-medium);
+        margin: 15px 0;
+        padding: 15px;
+        background: rgba(218, 165, 32, 0.1);
+        border-radius: 8px;
+        border-left: 3px solid var(--gold);
+      }
+
+      .hotel-link a {
+        color: var(--primary);
+        font-weight: 500;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        border-bottom: 2px dotted var(--primary);
+        padding-bottom: 2px;
+        font-size: 1.05em;
+      }
+
+      .recommendations {
+        background: linear-gradient(135deg, var(--cream), var(--warm-white));
+        padding: 30px;
+        border-radius: 12px;
+        border-left: 6px solid var(--accent);
+        box-shadow: 0 2px 15px rgba(218, 165, 32, 0.1);
+      }
+
+      .rec-category {
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 12px 20px;
+        border-radius: 20px;
+        font-weight: 500;
+        margin: 18px 0 12px 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.05em;
+        box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+      }
+
+      .rec-item {
+        margin: 12px 0;
+        padding-left: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 1.05em;
+      }
+
+      .rec-item:before {
+        content: '◆';
+        color: var(--primary);
+        font-weight: bold;
+        position: absolute;
+        left: 12px;
+        font-size: 1.2em;
+      }
+
+      .final-message {
+        text-align: center;
+        background: linear-gradient(45deg, var(--blue-morocco), var(--blue-light));
+        color: white;
+        padding: 45px;
+        border-radius: 15px;
+        font-size: 1.4em;
+        margin-bottom: 35px;
+        line-height: 1.5;
+        font-family: 'Playfair Display', serif;
+        box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+      }
+
+      .contact-info {
+        text-align: center;
+        background: linear-gradient(45deg, var(--secondary), var(--primary));
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 1.1em;
+        box-shadow: 0 4px 15px rgba(229, 81, 0, 0.3);
+      }
+
+      .map-container {
+        height: 400px;
+        background: var(--warm-white);
+        border-radius: 12px;
+        overflow: hidden;
+        margin: 25px 0;
+        position: relative;
+        border: 2px solid rgba(218, 165, 32, 0.3);
+        box-shadow: 0 4px 15px rgba(218, 165, 32, 0.1);
+      }
+
+      .itinerary-point {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+        gap: 15px;
+        padding: 15px;
+        background: var(--warm-white);
+        border-radius: 10px;
+        border-left: 4px solid var(--primary);
+        box-shadow: 0 1px 5px rgba(255, 107, 53, 0.1);
+      }
+
+      .point-marker {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-weight: bold;
+        font-size: 1em;
+        box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+      }
+
+      .point-content {
+        flex: 1;
+        font-size: 1.05em;
+      }
+
+      .footer-note {
+        text-align: center;
+        margin-top: 35px;
+        font-size: 1em;
+        color: var(--text-medium);
+        padding: 20px;
+        background: var(--cream);
+        border-radius: 10px;
+        border: 1px solid rgba(218, 165, 32, 0.2);
+      }
+
+      .icon-spacer {
+        margin-right: 12px;
+        width: 28px;
+        text-align: center;
+        font-size: 1.1em;
+        color: var(--accent);
+      }
+
+      .morocco-pattern {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        opacity: 0.05;
+        background: repeating-linear-gradient(
+          45deg,
+          var(--primary),
+          var(--primary) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+      }
+
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white !important;
+    margin: 0;
+    padding: 0;
+    width: 210mm;
+    height: 297mm;
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 100%;
+    min-height: 297mm;
+    margin: 0;
+    padding: 20mm;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-after: always;
+    background: white;
+  }
+
+  .cover-page {
+    min-height: 297mm;
+    page-break-after: always;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: transparent !important;
+    background-image: linear-gradient(45deg, rgba(30, 58, 138, 0.9), rgba(255, 107, 53, 0.9)),
+      url('https://rothschild-safaris.s3.amazonaws.com/images/Blog/2025-06-Morocco-Stargazing/Morocco-Stargazing_2025-07-21-084506_rfoe.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* Évite les coupures internes des blocs importants */
+  .page,
+  .day-program,
+  .flight-info,
+  .flight-details,
+  .warning-box,
+  .convocation-info,
+  .recommendations,
+  .final-message,
+  .contact-info,
+  .footer-note {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+      @media (max-width: 1100px) {
+        body {
+          padding: 30px;
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .page {
+          padding: 30px;
+        }
+
+        .cover-title {
+          font-size: 2.5em;
+        }
+
+        .cover-subtitle {
+          font-size: 1.4em;
+        }
+
+        .page-title {
+          font-size: 1.8em;
+        }
+
+        .flight-info,
+        .convocation-info,
+        .warning-box {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- COUVERTURE -->
+    <div class="page cover-page">
+      <div class="fb-logo">
+        <img src="https://i.imgur.com/KlSW7rj.png" alt="FB Voyages Logo" style="max-height: 120px; width: auto; margin-bottom: 20px; background: transparent; border: none; display: block; margin-left: auto; margin-right: auto;">
+        <div class="selectour-badge">Selectour</div>
+      </div>
+      <div class="cover-content">
+        <h1 class="cover-title">Raid Buggy au Maroc</h1>
+        <p class="cover-subtitle">Une aventure inoubliable dans le désert des mille et une nuits</p>
+        <div class="cover-date">Du 27 septembre au 05 octobre 2025</div>
+      </div>
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 2 - VOL ALLER -->
+    <div class="page">
+      <h1 class="page-title">
+        <span class="icon-spacer"><i class="fas fa-plane-departure"></i></span> Vol Aller
+      </h1>
+
+      <div class="convocation-info">
+        <h3 style="margin-top: 0; color: #3b82f6">
+          <span class="icon-spacer"><i class="fas fa-info-circle"></i></span> Convocation
+        </h3>
+        <p><strong>Date et heure:</strong> Samedi 27 septembre 2025 à 16h45</p>        <p><strong>Lieu:</strong> Aéroport d'Orly, Terminal 4</p>
+        <p><strong>Comptoir:</strong> Compagnie Royal Air Maroc</p>
+        <div class="desert-poetry">
+          "Le voyage de mille lieues commence par un premier pas... et le vôtre commence à Orly vers les terres
+          enchantées du Maroc."
+        </div>
+      </div>
+
+      <div class="flight-info">
+        <h3 style="margin-top: 0">
+          <span class="icon-spacer"><i class="far fa-calendar-alt"></i></span> Samedi 27 septembre 2025
+        </h3>
+
+        <div class="flight-details">
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-plane"></i></span> Vol:</strong>
+            AT 771 (Royal Air Maroc)
+          </p>
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-location-arrow"></i></span> Départ:</strong>
+            Orly 19h15
+          </p>
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Arrivée:</strong>
+            Casablanca 21h20
+          </p>
+        </div>
+
+        <div class="flight-details">
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-exchange-alt"></i></span> Correspondance:</strong>
+            Casablanca 23h20
+          </p>
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Arrivée à Ouarzazate:</strong>
+            01h10 (dimanche 28 septembre)</p>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <span class="icon-spacer"><i class="fas fa-exclamation-circle"></i></span>
+        <div><strong>N'oubliez pas votre passeport !</strong> La carte d'identité n'est pas acceptée au Maroc.</div>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 3 - PROGRAMME DÉTAILLÉ -->
+    <div class="page">
+      <h1 class="page-title">
+        <span class="icon-spacer"><i class="fas fa-calendar-day"></i></span> Programme détaillé
+      </h1>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-sun"></i></span> Dimanche 28 septembre – Arrivée à Ouarzazate
+        </h3>
+        <p>Après votre arrivée tardive, un transfert privé vous mènera à l'hôtel <strong>Karam Palace</strong>, où un repos bien mérité vous attend. Après un petit-déjeuner convivial, nous entamerons notre voyage en 4x4 vers M'Hamid El Ghizlane, porte d'entrée du désert. C'est ici que nous prendrons en main les buggys pour notre premier contact avec les pistes, en direction du Camp Chez Naji Bivouac de luxe M'hamid et bivouac de Luxe Erg Chegaga, puis dîner sous les étoiles marquant ainsi le début de l'aventure.</p>
+        <p class="hotel-link">
+          <a href="https://karampalace.allhotelsmorocco.com/fr/" target="_blank"><i class="fas fa-hotel"></i> Voir l'hôtel</a>
+        </p>
+        <div class="desert-poetry">
+          "Là où finit la route goudronnée commence l'aventure... Les dunes d'Erg Chegaga vous attendent pour une
+          symphonie de sable et de vent."
+        </div>
+        <p class="hotel-link">
+          <a href="https://www.morocco-luxury-camp.com/fr/bivouac-de-luxe-erg-chegaga/" target="_blank"><i class="fas fa-campground"></i> Voir le camp</a>
+        </p>
+      </div>
+
+<div class="day-program">
+  <h3>
+    <span class="icon-spacer"><i class="fas fa-truck-monster"></i></span> Du lundi 29 au mercredi 01 octobre – Sahara en buggy
+  </h3>
+  <p>3 journées entières de buggy dans les dunes dorées du Sahara avec pique-nique lunch au cœur du désert.</p>
+  <p>Retour chaque soir au camp Erg Chegaga pour savourer la magie des nuits étoilées.</p>
+  <div class="desert-poetry">
+    "Trois jours pour apprivoiser le désert, trois nuits pour contempler l'infini... Le Sahara ne se visite pas,
+    il se vit."
+  </div>
+</div>
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-route"></i></span> Jeudi 02 octobre – Chegaga → Foum Zguid → Aït
+          Ben Haddou
+        </h3>
+        <p>
+          Départ en buggy vers Foum Zguid (≈ 3h de buggy à travers les paysages lunaires). Déjeuner puis route vers Aït
+          Ben Haddou, joyau architectural du patrimoine mondial.
+        </p>
+        <p>Installation à la <strong>Kasbah Isfoula</strong>, gardienne des traditions ancestrales.</p>
+        <p class="hotel-link">
+          <a href="https://www.morocco-hotels24.com/kasbah-isfoula-and-spa/" target="_blank"><i class="fas fa-hotel"></i> Voir la Kasbah</a>
+        </p>
+        <div class="desert-poetry">
+          "Des dunes aux kasbahs, de l'or du sable à l'ocre des murs... Le Maroc dévoile ses mille visages."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-water"></i></span> Vendredi 03 octobre – Aït Ben Haddou → Lac
+          Takerkoust
+        </h3>
+        <p>Route majestueuse via Telouet et passage du col mythique de Tizi n'Tichka (2260 m), toit de l'Atlas.</p>
+        <p>Arrivée et installation au <strong>Kalyptus Luxury Camp</strong>, oasis de sérénité face aux montagnes.</p>
+        <p class="hotel-link">
+          <a href="https://kalyptusluxurycamp.com/fr/" target="_blank"><i class="fas fa-campground"></i> Voir le camp</a>
+        </p>
+        <p>Activités possibles : quad, buggy, dromadaire, montgolfière pour admirer l'Atlas depuis les cieux.</p>
+        <div class="desert-poetry">
+          "De la chaleur du désert à la fraîcheur des montagnes... L'âme du Maroc se révèle dans cette diversité."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-city"></i></span> Samedi 04 octobre – Marrakech
+        </h3>
+        <p>Transfert en 4x4 vers Marrakech la Rouge (arrivée fin de matinée).</p>
+        <p>
+          Installation au <strong>Riad Laz Mouassine</strong> et séjour libre pour découvrir la magie de la place Jemaa
+          el-Fna.
+        </p>
+        <div class="desert-poetry">
+          "Marrakech, où les souks murmurent des histoires millénaires et où chaque ruelle cache un trésor..."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-plane-arrival"></i></span> Dimanche 05 octobre – Retour
+        </h3>
+        <p>Transfert à l'aéroport de Marrakech pour vol retour vers Paris, le cœur empli de souvenirs magiques.</p>
+        <div class="desert-poetry">
+          "On ne revient jamais vraiment du Maroc... Une part de son âme reste à jamais dans les dunes du Sahara."
+        </div>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 4 - HOTELS -->
+    <div class="page">
+      <h1 class="page-title">
+        <span class="icon-spacer"><i class="fas fa-hotel"></i></span> Hôtels de votre séjour
+      </h1>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="far fa-calendar"></i></span> Du 27 au 28 septembre
+        </h3>
+        <p><strong>Hôtel Karam Palace</strong></p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Av Moulay Rachid - Ouarzazate
+        </p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-phone"></i></span> +212 5248-82.225
+        </p>
+        <p>
+          <a href="https://karampalace.allhotelsmorocco.com/fr/" target="_blank"><i class="fas fa-link"></i> Voir l'hôtel</a>
+        </p>
+        <div class="desert-poetry">
+          "Ouarzazate, Hollywood du Maroc, où le cinéma et la réalité se mélangent sous un ciel d'un bleu infini."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="far fa-calendar"></i></span> Du 28 septembre au 02 Octobre
+        </h3>
+        <p><strong>Camp Bivouac de Luxe M'Hamid « Chez Naji »</strong> du 28 au 29 septembre</p>
+        <p><strong>Camp Bivouac de luxe Erg Chegaga « chez Naji »</strong> du 28 septembre au 02 octobre</p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-phone"></i></span> Tel : +212.661.617.436
+        </p>
+        <p>
+          <a href="https://www.morocco-luxury-camp.com/fr/bivouac-de-luxe-erg-chegaga/" target="_blank"><i class="fas fa-link"></i> Voir le camp</a>
+        </p>
+        <div class="desert-poetry">
+          "Chez Naji, l'hospitalité berbère s'exprime dans chaque détail... Luxe et authenticité se marient sous les
+          étoiles du Sahara."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="far fa-calendar"></i></span> Du 02 au 03 octobre
+        </h3>
+        <p><strong>Hôtel la Kasbah Infoula</strong></p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Douar Assfalou Tammdakht, Aït Ben
+          Haddou
+        </p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-phone"></i></span> +212 5248-85.955
+        </p>
+        <p>
+          <a href="https://www.morocco-hotels24.com/kasbah-isfoula-and-spa/" target="_blank"><i class="fas fa-link"></i> Voir la Kasbah</a>
+        </p>
+        <div class="desert-poetry">
+          "Dormir dans une kasbah, c'est voyager dans le temps... Chaque pierre raconte l'histoire des caravanes
+          d'antan."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="far fa-calendar"></i></span> Du 03 au 04 octobre
+        </h3>
+        <p><strong>Kalyptus Luxury Camp</strong></p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Doaur Talat Inoualen, Amzough, Lalla
+          Takerkoust
+        </p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-phone"></i></span> +212 632-1451.45
+        </p>
+        <p>
+          <a href="https://kalyptusluxurycamp.com/fr/" target="_blank"><i class="fas fa-link"></i> Voir le camp</a>
+        </p>
+        <div class="desert-poetry">
+          "Entre lac et montagnes, Kalyptus offre un havre de paix où se ressourcer après l'aventure du désert."
+        </div>
+      </div>
+
+      <div class="day-program">
+        <h3>
+          <span class="icon-spacer"><i class="far fa-calendar"></i></span> Du 04 au 05 octobre
+        </h3>
+        <p><strong>Riad Laz Mouassine</strong></p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> 1 Derb El Ouartani, Marrakech
+        </p>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-phone"></i></span> +212 677-030447
+        </p>
+        <div class="desert-poetry">
+          "Dans la médina de Marrakech, le riad est un écrin de fraîcheur où se mélangent les parfums du jasmin et de la
+          menthe."
+        </div>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 5 - VOL RETOUR -->
+    <div class="page">
+      <h1 class="page-title">
+        <span class="icon-spacer"><i class="fas fa-plane-arrival"></i></span> Vol Retour
+      </h1>
+      <div class="flight-info">
+        <h3 style="margin-top: 0">
+          <span class="icon-spacer"><i class="far fa-calendar-alt"></i></span> Dimanche 05 octobre 2025
+        </h3>
+
+        <div class="flight-details">
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-plane"></i></span> Vol:</strong>
+            Easyjet 4666
+          </p>
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-location-arrow"></i></span> Départ:</strong>
+            Marrakech 18h25
+          </p>
+          <p>
+            <strong><span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> Arrivée:</strong>
+            Roissy Charles de Gaulle, Terminal 2B à 22h45
+          </p>
+        </div>
+
+        <div class="desert-poetry">
+          "Le retour n'est jamais un adieu au Maroc... C'est le début d'une nostalgie qui vous rappellera à jamais vers
+          ces terres magiques."
+        </div>
+      </div>
+
+      <h3 style="margin-top: 40px; color: var(--blue-morocco)">
+        <span class="icon-spacer"><i class="fas fa-route"></i></span> Itinéraire du séjour
+      </h3>
+      <div class="map-container">
+        <div class="custom-map">
+          <svg viewBox="0 0 800 600" style="width: 100%; height: 380px;">
+            <!-- Fond du Maroc stylisé -->
+            <defs>
+              <radialGradient id="desertGradient" cx="50%" cy="70%" r="60%">
+                <stop offset="0%" style="stop-color:#DAA520;stop-opacity:0.1"></stop>
+                <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:0.05"></stop>
+              </radialGradient>
+              <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FF6B35"></stop>
+                <stop offset="50%" style="stop-color:#DAA520"></stop>
+                <stop offset="100%" style="stop-color:#1E3A8A"></stop>
+              </linearGradient>
+            </defs>
+            
+            <!-- Fond -->
+            <rect width="800" height="600" fill="url(#desertGradient)"></rect>
+            
+            <!-- Tracé de l'itinéraire -->
+            <path d="M 150 300 Q 200 350 280 380 Q 350 420 400 400 Q 450 380 520 320 Q 580 280 650 250 Q 700 230 750 200" stroke="url(#pathGradient)" stroke-width="4" fill="none" stroke-dasharray="5,5">
+              <animate attributeName="stroke-dashoffset" values="0;-10" dur="2s" repeatCount="indefinite"></animate>
+            </path>
+            
+            <!-- Points de l'itinéraire -->
+            <!-- Ouarzazate -->
+            <circle cx="150" cy="300" r="12" fill="#FF6B35" stroke="#FFFCF7" stroke-width="3">
+              <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite"></animate>
+            </circle>
+            <text x="150" y="280" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="14" font-weight="600">Ouarzazate</text>
+            
+            <!-- M'Hamid -->
+            <circle cx="280" cy="380" r="10" fill="#DAA520" stroke="#FFFCF7" stroke-width="2"></circle>
+            <text x="280" y="400" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="12" font-weight="500">M'Hamid</text>
+            
+            <!-- Erg Chegaga -->
+            <circle cx="400" cy="400" r="14" fill="#E55100" stroke="#FFFCF7" stroke-width="3">
+              <animate attributeName="fill" values:#E55100;#DAA520;#E55100" dur="3s" repeatCount="indefinite"></animate>
+            </circle>
+            <text x="400" y="425" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="14" font-weight="600">Erg Chegaga</text>
+            <text x="400" y="440" text-anchor="middle" fill="#5D4E37" font-family="Inter" font-size="10">Bivouac de Luxe</text>
+            
+            <!-- Foum Zguid -->
+            <circle cx="520" cy="320" r="8" fill="#B7410E" stroke="#FFFCF7" stroke-width="2"></circle>
+            <text x="520" y="340" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="11" font-weight="500">Foum Zguid</text>
+            
+            <!-- Aït Ben Haddou -->
+            <circle cx="650" cy="250" r="11" fill="#1E3A8A" stroke="#FFFCF7" stroke-width="2"></circle>
+            <text x="650" y="230" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="12" font-weight="600">Aït Ben Haddou</text>
+            
+            <!-- Lac Takerkoust -->
+            <circle cx="700" cy="200" r="9" fill="#3B82F6" stroke="#FFFCF7" stroke-width="2"></circle>
+            <text x="700" y="180" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="11" font-weight="500">Lac Takerkoust</text>
+            
+            <!-- Marrakech -->
+            <circle cx="750" cy="180" r="13" fill="#CD853F" stroke="#FFFCF7" stroke-width="3">
+              <animate attributeName="r" values="13;17;13" dur="2.5s" repeatCount="indefinite"></animate>
+            </circle>
+            <text x="750" y="160" text-anchor="middle" fill="#2C1810" font-family="Inter" font-size="14" font-weight="700">Marrakech</text>
+            
+            <!-- Éléments décoratifs -->
+            <g opacity="0.3">
+              <!-- Dunes stylisées -->
+              <path d="M 0 450 Q 100 430 200 450 Q 300 470 400 450 Q 500 430 600 450 Q 700 470 800 450 L 800 600 L 0 600 Z" fill="#DAA520" opacity="0.1"></path>
+              <path d="M 0 480 Q 150 460 300 480 Q 450 500 600 480 Q 700 470 800 480 L 800 600 L 0 600 Z" fill="#FF6B35" opacity="0.08"></path>
+              
+              <!-- Motifs géométriques marocains -->
+              <g transform="translate(50,50)" opacity="0.15">
+                <polygon points="0,20 10,0 20,20 10,40" fill="#1E3A8A"></polygon>
+                <polygon points="30,20 40,0 50,20 40,40" fill="#FF6B35"></polygon>
+              </g>
+              <g transform="translate(650,450)" opacity="0.15">
+                <polygon points="0,20 10,0 20,20 10,40" fill="#DAA520"></polygon>
+                <polygon points="25,20 35,0 45,20 35,40" fill="#B7410E"></polygon>
+              </g>
+            </g>
+            
+            <!-- Légende -->
+            <rect x="20" y="20" width="220" height="90" fill="#FFFCF7" fill-opacity="0.95" stroke="#DAA520" stroke-width="2" rx="10"></rect>
+            <text x="30" y="40" fill="#2C1810" font-family="Inter" font-size="14" font-weight="700">🏜️ Itinéraire du Raid Buggy</text>
+            <text x="30" y="58" fill="#5D4E37" font-family="Inter" font-size="11">📍 7 étapes à travers le Maroc</text>
+            <text x="30" y="74" fill="#5D4E37" font-family="Inter" font-size="11">🚗 Du désert aux kasbahs</text>
+            <text x="30" y="90" fill="#5D4E37" font-family="Inter" font-size="11">⭐ 28 septembre - 05 octobre 2025</text>
+            <text x="30" y="105" fill="#FF6B35" font-family="Inter" font-size="10" font-weight="600">✨ Une aventure inoubliable vous attend</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="itinerary-point">
+        <div class="point-marker">1</div>
+        <div class="point-content"><strong>Ouarzazate</strong> - Arrivée et première nuit dans la cité du cinéma</div>
+      </div>
+
+      <div class="itinerary-point">
+        <div class="point-marker">2</div>
+        <div class="point-content">
+          <strong>M'Hamid & Erg Chegaga</strong> - 4 jours de raid buggy dans les dunes du Sahara
+        </div>
+      </div>
+
+      <div class="itinerary-point">
+        <div class="point-marker">3</div>
+        <div class="point-content">
+          <strong>Aït Ben Haddou</strong> - Visite de la kasbah inscrite au patrimoine mondial
+        </div>
+      </div>
+
+      <div class="itinerary-point">
+        <div class="point-marker">4</div>
+        <div class="point-content"><strong>Lac Takerkoust</strong> - Activités et détente face à l'Atlas</div>
+      </div>
+
+      <div class="itinerary-point">
+        <div class="point-marker">5</div>
+        <div class="point-content"><strong>Marrakech</strong> - Dernière étape dans la perle du Sud</div>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 6 - RECOMMANDATIONS -->
+    <div class="page">
+      <h1 class="page-title">
+        <span class="icon-spacer"><i class="fas fa-tshirt"></i></span> Recommandations Vestimentaires
+      </h1>
+      <div class="recommendations">
+        <div class="desert-poetry">
+          "S'habiller pour le désert, c'est un art... Protégez-vous du soleil tout en respectant les traditions
+          locales."
+        </div>
+
+        <div class="rec-category">
+          <span class="icon-spacer"><i class="fas fa-sun"></i></span> Protection soleil
+        </div>
+        <div class="rec-item">Casquette ou chapeau avec cordon (indispensable contre les vents de sable)</div>
+        <div class="rec-item">Lunettes de soleil enveloppantes (protection UV maximale)</div>
+        <div class="rec-item">Foulard/chèche (accessoire authentique et protecteur)</div>
+
+        <div class="rec-category">
+          <span class="icon-spacer"><i class="fas fa-tshirt"></i></span> Vêtements adaptés
+        </div>
+        <div class="rec-item">T-shirts légers manches longues (protection optimale)</div>
+        <div class="rec-item">Pantalons trekking (éviter shorts pour respecter les coutumes)</div>
+        <div class="rec-item">Polaire légère ou coupe-vent (nuits fraîches dans le désert)</div>
+
+        <div class="rec-category">
+          <span class="icon-spacer"><i class="fas fa-shoe-prints"></i></span> Chaussures
+        </div>
+        <div class="rec-item">Baskets solides ou chaussures de rando basses (confort essentiel)</div>
+        <div class="rec-item">Chaussettes confortables (prévenir les ampoules)</div>
+
+        <div class="rec-category">
+          <span class="icon-spacer"><i class="fas fa-toolbox"></i></span> Accessoires pratiques
+        </div>
+        <div class="rec-item">Gants légers sport/moto (protection pour le buggy)</div>
+        <div class="rec-item">Petit sac à dos (pour vos affaires personnelles)</div>
+        <div class="rec-item">Crème solaire, stick lèvres SPF (protection intensive)</div>
+        <div class="rec-item">Gourde ou bouteille isotherme (hydratation vitale)</div>
+
+        <div class="desert-poetry">
+          "L'équipement parfait vous permettra de profiter pleinement de chaque moment de cette aventure unique."
+        </div>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+
+    <!-- PAGE 7 - MESSAGE FINAL -->
+    <div class="page">
+      <div class="final-message">
+        ✨ Toute l'équipe de FB Voyages vous souhaite un magnifique voyage au Maroc ! ✨
+        <br><br>
+        "Que chaque grain de sable raconte votre histoire, que chaque étoile du désert guide vos rêves..."
+      </div>
+      <div class="contact-info">
+        <h3>
+          <span class="icon-spacer"><i class="fas fa-map-marker-alt"></i></span> FB VOYAGES
+        </h3>
+        📍 74bis Rue de Versailles<br>78150 Le Chesnay-Rocquencourt <br><br>
+        <em>"Votre spécialiste des voyages d'exception depuis 1995"</em>
+      </div>
+
+      <div class="footer-note">
+        <p><strong>Document créé spécialement pour votre voyage - Septembre 2025</strong></p>
+        <div class="desert-poetry">
+          "Un voyage se prépare dans les rêves, se vit dans l'instant, et se savoure dans les souvenirs..."
+        </div>
+        <p>
+          <span class="icon-spacer"><i class="fas fa-info-circle"></i></span> Pour toute question, n'hésitez pas à
+          contacter votre conseiller FB Voyages
+        </p>
+        <p><em>Bon voyage et que l'aventure commence !</em></p>
+      </div>
+
+      <div class="morocco-pattern"></div>
+    </div>
+  </body>
+</html>
