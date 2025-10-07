@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide: La Gestion de Portefeuille en termes simples</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        .bg-gradient-red {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shadow-red {
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.1);
+        }
+        .border-red-custom {
+            border-color: #dc2626;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .formula-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            margin: 12px 0;
+        }
+        .risk-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        .risk-low { background: #dcfce7; color: #16a34a; }
+        .risk-medium { background: #fef3c7; color: #d97706; }
+        .risk-high { background: #fef2f2; color: #dc2626; }
+        .calculator-input {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 12px;
+            transition: border-color 0.3s ease;
+        }
+        .calculator-input:focus {
+            border-color: #dc2626;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        .chart-container {
+            height: 400px;
+            margin: 20px 0;
+        }
+        .portfolio-selector {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .portfolio-button {
+            padding: 8px 16px;
+            border: 2px solid #dc2626;
+            background: white;
+            color: #dc2626;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .portfolio-button.active {
+            background: #dc2626;
+            color: white;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #dc2626;
+            cursor: pointer;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #dc2626;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        @media print {
+            .no-print { display: none; }
+            body { font-size: 12px; }
+            .page-break { page-break-before: always; }
+        }
+        @media (max-width: 768px) {
+            .mobile-stack { flex-direction: column; }
+            .mobile-full { width: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+<!-- Header -->
+<header class="bg-white text-gray-900 pt-10 pb-8 border-b-4 border-red-600">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="flex justify-center mb-6">
+            <!-- Logo depuis Imgur -->
+            <img src="https://imgur.com/1ligggU.png" alt="Logo Finance Tutoring"
+                 class="w-48 h-48 object-contain rounded-lg shadow-lg border-4 border-red-600">
+        </div>
+        <h1 class="text-2xl font-semibold text-red-600 mb-1">Finance Tutoring</h1>
+        <p class="text-sm text-red-500 mb-6">Excellence en Formation Financière</p>
+        <h1 class="text-4xl font-bold text-gradient mb-4">La Gestion de Portefeuille en termes simples</h1>
+        <p class="text-xl text-gray-700 max-w-4xl mx-auto">
+            Guide complet pour comprendre et maîtriser les fondamentaux de la gestion de portefeuille : diversification, allocation d'actifs, profils de risque et stratégies d'investissement.
+        </p>
+    </div>
+</header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-50 border-b-2 border-red-600 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex flex-wrap gap-4 text-sm">
+                <a href="#introduction" class="hover:text-red-600 transition-colors">Introduction</a>
+                <a href="#fondamentaux" class="hover:text-red-600 transition-colors">Fondamentaux</a>
+                <a href="#etapes" class="hover:text-red-600 transition-colors">Étapes</a>
+                <a href="#profils" class="hover:text-red-600 transition-colors">Profils</a>
+                <a href="#diversification" class="hover:text-red-600 transition-colors">Diversification</a>
+                <a href="#outils" class="hover:text-red-600 transition-colors">Outils</a>
+                <a href="#erreurs" class="hover:text-red-600 transition-colors">Erreurs</a>
+                <a href="#conseils" class="hover:text-red-600 transition-colors">Conseils</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Introduction -->
+        <section id="introduction" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-red border-l-4 border-red-custom">
+                <h2 class="text-3xl font-bold text-gradient mb-6">
+                    <i class="fas fa-compass mr-3"></i>Qu'est-ce que la Gestion de Portefeuille ?
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            La <strong class="text-red-600">gestion de portefeuille</strong> est l'art et la science de sélectionner, organiser et surveiller un ensemble d'investissements pour atteindre des objectifs financiers spécifiques. Elle consiste à équilibrer risque et rendement selon votre profil d'investisseur.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            Cette approche méthodique vous permet de <strong>maximiser vos gains</strong> tout en <strong>minimisant les risques</strong>, grâce à une répartition intelligente de vos actifs.
+                        </p>
+                        <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-400">
+                            <p class="text-sm font-semibold text-red-800">
+                                💡 <strong>Principe clé :</strong> "Ne pas mettre tous ses œufs dans le même panier"
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4 text-red-600">
+                            <i class="fas fa-target mr-2"></i>Objectifs Principaux
+                        </h3>
+                        <ul class="space-y-3 text-sm">
+                            <li><i class="fas fa-chart-line text-green-500 mr-2"></i><strong>Croissance du capital :</strong> Faire fructifier votre épargne</li>
+                            <li><i class="fas fa-shield-alt text-blue-500 mr-2"></i><strong>Préservation :</strong> Protéger votre patrimoine</li>
+                            <li><i class="fas fa-coins text-yellow-500 mr-2"></i><strong>Revenus réguliers :</strong> Générer des flux financiers</li>
+                            <li><i class="fas fa-balance-scale text-purple-500 mr-2"></i><strong>Équilibre risque/rendement :</strong> Optimiser selon votre profil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fondamentaux -->
+        <section id="fondamentaux" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Les Concepts Fondamentaux</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-puzzle-piece mr-2"></i>Diversification
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        La diversification consiste à répartir vos investissements entre différents types d'actifs, secteurs géographiques et classes d'actifs pour réduire le risque global.
+                    </p>
+                    <div class="bg-green-50 p-4 rounded border-l-4 border-green-400">
+                        <p class="text-sm"><strong>Avantage :</strong> Si un investissement performe mal, les autres peuvent compenser les pertes.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <h3 class="text-xl font-semibold mb-4 text-red-600">
+                        <i class="fas fa-balance-scale mr-2"></i>Rapport Risque/Rendement
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        Principe fondamental : plus le potentiel de gain est élevé, plus le risque de perte l'est aussi. L'art de la gestion consiste à trouver le bon équilibre.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded border-l-4 border-blue-400">
+                        <p class="text-sm"><strong>Règle d'or :</strong> Investissez uniquement dans ce que vous comprenez et pouvez vous permettre de perdre.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <h3 class="text-xl font-semibold mb-4 text-red-600">
+                    <i class="fas fa-layer-group mr-2"></i>Les Classes d'Actifs Principales
+                </h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fas fa-chart-line text-3xl text-red-500 mb-2"></i>
+                        <h4 class="font-semibold">Actions</h4>
+                        <span class="risk-badge risk-high">Risque Élevé</span>
+                        <p class="text-xs mt-2">6-10% annuel</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fas fa-certificate text-3xl text-blue-500 mb-2"></i>
+                        <h4 class="font-semibold">Obligations</h4>
+                        <span class="risk-badge risk-low">Risque Faible</span>
+                        <p class="text-xs mt-2">2-5% annuel</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fas fa-building text-3xl text-green-500 mb-2"></i>
+                        <h4 class="font-semibold">Immobilier</h4>
+                        <span class="risk-badge risk-medium">Risque Modéré</span>
+                        <p class="text-xs mt-2">4-8% annuel</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <i class="fas fa-coins text-3xl text-yellow-500 mb-2"></i>
+                        <h4 class="font-semibold">Matières Premières</h4>
+                        <span class="risk-badge risk-high">Risque Élevé</span>
+                        <p class="text-xs mt-2">Variable</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Étapes de Gestion -->
+        <section id="etapes" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Les 5 Étapes de la Gestion de Portefeuille</h2>
+            
+            <div class="space-y-8">
+                <!-- Étape 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="flex items-start">
+                        <div class="step-number">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3 text-red-600">Définir vos Objectifs Financiers</h3>
+                            <p class="text-gray-700 mb-4">
+                                Avant tout investissement, clarifiez vos objectifs : retraite, achat immobilier, éducation des enfants, constitution d'un capital...
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-green-50 p-4 rounded">
+                                    <h4 class="font-semibold text-green-700 mb-2">Court Terme</h4>
+                                    <p class="text-sm">0-2 ans<br>Liquidités, comptes épargne</p>
+                                </div>
+                                <div class="bg-blue-50 p-4 rounded">
+                                    <h4 class="font-semibold text-blue-700 mb-2">Moyen Terme</h4>
+                                    <p class="text-sm">2-7 ans<br>Obligations, fonds équilibrés</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded">
+                                    <h4 class="font-semibold text-purple-700 mb-2">Long Terme</h4>
+                                    <p class="text-sm">7+ ans<br>Actions, immobilier, croissance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="flex items-start">
+                        <div class="step-number">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3 text-red-600">Évaluer votre Profil de Risque</h3>
+                            <p class="text-gray-700 mb-4">
+                                Votre tolérance au risque dépend de votre âge, situation financière, expérience et tempérament.
+                            </p>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h4 class="font-semibold mb-4">Test de Profil de Risque</h4>
+                                <div class="space-y-3 text-sm">
+                                    <div class="flex items-center justify-between">
+                                        <span>🎂 Âge :</span>
+                                        <input type="range" class="slider" min="18" max="80" value="35" id="age-slider">
+                                        <span id="age-value">35 ans</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>💼 Expérience :</span>
+                                        <select class="calculator-input">
+                                            <option>Débutant</option>
+                                            <option>Intermédiaire</option>
+                                            <option>Expérimenté</option>
+                                        </select>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span>💰 Capacité de perte :</span>
+                                        <input type="range" class="slider" min="5" max="30" value="15" id="loss-slider">
+                                        <span id="loss-value">15%</span>
+                                    </div>
+                                </div>
+                                <div id="risk-result" class="mt-4 p-4 bg-white rounded border text-center">
+                                    <span class="risk-badge risk-medium">Profil Équilibré</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="flex items-start">
+                        <div class="step-number">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3 text-red-600">Déterminer l'Allocation d'Actifs</h3>
+                            <p class="text-gray-700 mb-4">
+                                Répartissez votre capital entre les différentes classes d'actifs selon votre profil et vos objectifs.
+                            </p>
+                            <div class="chart-container">
+                                <canvas id="allocationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="flex items-start">
+                        <div class="step-number">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3 text-red-600">Sélectionner les Investissements</h3>
+                            <p class="text-gray-700 mb-4">
+                                Choisissez les instruments financiers concrets : actions individuelles, ETF, fonds, obligations...
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold mb-3">✅ Critères de Sélection</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li>• <strong>Performance historique</strong> et régularité</li>
+                                        <li>• <strong>Frais de gestion</strong> compétitifs</li>
+                                        <li>• <strong>Liquidité</strong> appropriée</li>
+                                        <li>• <strong>Diversification</strong> du support</li>
+                                        <li>• <strong>Qualité du gestionnaire</strong></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-3">📊 Types d'Instruments</h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li>• <strong>ETF :</strong> Simple, diversifié, peu cher</li>
+                                        <li>• <strong>Fonds actifs :</strong> Gestion professionnelle</li>
+                                        <li>• <strong>Actions individuelles :</strong> Contrôle total</li>
+                                        <li>• <strong>Obligations :</strong> Revenus fixes</li>
+                                        <li>• <strong>SCPI/REIT :</strong> Immobilier indirect</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Étape 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-red card-hover">
+                    <div class="flex items-start">
+                        <div class="step-number">5</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold mb-3 text-red-600">Suivre et Rééquilibrer</h3>
+                            <p class="text-gray-700 mb-4">
+                                Surveillez régulièrement votre portefeuille et ajustez l'allocation si nécessaire.
+                            </p>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <div class="bg-blue-50 p-4 rounded text-center">
+                                    <i class="fas fa-calendar-alt text-2xl text-blue-600 mb-2"></i>
+                                    <h4 class="font-semibold">Révision Trimestrielle</h4>
+                                    <p class="text-xs mt-2">Vérification des performances</p>
+                                </div>
+                                <div class="bg-green-50 p-4 rounded text-center">
+                                    <i class="fas fa-sync-alt text-2xl text-green-600 mb-2"></i>
+                                    <h4 class="font-semibold">Rééquilibrage Annuel</h4>
+                                    <p class="text-xs mt-2">Ajustement des allocations</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded text-center">
+                                    <i class="fas fa-chart-line text-2xl text-purple-600 mb-2"></i>
+                                    <h4 class="font-semibold">Suivi Continu</h4>
+                                    <p class="text-xs mt-2">Monitoring des marchés</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profils d'Investisseur -->
+        <section id="profils" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">Profils d'Investisseur et Allocations Types</h2>
+            
+            <div class="mb-8">
+                <div class="portfolio-selector">
+                    <button class="portfolio-button active" onclick="updatePortfolio('conservateur')">
+                        <i class="fas fa-shield-alt mr-2"></i>Conservateur
+                    </button>
+                    <button class="portfolio-button" onclick="updatePortfolio('equilibre')">
+                        <i class="fas fa-balance-scale mr-2"></i>Équilibré
+                    </button>
+                    <button class="portfolio-button" onclick="updatePortfolio('dynamique')">
+                        <i class="fas fa-rocket mr-2"></i>Dynamique
+                    </button>
+                    <button class="portfolio-button" onclick="updatePortfolio('comparaison')">
+                        <i class="fas fa-layer-group mr-2"></i>Comparaison
+                    </button>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-red">
+                    <div class="chart-container">
+                        <canvas id="portfolioChart"></canvas>
+                    </div>
+                    
+                    <div id="portfolio-details" class="mt-6 grid md:grid-cols-3 gap-6">
+                        <!-- Détails du portefeuille sélectionné -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulateur de Performance -->
+        <section id="outils" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">
+                <i class="fas fa-calculator mr-3"></i>Outils de Calcul et Simulation
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Calculateur de Croissance -->
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-chart-line mr-2"></i>Simulateur de Croissance
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Capital initial (€):</label>
+                            <input type="number" id="capital-initial" class="calculator-input w-full" value="10000" step="1000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Apport mensuel (€):</label>
+                            <input type="number" id="apport-mensuel" class="calculator-input w-full" value="500" step="50">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Rendement annuel (%):</label>
+                            <input type="number" id="rendement-annuel" class="calculator-input w-full" value="7" step="0.5">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Durée (années):</label>
+                            <input type="number" id="duree-placement" class="calculator-input w-full" value="20" step="1">
+                        </div>
+                        <button onclick="calculerCroissance()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                            <i class="fas fa-calculator mr-2"></i>Calculer
+                        </button>
+                    </div>
+                    <div id="croissance-results" class="mt-4 p-4 bg-gray-50 rounded">
+                        <!-- Résultats -->
+                    </div>
+                </div>
+
+                <!-- Calculateur de Risque -->
+                <div class="bg-white p-6 rounded-lg shadow-red">
+                    <h3 class="text-lg font-semibold mb-4 text-red-600">
+                        <i class="fas fa-shield-alt mr-2"></i>Évaluation du Risque
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Valeur du portefeuille (€):</label>
+                            <input type="number" id="valeur-portefeuille" class="calculator-input w-full" value="50000" step="5000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Volatilité estimée (%):</label>
+                            <input type="number" id="volatilite" class="calculator-input w-full" value="15" step="1">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold mb-2">Horizon de temps:</label>
+                            <select id="horizon-temps" class="calculator-input w-full">
+                                <option value="1">1 mois</option>
+                                <option value="3">3 mois</option>
+                                <option value="6">6 mois</option>
+                                <option value="12" selected>1 an</option>
+                            </select>
+                        </div>
+                        <button onclick="calculerRisque()" class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">
+                            <i class="fas fa-calculator mr-2"></i>Évaluer le Risque
+                        </button>
+                    </div>
+                    <div id="risque-results" class="mt-4 p-4 bg-gray-50 rounded">
+                        <!-- Résultats -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Erreurs à Éviter -->
+        <section id="erreurs" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">
+                <i class="fas fa-exclamation-triangle mr-3"></i>Les 10 Erreurs à Éviter
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-red-50 p-6 rounded-lg border-l-4 border-red-400">
+                    <h3 class="font-semibold text-red-700 mb-4">🚫 Erreurs Courantes</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Manque de diversification :</strong> Concentrer tous les investissements dans un seul secteur</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Réaction émotionnelle :</strong> Vendre en panique lors des baisses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Market timing :</strong> Essayer de chronométrer le marché</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Suivre les modes :</strong> Investir dans les "actifs à la mode"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times-circle text-red-500 mr-2 mt-1"></i>
+                            <span><strong>Frais excessifs :</strong> Négliger l'impact des coûts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-400">
+                    <h3 class="font-semibold text-green-700 mb-4">✅ Bonnes Pratiques</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Investissement régulier :</strong> Dollar-cost averaging pour lisser les prix</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Vision long terme :</strong> Résister aux fluctuations court terme</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Rééquilibrage discipliné :</strong> Maintenir l'allocation cible</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Formation continue :</strong> Se tenir informé des évolutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mr-2 mt-1"></i>
+                            <span><strong>Simplicité :</strong> Privilégier des stratégies claires</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conseils Pratiques -->
+        <section id="conseils" class="mb-12">
+            <h2 class="text-3xl font-bold text-gradient mb-8">
+                <i class="fas fa-lightbulb mr-3"></i>Conseils Pratiques pour Débuter
+            </h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-red">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-baby text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Débutant (0-2 ans)</h3>
+                        <ul class="text-sm space-y-2 text-left">
+                            <li>• Commencez par une épargne d'urgence</li>
+                            <li>• Utilisez des ETF diversifiés</li>
+                            <li>• Automatisez vos investissements</li>
+                            <li>• Éduquez-vous progressivement</li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-green-50 rounded">
+                            <strong>Budget recommandé :</strong><br>
+                            <span class="text-green-600">100-500 €/mois</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Intermédiaire (2-5 ans)</h3>
+                        <ul class="text-sm space-y-2 text-left">
+                            <li>• Diversifiez géographiquement</li>
+                            <li>• Intégrez des actions individuelles</li>
+                            <li>• Optimisez fiscalement</li>
+                            <li>• Rééquilibrez régulièrement</li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-blue-50 rounded">
+                            <strong>Budget recommandé :</strong><br>
+                            <span class="text-blue-600">500-2000 €/mois</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-user-graduate text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg mb-3">Avancé (5+ ans)</h3>
+                        <ul class="text-sm space-y-2 text-left">
+                            <li>• Explorez les investissements alternatifs</li>
+                            <li>• Utilisez l'analyse technique</li>
+                            <li>• Considérez la gestion active</li>
+                            <li>• Optimisez les stratégies complexes</li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-purple-50 rounded">
+                            <strong>Budget recommandé :</strong><br>
+                            <span class="text-purple-600">2000+ €/mois</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-6 bg-gradient-to-r from-red-50 to-blue-50 rounded-lg">
+                    <h3 class="font-semibold text-lg mb-4 text-center">
+                        <i class="fas fa-road mr-2"></i>Roadmap d'Investissement
+                    </h3>
+                    <div class="flex justify-between items-center text-sm">
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-2">1</div>
+                            <span>Épargne<br>d'urgence</span>
+                        </div>
+                        <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-2">2</div>
+                            <span>ETF<br>diversifiés</span>
+                        </div>
+                        <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-2">3</div>
+                            <span>Actions<br>individuelles</span>
+                        </div>
+                        <div class="flex-1 h-0.5 bg-gray-300 mx-2"></div>
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-2">4</div>
+                            <span>Investissements<br>alternatifs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion et CTA -->
+        <section class="mb-12">
+            <div class="bg-gradient-red text-white p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6">
+                    <i class="fas fa-trophy mr-3"></i>Maîtrisez votre Avenir Financier
+                </h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-red-100 leading-relaxed mb-4">
+                            La gestion de portefeuille n'est pas un art réservé aux experts. Avec les bonnes connaissances et une approche méthodique, vous pouvez <strong>construire et gérer efficacement</strong> votre patrimoine financier.
+                        </p>
+                        <p class="text-red-100 leading-relaxed mb-4">
+                            Les principes que vous avez découverts dans ce guide constituent les <strong>fondations solides</strong> d'une stratégie d'investissement réussie : diversification, gestion du risque, discipline et vision long terme.
+                        </p>
+                        <p class="text-red-100 leading-relaxed">
+                            L'important est de <strong>commencer maintenant</strong>, d'apprendre continuellement et d'ajuster votre stratégie au fil de votre évolution personnelle et des conditions de marché.
+                        </p>
+                    </div>
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="font-semibold text-lg mb-4">
+                            <i class="fas fa-check-circle mr-2"></i>Points Clés à Retenir
+                        </h3>
+                        <ul class="space-y-2 text-sm text-red-100">
+                            <li>✓ Définissez clairement vos objectifs financiers</li>
+                            <li>✓ Évaluez honnêtement votre profil de risque</li>
+                            <li>✓ Diversifiez intelligemment vos investissements</li>
+                            <li>✓ Investissez régulièrement (dollar-cost averaging)</li>
+                            <li>✓ Maintenez une perspective long terme</li>
+                            <li>✓ Rééquilibrez périodiquement votre portefeuille</li>
+                            <li>✓ Continuez à vous former et vous informer</li>
+                            <li>✓ Évitez les décisions émotionnelles</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-red-400 text-center">
+                    <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-xl">Finance Tutoring</h4>
+                            <p class="text-red-200">Excellence en Formation Financière</p>
+                        </div>
+                    </div>
+                    <p class="text-red-100 mb-4">Approfondissez vos connaissances avec nos formations spécialisées</p>
+                    <a href="https://www.finance-tutoring.fr" class="inline-flex items-center px-6 py-3 bg-white text-red-600 font-semibold rounded-lg hover:bg-red-50 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Découvrez Finance Tutoring
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400 mb-2">
+                © 2024 Finance Tutoring - Guide de Gestion de Portefeuille
+            </p>
+            <p class="text-sm text-gray-500">
+                Toutes les informations sont fournies à titre éducatif. Consultez un conseiller financier pour des recommandations personnalisées.
+            </p>
+            <div class="mt-4 space-x-6 text-sm text-gray-500">
+                <a href="https://www.finance-tutoring.fr" class="hover:text-red-400 transition-colors">
+                    <i class="fas fa-globe mr-1"></i>www.finance-tutoring.fr
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Variables globales pour les graphiques
+        let allocationChart = null;
+        let portfolioChart = null;
+        
+        // Configuration des profils d'investisseur
+        const portfolioProfiles = {
+            conservateur: {
+                name: "Conservateur",
+                allocation: { Actions: 20, Obligations: 60, Immobilier: 10, Liquidités: 10 },
+                colors: ['#ef4444', '#3b82f6', '#10b981', '#f59e0b'],
+                risk: "Faible",
+                expectedReturn: "3-5%",
+                description: "Privilégie la sécurité du capital avec des revenus réguliers",
+                suitability: "Approche de la retraite, capital à préserver"
+            },
+            equilibre: {
+                name: "Équilibré",
+                allocation: { Actions: 50, Obligations: 30, Immobilier: 15, Liquidités: 5 },
+                colors: ['#ef4444', '#3b82f6', '#10b981', '#f59e0b'],
+                risk: "Modéré",
+                expectedReturn: "5-7%",
+                description: "Équilibre entre croissance et sécurité",
+                suitability: "Horizon moyen terme, accumulation de patrimoine"
+            },
+            dynamique: {
+                name: "Dynamique",
+                allocation: { Actions: 75, Obligations: 10, Immobilier: 10, Liquidités: 5 },
+                colors: ['#ef4444', '#3b82f6', '#10b981', '#f59e0b'],
+                risk: "Élevé",
+                expectedReturn: "7-10%",
+                description: "Recherche de croissance maximale à long terme",
+                suitability: "Jeune investisseur, horizon long terme"
+            }
+        };
+        
+        // Initialisation
+        window.onload = function() {
+            setupCharts();
+            setupEventListeners();
+            updatePortfolio('equilibre');
+            updateRiskProfile();
+        };
+        
+        function setupCharts() {
+            // Configuration du graphique d'allocation
+            const ctx1 = document.getElementById('allocationChart').getContext('2d');
+            allocationChart = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: [],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Allocation d\'Actifs Recommandée',
+                            font: { size: 16 }
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+            
+            // Configuration du graphique de portefeuille
+            const ctx2 = document.getElementById('portfolioChart').getContext('2d');
+            portfolioChart = new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: [],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Profil d\'Investisseur',
+                            font: { size: 18 }
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        }
+        
+        function setupEventListeners() {
+            // Sliders pour le profil de risque
+            document.getElementById('age-slider').addEventListener('input', updateRiskProfile);
+            document.getElementById('loss-slider').addEventListener('input', updateRiskProfile);
+        }
+        
+        function updateRiskProfile() {
+            const age = parseInt(document.getElementById('age-slider').value);
+            const lossCapacity = parseInt(document.getElementById('loss-slider').value);
+            
+            document.getElementById('age-value').textContent = age + ' ans';
+            document.getElementById('loss-value').textContent = lossCapacity + '%';
+            
+            // Calcul du profil de risque
+            let risk = 'medium';
+            let profileText = 'Équilibré';
+            
+            if (age > 55 || lossCapacity < 10) {
+                risk = 'low';
+                profileText = 'Conservateur';
+            } else if (age < 35 && lossCapacity > 20) {
+                risk = 'high';
+                profileText = 'Dynamique';
+            }
+            
+            const riskResult = document.getElementById('risk-result');
+            riskResult.innerHTML = `<span class="risk-badge risk-${risk}">${profileText}</span>`;
+            
+            // Mise à jour du graphique d'allocation
+            updateAllocationChart(profileText.toLowerCase());
+        }
+        
+        function updateAllocationChart(profile) {
+            if (!portfolioProfiles[profile]) return;
+            
+            const data = portfolioProfiles[profile];
+            const labels = Object.keys(data.allocation);
+            const values = Object.values(data.allocation);
+            
+            allocationChart.data.labels = labels;
+            allocationChart.data.datasets[0].data = values;
+            allocationChart.data.datasets[0].backgroundColor = data.colors;
+            allocationChart.update();
+        }
+        
+        function updatePortfolio(profile) {
+            // Mise à jour des boutons
+            document.querySelectorAll('.portfolio-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (profile === 'comparaison') {
+                showComparison();
+                return;
+            }
+            
+            const data = portfolioProfiles[profile];
+            if (!data) return;
+            
+            const labels = Object.keys(data.allocation);
+            const values = Object.values(data.allocation);
+            
+            portfolioChart.data.labels = labels;
+            portfolioChart.data.datasets[0].data = values;
+            portfolioChart.data.datasets[0].backgroundColor = data.colors;
+            portfolioChart.options.plugins.title.text = `Profil ${data.name}`;
+            portfolioChart.update();
+            
+            // Mise à jour des détails
+            document.getElementById('portfolio-details').innerHTML = `
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-gray-800">Niveau de Risque</h4>
+                    <span class="risk-badge risk-${data.risk.toLowerCase()}">${data.risk}</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-gray-800">Rendement Attendu</h4>
+                    <span class="text-lg font-bold text-green-600">${data.expectedReturn}</span>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2 text-gray-800">Convient à</h4>
+                    <p class="text-sm text-gray-700">${data.suitability}</p>
+                </div>
+            `;
+        }
+        
+        function showComparison() {
+            // Graphique de comparaison
+            const profiles = ['conservateur', 'equilibre', 'dynamique'];
+            const datasets = profiles.map((profile, index) => {
+                const data = portfolioProfiles[profile];
+                return {
+                    label: data.name,
+                    data: Object.values(data.allocation),
+                    backgroundColor: data.colors[index],
+                    borderWidth: 2
+                };
+            });
+            
+            portfolioChart.data.labels = Object.keys(portfolioProfiles.conservateur.allocation);
+            portfolioChart.data.datasets = datasets;
+            portfolioChart.options.plugins.title.text = 'Comparaison des Profils';
+            portfolioChart.config.type = 'bar';
+            portfolioChart.update();
+            
+            // Tableau de comparaison
+            document.getElementById('portfolio-details').innerHTML = `
+                <div class="col-span-3">
+                    <div class="overflow-x-auto">
+                        <table class="w-full border border-gray-300 rounded-lg">
+                            <thead class="bg-red-600 text-white">
+                                <tr>
+                                    <th class="p-3 text-left">Profil</th>
+                                    <th class="p-3">Risque</th>
+                                    <th class="p-3">Rendement</th>
+                                    <th class="p-3">Actions</th>
+                                    <th class="p-3">Obligations</th>
+                                    <th class="p-3">Immobilier</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${profiles.map(profile => {
+                                    const data = portfolioProfiles[profile];
+                                    const riskClass = data.risk.toLowerCase() === 'faible' ? 'low' : 
+                                                     data.risk.toLowerCase() === 'modéré' ? 'medium' : 'high';
+                                    return `
+                                        <tr class="border-b">
+                                            <td class="p-3 font-semibold">${data.name}</td>
+                                            <td class="p-3 text-center">
+                                                <span class="risk-badge risk-${riskClass}">${data.risk}</span>
+                                            </td>
+                                            <td class="p-3 text-center font-semibold text-green-600">${data.expectedReturn}</td>
+                                            <td class="p-3 text-center">${data.allocation.Actions}%</td>
+                                            <td class="p-3 text-center">${data.allocation.Obligations}%</td>
+                                            <td class="p-3 text-center">${data.allocation.Immobilier}%</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function calculerCroissance() {
+            const capitalInitial = parseFloat(document.getElementById('capital-initial').value);
+            const apportMensuel = parseFloat(document.getElementById('apport-mensuel').value);
+            const rendementAnnuel = parseFloat(document.getElementById('rendement-annuel').value) / 100;
+            const duree = parseFloat(document.getElementById('duree-placement').value);
+            
+            const rendementMensuel = rendementAnnuel / 12;
+            const nombreMois = duree * 12;
+            
+            // Calcul de la valeur future avec apports réguliers
+            const valeurFinale = capitalInitial * Math.pow(1 + rendementAnnuel, duree) + 
+                                apportMensuel * ((Math.pow(1 + rendementMensuel, nombreMois) - 1) / rendementMensuel);
+            
+            const totalApports = capitalInitial + (apportMensuel * nombreMois);
+            const gainTotal = valeurFinale - totalApports;
+            const rendementTotal = (gainTotal / totalApports) * 100;
+            
+            document.getElementById('croissance-results').innerHTML = `
+                <h5 class="font-semibold mb-3">Projection sur ${duree} ans</h5>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="flex justify-between">
+                        <span>Capital final :</span>
+                        <span class="font-semibold text-green-600">${valeurFinale.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Total apporté :</span>
+                        <span class="font-semibold">${totalApports.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Plus-value :</span>
+                        <span class="font-semibold text-blue-600">${gainTotal.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Rendement total :</span>
+                        <span class="font-semibold text-purple-600">${rendementTotal.toFixed(1)}%</span>
+                    </div>
+                </div>
+                <div class="mt-3 p-3 bg-green-50 rounded text-center">
+                    <span class="text-sm"><strong>Gain mensuel moyen :</strong> 
+                    <span class="text-green-600">${(gainTotal / nombreMois).toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span></span>
+                </div>
+            `;
+        }
+        
+        function calculerRisque() {
+            const valeurPortefeuille = parseFloat(document.getElementById('valeur-portefeuille').value);
+            const volatilite = parseFloat(document.getElementById('volatilite').value) / 100;
+            const horizonMois = parseInt(document.getElementById('horizon-temps').value);
+            
+            // Calcul de la volatilité ajustée selon l'horizon
+            const volatiliteAjustee = volatilite * Math.sqrt(horizonMois / 12);
+            
+            // Calcul des pertes potentielles (approche simplifiée)
+            const perteProbable95 = valeurPortefeuille * volatiliteAjustee * 1.65; // 95% confiance
+            const perteProbable99 = valeurPortefeuille * volatiliteAjustee * 2.33; // 99% confiance
+            
+            const perte5Pourcent = valeurPortefeuille * 0.05;
+            const perte10Pourcent = valeurPortefeuille * 0.10;
+            const perte20Pourcent = valeurPortefeuille * 0.20;
+            
+            document.getElementById('risque-results').innerHTML = `
+                <h5 class="font-semibold mb-3">Analyse de Risque (${horizonMois} mois)</h5>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>Volatilité annualisée :</span>
+                        <span class="font-semibold">${(volatilite * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Perte probable (95%) :</span>
+                        <span class="font-semibold text-orange-600">${perteProbable95.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Perte probable (99%) :</span>
+                        <span class="font-semibold text-red-600">${perteProbable99.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</span>
+                    </div>
+                    <div class="mt-3 pt-3 border-t">
+                        <p class="text-xs text-gray-600 mb-2"><strong>Scénarios de perte :</strong></p>
+                        <div class="grid grid-cols-3 gap-2 text-xs">
+                            <div class="bg-yellow-50 p-2 rounded text-center">
+                                <div class="font-semibold">-5%</div>
+                                <div class="text-yellow-700">${perte5Pourcent.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</div>
+                            </div>
+                            <div class="bg-orange-50 p-2 rounded text-center">
+                                <div class="font-semibold">-10%</div>
+                                <div class="text-orange-700">${perte10Pourcent.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</div>
+                            </div>
+                            <div class="bg-red-50 p-2 rounded text-center">
+                                <div class="font-semibold">-20%</div>
+                                <div class="text-red-700">${perte20Pourcent.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR'})}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
