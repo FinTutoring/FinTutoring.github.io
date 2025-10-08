@@ -1,124 +1,406 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light" style=""><head>
+<html lang="fr" data-theme="light">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Price Sequence Recognition Strategy - Florian Campuzan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Poppins:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F3RMKGQTD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7F3RMKGQTD');
+    </script>
+    
     <style>
-      body {
-        max-width: 880px;
-        margin: 0 auto;
-        padding: 32px 80px;
-        position: relative;
+      :root {
+        --container-max-width: 1200px;
+        --mobile-breakpoint: 768px;
+      }
+
+      * {
         box-sizing: border-box;
+      }
+
+      body {
+        max-width: var(--container-max-width);
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
         font-family: 'Montserrat', sans-serif;
         line-height: 1.6;
         color: #000;
         background: #fafafa;
       }
 
+      @media (min-width: 768px) {
+        body {
+          padding: 40px 60px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          padding: 40px 80px;
+        }
+      }
+
       .cover-page {
         text-align: center;
         page-break-after: always;
-        margin-bottom: 60px;
-        padding: 80px 40px;
+        margin-bottom: 40px;
+        padding: 40px 20px;
         background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
-        border-radius: 12px;
+        border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.08);
         border: 1px solid #f0f0f0;
       }
 
+      @media (min-width: 768px) {
+        .cover-page {
+          padding: 60px 40px;
+          margin-bottom: 60px;
+        }
+      }
+
       .cover-image {
-        width: 200px;
-        height: 200px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
         object-fit: cover;
         margin: 20px 0;
         border: 4px solid #c62828;
       }
 
+      @media (min-width: 768px) {
+        .cover-image {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
       .main-title {
         color: #000;
         font-family: 'Inter', sans-serif;
-        font-size: 2.6em;
+        font-size: 1.8em;
         font-weight: 800;
-        margin: 30px 0;
-        line-height: 1.2;
-        text-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        letter-spacing: -0.02em;
+        margin: 20px 0;
+        line-height: 1.3;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        letter-spacing: -0.01em;
+      }
+
+      @media (min-width: 768px) {
+        .main-title {
+          font-size: 2.6em;
+          margin: 30px 0;
+          line-height: 1.2;
+        }
       }
 
       .tagline {
-        font-size: 1.1em;
+        font-size: 1em;
         color: #333;
         font-style: italic;
-        margin: 20px 0;
+        margin: 15px 0;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 768px) {
+        .tagline {
+          font-size: 1.1em;
+          margin: 20px 0;
+        }
       }
 
       .author-name {
         font-family: 'Inter', sans-serif;
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: 700;
         color: #c62828;
-        margin: 40px 0 20px 0;
+        margin: 30px 0 15px 0;
         text-shadow: 0 2px 4px rgba(198,40,40,0.2);
       }
 
+      @media (min-width: 768px) {
+        .author-name {
+          font-size: 2em;
+          margin: 40px 0 20px 0;
+        }
+      }
+
       .section {
-        margin: 50px 0;
+        margin: 40px 0;
         page-break-inside: avoid;
         background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
-        padding: 40px;
-        border-radius: 12px;
+        padding: 30px 20px;
+        border-radius: 16px;
         box-shadow: 0 8px 32px rgba(0,0,0,0.06);
         border: 1px solid #f0f0f0;
         position: relative;
       }
 
+      @media (min-width: 768px) {
+        .section {
+          margin: 50px 0;
+          padding: 40px;
+        }
+      }
+
       .section-title {
-        color: #000;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: #ffffff;
         font-family: 'Inter', sans-serif;
-        font-size: 1.9em;
-        font-weight: 800;
-        margin: 40px 0 25px 0;
-        border-bottom: 4px solid #c62828;
-        padding-bottom: 12px;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        font-size: 1.4em;
+        font-weight: 700;
+        margin: 30px 0 20px 0;
+        padding: 20px 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        position: relative;
+        overflow: hidden;
         letter-spacing: -0.01em;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        border: 1px solid #404040;
+      }
+
+      @media (min-width: 768px) {
+        .section-title {
+          font-size: 1.8em;
+          margin: 40px 0 25px 0;
+          padding: 25px 30px;
+        }
+      }
+
+      .section-title::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(180deg, #c62828 0%, #d32f2f 100%);
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(198,40,40,0.1) 100%);
+      }
+
+      .section-title-number {
+        display: inline-block;
+        background: linear-gradient(135deg, #c62828 0%, #d32f2f 100%);
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 32px;
+        font-size: 0.75em;
+        font-weight: 800;
+        margin-right: 12px;
+        box-shadow: 0 4px 8px rgba(198,40,40,0.3);
+      }
+
+      @media (min-width: 768px) {
+        .section-title-number {
+          width: 36px;
+          height: 36px;
+          line-height: 36px;
+          font-size: 0.8em;
+          margin-right: 15px;
+        }
+      }
+
+      .performance-chart {
+        width: 100%;
+        height: 200px;
+        margin: 20px 0;
+        background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #303f9f 100%);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 600;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(26, 35, 126, 0.2);
+        border: 1px solid #3949ab;
+        text-align: center;
+        padding: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .performance-chart {
+          height: 280px;
+          margin: 25px 0;
+        }
+      }
+
+      .performance-chart-main {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        line-height: 1.3;
+      }
+
+      @media (min-width: 768px) {
+        .performance-chart-main {
+          font-size: 1.8em;
+        }
+      }
+
+      .performance-chart-sub {
+        font-size: 0.9em;
+        opacity: 0.9;
+        font-weight: 500;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        line-height: 1.4;
+      }
+
+      @media (min-width: 768px) {
+        .performance-chart-sub {
+          font-size: 1em;
+        }
+      }
+
+      .scenarios-chart {
+        width: 100%;
+        height: 180px;
+        margin: 20px 0;
+        background: linear-gradient(135deg, #2e7d32 0%, #388e3c 50%, #43a047 100%);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-weight: 600;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(46, 125, 50, 0.2);
+        border: 1px solid #4caf50;
+        text-align: center;
+        padding: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .scenarios-chart {
+          height: 260px;
+          margin: 25px 0;
+        }
+      }
+
+      .scenarios-chart-main {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        line-height: 1.3;
+      }
+
+      @media (min-width: 768px) {
+        .scenarios-chart-main {
+          font-size: 1.8em;
+        }
+      }
+
+      .scenarios-chart-sub {
+        font-size: 0.9em;
+        opacity: 0.9;
+        font-weight: 500;
+        text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+        line-height: 1.4;
+      }
+
+      @media (min-width: 768px) {
+        .scenarios-chart-sub {
+          font-size: 1em;
+        }
       }
 
       .bilingual-section {
-        margin: 30px 0;
+        margin: 25px 0;
       }
 
-      .french-content {
-        margin-bottom: 25px;
+      @media (min-width: 768px) {
+        .bilingual-section {
+          margin: 30px 0;
+        }
       }
 
       .english-content {
+        margin-bottom: 20px;
+      }
+
+      @media (min-width: 768px) {
+        .english-content {
+          margin-bottom: 25px;
+        }
+      }
+
+      .french-content {
         font-style: italic;
         color: #444;
         border-left: 3px solid #c62828;
-        padding-left: 20px;
+        padding-left: 15px;
+        margin-left: 10px;
+      }
+
+      @media (min-width: 768px) {
+        .french-content {
+          padding-left: 20px;
+          margin-left: 0;
+        }
       }
 
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin: 30px 0;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 25px 0;
+      }
+
+      @media (min-width: 480px) {
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .stats-grid {
+          margin: 30px 0;
+        }
       }
 
       .stat-box {
         border: 1px solid #e8e8e8;
-        padding: 30px;
+        padding: 20px;
         text-align: center;
         background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
         box-shadow: 0 4px 16px rgba(0,0,0,0.06);
         border-radius: 8px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
         position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .stat-box {
+          padding: 30px;
+        }
       }
       
       .stat-box:hover {
@@ -139,61 +421,48 @@
 
       .stat-value {
         font-family: 'Inter', sans-serif;
-        font-size: 2.2em;
+        font-size: 1.8em;
         font-weight: 800;
         color: #c62828;
         margin-bottom: 8px;
         text-shadow: 0 2px 4px rgba(198,40,40,0.15);
       }
 
+      @media (min-width: 768px) {
+        .stat-value {
+          font-size: 2.2em;
+        }
+      }
+
       .stat-label {
-        font-size: 0.95em;
+        font-size: 0.85em;
         color: #555;
         margin-top: 8px;
         line-height: 1.4;
         font-weight: 500;
       }
 
-      .performance-chart {
-        width: 100%;
-        height: 320px;
-        border: 1px solid #e8e8e8;
-        margin: 25px 0;
-        background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 20%, #c62828 20%, #c62828 65%, #333 65%, #333 100%);
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 600;
-        border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      }
-
-      .scenarios-chart {
-        width: 100%;
-        height: 280px;
-        border: 1px solid #e8e8e8;
-        margin: 25px 0;
-        background: linear-gradient(45deg, #c62828 0%, #c62828 33%, #000 33%, #000 66%, #666 66%, #666 100%);
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-weight: 600;
-        border-radius: 8px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      @media (min-width: 768px) {
+        .stat-label {
+          font-size: 0.95em;
+        }
       }
 
       .highlight-box {
         background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
         border-left: 6px solid #c62828;
-        padding: 30px;
-        margin: 30px 0;
+        padding: 25px 20px;
+        margin: 25px 0;
         box-shadow: 0 4px 16px rgba(198,40,40,0.08);
         border-radius: 0 8px 8px 0;
         position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .highlight-box {
+          padding: 30px;
+          margin: 30px 0;
+        }
       }
       
       .highlight-box::before {
@@ -208,36 +477,68 @@
 
       .quote {
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1.1em;
         font-style: italic;
         color: #c62828;
-        margin: 40px 0;
-        padding: 30px;
+        margin: 30px 0;
+        padding: 25px 20px;
         border: 2px solid #c62828;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(198,40,40,0.02) 0%, rgba(198,40,40,0.05) 100%);
+      }
+
+      @media (min-width: 768px) {
+        .quote {
+          font-size: 1.3em;
+          margin: 40px 0;
+          padding: 30px;
+        }
       }
 
       ul {
         padding-left: 20px;
+        margin: 15px 0;
       }
 
       li {
-        margin: 10px 0;
+        margin: 8px 0;
+        line-height: 1.5;
+      }
+
+      @media (min-width: 768px) {
+        li {
+          margin: 10px 0;
+        }
       }
 
       .methodology-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin: 30px 0;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 25px 0;
+      }
+
+      @media (min-width: 768px) {
+        .methodology-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 30px;
+          margin: 30px 0;
+        }
       }
 
       .method-card {
         border: 1px solid #e8e8e8;
-        padding: 30px;
+        padding: 25px 20px;
         background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
         box-shadow: 0 4px 16px rgba(0,0,0,0.04);
         border-radius: 8px;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      @media (min-width: 768px) {
+        .method-card {
+          padding: 30px;
+        }
       }
       
       .method-card:hover {
@@ -249,60 +550,96 @@
         color: #c62828;
         font-family: 'Inter', sans-serif;
         font-weight: 700;
-        font-size: 1.2em;
-        margin-bottom: 18px;
+        font-size: 1.1em;
+        margin-bottom: 15px;
         text-transform: uppercase;
         letter-spacing: 0.5px;
+        line-height: 1.3;
+      }
+
+      @media (min-width: 768px) {
+        .method-title {
+          font-size: 1.2em;
+          margin-bottom: 18px;
+        }
+      }
+
+      p {
+        line-height: 1.6;
+        margin: 15px 0;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      .mobile-optimized-text {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 767px) {
+        .mobile-optimized-text {
+          font-size: 16px;
+          text-align: justify;
+        }
+        
+        .section-title,
+        .highlight-box,
+        .performance-chart,
+        .scenarios-chart {
+          margin-left: -5px;
+          margin-right: -5px;
+          width: calc(100% + 10px);
+        }
+      }
+
+      .signature {
+        text-align: center;
+        margin-top: 40px;
+        padding: 30px 20px;
+        background: linear-gradient(135deg, #fff 0%, #fefefe 100%);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        border: 1px solid #f0f0f0;
+        position: relative;
+      }
+
+      @media (min-width: 768px) {
+        .signature {
+          margin-top: 60px;
+          padding: 40px;
+        }
+      }
+
+      .signature::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #c62828, #d32f2f);
+        border-radius: 12px 12px 0 0;
       }
     </style>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Noto%20Sans%20JP:wght@400&amp;display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7F3RMKGQTD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7F3RMKGQTD');
-  </script>
-
-
-
-
 </head>
-  <body style="">
+<body>
     <div class="cover-page">
       <h1 class="main-title">Price Sequence Recognition Strategy<br>US Nano, Microcaps &amp; Midcaps</h1>
-      <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan" class="cover-image" data-height-listener-added="true">
+      <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan" class="cover-image">
       <div class="author-name">Florian Campuzan</div>
       <div class="tagline">Pattern recognition and probabilistic trend following on regulated US equities</div>
     </div>
 
     <div class="section">
-      <h2 class="section-title">1. Résumé Exécutif / Executive Summary</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">1</span>
+        Executive Summary / Résumé Exécutif
+      </h2>
 
       <div class="bilingual-section">
-        <div class="french-content">
-          <p>
-            <strong>Stratégie discrétionnaire systématisée</strong> basée sur la reconnaissance de séquences de prix
-            développée par Florian Campuzan, diplômé de Sciences Po Paris, CFA charterholder et agréé AMF.
-          </p>
-
-          <ul>
-            <li><strong>Univers d'investissement :</strong> nano, micro et mid caps cotées sur NYSE, NASDAQ, AMEX</li>
-            <li>
-              <strong>Exécution :</strong> uniquement en Market-On-Close (MOC) pour standardiser les entrées/sorties
-            </li>
-            <li><strong>Position moyenne :</strong> 1,5% du volume capitalisé en dollars de la barre d'entrée</li>
-            <li><strong>Horizon moyen :</strong> 6 jours par position</li>
-            <li>
-              <strong>Philosophie :</strong> combinaison cassure + bottom fishing avec ajustement dynamique du
-              risk/reward
-            </li>
-            <li><strong>Objectif :</strong> capturer les asymétries naturelles du marché des small caps</li>
-          </ul>
-        </div>
-
-        <div class="english-content">
+        <div class="english-content mobile-optimized-text">
           <p>
             <strong>Discretionary, systematized strategy</strong> based on price sequence recognition developed by
             Florian Campuzan, Sciences Po Paris graduate, CFA charterholder and AMF-certified.
@@ -322,29 +659,38 @@
             <li><strong>Goal:</strong> capture natural asymmetries of small-cap markets</li>
           </ul>
         </div>
+
+        <div class="french-content mobile-optimized-text">
+          <p>
+            <strong>Stratégie discrétionnaire systématisée</strong> basée sur la reconnaissance de séquences de prix
+            développée par Florian Campuzan, diplômé de Sciences Po Paris, CFA charterholder et agréé AMF.
+          </p>
+
+          <ul>
+            <li><strong>Univers d'investissement :</strong> nano, micro et mid caps cotées sur NYSE, NASDAQ, AMEX</li>
+            <li>
+              <strong>Exécution :</strong> uniquement en Market-On-Close (MOC) pour standardiser les entrées/sorties
+            </li>
+            <li><strong>Position moyenne :</strong> 1,5% du volume capitalisé en dollars de la barre d'entrée</li>
+            <li><strong>Horizon moyen :</strong> 6 jours par position</li>
+            <li>
+              <strong>Philosophie :</strong> combinaison cassure + bottom fishing avec ajustement dynamique du
+              risk/reward
+            </li>
+            <li><strong>Objectif :</strong> capturer les asymétries naturelles du marché des small caps</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="section">
-      <h2 class="section-title">2. Origine et Philosophie / Origin and Philosophy</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">2</span>
+        Origin and Philosophy / Origine et Philosophie
+      </h2>
 
       <div class="bilingual-section">
-        <div class="french-content">
-          <p>
-            Le système repose sur une
-            <strong>mémoire visuelle et statistique de centaines de milliers de graphiques</strong> étudiés et intégrés
-            par le trader au cours de sa carrière. Cette expérience approfondie a permis d'identifier des structures de
-            prix à probabilité de succès élevée, avec un comportement récurrent en phase de cassure ou de capitulation.
-          </p>
-
-          <p>
-            L'approche privilégie le <strong>suivi de tendance à court terme</strong> combiné à des entrées en zone de
-            "capitulation probable", exploitables sur des marchés régulés où la liquidité est intermittente mais les
-            patterns comportementaux restent constants.
-          </p>
-        </div>
-
-        <div class="english-content">
+        <div class="english-content mobile-optimized-text">
           <p>
             The system relies on the trader's
             <strong>visual and statistical memory of hundreds of thousands of charts</strong> studied and integrated
@@ -358,24 +704,34 @@
             patterns remain constant.
           </p>
         </div>
+
+        <div class="french-content mobile-optimized-text">
+          <p>
+            Le système repose sur une
+            <strong>mémoire visuelle et statistique de centaines de milliers de graphiques</strong> étudiés et intégrés
+            par le trader au cours de sa carrière. Cette expérience approfondie a permis d'identifier des structures de
+            prix à probabilité de succès élevée, avec un comportement récurrent en phase de cassure ou de capitulation.
+          </p>
+
+          <p>
+            L'approche privilégie le <strong>suivi de tendance à court terme</strong> combiné à des entrées en zone de
+            "capitulation probable", exploitables sur des marchés régulés où la liquidité est intermittente mais les
+            patterns comportementaux restent constants.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="section">
-      <h2 class="section-title">3. Méthodologie / Methodology</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">3</span>
+        Methodology / Méthodologie
+      </h2>
 
       <div class="methodology-grid">
         <div class="method-card">
-          <div class="method-title">Approche Technique / Technical Approach</div>
-          <div class="french-content">
-            <ul>
-              <li>Cassure + bottom fishing</li>
-              <li>Détection des points d'inflexion</li>
-              <li>Suivi de tendance court terme</li>
-              <li>Risk/Reward moyen : 20:1</li>
-            </ul>
-          </div>
-          <div class="english-content" style="margin-top: 15px; font-size: 0.9em;">
+          <div class="method-title">Technical Approach / Approche Technique</div>
+          <div class="english-content">
             <ul>
               <li>Breakout + bottom fishing</li>
               <li>Inflection point detection</li>
@@ -383,19 +739,19 @@
               <li>Average Risk/Reward: 20:1</li>
             </ul>
           </div>
+          <div class="french-content" style="margin-top: 15px; font-size: 0.9em;">
+            <ul>
+              <li>Cassure + bottom fishing</li>
+              <li>Détection des points d'inflexion</li>
+              <li>Suivi de tendance court terme</li>
+              <li>Risk/Reward moyen : 20:1</li>
+            </ul>
+          </div>
         </div>
 
         <div class="method-card">
-          <div class="method-title">Gestion du Risque / Risk Management</div>
-          <div class="french-content">
-            <ul>
-              <li>Contrôle dynamique du risque</li>
-              <li>Ajustement stop/target continu</li>
-              <li>Durée moyenne : 6 jours</li>
-              <li>Aucun effet de levier</li>
-            </ul>
-          </div>
-          <div class="english-content" style="margin-top: 15px; font-size: 0.9em;">
+          <div class="method-title">Risk Management / Gestion du Risque</div>
+          <div class="english-content">
             <ul>
               <li>Dynamic risk control</li>
               <li>Continuous stop/target adjustment</li>
@@ -403,32 +759,43 @@
               <li>No leverage</li>
             </ul>
           </div>
+          <div class="french-content" style="margin-top: 15px; font-size: 0.9em;">
+            <ul>
+              <li>Contrôle dynamique du risque</li>
+              <li>Ajustement stop/target continu</li>
+              <li>Durée moyenne : 6 jours</li>
+              <li>Aucun effet de levier</li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="highlight-box">
         <div class="bilingual-section">
-          <div class="french-content">
-            <p><strong>Synthèse méthodologique :</strong> La stratégie combine analyse technique discrétionnaire et gestion systématique du risque, avec ajustement continu du ratio risque/rendement selon la volatilité intra-trade.</p>
-          </div>
           <div class="english-content">
             <p><strong>Methodological synthesis:</strong> The strategy combines discretionary technical analysis with systematic risk management, featuring continuous risk/reward ratio adjustment based on intra-trade volatility.</p>
+          </div>
+          <div class="french-content">
+            <p><strong>Synthèse méthodologique :</strong> La stratégie combine analyse technique discrétionnaire et gestion systématique du risque, avec ajustement continu du ratio risque/rendement selon la volatilité intra-trade.</p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <h2 class="section-title">4. Backtest et Performance / Backtest and Live Performance</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">4</span>
+        Backtest and Live Performance / Backtest et Performance
+      </h2>
 
       <div class="stats-grid">
         <div class="stat-box">
           <div class="stat-value">+65%</div>
-          <div class="stat-label">Performance Totale<br>(26 jours de trading)</div>
+          <div class="stat-label">Total Performance<br>(26 trading days)</div>
         </div>
         <div class="stat-box">
           <div class="stat-value">7%</div>
-          <div class="stat-label">Volatilité Observée<br>(25% annualisée projetée)</div>
+          <div class="stat-label">Observed Volatility<br>(25% projected annualized)</div>
         </div>
         <div class="stat-box">
           <div class="stat-value">-12.7%</div>
@@ -441,26 +808,26 @@
       </div>
 
       <div class="performance-chart">
-        Backtest 5 ans vs Performance Réelle 2025<br>
-        <small>Cohérence structurelle confirmée</small>
+        <div class="performance-chart-main">Backtest 5 Years vs Live Performance 2025</div>
+        <div class="performance-chart-sub">Structural consistency confirmed</div>
       </div>
 
       <div class="bilingual-section">
-        <div class="french-content">
+        <div class="english-content mobile-optimized-text">
           <ul>
-            <li><strong>Backtest sur 5 ans :</strong> cohérence structurelle des résultats</li>
-            <li><strong>Depuis septembre 2025 :</strong> la performance réelle reproduit fidèlement le backtest</li>
-            <li><strong>Sortino ratio :</strong> ≈20</li>
-            <li><strong>Volatilité observée :</strong> 7%, correspondant à une volatilité annualisée projetée d'environ 25%, un niveau maîtrisé pour une stratégie directionnelle sur microcaps</li>
-            <li><strong>Validation empirique :</strong> les patterns identifiés maintiennent leur efficacité</li>
+            <li><strong>Five-year backtest:</strong> structural consistency of results</li>
+            <li><strong>Since September 2025:</strong> live performance faithfully reproduces backtest</li>
+            <li><strong>Sortino ratio:</strong> ≈20</li>
+            <li><strong>Observed volatility:</strong> 7%, corresponding to projected annualized volatility of approximately 25%, a controlled level for a directional microcap strategy</li>
+            <li><strong>Empirical validation:</strong> identified patterns maintain their effectiveness</li>
           </ul>
         </div>
 
-        <div class="english-content">
+        <div class="french-content mobile-optimized-text">
           <p>
-            <strong>Five-year backtest</strong> with consistent structural results.
-            <strong>Since September 2025</strong>, live performance mirrors the backtest with remarkable accuracy.
-            <strong>Sortino ratio:</strong> ≈20. <strong>Observed volatility:</strong> 7%, corresponding to a projected annualized volatility of approximately 25%, a controlled level for a directional microcap strategy. <strong>Empirical validation:</strong> identified patterns maintain their effectiveness in real-time execution.
+            <strong>Backtest sur 5 ans :</strong> cohérence structurelle des résultats.
+            <strong>Depuis septembre 2025 :</strong> la performance réelle reproduit fidèlement le backtest.
+            <strong>Sortino ratio :</strong> ≈20. <strong>Volatilité observée :</strong> 7%, correspondant à une volatilité annualisée projetée d'environ 25%, un niveau maîtrisé pour une stratégie directionnelle sur microcaps. <strong>Validation empirique :</strong> les patterns identifiés maintiennent leur efficacité en temps réel.
           </p>
         </div>
       </div>
@@ -468,33 +835,34 @@
 
     <div class="section">
       <h2 class="section-title">
-        5. Interprétation Institutionnelle des Ratios / Institutional Interpretation of Ratios
+        <span class="section-title-number">5</span>
+        Institutional Interpretation of Ratios / Interprétation Institutionnelle des Ratios
       </h2>
 
       <div class="highlight-box">
         <div class="bilingual-section">
-          <div class="french-content">
+          <div class="english-content mobile-optimized-text">
             <ul>
               <li>
-                <strong>Sharpe ≈15 :</strong> reflète une forte asymétrie des rendements avec très peu de pertes significatives, caractéristique d'une stratégie à haute conviction
+                <strong>Sharpe ≈15 :</strong> reflects strong return asymmetry with very few significant losses, characteristic of a high-conviction strategy
               </li>
               <li>
-                <strong>Sortino ≈20 :</strong> démontre une asymétrie exceptionnelle — les gains dominent largement la variabilité des pertes
+                <strong>Sortino ≈20 :</strong> demonstrates exceptional asymmetry — gains significantly dominate loss variability
               </li>
               <li>
-                <strong>Max Drawdown -12.7% :</strong> profil de risque discipliné et maîtrisé pour une approche directionnelle
+                <strong>Max Drawdown -12.7% :</strong> disciplined and controlled risk profile for a directional approach
               </li>
               <li>
-                <strong>Volatilité 7% (25% annualisée projetée) :</strong> niveau approprié pour une stratégie discrétionnaire systématisée sur microcaps
+                <strong>Volatility 7% (25% projected annualized) :</strong> appropriate level for a systematized discretionary microcap strategy
               </li>
             </ul>
           </div>
 
-          <div class="english-content">
+          <div class="french-content mobile-optimized-text">
             <p>
-              A <strong>Sharpe ratio ≈15</strong> reflects strong return asymmetry with very few significant losses, characteristic of a high-conviction strategy. <strong>Sortino ≈20</strong> reveals exceptional asymmetry — gains significantly dominate loss variability.
-              <strong>Max drawdown -12.7%</strong> demonstrates disciplined risk management for a directional approach.
-              <strong>Volatility 7% (25% projected annualized)</strong> represents an appropriate level for a systematized discretionary microcap strategy.
+              Un <strong>ratio Sharpe ≈15</strong> reflète une forte asymétrie des rendements avec très peu de pertes significatives, caractéristique d'une stratégie à haute conviction. <strong>Sortino ≈20</strong> révèle une asymétrie exceptionnelle — les gains dominent largement la variabilité des pertes.
+              <strong>Drawdown maximum -12.7%</strong> démontre un profil de risque discipliné pour une approche directionnelle.
+              <strong>Volatilité 7% (25% annualisée projetée)</strong> représente un niveau approprié pour une stratégie discrétionnaire systématisée sur microcaps.
             </p>
           </div>
         </div>
@@ -502,26 +870,29 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">6. Scalabilité et Perspectives / Scalability and Outlook</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">6</span>
+        Scalability and Outlook / Scalabilité et Perspectives
+      </h2>
 
       <div class="bilingual-section">
-        <div class="french-content">
+        <div class="english-content mobile-optimized-text">
           <ul>
-            <li><strong>Capacité estimée :</strong> jusqu'à 50 M USD sur la niche actuelle</li>
-            <li><strong>Migration possible :</strong> vers midcaps/liquides, avec décroissance marginale de l'edge</li>
-            <li><strong>Objectif :</strong> préserver l'asymétrie rendement/risque tout en augmentant les encours</li>
+            <li><strong>Estimated capacity:</strong> up to USD 50M in the current niche</li>
+            <li><strong>Possible migration:</strong> to more liquid assets, with gradual edge decay</li>
+            <li><strong>Objective:</strong> maintain return asymmetry while scaling AUM</li>
             <li>
-              <strong>Limite structurelle :</strong> au-delà de 50M, nécessité d'adapter l'univers d'investissement
+              <strong>Structural limit:</strong> beyond 50M, investment universe adaptation required
             </li>
           </ul>
         </div>
 
-        <div class="english-content">
+        <div class="french-content mobile-optimized-text">
           <p>
-            <strong>Estimated capacity:</strong> up to USD 50M in the current niche.
-            <strong>Possible migration</strong> to more liquid assets, with gradual edge decay.
-            <strong>Objective:</strong> maintain return asymmetry while scaling AUM.
-            <strong>Structural limit:</strong> beyond 50M, investment universe adaptation required.
+            <strong>Capacité estimée :</strong> jusqu'à 50 M USD sur la niche actuelle.
+            <strong>Migration possible :</strong> vers midcaps/liquides, avec décroissance marginale de l'edge.
+            <strong>Objectif :</strong> préserver l'asymétrie rendement/risque tout en augmentant les encours.
+            <strong>Limite structurelle :</strong> au-delà de 50M, nécessité d'adapter l'univers d'investissement.
           </p>
         </div>
       </div>
@@ -529,31 +900,32 @@
 
     <div class="section">
       <h2 class="section-title">
-        7. Projections de Performance et Croissance du Capital / Performance Projections &amp; Capital Growth
+        <span class="section-title-number">7</span>
+        Performance Projections & Capital Growth / Projections de Performance et Croissance du Capital
       </h2>
 
       <div class="scenarios-chart">
-        Scénarios de Croissance sur 5 ans<br>
-        <small>Base: 15% | Optimiste: 20% | Étendu: 12%</small>
+        <div class="scenarios-chart-main">5-Year Growth Scenarios</div>
+        <div class="scenarios-chart-sub">Base: 15% | Optimistic: 20% | Extended: 12%</div>
       </div>
 
       <div class="stats-grid">
         <div class="stat-box">
           <div class="stat-value">5M USD</div>
-          <div class="stat-label">Scénario de Base / Base Scenario<br>15% annualisé / annualized, Sharpe 3</div>
+          <div class="stat-label">Base Scenario / Scénario de Base<br>15% annualized / annualisé, Sharpe 3</div>
         </div>
         <div class="stat-box">
           <div class="stat-value">20M USD</div>
-          <div class="stat-label">Scénario Optimiste / Optimistic Scenario<br>20% annualisé / annualized, Sharpe &gt;4</div>
+          <div class="stat-label">Optimistic Scenario / Scénario Optimiste<br>20% annualized / annualisé, Sharpe &gt;4</div>
         </div>
         <div class="stat-box">
           <div class="stat-value">50M USD</div>
-          <div class="stat-label">Scénario Étendu / Extended Scenario<br>12% annualisé / annualized, edge dilué / diluted</div>
+          <div class="stat-label">Extended Scenario / Scénario Étendu<br>12% annualized / annualisé, diluted edge / edge dilué</div>
         </div>
       </div>
 
       <div class="bilingual-section">
-        <div class="english-content">
+        <div class="english-content mobile-optimized-text">
           <p>
             <strong>Three 5-year capital growth scenarios:</strong> Base (AUM 5M → 15% annualized return, Sharpe 3),
             Optimistic (AUM 20M → 20% return, Sharpe &gt;4), Scaled (AUM 50M → 12% return due to liquidity dilution).
@@ -563,29 +935,13 @@
     </div>
 
     <div class="section">
-      <h2 class="section-title">8. Objectif du Pitch / Purpose of the Pitch</h2>
+      <h2 class="section-title">
+        <span class="section-title-number">8</span>
+        Purpose of the Pitch / Objectif du Pitch
+      </h2>
 
       <div class="bilingual-section">
-        <div class="french-content">
-          <p>
-            Présenter une <strong>stratégie non corrélée, asymétrique et scalable</strong> à des investisseurs
-            sophistiqués, family offices et sponsors institutionnels recherchant :
-          </p>
-
-          <ul>
-            <li>Un profil de rendement non corrélé aux indices traditionnels</li>
-            <li>Une asymétrie positive avec contrôle du drawdown</li>
-            <li>Une approche discrétionnaire systématisée et transparente</li>
-            <li>Des partenariats ou une levée progressive de capital jusqu'à 50 M USD</li>
-          </ul>
-
-          <p>
-            <strong>Recherche active :</strong> partenaires stratégiques pour incubation, co-investissement ou
-            allocation progressive de capital institutionnel.
-          </p>
-        </div>
-
-        <div class="english-content">
+        <div class="english-content mobile-optimized-text">
           <p>
             <strong>Present an uncorrelated, asymmetric, and scalable strategy</strong> to sophisticated investors,
             family offices, and institutional sponsors seeking:
@@ -603,25 +959,41 @@
             institutional capital allocation.
           </p>
         </div>
+
+        <div class="french-content mobile-optimized-text">
+          <p>
+            Présenter une <strong>stratégie non corrélée, asymétrique et scalable</strong> à des investisseurs
+            sophistiqués, family offices et sponsors institutionnels recherchant :
+          </p>
+
+          <ul>
+            <li>Un profil de rendement non corrélé aux indices traditionnels</li>
+            <li>Une asymétrie positive avec contrôle du drawdown</li>
+            <li>Une approche discrétionnaire systématisée et transparente</li>
+            <li>Des partenariats ou une levée progressive de capital jusqu'à 50 M USD</li>
+          </ul>
+
+          <p>
+            <strong>Recherche active :</strong> partenaires stratégiques pour incubation, co-investissement ou
+            allocation progressive de capital institutionnel.
+          </p>
+        </div>
       </div>
     </div>
 
-    <div class="quote" style="background: linear-gradient(135deg, rgba(198,40,40,0.02) 0%, rgba(198,40,40,0.05) 100%); border-radius: 12px; border: 2px solid #c62828; position: relative; overflow: hidden;">
-      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #c62828, #d32f2f);"></div>
+    <div class="quote">
       <div style="margin-top: 10px;">
-        "La constance et la discipline précèdent la performance."<br>
-        <small style="font-size: 0.9em; opacity: 0.85;">"Consistency and discipline precede performance."</small>
+        "Consistency and discipline precede performance."<br>
+        <small style="font-size: 0.9em; opacity: 0.85;">"La constance et la discipline précèdent la performance."</small>
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 60px; padding: 40px; background: linear-gradient(135deg, #fff 0%, #fefefe 100%); border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; position: relative;">
-      <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #c62828, #d32f2f); border-radius: 12px 12px 0 0;"></div>
+    <div class="signature">
       <p style="margin-top: 15px;">
         <strong style="font-family: 'Inter', sans-serif; font-size: 1.3em; color: #c62828;">Florian Campuzan</strong><br>
-        <span style="color: #666; font-weight: 500;">Sciences Po Paris • CFA Charterholder • Agréé AMF</span><br>
+        <span style="color: #666; font-weight: 500;">Sciences Po Paris • CFA Charterholder • AMF Certified</span><br>
         <em style="color: #888; font-size: 1.1em; margin-top: 8px; display: inline-block;">Price Sequence Recognition Strategy</em>
       </p>
     </div>
-  
-
-</body></html>
+</body>
+</html>
