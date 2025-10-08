@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Sequence Recognition Strategy - Florian Campuzan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 32px 80px;
+        position: relative;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.6;
+        color: #000;
+        background: #fff;
+      }
+
+      .cover-page {
+        text-align: center;
+        page-break-after: always;
+        margin-bottom: 60px;
+        padding: 60px 0;
+      }
+
+      .cover-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 20px 0;
+        border: 4px solid #000;
+      }
+
+      .main-title {
+        color: #000;
+        font-size: 2.2em;
+        font-weight: 700;
+        margin: 30px 0;
+        line-height: 1.3;
+      }
+
+      .tagline {
+        font-size: 1.1em;
+        color: #333;
+        font-style: italic;
+        margin: 20px 0;
+      }
+
+      .author-name {
+        font-size: 1.8em;
+        font-weight: 600;
+        color: #000;
+        margin: 40px 0 20px 0;
+      }
+
+      .section {
+        margin: 50px 0;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        background: #000;
+        color: #fff;
+        font-size: 1.6em;
+        font-weight: 600;
+        margin: 40px 0 20px 0;
+        padding: 20px 25px;
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 5%;
+        width: 90%;
+        height: 3px;
+        background: linear-gradient(90deg, #c62828 0%, #000 100%);
+        border-radius: 2px;
+      }
+
+      .bilingual-section {
+        margin: 30px 0;
+      }
+
+      .french-content {
+        margin-bottom: 25px;
+      }
+
+      .english-content {
+        font-style: italic;
+        color: #444;
+        border-left: 3px solid #000;
+        padding-left: 20px;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .stat-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        background: #f9f9f9;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .stat-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .stat-value {
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #c62828;
+      }
+
+      .stat-label {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      .performance-chart {
+        width: 100%;
+        height: 300px;
+        border: 1px solid #ddd;
+        margin: 20px 0;
+        background: linear-gradient(to right, #f5f5f5 0%, #f5f5f5 20%, #c62828 20%, #c62828 65%, #333 65%, #333 100%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+
+      .scenarios-chart {
+        width: 100%;
+        height: 250px;
+        border: 1px solid #ddd;
+        margin: 20px 0;
+        background: linear-gradient(45deg, #c62828 0%, #c62828 33%, #000 33%, #000 66%, #666 66%, #666 100%);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+
+      .highlight-box {
+        background: #f8f8f8;
+        border-left: 4px solid #000;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .quote {
+        text-align: center;
+        font-size: 1.3em;
+        font-style: italic;
+        color: #000;
+        margin: 40px 0;
+        padding: 30px;
+        border: 2px solid #000;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 10px 0;
+      }
+
+      .methodology-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 30px 0;
+      }
+
+      .method-card {
+        border: 1px solid #ddd;
+        padding: 25px;
+        background: #fff;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .method-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      .method-title {
+        color: #000;
+        font-weight: 600;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+      }
+
+      .trading-metrics {
+        display: flex;
+        justify-content: space-around;
+        margin: 30px 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .metric-item {
+        text-align: center;
+        padding: 15px;
+      }
+
+      .metric-value {
+        font-size: 2em;
+        font-weight: 700;
+        color: #c62828;
+      }
+
+      .metric-label {
+        font-size: 0.9em;
+        color: #666;
+        margin-top: 5px;
+      }
+
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+        padding-left: 30px;
+      }
+
+      .timeline:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: #000;
+        border-radius: 2px;
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .timeline-item:before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        background: #000;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #000;
+      }
+
+      .timeline-date {
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 5px;
+      }
+
+      .timeline-content {
+        background: #f8f8f8;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 3px solid #000;
+      }
+
+      .sponsor-proposal {
+        background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 100%);
+        padding: 30px;
+        border-radius: 12px;
+        border: 2px solid #000;
+        margin: 40px 0;
+      }
+
+      .proposal-title {
+        color: #000;
+        font-size: 1.4em;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .proposal-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .proposal-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+      }
+
+      .proposal-item-title {
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .development-highlight {
+        background: #000;
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin: 30px 0;
+        text-align: center;
+      }
+
+      .backtest-info {
+        background: #f8f8f8;
+        padding: 20px;
+        border-radius: 8px;
+        border: 2px solid #000;
+        margin: 20px 0;
+      }
+
+      .backtest-title {
+        color: #000;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.2em;
+      }
+    </style>
+</head>
+<body>
+    <div class="cover-page">
+      <h1 class="main-title">Price Sequence Recognition Strategy<br>US Nano, Microcaps & Midcaps</h1>
+      <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan" class="cover-image">
+      <div class="author-name">Florian Campuzan</div>
+      <div class="tagline">Pattern recognition and probabilistic trend following on regulated US equities</div>
+      <div style="margin-top: 30px; padding: 15px; background: #000; color: white; border-radius: 8px; display: inline-block;">
+        <strong>Live Trading depuis le 2 septembre 2025</strong>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">1. Résumé Exécutif / Executive Summary</h2>
+
+      <div class="bilingual-section">
+        <div class="french-content">
+          <p>
+            <strong>Stratégie discrétionnaire systématisée</strong> développée sur <strong>8 longues années de travail</strong> 
+            par un ancien trader compte propre, combinant approche discrétionnaire et quantitative en <strong>long only sans levier</strong>.
+          </p>
+
+          <div class="development-highlight">
+            <strong>8 ANS DE DÉVELOPPEMENT • APPROCHE HYBRIDE • LONG ONLY SANS LEVIER</strong>
+          </div>
+
+          <div class="highlight-box">
+            <p><strong>Objectif de ce pitch :</strong> Présenter une stratégie mature et documentée en préparation d'une future levée de fonds 
+            dans environ 12 mois, une fois démontrée la robustesse en conditions réelles de marché et la constance des paramètres de performance ajustées au risque.</p>
+            <p><em>Approche sans pression :</em> Ce document vise à établir des relations de confiance en amont, sans urgence de collecte immédiate.</p>
+          </div>
+
+          <ul>
+            <li><strong>Univers d'investissement :</strong> nano, micro et mid caps cotées sur NYSE, NASDAQ, AMEX</li>
+            <li><strong>Exécution :</strong> uniquement en Market-On-Close (MOC)</li>
+            <li><strong>Taille de position moyenne :</strong> 15% (modulable selon conditions de marché)</li>
+            <li><strong>Horizon moyen :</strong> 6 jours par position</li>
+            <li><strong>Philosophie :</strong> combinaison cassure + bottom fishing avec ajustement dynamique du risk/reward</li>
+          </ul>
+        </div>
+
+        <div class="english-content">
+          <p>
+            <strong>Discretionary, systematized strategy</strong> developed over <strong>8 years of intensive work</strong> 
+            by a former proprietary trader, combining discretionary and quantitative approaches in <strong>long only, no leverage</strong>.
+          </p>
+
+          <div class="highlight-box">
+            <p><strong>Purpose of this pitch:</strong> Present a mature, documented strategy in preparation for a future fund raising 
+            in approximately 12 months, once robustness in real market conditions and consistency of risk-adjusted performance parameters are demonstrated.</p>
+            <p><em>No-pressure approach:</em> This document aims to build trusted relationships in advance, without immediate fundraising urgency.</p>
+          </div>
+
+          <ul>
+            <li><strong>Investment universe:</strong> nano, micro, and mid-cap equities listed on NYSE, NASDAQ, and AMEX</li>
+            <li><strong>Execution:</strong> exclusively Market-On-Close (MOC)</li>
+            <li><strong>Average position size:</strong> 15% (adjustable based on market conditions)</li>
+            <li><strong>Average holding period:</strong> 6 days</li>
+            <li><strong>Philosophy:</strong> breakout + bottom-fishing with dynamic risk/reward adjustment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">2. Parcours et Développement / Background and Development</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Début années 2000</div>
+          <div class="timeline-content">
+            <strong>Débuts dans le Trading</strong><br>
+            Premières expériences et apprentissage des marchés financiers
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2018-2025</div>
+          <div class="timeline-content">
+            <strong>8 Années de Développement Intensif</strong><br>
+            Retraite sur le sujet - Développement d'un backtest profond combinant approche discrétionnaire et quantitative<br>
+            <em>Long only sans levier - Focus small caps US</em>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2 Septembre 2025</div>
+          <div class="timeline-content">
+            <strong>Passage en Live Trading</strong><br>
+            Déploiement de la stratégie avec capital propre après validation backtest complète
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">Objectif 2026</div>
+          <div class="timeline-content">
+            <strong>Préparation Levée de Fonds</strong><br>
+            Démonstration de robustesse sur 12 mois de trading live avant ouverture au capital externe
+          </div>
+        </div>
+      </div>
+
+      <div class="bilingual-section">
+        <div class="french-content">
+          <p>
+            Fort d'une expérience débutée au <strong>début des années 2000</strong>, suivie de plusieurs années de retraite 
+            et de <strong>8 années de développement intensif (2018-2025)</strong>, cette stratégie représente l'aboutissement 
+            d'un travail méthodique combinant expertise discrétionnaire et rigueur quantitative.
+          </p>
+        </div>
+        <div class="english-content">
+          <p>
+            With experience starting in the <strong>early 2000s</strong>, followed by several years of dedicated focus 
+            and <strong>8 years of intensive development (2018-2025)</strong>, this strategy represents the culmination 
+            of methodical work combining discretionary expertise and quantitative rigor.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">3. Origine et Philosophie / Origin and Philosophy</h2>
+
+      <div class="backtest-info">
+        <div class="backtest-title">🔬 BACKTEST ULTRA-RIGOUREUX - 5 ANS EFFECTIFS - 100+ TRADES</div>
+        <p>Le backtest a été conçu pour <strong>reproduire de manière quasi-exacte les conditions réelles de marché</strong>, 
+        incluant tous les coûts de transaction, slippage, et contraintes de liquidité. Cette rigueur méthodologique semble 
+        confirmée par les premiers résultats sur 1 mois et demi de trading live.</p>
+      </div>
+
+      <div class="bilingual-section">
+        <div class="french-content">
+          <p>
+            Le système repose sur une <strong>mémoire visuelle et statistique de centaines de milliers de graphiques</strong> 
+            étudiés et intégrés au cours de 8 années de développement. Cette approche hybride combine l'intuition du trader 
+            expérimenté avec la rigueur statistique d'une approche quantitative.
+          </p>
+
+          <p>
+            Le backtest sur <strong>5 années effectives avec plus de 100 trades</strong> a été mené avec une exigence 
+            méthodologique extrême, reproduisant fidèlement les conditions de trading réelles. La cohérence entre backtest 
+            et performance live confirme la robustesse de l'approche.
+          </p>
+        </div>
+
+        <div class="english-content">
+          <p>
+            The system relies on <strong>visual and statistical memory of hundreds of thousands of charts</strong> 
+            studied and integrated over 8 years of development. This hybrid approach combines the intuition of an 
+            experienced trader with the statistical rigor of a quantitative methodology.
+          </p>
+
+          <p>
+            The backtest over <strong>5 effective years with 100+ trades</strong> was conducted with extreme methodological 
+            rigor, faithfully reproducing real trading conditions. The consistency between backtest and live performance 
+            confirms the approach's robustness.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">4. Méthodologie / Methodology</h2>
+
+      <div class="methodology-grid">
+        <div class="method-card">
+          <div class="method-title">Approche Technique</div>
+          <ul>
+            <li>Cassure + bottom fishing</li>
+            <li>Détection des points d'inflexion</li>
+            <li>Suivi de tendance court terme</li>
+            <li>Risk/Reward moyen : 20:1</li>
+            <li><strong>Long only sans levier</strong></li>
+          </ul>
+        </div>
+
+        <div class="method-card">
+          <div class="method-title">Gestion du Risque</div>
+          <ul>
+            <li>Contrôle dynamique du risque</li>
+            <li>Ajustement stop/target continu</li>
+            <li>Durée moyenne : 6 jours</li>
+            <li><strong>Taille position : 15% (modulable)</strong></li>
+            <li>Aucun effet de levier</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trading-metrics">
+        <div class="metric-item">
+          <div class="metric-value">12</div>
+          <div class="metric-label">Trades par mois</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">20%</div>
+          <div class="metric-label">Hit Ratio</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">6</div>
+          <div class="metric-label">Jours par position</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">15%</div>
+          <div class="metric-label">Taille Position</div>
+        </div>
+      </div>
+
+      <div class="bilingual-section">
+        <div class="english-content">
+          <p>
+            <strong>Technical Approach:</strong> Breakout + bottom-fishing to identify turning points and short-term
+            trends. <strong>Risk Management:</strong> Dynamic risk control with continuous stop/target adjustments.
+            Average trade duration: 6 days, <strong>no leverage, long only strategy</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">5. Performance Live et Backtest / Live Performance & Backtest</h2>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-value">+65%</div>
+          <div class="stat-label">Performance Live<br>(2 sept - 8 oct 2025)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">7.2%</div>
+          <div class="stat-label">Volatilité Quotidienne</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">-12.7%</div>
+          <div class="stat-label">Max Drawdown</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">5.0</div>
+          <div class="stat-label">Sharpe Ratio Annualisé</div>
+        </div>
+      </div>
+
+      <div class="performance-chart">
+        Backtest 5 ans (100+ trades) vs Performance Live 2025<br>
+        <small>Cohérence structurelle confirmée depuis le passage en live</small>
+      </div>
+
+      <div class="bilingual-section">
+        <div class="french-content">
+          <ul>
+            <li><strong>Backtest sur 5 ans (100+ trades) :</strong> cohérence structurelle des résultats</li>
+            <li><strong>Depuis septembre 2025 :</strong> la performance live reproduit fidèlement le backtest</li>
+            <li><strong>Validation empirique :</strong> les patterns identifiés maintiennent leur efficacité en live</li>
+            <li><strong>Taille de position :</strong> 15% en moyenne, modulable selon conditions de marché</li>
+          </ul>
+        </div>
+
+        <div class="english-content">
+          <p>
+            <strong>Five-year backtest (100+ trades)</strong> with consistent structural results.
+            <strong>Since September 2025</strong>, live performance mirrors the backtest with remarkable accuracy.
+            <strong>Position sizing:</strong> 15% average, adjustable based on market conditions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">6. Proposition de Partenariat / Partnership Proposal</h2>
+
+      <div class="sponsor-proposal">
+        <div class="proposal-title">🚀 PRÉPARATION LEVÉE DE FONDS 2026 - 8 ANS DE DÉVELOPPEMENT</div>
+        
+        <div class="bilingual-section">
+          <div class="french-content">
+            <p><strong>Objectif :</strong> Établir des relations privilégiées avec des sponsors institutionnels en vue d'une future levée de fonds dans environ 12 mois.</p>
+            
+            <div class="proposal-grid">
+              <div class="proposal-item">
+                <div class="proposal-item-title">Phase Actuelle</div>
+                <ul>
+                  <li>Trading live avec capital propre</li>
+                  <li>Validation en conditions réelles</li>
+                  <li>8 ans de développement</li>
+                  <li>Backtest 5 ans - 100+ trades</li>
+                </ul>
+              </div>
+              
+              <div class="proposal-item">
+                <div class="proposal-item-title">Objectif 2026</div>
+                <ul>
+                  <li>Levée de fonds ~50M USD</li>
+                  <li>Structure fonds professionnelle</li>
+                  <li>Reporting institutionnel</li>
+                  <li>Scalabilité contrôlée</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="english-content">
+            <p><strong>Goal:</strong> Establish privileged relationships with institutional sponsors for a future fund raising in approximately 12 months.</p>
+            
+            <div class="proposal-grid">
+              <div class="proposal-item">
+                <div class="proposal-item-title">Current Phase</div>
+                <ul>
+                  <li>Live trading with proprietary capital</li>
+                  <li>Real-market validation</li>
+                  <li>8 years of development</li>
+                  <li>5-year backtest - 100+ trades</li>
+                </ul>
+              </div>
+              
+              <div class="proposal-item">
+                <div class="proposal-item-title">2026 Objective</div>
+                <ul>
+                  <li>Fund raising ~USD 50M</li>
+                  <li>Professional fund structure</li>
+                  <li>Institutional reporting</li>
+                  <li>Controlled scalability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote">
+      "Huit années de travail méthodique valent mieux que huit mois de précipitation."<br>
+      <small>"Eight years of methodical work are worth more than eight months of haste."</small>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; padding-top: 30px; border-top: 2px solid #000">
+      <p>
+        <strong>Florian Campuzan</strong><br>
+        Sciences Po Paris • CFA Charterholder • Agréé AMF<br>
+        <em>Trader depuis les années 2000 • 8 ans de développement • Price Sequence Recognition Strategy</em><br>
+        <span style="color: #000; font-weight: 600; background: #f8f8f8; padding: 5px 15px; border-radius: 20px;">Live Trading depuis le 2 septembre 2025</span>
+      </p>
+    </div>
+</body>
+</html>
