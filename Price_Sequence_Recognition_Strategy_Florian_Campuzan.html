@@ -21,11 +21,119 @@
         * {
             box-sizing: border-box;
         }
+
+        /* MENU DE NAVIGATION DYNAMIQUE */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-black);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 3px solid var(--primary-red);
+            transition: background 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2em;
+            font-weight: 800;
+            color: var(--primary-white);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-logo span {
+            color: var(--primary-red);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 0;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 20px 16px;
+            color: var(--primary-white);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            background: rgba(198, 40, 40, 0.1);
+            border-bottom-color: var(--primary-red);
+            color: var(--primary-white);
+        }
+
+        .nav-links a.active {
+            background: rgba(198, 40, 40, 0.2);
+            border-bottom-color: var(--primary-red);
+        }
+
+        /* Burger menu pour mobile */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 8px;
+            margin-left: auto;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-white);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
         
         body {
             max-width: 880px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 80px 20px 20px 20px;
             position: relative;
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
@@ -37,7 +145,20 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Sections avec IDs pour navigation */
+        .section {
+            scroll-margin-top: 80px;
+            margin: 40px 0;
+            page-break-inside: avoid;
+            background: var(--primary-white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid var(--primary-black);
+            position: relative;
+        }
+
         .cover-page {
+            scroll-margin-top: 80px;
             text-align: center;
             page-break-after: always;
             margin-bottom: 40px;
@@ -45,6 +166,17 @@
             background: var(--primary-white);
             border-radius: 8px;
             border: 2px solid var(--primary-black);
+        }
+
+        .appendix-section {
+            scroll-margin-top: 80px;
+            margin: 50px 0;
+            page-break-before: always;
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid var(--medium-gray);
+            position: relative;
         }
 
         .cover-image {
@@ -80,16 +212,6 @@
             font-weight: 700;
             color: var(--primary-red);
             margin: 30px 0 15px 0;
-        }
-
-        .section {
-            margin: 40px 0;
-            page-break-inside: avoid;
-            background: var(--primary-white);
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid var(--primary-black);
-            position: relative;
         }
 
         .section-title {
@@ -297,16 +419,6 @@
             letter-spacing: 0.5px;
         }
 
-        .appendix-section {
-            margin: 50px 0;
-            page-break-before: always;
-            background: var(--light-gray);
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid var(--medium-gray);
-            position: relative;
-        }
-
         .appendix-title {
             background: var(--primary-black);
             color: var(--primary-white);
@@ -331,7 +443,7 @@
             background: var(--primary-red);
         }
 
-        /* FIX: Wrapper responsive pour le tableau avec scroll horizontal sur mobile */
+        /* Wrapper responsive pour le tableau avec scroll horizontal sur mobile */
         .table-wrapper {
             width: 100%;
             overflow-x: auto;
@@ -343,7 +455,6 @@
 
         .performance-table {
             width: 100%;
-            /* FIX: Min-width pour conserver la lisibilité sur mobile */
             min-width: 600px;
             border-collapse: collapse;
             margin: 0;
@@ -365,7 +476,6 @@
             font-size: 1em;
             text-align: center;
             border: none;
-            /* FIX: Éviter le retour à la ligne sur mobile */
             white-space: nowrap;
         }
 
@@ -383,7 +493,6 @@
             font-weight: 500;
             text-align: center;
             border: none;
-            /* FIX: Éviter le retour à la ligne sur mobile */
             white-space: nowrap;
         }
 
@@ -467,7 +576,7 @@
             background: var(--primary-black);
         }
 
-        /* FIX: Graphique optimisé avec aspect-ratio pour tous supports */
+        /* Graphique optimisé avec aspect-ratio pour tous supports */
         .chart-container {
             width: 100%;
             background: var(--primary-white);
@@ -498,15 +607,15 @@
             font-style: italic;
         }
 
-.chart-canvas-container {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: 500px; /* 🔥 hauteur minimum augmentée */
-    height: auto;
-}
+        .chart-canvas-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            min-height: 500px;
+            height: auto;
+        }
+
         #performanceChart {
-            /* FIX: Canvas 100% responsive sans déformation */
             width: 100% !important;
             height: 100% !important;
             max-width: 100%;
@@ -522,10 +631,59 @@
             letter-spacing: normal;
         }
 
-        /* OPTIMISATIONS MOBILE */
+        /* Responsive menu mobile */
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .nav-logo {
+                font-size: 1em;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: var(--primary-black);
+                flex-direction: column;
+                transition: left 0.3s ease;
+                padding: 0;
+                border-top: 1px solid var(--primary-red);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links a {
+                padding: 20px 25px;
+                font-size: 1em;
+                border-bottom: none;
+                border-left: 3px solid transparent;
+            }
+
+            .nav-links a:hover,
+            .nav-links a.active {
+                background: rgba(198, 40, 40, 0.2);
+                border-left-color: var(--primary-red);
+                border-bottom: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
             body {
-                padding: 15px;
+                padding: 80px 15px 20px 15px;
                 max-width: 100%;
             }
             
@@ -557,7 +715,6 @@
                 padding: 15px;
             }
 
-            /* FIX: Graphique carré sur mobile pour meilleure lisibilité */
             .chart-canvas-container {
                 aspect-ratio: 1 / 1;
             }
@@ -586,10 +743,8 @@
                 height: 120px;
             }
 
-            /* FIX: Optimisation du tableau sur mobile - taille de police réduite */
             .performance-table {
                 font-size: 0.8em;
-                /* FIX: Min-width réduite sur mobile pour s'adapter aux petits écrans */
                 min-width: 500px;
             }
 
@@ -598,7 +753,6 @@
                 padding: 8px 6px;
             }
 
-            /* FIX: Wrapper avec padding pour éviter que le contenu touche les bords */
             .table-wrapper {
                 margin: 20px -5px;
                 padding: 0 5px;
@@ -607,6 +761,10 @@
 
         /* OPTIMISATIONS IMPRESSION/PDF */
         @media print {
+            .nav-menu {
+                display: none;
+            }
+
             body {
                 max-width: none;
                 padding: 15mm;
@@ -619,7 +777,6 @@
                 margin: 15px 0;
             }
 
-            /* FIX: Aspect ratio fixe pour impression */
             .chart-canvas-container {
                 aspect-ratio: 16 / 9;
                 height: auto;
@@ -634,13 +791,11 @@
                 margin: 20px 0;
             }
 
-            /* Suppression des ombres pour l'impression */
             .section, .stat-box, .method-card, .summary-card, .chart-container {
                 box-shadow: none !important;
                 border: 1px solid var(--primary-black) !important;
             }
 
-            /* FIX: Tableau optimisé pour impression */
             .table-wrapper {
                 overflow: visible;
                 border: none;
@@ -654,7 +809,6 @@
 
         /* OPTIMISATIONS ÉCRANS LARGES */
         @media (min-width: 1200px) {
-            /* FIX: Aspect ratio maintenu même sur grands écrans */
             .chart-canvas-container {
                 aspect-ratio: 16 / 9;
                 max-height: 500px;
@@ -663,14 +817,36 @@
     </style>
 </head>
 <body>
-    <div class="cover-page">
+    <!-- MENU DE NAVIGATION DYNAMIQUE -->
+    <nav class="nav-menu">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">PSR <span>Strategy</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#performance">Performance</a></li>
+                <li><a href="#scalability">Scalability</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#ratios">Ratios</a></li>
+                <li><a href="#purpose">Purpose</a></li>
+                <li><a href="#appendix">Appendix</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cover-page" id="home">
         <h1 class="main-title">Price Sequence Recognition Strategy<br>US Nano, Microcaps & Midcaps</h1>
         <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan" class="cover-image">
         <div class="author-name">Florian Campuzan</div>
         <div class="tagline">Pattern recognition and probabilistic trend following on regulated US equities</div>
     </div>
 
-    <div class="section">
+    <div class="section" id="executive-summary">
         <h2 class="section-title">
             <span class="section-title-number">1</span>
             Executive Summary
@@ -696,7 +872,7 @@
         </ul>
     </div>
 
-    <div class="section">
+    <div class="section" id="performance">
         <h2 class="section-title">
             <span class="section-title-number">2</span>
             Strategy Performance & Key Metrics* (Live IBKR Trading Account)
@@ -743,7 +919,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="scalability">
         <h2 class="section-title">
             <span class="section-title-number">3</span>
             Scalability & Performance Projections
@@ -778,7 +954,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="methodology">
         <h2 class="section-title">
             <span class="section-title-number">4</span>
             Methodology
@@ -811,7 +987,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="ratios">
         <h2 class="section-title">
             <span class="section-title-number">5</span>
             Institutional Interpretation of Ratios
@@ -838,7 +1014,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="purpose">
         <h2 class="section-title">
             <span class="section-title-number">6</span>
             Purpose of the Pitch
@@ -862,7 +1038,7 @@
         </p>
     </div>
 
-    <div class="appendix-section">
+    <div class="appendix-section" id="appendix">
         <h2 class="appendix-title">
             APPENDIX - Monthly Performance Detail vs Benchmark
         </h2>
@@ -872,7 +1048,6 @@
             <strong>Note:</strong> All performance figures represent real trading results from an Interactive Brokers (IBKR) account with no leverage used.
         </div>
 
-        <!-- FIX: Wrapper responsive ajouté autour du tableau -->
         <div class="table-wrapper">
             <table class="performance-table">
                 <thead>
@@ -909,12 +1084,11 @@
                 <div class="summary-label"><strong>Cumulative Strategy Performance</strong><br>Real IBKR account, no leverage</div>
             </div>
             <div class="summary-card">
-                <div class="summary-value positive">+4.35%</div>
+                <div class="summary-value positive">+1.96%</div>
                 <div class="summary-label"><strong>Nasdaq Composite Performance</strong><br>September-October 2025 period</div>
             </div>
         </div>
 
-        <!-- FIX: Graphique optimisé avec aspect-ratio responsive -->
         <div class="chart-container">
             <div class="chart-title">Comparative Indexed Performance – Strategy vs Nasdaq (Sep–Oct 2025)</div>
             <div class="chart-subtitle">Indexed to 100 on Sep 2, 2025</div>
@@ -1034,7 +1208,10 @@
                                 size: 12,
                                 weight: '600'
                             },
-                            color: '#000000',
+                            color: function(context) {
+                                // FIX: PSR Strategy en rouge comme la courbe
+                                return context.datasetIndex === 0 ? '#C62828' : '#000000';
+                            },
                             usePointStyle: true,
                             pointStyle: 'line',
                             padding: 20
@@ -1115,8 +1292,9 @@
                             color: 'rgba(198, 40, 40, 0.1)',
                             drawBorder: false
                         },
+                        // FIX: Échelle prolongée jusqu'à 200
                         min: 90,
-                        max: 165
+                        max: 200
                     },
                     y1: {
                         type: 'linear',
@@ -1161,6 +1339,90 @@
         // Redimensionnement automatique
         window.addEventListener('resize', function() {
             chart.resize();
+        });
+
+        // SCRIPT POUR LE MENU DE NAVIGATION DYNAMIQUE
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            const navLinksItems = document.querySelectorAll('.nav-links a');
+
+            // Toggle menu mobile
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Fermer le menu mobile lors du clic sur un lien
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function() {
+                    navToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Navigation active basée sur le scroll
+            const sections = document.querySelectorAll('section, .section, .cover-page, .appendix-section');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Retirer la classe active de tous les liens
+                            navLinksItems.forEach(link => link.classList.remove('active'));
+                            
+                            // Ajouter la classe active au lien correspondant
+                            const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+                            if (activeLink) {
+                                activeLink.classList.add('active');
+                            }
+                        }
+                    });
+                },
+                {
+                    threshold: 0.3,
+                    rootMargin: '-80px 0px -50% 0px'
+                }
+            );
+
+            // Observer toutes les sections
+            sections.forEach(section => {
+                if (section.id) {
+                    observer.observe(section);
+                }
+            });
+
+            // Smooth scroll personnalisé pour gérer le menu fixe
+            navLinksItems.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Effet de transparence du menu au scroll
+            let lastScrollTop = 0;
+            const navMenu = document.querySelector('.nav-menu');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > 100) {
+                    navMenu.style.background = 'rgba(0, 0, 0, 0.95)';
+                } else {
+                    navMenu.style.background = 'var(--primary-black)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
         });
     </script>
 </body>
