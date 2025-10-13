@@ -1087,7 +1087,7 @@
     </p>
 
     <p>
-        While the current live phase is still <strong>statistically non-representative</strong> due to its short duration, it already exhibits <strong>robust structural characteristics</strong> consistent with the backtested framework. My objective with this ongoing report is to <strong>document performance weekly</strong> to progressively build a statistically meaningful record and demonstrate the strategy’s <strong>reproducibility over time</strong>.
+        While the current live phase is still <strong>statistically non-representative</strong> due to its short duration, it already exhibits <strong>robust structural characteristics</strong> consistent with the backtested framework. My objective with this ongoing report is to <strong>document performance weekly</strong> to progressively build a statistically meaningful record and demonstrate the strategy's <strong>reproducibility over time</strong>.
     </p>
 
     <p>
@@ -1180,6 +1180,14 @@
                 <div class="trading-metric-value">16.29</div>
                 <div class="trading-metric-label">RISK REWARD RATIO<br>(Period)</div>
             </div>
+            <div class="trading-metric-box">
+                <div class="trading-metric-value">15.00%</div>
+                <div class="trading-metric-label">POSITION SIZE<br>(Per Trade)</div>
+            </div>
+            <div class="trading-metric-box">
+                <div class="trading-metric-value">0.13</div>
+                <div class="trading-metric-label">NASDAQ CORRELATION<br>(Period)</div>
+            </div>
         </div>
 
         <div class="performance-chart">
@@ -1195,7 +1203,7 @@
             <p><strong>Performance Analysis:</strong> The strategy delivered 56.10% return over 29 trading days with exceptional risk-adjusted metrics (Sharpe: 8.23, Sortino: 15.41). Downside volatility is contained at 3.62% versus total volatility of 6.78%, demonstrating effective risk management in live trading conditions.</p>
             <p><strong>Trading Statistics:</strong> With 20 trades executed during the period, the strategy achieved an 15% hit ratio (17 losers vs 3 winners) and an exceptional risk-reward ratio of 16.29, highlighting the asymmetric return profile and high-conviction approach.</p>
             
-<p><strong>Note on Position Sizing & Volatility:</strong> The current position sizing (around 15%) is intentionally elevated during this proprietary phase, which explains the higher daily volatility observed. The strategy is readily adjustable for institutional deployment by reducing maximum exposure to 5%, expected to lower volatility roughly threefold while preserving the same asymmetric return characteristics.</p>        </div>
+<p><strong>Position Sizing & Correlation:</strong> The current position sizing (around 15%) is intentionally elevated during this proprietary phase, which explains the higher daily volatility observed. The strategy exhibits very low correlation with the Nasdaq (0.13), confirming its decorrelated nature and potential for portfolio diversification.</p>        </div>
     </div>
 
     <div class="section" id="scalability">
@@ -1297,6 +1305,12 @@
 <strong>Hit Ratio 15.00%:</strong> A structurally low success rate inherent to breakout strategies, where a few large winners offset numerous small losses. Despite the limited number of trades and a naturally high proportion of losing ones, this ratio represents a structural floor — reassuring for investors, as profitability is achieved without relying on frequent wins.                </li>
                 <li>
                     <strong>Risk-Reward 16.29:</strong> Outstanding asymmetric return profile with controlled risk exposure
+                </li>
+                <li>
+                    <strong>Position Size 15.00%:</strong> Current elevated sizing for demonstration purposes. Institutional implementation would cap at 5% for reduced volatility.
+                </li>
+                <li>
+                    <strong>Nasdaq Correlation 0.13:</strong> Very low correlation confirms strategy's decorrelated nature and diversification benefits for traditional portfolios.
                 </li>
             </ul>
         </div>
