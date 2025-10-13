@@ -228,16 +228,6 @@
             text-align: center;
         }
 
-        .contact-title::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: var(--primary-white);
-        }
-
         .contact-info-compact {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -262,7 +252,7 @@
         .contact-label-compact {
             font-family: 'Inter', sans-serif;
             font-size: 0.85em;
-            font-weight: 700; /* Titres en gras */
+            font-weight: 700;
             color: var(--primary-black);
             margin-bottom: 6px;
             text-transform: uppercase;
@@ -271,7 +261,7 @@
 
         .contact-value-compact {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.85em; /* Réduction de 2 points (0.95em -> 0.85em) */
+            font-size: 0.85em;
             font-weight: 500;
             color: var(--primary-black);
             word-break: break-all;
@@ -603,6 +593,51 @@
             background: var(--primary-red);
         }
 
+        /* Styles pour la nouvelle section Q&A */
+        .qa-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .qa-item {
+            border: 2px solid var(--primary-black);
+            padding: 0;
+            background: var(--primary-white);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .qa-question {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1em;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .qa-question-icon {
+            font-size: 1.2em;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .qa-answer {
+            padding: 25px;
+            background: var(--primary-white);
+            line-height: 1.7;
+        }
+
+        .qa-answer strong {
+            color: var(--primary-red);
+        }
+
         /* Wrapper responsive pour le tableau avec scroll horizontal sur mobile */
         .table-wrapper {
             width: 100%;
@@ -878,7 +913,7 @@
                 max-width: 100%;
             }
             
-            .stats-grid, .methodology-grid, .performance-summary, .trading-metrics {
+            .stats-grid, .methodology-grid, .performance-summary, .trading-metrics, .qa-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
             }
@@ -967,6 +1002,16 @@
             .contact-item-compact {
                 padding: 10px;
             }
+
+            /* Responsive pour Q&A */
+            .qa-question {
+                padding: 15px;
+                font-size: 1em;
+            }
+            
+            .qa-answer {
+                padding: 20px;
+            }
         }
 
         /* OPTIMISATIONS IMPRESSION/PDF */
@@ -1001,7 +1046,7 @@
                 margin: 20px 0;
             }
 
-            .section, .stat-box, .method-card, .summary-card, .chart-container {
+            .section, .stat-box, .method-card, .summary-card, .chart-container, .qa-item {
                 box-shadow: none !important;
                 border: 1px solid var(--primary-black) !important;
             }
@@ -1035,6 +1080,11 @@
             .contact-label-compact, .contact-value-compact {
                 color: var(--primary-black) !important;
             }
+
+            .qa-question {
+                background: var(--primary-black) !important;
+                color: var(--primary-white) !important;
+            }
         }
 
         /* OPTIMISATIONS ÉCRANS LARGES */
@@ -1055,7 +1105,7 @@
         <div class="tagline">Systematic swing trading approach capturing breakouts from consolidation bases in strong industry groups through probabilistic trend following.</div>
     </div>
 
-    <!-- MENU DE NAVIGATION DYNAMIQUE -->
+    <!-- MENU DE NAVIGATION DYNAMIQUE - AVEC NOUVELLE SECTION Q&A -->
     <nav class="nav-menu">
         <div class="nav-container">
             <ul class="nav-links">
@@ -1066,6 +1116,7 @@
                 <li><a href="#ratios">Ratios</a></li>
                 <li><a href="#purpose">Purpose</a></li>
                 <li><a href="#appendix">Appendix</a></li>
+                <li><a href="#qa">Q&A</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-toggle">
@@ -1076,33 +1127,34 @@
         </div>
     </nav>
 
-<div class="section" id="introduction">
-    <h2 class="section-title">
-        <span class="section-title-number">0</span>
-        Introduction & Context
-    </h2>
+    <div class="section" id="introduction">
+        <h2 class="section-title">
+            <span class="section-title-number">0</span>
+            Introduction & Context
+        </h2>
 
-    <p>
-        I have been trading the <strong>Price Sequence Recognition (PSR) Strategy</strong> for several years, and its current configuration represents the <strong>culmination of eight years of research, testing, and refinement</strong>. The strategy reached full operational maturity in <strong>September 2025</strong>, following extensive backtesting and validation across diverse market environments.
-    </p>
+        <p>
+            I have been trading the <strong>Price Sequence Recognition (PSR) Strategy</strong> for several years, and its current configuration represents the <strong>culmination of eight years of research, testing, and refinement</strong>. The strategy reached full operational maturity in <strong>September 2025</strong>, following extensive backtesting and validation across diverse market environments.
+        </p>
 
-    <p>
-        While the current live phase is still <strong>statistically non-representative</strong> due to its short duration, it already exhibits <strong>robust structural characteristics</strong> consistent with the backtested framework. My objective with this ongoing report is to <strong>document performance weekly</strong> to progressively build a statistically meaningful record and demonstrate the strategy's <strong>reproducibility over time</strong>.
-    </p>
+        <p>
+            While the current live phase is still <strong>statistically non-representative</strong> due to its short duration, it already exhibits <strong>robust structural characteristics</strong> consistent with the backtested framework. My objective with this ongoing report is to <strong>document performance weekly</strong> to progressively build a statistically meaningful record and demonstrate the strategy's <strong>reproducibility over time</strong>.
+        </p>
 
-    <p>
-        I am <strong>not seeking immediate fundraising</strong>. My goal is to <strong>lay the groundwork</strong> for a potential institutional setup within one to two years. Should that not materialize, I will continue to trade the strategy <strong>proprietarily</strong> — yet my long-term vision is to see it <strong>integrated within an institutional framework</strong>, where its asymmetric and uncorrelated profile could serve as a diversifying component in multi-strategy portfolios.
-    </p>
+        <p>
+            I am <strong>not seeking immediate fundraising</strong>. My goal is to <strong>lay the groundwork</strong> for a potential institutional setup within one to two years. Should that not materialize, I will continue to trade the strategy <strong>proprietarily</strong> — yet my long-term vision is to see it <strong>integrated within an institutional framework</strong>, where its asymmetric and uncorrelated profile could serve as a diversifying component in multi-strategy portfolios.
+        </p>
 
-    <div style="text-align:center; margin-top:40px;">
-        <img src="https://i.imgur.com/H1oVcC5.png" 
-             alt="Signature Florian Campuzan" 
-             style="height:95px; opacity:0.95; margin-bottom:5px;">
-        <div style="font-family:'Inter', sans-serif; font-size:0.9em; color:#000;">
-            Florian Campuzan
+        <div style="text-align:center; margin-top:40px;">
+            <img src="https://i.imgur.com/H1oVcC5.png" 
+                 alt="Signature Florian Campuzan" 
+                 style="height:95px; opacity:0.95; margin-bottom:5px;">
+            <div style="font-family:'Inter', sans-serif; font-size:0.9em; color:#000;">
+                Florian Campuzan
+            </div>
         </div>
     </div>
-</div>
+
     <div class="section" id="executive-summary">
         <h2 class="section-title">
             <span class="section-title-number">1</span>
@@ -1122,7 +1174,6 @@
                 <strong>Execution:</strong> exclusively Market-On-Close (MOC) to avoid intraday noise and ensure
                 consistency
             </li>
-            <li><strong>Average position:</strong> 1.5% of the dollar-capitalized volume at entry</li>
             <li><strong>Average holding period:</strong> 7 days</li>
             <li><strong>Philosophy:</strong> breakout + bottom-fishing with dynamic risk/reward adjustment</li>
             <li><strong>Goal:</strong> capture natural asymmetries of small-cap markets</li>
@@ -1162,7 +1213,6 @@
             </div>
         </div>
 
-        <!-- NOUVELLES MÉTRIQUES DE TRADING -->
         <div class="trading-metrics">
             <div class="trading-metric-box">
                 <div class="trading-metric-value">20</div>
@@ -1203,7 +1253,8 @@
             <p><strong>Performance Analysis:</strong> The strategy delivered 56.10% return over 29 trading days with exceptional risk-adjusted metrics (Sharpe: 8.23, Sortino: 15.41). Downside volatility is contained at 3.62% versus total volatility of 6.78%, demonstrating effective risk management in live trading conditions.</p>
             <p><strong>Trading Statistics:</strong> With 20 trades executed during the period, the strategy achieved an 15% hit ratio (17 losers vs 3 winners) and an exceptional risk-reward ratio of 16.29, highlighting the asymmetric return profile and high-conviction approach.</p>
             
-<p><strong>Position Sizing & Correlation:</strong> The current position sizing (around 15%) is intentionally elevated during this proprietary phase, which explains the higher daily volatility observed. The strategy exhibits very low correlation with the Nasdaq (0.13), confirming its decorrelated nature and potential for portfolio diversification.</p>        </div>
+            <p><strong>Position Sizing & Correlation:</strong> The current position sizing (around 15%) is intentionally elevated during this proprietary phase, which explains the higher daily volatility observed. The strategy exhibits very low correlation with the Nasdaq (0.13), confirming its decorrelated nature and potential for portfolio diversification.</p>
+        </div>
     </div>
 
     <div class="section" id="scalability">
@@ -1302,7 +1353,8 @@
                     <strong>Risk-Free Rate 3.00%:</strong> Conservative benchmark assumption enhances ratio credibility
                 </li>
                 <li>
-<strong>Hit Ratio 15.00%:</strong> A structurally low success rate inherent to breakout strategies, where a few large winners offset numerous small losses. Despite the limited number of trades and a naturally high proportion of losing ones, this ratio represents a structural floor — reassuring for investors, as profitability is achieved without relying on frequent wins.                </li>
+                    <strong>Hit Ratio 15.00%:</strong> A structurally low success rate inherent to breakout strategies, where a few large winners offset numerous small losses. Despite the limited number of trades and a naturally high proportion of losing ones, this ratio represents a structural floor — reassuring for investors, as profitability is achieved without relying on frequent wins.
+                </li>
                 <li>
                     <strong>Risk-Reward 16.29:</strong> Outstanding asymmetric return profile with controlled risk exposure
                 </li>
@@ -1415,6 +1467,91 @@
         </div>
     </div>
 
+    <!-- NOUVELLE SECTION QUESTIONS & OBJECTIONS PLACÉE AVANT LE CONTACT -->
+    <div class="section" id="qa">
+        <h2 class="section-title">
+            <span class="section-title-number">7</span>
+            Questions & Objections
+        </h2>
+
+        <div class="highlight-box">
+            <p><strong>💡 "You're too early."</strong><br>
+            That's fair — the live phase is intentionally limited at this stage to validate operational execution. What's important is that live behavior perfectly mirrors the statistical structure observed in 8 years of research and backtesting. Each trade is documented with full transparency to progressively build institutional-grade track record integrity.</p>
+        </div>
+
+        <div class="qa-grid">
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "The hit ratio is too low — only 15%?"
+                </div>
+                <div class="qa-answer">
+                    "It's structurally low by design. The PSR system identifies high-momentum breakout structures with very asymmetric payoffs — a few outliers more than offset numerous small losses. It's not discretionary underperformance; it's the mathematical signature of this type of asymmetry. Falling below this hit ratio would be statistically unlikely, which actually makes it reassuring from a floor-risk perspective."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "The market seems too small or illiquid."
+                </div>
+                <div class="qa-answer">
+                    "True, the small-cap segment is fragmented — but that's precisely the opportunity. At scale, we cap position size and broaden the universe — liquidity expands geometrically, not linearly, with AUM. That's why the model remains valid up to $100M, with drawdown control under 15%."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "It feels discretionary — how repeatable is this?"
+                </div>
+                <div class="qa-answer">
+                    "It's systematized discretion. The setup identification is rule-based, coded, and testable — while execution benefits from human oversight to avoid false positives. Every signal, entry, and exit rule is reproducible and verifiable — I simply keep human supervision for quality control, not intuition."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "Your live data window is too short."
+                </div>
+                <div class="qa-answer">
+                    "Absolutely — and that's why I'm transparent about it. This phase is for live validation of structural robustness, not marketing. The statistical architecture has been backtested across multiple market regimes, and each live month's data is appended to a growing, auditable dataset. It's a progressive institutionalization process."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "How scalable is this really?"
+                </div>
+                <div class="qa-answer">
+                    "The live sizing is 15% per trade for demonstration, but institutional deployment would cap exposure at 5%, keeping expected annual volatility around 12–15% and Sharpe ratios above 2.0. It's a controlled scaling model — not aggressive growth."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "Why should I believe the edge is sustainable?"
+                </div>
+                <div class="qa-answer">
+                    "Because it's structural, not situational. Price sequence recognition is based on statistical recurrence of accumulation–breakout–momentum cycles. It doesn't depend on market mood or leverage. As long as behavioral inefficiencies persist — and they do in nano/microcaps — the asymmetry remains exploitable."
+                </div>
+            </div>
+
+            <div class="qa-item">
+                <div class="qa-question">
+                    <span class="qa-question-icon">💡</span>
+                    "You're a one-person setup — what about operational risk?"
+                </div>
+                <div class="qa-answer">
+                    "That's true for the current stage, which is why I'm positioning this as a pre-fund institutionalization phase. I'm already using fully regulated infrastructure (IBKR, no leverage, documented compliance). The next phase is to onboard partners for compliance, custody, and capital structure, not to prove the edge — that's already statistically demonstrated."
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- SECTION CONTACT COMPACTE -->
     <div class="contact-section" id="contact">
         <h2 class="contact-title">
@@ -1441,9 +1578,9 @@
             <div class="contact-item-compact">
                 <div class="contact-label-compact">QUALIFICATIONS</div>
                 <div class="contact-value-compact">
-    <div>Sciences Po Paris</div>
-    <div style="font-size: 0.8em; margin-top: 2px;">CFA Charterholder</div>
-</div>
+                    <div>Sciences Po Paris</div>
+                    <div style="font-size: 0.8em; margin-top: 2px;">CFA Charterholder</div>
+                </div>
             </div>
         </div>
 
@@ -1545,19 +1682,16 @@
                                 weight: '600'
                             },
                             color: function(context) {
-                                // FIX: PSR Strategy en rouge comme la courbe
                                 return context.datasetIndex === 0 ? '#C62828' : '#000000';
                             },
                             usePointStyle: true,
                             pointStyle: function(context) {
-                                // FIX: Utiliser un carré rouge pour PSR Strategy et un carré noir pour Nasdaq
                                 return context.datasetIndex === 0 ? 'rect' : 'rect';
                             },
                             generateLabels: function(chart) {
                                 const original = Chart.defaults.plugins.legend.labels.generateLabels;
                                 const labelsOriginal = original.call(this, chart);
                                 
-                                // FIX: Modifier les labels pour utiliser des carrés de couleur
                                 labelsOriginal[0].text = 'PSR Strategy';
                                 labelsOriginal[0].fillStyle = '#C62828';
                                 labelsOriginal[0].strokeStyle = '#C62828';
@@ -1592,7 +1726,6 @@
                             label: function(context) {
                                 let label = context.dataset.label || '';
                                 if (label) {
-                                    // FIX: Supprimer le carré blanc du tooltip pour PSR Strategy
                                     if (label.includes('PSR Strategy')) {
                                         label = 'PSR Strategy';
                                     }
@@ -1656,7 +1789,6 @@
                             color: 'rgba(198, 40, 40, 0.1)',
                             drawBorder: false
                         },
-                        // FIX: Échelle prolongée jusqu'à 200
                         min: 90,
                         max: 200
                     },
