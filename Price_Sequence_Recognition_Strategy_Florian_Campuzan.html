@@ -802,6 +802,17 @@
             border-radius: 2px;
         }
 
+        /* Style pour le carré noir après Nasdaq */
+        .nasdaq-black-square {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary-black);
+            margin: 0 4px;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+
         .psr-with-square {
             display: inline-flex;
             align-items: center;
@@ -1336,7 +1347,7 @@
         </div>
 
         <div class="chart-container">
-            <div class="chart-title">Comparative Indexed Performance – PSR Strategy (<span class="psr-red-square"></span>) vs Nasdaq (Sep–Oct 2025)</div>
+            <div class="chart-title">Comparative Indexed Performance – PSR Strategy (<span class="psr-red-square"></span>) vs Nasdaq (<span class="nasdaq-black-square"></span>) (Sep–Oct 2025)</div>
             <div class="chart-subtitle">Indexed to 100 on Sep 2, 2025</div>
             <div class="chart-canvas-container">
                 <canvas id="performanceChart"></canvas>
@@ -1489,18 +1500,23 @@
                             },
                             usePointStyle: true,
                             pointStyle: function(context) {
-                                // FIX: Utiliser un carré rouge pour PSR Strategy
-                                return context.datasetIndex === 0 ? 'rect' : 'line';
+                                // FIX: Utiliser un carré rouge pour PSR Strategy et un carré noir pour Nasdaq
+                                return context.datasetIndex === 0 ? 'rect' : 'rect';
                             },
                             generateLabels: function(chart) {
                                 const original = Chart.defaults.plugins.legend.labels.generateLabels;
                                 const labelsOriginal = original.call(this, chart);
                                 
-                                // FIX: Modifier le label PSR Strategy pour utiliser un carré rouge
+                                // FIX: Modifier les labels pour utiliser des carrés de couleur
                                 labelsOriginal[0].text = 'PSR Strategy';
                                 labelsOriginal[0].fillStyle = '#C62828';
                                 labelsOriginal[0].strokeStyle = '#C62828';
                                 labelsOriginal[0].pointStyle = 'rect';
+                                
+                                labelsOriginal[1].text = 'Nasdaq Composite';
+                                labelsOriginal[1].fillStyle = '#000000';
+                                labelsOriginal[1].strokeStyle = '#000000';
+                                labelsOriginal[1].pointStyle = 'rect';
                                 
                                 return labelsOriginal;
                             },
