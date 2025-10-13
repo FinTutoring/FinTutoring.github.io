@@ -1050,7 +1050,7 @@
     <div class="section" id="performance">
         <h2 class="section-title">
             <span class="section-title-number">2</span>
-            Strategy Performance & Key Metrics* (Live IBKR Trading Account)
+            Strategy Performance & Key Metrics* 
         </h2>
 
         <div class="stats-grid">
@@ -1359,7 +1359,7 @@
             data: {
                 labels: dateLabels,
                 datasets: [{
-                    label: 'PSR Strategy (■)',
+                    label: 'PSR Strategy',
                     data: strategyIndexed,
                     borderColor: '#C62828',
                     backgroundColor: 'rgba(198, 40, 40, 0.05)',
@@ -1417,7 +1417,22 @@
                                 return context.datasetIndex === 0 ? '#C62828' : '#000000';
                             },
                             usePointStyle: true,
-                            pointStyle: 'line',
+                            pointStyle: function(context) {
+                                // FIX: Utiliser un carré rouge pour PSR Strategy
+                                return context.datasetIndex === 0 ? 'rect' : 'line';
+                            },
+                            generateLabels: function(chart) {
+                                const original = Chart.defaults.plugins.legend.labels.generateLabels;
+                                const labelsOriginal = original.call(this, chart);
+                                
+                                // FIX: Modifier le label PSR Strategy pour utiliser un carré rouge
+                                labelsOriginal[0].text = 'PSR Strategy';
+                                labelsOriginal[0].fillStyle = '#C62828';
+                                labelsOriginal[0].strokeStyle = '#C62828';
+                                labelsOriginal[0].pointStyle = 'rect';
+                                
+                                return labelsOriginal;
+                            },
                             padding: 20
                         }
                     },
@@ -1438,7 +1453,15 @@
                         },
                         callbacks: {
                             label: function(context) {
-                                return context.dataset.label + ': ' + context.parsed.y.toFixed(2);
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    // FIX: Supprimer le carré blanc du tooltip pour PSR Strategy
+                                    if (label.includes('PSR Strategy')) {
+                                        label = 'PSR Strategy';
+                                    }
+                                    label += ': ' + context.parsed.y.toFixed(2);
+                                }
+                                return label;
                             }
                         }
                     }
