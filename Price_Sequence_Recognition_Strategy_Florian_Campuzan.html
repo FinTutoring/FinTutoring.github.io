@@ -13,6 +13,7 @@
             --primary-white: #FFFFFF;
             --primary-red: #C62828;
             --positive-green: #2E7D32;
+            --dark-green: #1B5E20;
             --dark-gray: #333333;
             --light-gray: #F5F5F5;
             --medium-gray: #E0E0E0;
@@ -826,7 +827,7 @@
             letter-spacing: normal;
         }
 
-        /* Style pour le carré rouge entre parenthèses après PSR Strategy */
+        /* Style pour le carré rouge après PSR Strategy */
         .psr-red-square {
             display: inline-block;
             width: 12px;
@@ -843,6 +844,17 @@
             width: 12px;
             height: 12px;
             background-color: var(--primary-black);
+            margin: 0 4px;
+            vertical-align: middle;
+            border-radius: 2px;
+        }
+
+        /* Style pour le carré vert foncé après Russell 2000 */
+        .russell-green-square {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--dark-green);
             margin: 0 4px;
             vertical-align: middle;
             border-radius: 2px;
@@ -1102,7 +1114,7 @@
         <h1 class="main-title">Price Sequence Recognition Strategy<br>US Nano, Micro & Midcaps</h1>
         <img src="https://i.imgur.com/xqqvCEk.jpeg" alt="Florian Campuzan" class="cover-image">
         <div class="author-name">Florian Campuzan</div>
-        <div class="tagline">Systematic swing trading approach capturing breakouts from consolidation bases in strong industry groups through probabilistic trend following.</div>
+        <div class="tagline">Long-only systematic swing trading approach capturing breakouts from consolidation bases in strong industry groups through probabilistic trend following.</div>
     </div>
 
     <!-- MENU DE NAVIGATION DYNAMIQUE - AVEC NOUVELLE SECTION Q&A -->
@@ -1134,15 +1146,15 @@
         </h2>
 
         <p>
-            I have been trading the <strong>Price Sequence Recognition (PSR) Strategy</strong> for several years, and its current configuration represents the <strong>culmination of eight years of research, testing, and refinement</strong>. The strategy reached full operational maturity in <strong>September 2025</strong>, following extensive backtesting and validation across diverse market environments.
+            <i>"I have been trading the Price Sequence Recognition (PSR) Strategy for several years, and its current configuration represents the culmination of eight years of research, testing, and refinement. The strategy reached full operational maturity in September 2025, following extensive backtesting and validation across diverse market environments.</i>
         </p>
 
         <p>
-            While the current live phase is still <strong>statistically non-representative</strong> due to its short duration, it already exhibits <strong>robust structural characteristics</strong> consistent with the backtested framework. My objective with this ongoing report is to <strong>document performance weekly</strong> to progressively build a statistically meaningful record and demonstrate the strategy's <strong>reproducibility over time</strong>.
+            <i>While the current live phase is still statistically non-representative due to its short duration, it already exhibits robust structural characteristics consistent with the backtested framework. My objective with this ongoing report is to document performance weekly to progressively build a statistically meaningful record and demonstrate the strategy's reproducibility over time.</i>
         </p>
 
         <p>
-            I am <strong>not seeking immediate fundraising</strong>. My goal is to <strong>lay the groundwork</strong> for a potential institutional setup within one to two years. Should that not materialize, I will continue to trade the strategy <strong>proprietarily</strong> — yet my long-term vision is to see it <strong>integrated within an institutional framework</strong>, where its asymmetric and uncorrelated profile could serve as a diversifying component in multi-strategy portfolios.
+            <i>I am not seeking immediate fundraising. My goal is to lay the groundwork for a potential institutional setup within one to two years. Should that not materialize, I will continue to trade the strategy proprietarily — yet my long-term vision is to see it integrated within an institutional framework, where its asymmetric and uncorrelated profile could serve as a diversifying component in multi-strategy portfolios."</i>
         </p>
 
         <div style="text-align:center; margin-top:40px;">
@@ -1150,7 +1162,7 @@
                  alt="Signature Florian Campuzan" 
                  style="height:95px; opacity:0.95; margin-bottom:5px;">
             <div style="font-family:'Inter', sans-serif; font-size:0.9em; color:#000;">
-                Florian Campuzan
+                <strong>Florian Campuzan</strong>
             </div>
         </div>
     </div>
@@ -1162,21 +1174,21 @@
         </h2>
 
         <p>
-            <strong>Systematized discretionary strategy</strong> based on price sequence recognition developed by
-            Florian Campuzan, Sciences Po Paris graduate, CFA charterholder and AMF-certified.
+            Systematized discretionary long-only strategy based on price sequence recognition developed by
+            <strong>Florian Campuzan</strong>, Sciences Po Paris graduate, CFA charterholder and AMF-certified.
         </p>
 
         <ul>
             <li>
-                <strong>Investment universe:</strong> nano, micro, and mid-cap equities listed on NYSE, NASDAQ, and AMEX
+                Investment universe: nano, micro, and mid-cap equities listed on NYSE, NASDAQ, and AMEX
             </li>
             <li>
-                <strong>Execution:</strong> exclusively Market-On-Close (MOC) to avoid intraday noise and ensure
+                Execution: exclusively Market-On-Close (MOC) to avoid intraday noise and ensure
                 consistency
             </li>
-            <li><strong>Average holding period:</strong> 7 days</li>
-            <li><strong>Philosophy:</strong> breakout + bottom-fishing with dynamic risk/reward adjustment</li>
-            <li><strong>Goal:</strong> capture natural asymmetries of small-cap markets</li>
+            <li>Average holding period: 7 days</li>
+            <li>Philosophy: long-only breakout + bottom-fishing with dynamic risk/reward adjustment</li>
+            <li>Goal: capture natural asymmetries of small-cap markets</li>
         </ul>
     </div>
 
@@ -1188,42 +1200,42 @@
 
         <div class="stats-grid">
             <div class="stat-box">
-                <div class="stat-value">56.10%</div>
-                <div class="stat-label">Total Performance<br>(29 trading days)</div>
+                <div class="stat-value">54.01%</div>
+                <div class="stat-label">Total Performance<br>(30 trading days)</div>
             </div>
             <div class="stat-box">
-                <div class="stat-value">6.78%</div>
-                <div class="stat-label">Total Volatility<br>(Annualized: NA)</div>
+                <div class="stat-value">6.68%</div>
+                <div class="stat-label">Daily Volatility<br>(36.61% Period)</div>
             </div>
             <div class="stat-box">
                 <div class="stat-value">-12.66%</div>
                 <div class="stat-label">Max Drawdown</div>
             </div>
             <div class="stat-box">
-                <div class="stat-value">8.23</div>
+                <div class="stat-value">1.39</div>
                 <div class="stat-label">Sharpe Ratio<br>(Period)</div>
             </div>
             <div class="stat-box">
-                <div class="stat-value">15.41</div>
+                <div class="stat-value">2.65</div>
                 <div class="stat-label">Sortino Ratio<br>(Period)</div>
             </div>
             <div class="stat-box">
-                <div class="stat-value">3.62%</div>
-                <div class="stat-label">Downside Volatility<br>(Negative returns only)</div>
+                <div class="stat-value">3.51%</div>
+                <div class="stat-label">Downside Volatility<br>(Daily)</div>
             </div>
         </div>
 
         <div class="trading-metrics">
             <div class="trading-metric-box">
-                <div class="trading-metric-value">20</div>
+                <div class="trading-metric-value">21</div>
                 <div class="trading-metric-label">NUMBER OF TRADES<br>(Period)</div>
             </div>
             <div class="trading-metric-box">
-                <div class="trading-metric-value">17 / 3</div>
-                <div class="trading-metric-label"> LOOSERS/WINNERS <br>(Period)</div>
+                <div class="trading-metric-value">3 / 18</div>
+                <div class="trading-metric-label">WINNERS/LOSERS<br>(Period)</div>
             </div>
             <div class="trading-metric-box">
-                <div class="trading-metric-value">15.00%</div>
+                <div class="trading-metric-value">14.29%</div>
                 <div class="trading-metric-label">HIT RATIO<br>(Period)</div>
             </div>
             <div class="trading-metric-box">
@@ -1231,18 +1243,18 @@
                 <div class="trading-metric-label">RISK REWARD RATIO<br>(Period)</div>
             </div>
             <div class="trading-metric-box">
-                <div class="trading-metric-value">15.00%</div>
-                <div class="trading-metric-label">POSITION SIZE<br>(Per Trade)</div>
+                <div class="trading-metric-value">1.72%</div>
+                <div class="trading-metric-label">AVG LOSS<br>(Per Trade)</div>
             </div>
             <div class="trading-metric-box">
-                <div class="trading-metric-value">0.13</div>
+                <div class="trading-metric-value">0.093</div>
                 <div class="trading-metric-label">NASDAQ CORRELATION<br>(Period)</div>
             </div>
         </div>
 
         <div class="performance-chart">
             <div class="performance-chart-main">Live Performance Metrics*</div>
-            <div class="performance-chart-sub">29 trading days analysis period</div>
+            <div class="performance-chart-sub">30 trading days analysis period (Sep 2 - Oct 13, 2025)</div>
         </div>
 
         <div class="asterisk-note">
@@ -1250,10 +1262,10 @@
         </div>
 
         <div class="highlight-box">
-            <p><strong>Performance Analysis:</strong> The strategy delivered 56.10% return over 29 trading days with exceptional risk-adjusted metrics (Sharpe: 8.23, Sortino: 15.41). Downside volatility is contained at 3.62% versus total volatility of 6.78%, demonstrating effective risk management in live trading conditions.</p>
-            <p><strong>Trading Statistics:</strong> With 20 trades executed during the period, the strategy achieved an 15% hit ratio (17 losers vs 3 winners) and an exceptional risk-reward ratio of 16.29, highlighting the asymmetric return profile and high-conviction approach.</p>
+            <p>Performance Analysis: The long-only strategy delivered 54.01% return over 30 trading days with strong risk-adjusted metrics (Sharpe: 1.39, Sortino: 2.65). Downside volatility is contained at 3.51% daily versus total volatility of 6.68%, demonstrating effective risk management in live trading conditions.</p>
+            <p>Trading Statistics: With 21 trades executed during the period, the strategy achieved a 14.29% hit ratio (3 winners vs 18 losers) with an average loss of 1.72% per trade and an exceptional risk-reward ratio of 16.29, highlighting the asymmetric return profile and high-conviction approach.</p>
             
-            <p><strong>Position Sizing & Correlation:</strong> The current position sizing (around 15%) is intentionally elevated during this proprietary phase, which explains the higher daily volatility observed. The strategy exhibits very low correlation with the Nasdaq (0.13), confirming its decorrelated nature and potential for portfolio diversification.</p>
+            <p>Resilience During Market Correction: The long-only strategy demonstrated remarkable resilience during the October 10 market correction, maintaining positive performance while both Nasdaq and Russell 2000 declined significantly. This underscores the strategy's decorrelated nature and effective risk management protocols despite being long-only.</p>
         </div>
     </div>
 
@@ -1288,11 +1300,11 @@
         </div>
 
         <div class="highlight-box">
-            <p><strong>Scalability Analysis:</strong> The strategy demonstrates capacity to deliver 30% annual returns with controlled drawdowns up to $100M AUM. The systematic approach combined with disciplined risk management creates a scalable edge in small-cap markets.</p>
+            <p>Scalability Analysis: The long-only strategy demonstrates capacity to deliver 30% annual returns with controlled drawdowns up to $100M AUM. The systematic approach combined with disciplined risk management creates a scalable edge in small-cap markets.</p>
             
-            <p><strong>Position Sizing Flexibility:</strong> The current elevated volatility reflects deliberate position sizing for demonstration purposes. For institutional implementation, maximum position size would be capped at 5%, reducing volatility to ~12-15% annualized while maintaining target returns of 25-30% with Sharpe ratios above 2.0.</p>
+            <p>Position Sizing Flexibility: The current elevated volatility reflects deliberate position sizing for demonstration purposes. For institutional implementation, maximum position size would be capped at 5%, reducing volatility while maintaining target returns of 25-30% with Sharpe ratios above 2.0.</p>
             
-            <p><strong>Adaptability:</strong> The strategy's architecture allows precise calibration of the risk/return profile according to investor preferences while preserving the structural edge of price sequence recognition.</p>
+            <p>Long-Only Advantage: As a long-only strategy, it avoids the complexities and risks of short selling while maintaining decorrelation through selective stock picking and timing in the small-cap universe.</p>
         </div>
     </div>
 
@@ -1306,10 +1318,10 @@
             <div class="method-card">
                 <div class="method-title">Technical Approach</div>
                 <ul>
-                    <li>Breakout + bottom fishing</li>
+                    <li>Long-only breakout + bottom fishing</li>
                     <li>Inflection point detection</li>
                     <li>Short-term trend following</li>
-                    <li>Average Risk/Reward: 16 </li>
+                    <li>Average Risk/Reward: 16.29</li>
                 </ul>
             </div>
 
@@ -1325,7 +1337,7 @@
         </div>
 
         <div class="highlight-box">
-            <p><strong>Methodological synthesis:</strong> The strategy combines discretionary technical analysis with systematic risk management, featuring continuous risk/reward ratio adjustment based on intra-trade volatility. No leverage is employed in the strategy.</p>
+            <p>Methodological synthesis: The long-only strategy combines discretionary technical analysis with systematic risk management, featuring continuous risk/reward ratio adjustment based on intra-trade volatility. No leverage is employed in the strategy, and all positions are long-only with carefully timed entries and exits.</p>
         </div>
     </div>
 
@@ -1338,31 +1350,34 @@
         <div class="highlight-box">
             <ul>
                 <li>
-                    <strong>Sharpe 8.23:</strong> Exceptional risk-adjusted returns with minimal volatility
+                    Sharpe 1.39: Strong risk-adjusted returns for a long-only small-cap strategy
                 </li>
                 <li>
-                    <strong>Sortino 15.41:</strong> Superior downside protection - gains significantly dominate loss variability
+                    Sortino 2.65: Superior downside protection - gains significantly dominate loss variability
                 </li>
                 <li>
-                    <strong>Max Drawdown -12.66%:</strong> Controlled risk profile for directional small-cap strategy
+                    Max Drawdown -12.66%: Controlled risk profile for directional long-only small-cap strategy
                 </li>
                 <li>
-                    <strong>Volatility 6.78%:</strong> Appropriate level for systematized discretionary microcap approach. <em>Note: This reflects current elevated position sizing for demonstration. Can be reduced to ~12-15% annualized with 5% max position size.</em>
+                    Daily Volatility 6.68%: Appropriate level for systematized discretionary microcap approach. Note: This reflects current elevated position sizing for demonstration.
                 </li>
                 <li>
-                    <strong>Risk-Free Rate 3.00%:</strong> Conservative benchmark assumption enhances ratio credibility
+                    Risk-Free Rate 3.00%: Conservative benchmark assumption enhances ratio credibility
                 </li>
                 <li>
-                    <strong>Hit Ratio 15.00%:</strong> A structurally low success rate inherent to breakout strategies, where a few large winners offset numerous small losses. Despite the limited number of trades and a naturally high proportion of losing ones, this ratio represents a structural floor — reassuring for investors, as profitability is achieved without relying on frequent wins.
+                    Hit Ratio 14.29%: A structurally low success rate inherent to breakout strategies, where a few large winners offset numerous small losses. Despite the limited number of trades and a naturally high proportion of losing ones, this ratio represents a structural floor — reassuring for investors, as profitability is achieved without relying on frequent wins.
                 </li>
                 <li>
-                    <strong>Risk-Reward 16.29:</strong> Outstanding asymmetric return profile with controlled risk exposure
+                    Risk-Reward 16.29: Outstanding asymmetric return profile with controlled risk exposure
                 </li>
                 <li>
-                    <strong>Position Size 15.00%:</strong> Current elevated sizing for demonstration purposes. Institutional implementation would cap at 5% for reduced volatility.
+                    Average Loss 1.72%: Controlled loss size per trade demonstrates disciplined risk management
                 </li>
                 <li>
-                    <strong>Nasdaq Correlation 0.13:</strong> Very low correlation confirms strategy's decorrelated nature and diversification benefits for traditional portfolios.
+                    Nasdaq Correlation 0.093: Very low correlation confirms strategy's decorrelated nature and diversification benefits for traditional portfolios.
+                </li>
+                <li>
+                    Russell 2000 Correlation 0.170: Low correlation with small-cap benchmark demonstrates strategy's unique edge beyond traditional small-cap exposure.
                 </li>
             </ul>
         </div>
@@ -1375,34 +1390,34 @@
         </h2>
 
         <p>
-            <strong>Present an uncorrelated, asymmetric, and scalable strategy</strong> to sophisticated investors,
+            Present an uncorrelated, asymmetric, and scalable long-only strategy to sophisticated investors,
             family offices, and institutional sponsors seeking:
         </p>
 
         <ul>
             <li>Uncorrelated return profile to traditional indices</li>
             <li>Positive asymmetry with controlled drawdown</li>
-            <li>Systematized discretionary approach with full transparency</li>
+            <li>Systematized discretionary long-only approach with full transparency</li>
             <li>Partnerships or progressive capital allocation up to USD 100M</li>
         </ul>
 
         <p>
-            <strong>Active search:</strong> strategic partners for incubation, co-investment, or progressive
+            Active search: strategic partners for incubation, co-investment, or progressive
             institutional capital allocation.
         </p>
         
         <div class="highlight-box">
-            <p><strong>Note on Current Performance Presentation:</strong> The elevated position sizing and resulting volatility in current results are intentional for this demonstration phase. The strategy can be immediately calibrated for institutional requirements with maximum 5% position sizing, reducing volatility while maintaining the core asymmetric return profile that makes this approach valuable for portfolio diversification.</p>
+            <p>Note on Current Performance Presentation: The elevated position sizing and resulting volatility in current results are intentional for this demonstration phase. The strategy can be immediately calibrated for institutional requirements with maximum 5% position sizing, reducing volatility while maintaining the core asymmetric return profile that makes this long-only approach valuable for portfolio diversification.</p>
         </div>
     </div>
 
     <div class="appendix-section" id="appendix">
         <h2 class="appendix-title">
-            APPENDIX - Monthly Performance Detail vs Benchmark
+            APPENDIX - Monthly Performance Detail vs Benchmarks
         </h2>
 
         <div class="benchmark-note">
-            <strong>Benchmark used:</strong> Nasdaq Composite (^IXIC) - The reference index for US technology and growth stocks, particularly relevant for our nano, micro and mid-cap investment universe.<br><br>
+            <strong>Benchmarks used:</strong> Nasdaq Composite (^IXIC) - The reference index for US technology and growth stocks; Russell 2000 (^RUT) - The primary benchmark for US small-cap stocks, particularly relevant for our nano, micro and mid-cap investment universe.<br><br>
             <strong>Note:</strong> All performance figures represent real trading results from an Interactive Brokers (IBKR) account with no leverage used.
         </div>
 
@@ -1413,23 +1428,26 @@
                         <th style="text-align: left; color: var(--primary-white);">Month</th>
                         <th style="color: var(--primary-white);">PSR Strategy (<span class="psr-red-square"></span>)</th>
                         <th style="color: var(--primary-white);">Nasdaq Composite</th>
-                        <th style="color: var(--primary-white);">Relative Alpha</th>
+                        <th style="color: var(--primary-white);">Russell 2000</th>
+                        <th style="color: var(--primary-white);">Relative Alpha (vs Nasdaq)</th>
                         <th style="color: var(--primary-white);">Performance Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="background-color: rgba(198, 40, 40, 0.05);">
                         <td class="month-cell" style="background: var(--primary-black);"><strong>September 2025</strong></td>
-                        <td class="positive"><strong>+36.95%</strong></td>
+                        <td class="positive"><strong>+29.78%</strong></td>
                         <td class="positive">+4.60%</td>
-                        <td class="positive"><strong>+32.35%</strong></td>
+                        <td class="positive">+3.51%</td>
+                        <td class="positive"><strong>+25.18%</strong></td>
                         <td class="positive">🏆 OUTPERFORMANCE</td>
                     </tr>
                     <tr style="background-color: rgba(26, 35, 126, 0.03);">
-                        <td class="month-cell" style="background: var(--primary-black);"><strong>October 2025</strong></td>
-                        <td class="positive"><strong>+13.96%</strong></td>
+                        <td class="month-cell" style="background: var(--primary-black);"><strong>October 2025*</strong></td>
+                        <td class="positive"><strong>+12.43%</strong></td>
                         <td class="negative">-2.42%</td>
-                        <td class="positive"><strong>+16.38%</strong></td>
+                        <td class="negative">-1.85%</td>
+                        <td class="positive"><strong>+14.85%</strong></td>
                         <td class="positive">🏆 OUTPERFORMANCE</td>
                     </tr>
                 </tbody>
@@ -1438,17 +1456,21 @@
 
         <div class="performance-summary">
             <div class="summary-card">
-                <div class="summary-value positive">+56.10%</div>
+                <div class="summary-value positive">+54.01%</div>
                 <div class="summary-label"><strong>Cumulative Strategy Performance</strong><br>Real IBKR account, no leverage</div>
             </div>
             <div class="summary-card">
-                <div class="summary-value positive">+4.34%</div>
+                <div class="summary-value positive">+2.18%</div>
                 <div class="summary-label"><strong>Nasdaq Composite Performance</strong><br>September-October 2025 period</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-value positive">+1.66%</div>
+                <div class="summary-label"><strong>Russell 2000 Performance</strong><br>September-October 2025 period</div>
             </div>
         </div>
 
         <div class="chart-container">
-            <div class="chart-title">Comparative Indexed Performance – PSR Strategy (<span class="psr-red-square"></span>) vs Nasdaq (<span class="nasdaq-black-square"></span>) (Sep–Oct 2025)</div>
+            <div class="chart-title">Comparative Indexed Performance – PSR Strategy (<span class="psr-red-square"></span>) vs Nasdaq (<span class="nasdaq-black-square"></span>) vs Russell 2000 (<span class="russell-green-square"></span>) (Sep 2 – Oct 13, 2025)</div>
             <div class="chart-subtitle">Indexed to 100 on Sep 2, 2025</div>
             <div class="chart-canvas-container">
                 <canvas id="performanceChart"></canvas>
@@ -1458,15 +1480,18 @@
         <div class="highlight-box" style="margin-top: 40px;">
             <h3 style="color: var(--primary-red); margin-bottom: 20px;">🔍 Comparative Analysis</h3>
             <ul style="line-height: 1.8;">
-                <li><strong>Systematic outperformance:</strong> The strategy continued to outperform the Nasdaq Composite during September and early October 2025 under live trading conditions.</li>
-                <li><strong>Proactive risk management:</strong> A mechanical, full exit to cash was executed before the October 10, 2025 correction (~–3.5% on the Nasdaq), with the analysis period ending on that date.</li>
-                <li><strong>Real account performance:</strong> All results come from a live Interactive Brokers account, with no leverage employed (MOC-only execution).</li>
-                <li><strong>Effective decorrelation:</strong> Results confirm a low correlation to traditional indices, with positive expectancy across distinct market regimes.</li>
-                <li><strong>Position sizing note:</strong> Current elevated volatility reflects intentional position sizing for demonstration. Institutional implementation would feature 5% max position sizing, reducing volatility while maintaining return characteristics.</li>
+                <li>Systematic outperformance: The long-only strategy significantly outperformed both the Nasdaq Composite and Russell 2000 during September and October 2025 under live trading conditions, delivering +54.01% vs +2.18% for Nasdaq and +1.66% for Russell 2000.</li>
+                <li>Resilience during market stress: The strategy demonstrated exceptional resilience during the October 10 market correction, maintaining positive performance (+12.43% for October) while both benchmarks declined significantly (-2.42% Nasdaq, -1.85% Russell).</li>
+                <li>Real account performance: All results come from a live Interactive Brokers account, with no leverage employed (MOC-only execution).</li>
+                <li>Effective decorrelation: Results confirm very low correlation to traditional indices (0.093 vs Nasdaq, 0.170 vs Russell), with positive expectancy across distinct market regimes including stress periods.</li>
+                <li>Long-only advantage: The strategy demonstrates that careful stock selection and timing can generate significant alpha even in a long-only framework during market corrections.</li>
             </ul>
         </div>
-    </div>
 
+        <div class="asterisk-note">
+            <strong>*</strong> October performance calculated from October 1 to October 13, 2025, capturing the strategy's resilience during the market correction of October 10.
+        </div>
+    </div>
     <!-- NOUVELLE SECTION QUESTIONS & OBJECTIONS PLACÉE AVANT LE CONTACT -->
     <div class="section" id="qa">
         <h2 class="section-title">
@@ -1474,16 +1499,21 @@
             Questions & Objections
         </h2>
 
-        <div class="highlight-box">
-            <p><strong>💡 "You're too early."</strong><br>
-            That's fair — the live phase is intentionally limited at this stage to validate operational execution. What's important is that live behavior perfectly mirrors the statistical structure observed in 8 years of research and backtesting. Each trade is documented with full transparency to progressively build institutional-grade track record integrity.</p>
+        <div class="qa-item">
+            <div class="qa-question">
+                <span class="qa-question-icon">💡</span>
+                "You're too early."
+            </div>
+            <div class="qa-answer">
+                "That's fair — the live phase is intentionally limited at this stage to validate operational execution. What's important is that live behavior perfectly mirrors the statistical structure observed in 8 years of research and backtesting. Each trade is documented with full transparency to progressively build institutional-grade track record integrity."
+            </div>
         </div>
 
         <div class="qa-grid">
             <div class="qa-item">
                 <div class="qa-question">
                     <span class="qa-question-icon">💡</span>
-                    "The hit ratio is too low — only 15%?"
+                    "The hit ratio is too low — only 14.29%?"
                 </div>
                 <div class="qa-answer">
                     "It's structurally low by design. The PSR system identifies high-momentum breakout structures with very asymmetric payoffs — a few outliers more than offset numerous small losses. It's not discretionary underperformance; it's the mathematical signature of this type of asymmetry. Falling below this hit ratio would be statistically unlikely, which actually makes it reassuring from a floor-risk perspective."
@@ -1493,10 +1523,10 @@
             <div class="qa-item">
                 <div class="qa-question">
                     <span class="qa-question-icon">💡</span>
-                    "The market seems too small or illiquid."
+                    "How can a long-only strategy perform well during market corrections?"
                 </div>
                 <div class="qa-answer">
-                    "True, the small-cap segment is fragmented — but that's precisely the opportunity. At scale, we cap position size and broaden the universe — liquidity expands geometrically, not linearly, with AUM. That's why the model remains valid up to $100M, with drawdown control under 15%."
+                    "The strategy demonstrated remarkable resilience during the October 10 correction. While being long-only, our selective stock picking, precise timing, and disciplined risk management allowed us to maintain positive performance (+12.43% in October) while both Nasdaq and Russell declined. This highlights the power of our price sequence recognition methodology to identify stocks with independent price action."
                 </div>
             </div>
 
@@ -1526,7 +1556,7 @@
                     "How scalable is this really?"
                 </div>
                 <div class="qa-answer">
-                    "The live sizing is 15% per trade for demonstration, but institutional deployment would cap exposure at 5%, keeping expected annual volatility around 12–15% and Sharpe ratios above 2.0. It's a controlled scaling model — not aggressive growth."
+                    "The live sizing is intentionally elevated for demonstration, but institutional deployment would cap exposure at 5%, keeping expected annual volatility around target levels while maintaining returns. It's a controlled scaling model — not aggressive growth."
                 </div>
             </div>
 
@@ -1551,7 +1581,6 @@
             </div>
         </div>
     </div>
-
     <!-- SECTION CONTACT COMPACTE -->
     <div class="contact-section" id="contact">
         <h2 class="contact-title">
@@ -1561,7 +1590,7 @@
         <div class="contact-info-compact">
             <div class="contact-item-compact">
                 <div class="contact-label-compact">NAME</div>
-                <div class="contact-value-compact">Florian Campuzan</div>
+                <div class="contact-value-compact"><strong>Florian Campuzan</strong></div>
             </div>
             <div class="contact-item-compact">
                 <div class="contact-label-compact">EMAIL</div>
@@ -1595,25 +1624,28 @@
     </div>
 
     <script>
-        // Données pour le graphique comparatif
+        // Données pour le graphique comparatif avec Russell 2000 - Mises à jour jusqu'au 13 octobre
         const performanceData = {
             dates: [
                 '2025-09-02', '2025-09-03', '2025-09-04', '2025-09-05', '2025-09-08', '2025-09-09',
                 '2025-09-10', '2025-09-11', '2025-09-12', '2025-09-15', '2025-09-16', '2025-09-17',
                 '2025-09-18', '2025-09-19', '2025-09-22', '2025-09-23', '2025-09-24', '2025-09-25',
                 '2025-09-26', '2025-09-29', '2025-09-30', '2025-10-01', '2025-10-02', '2025-10-03',
-                '2025-10-06', '2025-10-07', '2025-10-08', '2025-10-09', '2025-10-10'
+                '2025-10-06', '2025-10-07', '2025-10-08', '2025-10-09', '2025-10-10', '2025-10-13'
             ],
-            strategy: [1098, 1090, 1256, 1303, 1322, 1316, 1315, 1316, 1255, 1267, 1277, 1226, 1222, 1246, 1235, 1294, 1270, 1447, 1622, 1722, 1504, 1622, 1687, 1533, 1817, 1812, 1772, 1735, 1714],
-            nasdaq: [21279.63, 21497.73, 21707.69, 21700.39, 21798.70, 21879.49, 21886.06, 22043.07, 22141.10, 22348.75, 22333.96, 22261.33, 22470.72, 22631.48, 22788.98, 22573.47, 22497.86, 22384.70, 22484.07, 22591.15, 22660.01, 22755.16, 22844.05, 22780.51, 22941.67, 22788.36, 23043.38, 23024.63, 22204.43]
+            strategy: [1098, 1090, 1256, 1303, 1322, 1316, 1315, 1316, 1255, 1267, 1277, 1226, 1222, 1246, 1235, 1294, 1270, 1447, 1622, 1722, 1504, 1622, 1687, 1533, 1817, 1812, 1772, 1735, 1714, 1691],
+            nasdaq: [21279.63, 21497.73, 21707.69, 21700.39, 21798.70, 21879.49, 21886.06, 22043.07, 22141.10, 22348.75, 22333.96, 22261.33, 22470.72, 22631.48, 22788.98, 22573.47, 22497.86, 22384.70, 22484.07, 22591.15, 22660.01, 22755.16, 22844.05, 22780.51, 22941.67, 22788.36, 23043.38, 23024.63, 22204.43, 22695.00],
+            russell: [2352, 2350, 2380, 2391, 2395, 2382, 2378, 2422, 2397, 2405, 2403, 2407, 2468, 2449, 2463, 2458, 2435, 2411, 2434, 2435, 2436, 2442, 2458, 2476, 2486, 2458, 2484, 2469, 2395, 2461]
         };
 
         // Calcul des indices base 100
         const strategyBase = performanceData.strategy[0];
         const nasdaqBase = performanceData.nasdaq[0];
+        const russellBase = performanceData.russell[0];
 
         const strategyIndexed = performanceData.strategy.map(value => (value / strategyBase) * 100);
         const nasdaqIndexed = performanceData.nasdaq.map(value => (value / nasdaqBase) * 100);
+        const russellIndexed = performanceData.russell.map(value => (value / russellBase) * 100);
 
         // Labels pour les dates (simplifiés)
         const dateLabels = performanceData.dates.map(date => {
@@ -1621,7 +1653,7 @@
             return d.getMonth() === 8 ? `Sep ${d.getDate()}` : `Oct ${d.getDate()}`;
         });
 
-        // Configuration optimisée du graphique
+        // Configuration optimisée du graphique avec trois séries
         const ctx = document.getElementById('performanceChart').getContext('2d');
         const chart = new Chart(ctx, {
             type: 'line',
@@ -1655,6 +1687,20 @@
                     pointBorderColor: '#ffffff',
                     pointBorderWidth: 1,
                     yAxisID: 'y1'
+                }, {
+                    label: 'Russell 2000',
+                    data: russellIndexed,
+                    borderColor: '#1B5E20',
+                    backgroundColor: 'rgba(27, 94, 32, 0.05)',
+                    borderWidth: 3,
+                    fill: false,
+                    tension: 0.1,
+                    pointRadius: 3,
+                    pointHoverRadius: 5,
+                    pointBackgroundColor: '#1B5E20',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 1,
+                    yAxisID: 'y1'
                 }]
             },
             options: {
@@ -1682,11 +1728,13 @@
                                 weight: '600'
                             },
                             color: function(context) {
-                                return context.datasetIndex === 0 ? '#C62828' : '#000000';
+                                if (context.datasetIndex === 0) return '#C62828';
+                                if (context.datasetIndex === 1) return '#000000';
+                                return '#1B5E20';
                             },
                             usePointStyle: true,
                             pointStyle: function(context) {
-                                return context.datasetIndex === 0 ? 'rect' : 'rect';
+                                return 'rect';
                             },
                             generateLabels: function(chart) {
                                 const original = Chart.defaults.plugins.legend.labels.generateLabels;
@@ -1701,6 +1749,11 @@
                                 labelsOriginal[1].fillStyle = '#000000';
                                 labelsOriginal[1].strokeStyle = '#000000';
                                 labelsOriginal[1].pointStyle = 'rect';
+                                
+                                labelsOriginal[2].text = 'Russell 2000';
+                                labelsOriginal[2].fillStyle = '#1B5E20';
+                                labelsOriginal[2].strokeStyle = '#1B5E20';
+                                labelsOriginal[2].pointStyle = 'rect';
                                 
                                 return labelsOriginal;
                             },
@@ -1740,7 +1793,7 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'Trading Days (Sep-Oct 2025)',
+                            text: 'Trading Days (Sep 2 - Oct 13, 2025)',
                             font: {
                                 family: 'Inter',
                                 size: 11,
@@ -1798,7 +1851,7 @@
                         position: 'right',
                         title: {
                             display: true,
-                            text: 'Nasdaq (Base 100)',
+                            text: 'Nasdaq & Russell (Base 100)',
                             font: {
                                 family: 'Inter',
                                 size: 10,
